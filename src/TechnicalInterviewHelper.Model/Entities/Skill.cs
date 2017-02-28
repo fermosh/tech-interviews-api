@@ -5,7 +5,7 @@
     /// <summary>
     /// Skill entity.
     /// </summary>
-    public class Skill
+    public class Skill : DocumentDbEntity
     {
         /// <summary>
         /// Gets or sets the root identifier.
@@ -86,14 +86,6 @@
         /// The exercises.
         /// </value>
         public List<Exercise> Exercises { get; set; }
-
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the parent identifier.

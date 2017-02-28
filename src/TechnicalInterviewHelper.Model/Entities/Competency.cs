@@ -5,17 +5,8 @@
     /// <summary>
     /// Competency entity.
     /// </summary>
-    public class Competency
+    public class Competency : DocumentDbEntity
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        [JsonProperty("id")]
-        public string Id { get; set; }
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>

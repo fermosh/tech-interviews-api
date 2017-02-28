@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\DocumentDbEntity.cs" />
     <Compile Include="Entities\Domain.cs" />
     <Compile Include="Entities\Competency.cs" />
     <Compile Include="Entities\Exercise.cs" />
@@ -54,6 +55,8 @@
     <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\SkillMatrix.cs" />
     <Compile Include="Entities\Topic.cs" />
+    <Compile Include="Interfaces\ICommandRepository.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\DocumentDbEntity.cs" />
+    <Compile Include="Repositories\DocumentDbCommandRepository.cs" />
     <Compile Include="Repositories\DocumentDbQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

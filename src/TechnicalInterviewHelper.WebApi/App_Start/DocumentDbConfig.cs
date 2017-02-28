@@ -9,7 +9,7 @@
     /// <summary>
     /// A class to initialize the DocumentDB client.
     /// </summary>
-    public class DocumentDbConfig
+    public class DocumentDbConfig : IDisposable
     {
         #region Private fields
 
@@ -51,7 +51,7 @@
         /// <summary>
         /// The client
         /// </summary>
-        private readonly DocumentClient client;
+        private readonly DocumentClient documentClient;
 
         #endregion Private fields
 
@@ -62,7 +62,7 @@
         /// </summary>
         public DocumentDbConfig()
         {
-            this.client = new DocumentClient(new Uri(this.endPointUrl), this.authorizationKey, new ConnectionPolicy { EnableEndpointDiscovery = false });
+            this.documentClient = new DocumentClient(new Uri(this.endPointUrl), this.authorizationKey, new ConnectionPolicy { EnableEndpointDiscovery = false });
         }
 
         #endregion Constructor
@@ -91,13 +91,13 @@
         {
             try
             {
-                await this.client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(this.databaseId));
+                await this.documentClient.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(this.databaseId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await this.client.CreateDatabaseAsync(new Database { Id = this.databaseId });
+                    await this.documentClient.CreateDatabaseAsync(new Database { Id = this.databaseId });
                 }
                 else
                 {
@@ -116,13 +116,13 @@
 
             try
             {
-                await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.competencyCollectionId));
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.competencyCollectionId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await this.client.CreateDocumentCollectionAsync(
+                    await this.documentClient.CreateDocumentCollectionAsync(
                         UriFactory.CreateDatabaseUri(this.databaseId),
                         new DocumentCollection { Id = this.competencyCollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
@@ -139,13 +139,13 @@
 
             try
             {
-                await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.levelCollectionId));
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.levelCollectionId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await this.client.CreateDocumentCollectionAsync(
+                    await this.documentClient.CreateDocumentCollectionAsync(
                         UriFactory.CreateDatabaseUri(this.databaseId),
                         new DocumentCollection { Id = this.levelCollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
@@ -162,13 +162,13 @@
 
             try
             {
-                await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.domainCollectionId));
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.domainCollectionId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await this.client.CreateDocumentCollectionAsync(
+                    await this.documentClient.CreateDocumentCollectionAsync(
                         UriFactory.CreateDatabaseUri(this.databaseId),
                         new DocumentCollection { Id = this.domainCollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
@@ -185,13 +185,13 @@
 
             try
             {
-                await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.skillCollectionId));
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.skillCollectionId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await this.client.CreateDocumentCollectionAsync(
+                    await this.documentClient.CreateDocumentCollectionAsync(
                         UriFactory.CreateDatabaseUri(this.databaseId),
                         new DocumentCollection { Id = this.skillCollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
@@ -205,6 +205,32 @@
             #endregion Skill collection
         }
 
+
+
         #endregion Initialization functions
+
+        #region IDisposable Support
+
+        private bool disposedValue = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    this.documentClient.Dispose();
+                }
+
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        #endregion
     }
 }
