@@ -1,12 +1,12 @@
-﻿namespace TechnicalInterviewHelper.Services
+﻿namespace TechnicalInterviewHelper.Model
 {
-    using Model;
+    using Newtonsoft.Json;
 
     /// <summary>
-    /// Minimum fields that an entity model in DocumentDB should meet.
+    /// The class implements the data type for the Id field that every entity should have.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.IEntity{System.String}" />
-    public class DocumentDbEntity : IEntity<string>
+    public abstract class BaseEntity : IEntity<string>
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -14,6 +14,7 @@
         /// <value>
         /// The identifier.
         /// </value>
+        [JsonProperty("id")]
         public string Id { get; set; }
     }
 }

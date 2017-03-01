@@ -5,7 +5,7 @@
     /// <summary>
     /// Competency entity.
     /// </summary>
-    public class Competency : DocumentDbEntity
+    public class Competency : BaseEntity
     {
         /// <summary>
         /// Gets or sets the name.

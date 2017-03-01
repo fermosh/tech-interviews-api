@@ -5,7 +5,7 @@
     /// <summary>
     /// Skill entity.
     /// </summary>
-    public class Skill : DocumentDbEntity
+    public class Skill : BaseEntity
     {
         /// <summary>
         /// Gets or sets the root identifier.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Topic entity.
     /// </summary>
-    public class Topic : DocumentDbEntity
+    public class Topic : BaseEntity
     {
         /// <summary>
         /// Gets or sets the name.

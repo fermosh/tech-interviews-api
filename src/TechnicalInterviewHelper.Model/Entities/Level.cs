@@ -3,7 +3,7 @@
     /// <summary>
     /// Level entity.
     /// </summary>
-    public class Level : DocumentDbEntity
+    public class Level : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.

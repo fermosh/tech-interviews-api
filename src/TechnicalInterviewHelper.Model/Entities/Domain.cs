@@ -3,7 +3,7 @@
     /// <summary>
     /// Domain entity.
     /// </summary>
-    public class Domain : DocumentDbEntity
+    public class Domain : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.

@@ -5,7 +5,7 @@
     /// <summary>
     /// SkillMatrix data transfer object.
     /// </summary>
-    public class SkillMatrix : DocumentDbEntity
+    public class SkillMatrix : BaseEntity
     {
         /// <summary>
         /// Gets or sets a value indicating whether this instance has content.

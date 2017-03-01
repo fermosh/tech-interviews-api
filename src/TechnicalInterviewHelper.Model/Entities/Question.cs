@@ -3,7 +3,7 @@
     /// <summary>
     /// Question entity.
     /// </summary>
-    public class Question : DocumentDbEntity
+    public class Question : BaseEntity
     {
         /// <summary>
         /// Gets or sets the text.

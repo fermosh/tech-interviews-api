@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\DocumentDbEntity.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Domain.cs" />
     <Compile Include="Entities\Competency.cs" />
     <Compile Include="Entities\Exercise.cs" />

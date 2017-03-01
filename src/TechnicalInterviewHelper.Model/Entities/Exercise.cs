@@ -3,7 +3,7 @@
     /// <summary>
     /// Exercise entity.
     /// </summary>
-    public class Exercise : DocumentDbEntity
+    public class Exercise : BaseEntity
     {
         /// <summary>
         /// Gets or sets the text.

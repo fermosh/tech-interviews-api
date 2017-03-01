@@ -12,7 +12,7 @@
     /// <typeparam name="T">Entity to apply the command operations.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.ICommandRepository{T, TKey}" />
     public class DocumentDbCommandRepository<T> : IDisposable, ICommandRepository<T>
-            where T : DocumentDbEntity
+            where T : BaseEntity
     {
         #region Private fields
 
