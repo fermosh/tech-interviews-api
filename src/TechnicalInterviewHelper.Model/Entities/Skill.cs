@@ -8,6 +8,30 @@
     public class Skill : BaseEntity
     {
         /// <summary>
+        /// Gets or sets the competency identifier.
+        /// </summary>
+        /// <value>
+        /// The competency identifier.
+        /// </value>
+        public int CompetencyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the level identifier.
+        /// </summary>
+        /// <value>
+        /// The level identifier.
+        /// </value>
+        public int LevelId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the domain identifier.
+        /// </summary>
+        /// <value>
+        /// The domain identifier.
+        /// </value>
+        public int DomainId { get; set; }
+
+        /// <summary>
         /// Gets or sets the root identifier.
         /// </summary>
         /// <value>
@@ -45,15 +69,7 @@
         /// <value>
         /// The level set.
         /// </value>
-        public int LevelSet { get; set; }
-
-        /// <summary>
-        /// Gets or sets the competency identifier.
-        /// </summary>
-        /// <value>
-        /// The competency identifier.
-        /// </value>
-        public int CompetencyId { get; set; }
+        public int LevelSet { get; set; }        
 
         /// <summary>
         /// Gets or sets the job function level.
