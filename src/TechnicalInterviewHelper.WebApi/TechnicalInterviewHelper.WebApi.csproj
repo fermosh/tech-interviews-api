@@ -165,11 +165,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CommandPositionSkillController.cs" />
     <Compile Include="Controllers\CompetencyController.cs" />
     <Compile Include="Controllers\DomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LevelController.cs" />
-    <Compile Include="Controllers\PositionSkillController.cs" />
+    <Compile Include="Controllers\QueryPositionSkillController.cs" />
     <Compile Include="Controllers\SkillMatrixController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />

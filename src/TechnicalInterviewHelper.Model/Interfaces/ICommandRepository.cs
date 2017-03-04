@@ -1,6 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
-    using System;
     using System.Threading.Tasks;
 
     /// <summary>
