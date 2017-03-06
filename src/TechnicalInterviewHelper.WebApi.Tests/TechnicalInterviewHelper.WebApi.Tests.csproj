@@ -72,6 +72,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\CompetencyControllerTests.cs" />
+    <Compile Include="Controllers\SkillMatrixControllerTests.cs" />
+    <Compile Include="Controllers\LevelControllerTests.cs" />
+    <Compile Include="Controllers\DomainControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +84,10 @@
     <ProjectReference Include="..\TechnicalInterviewHelper.Model\TechnicalInterviewHelper.Model.csproj">
       <Project>{CC0E70F1-3960-4A16-9F11-EACC555099BC}</Project>
       <Name>TechnicalInterviewHelper.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechnicalInterviewHelper.Tests.Common\TechnicalInterviewHelper.Tests.Common.csproj">
+      <Project>{2C89658C-31A0-4D61-8489-4319164BC7D1}</Project>
+      <Name>TechnicalInterviewHelper.Tests.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechnicalInterviewHelper.WebApi\TechnicalInterviewHelper.WebApi.csproj">
       <Project>{E8BBB755-E9FA-424B-B7FD-9635DD385392}</Project>

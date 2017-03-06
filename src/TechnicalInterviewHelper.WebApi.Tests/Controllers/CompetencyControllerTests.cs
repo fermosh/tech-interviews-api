@@ -8,6 +8,7 @@
     using Moq;
     using NUnit.Framework;
     using WebApi.Controllers;
+    using TechnicalInterviewHelper.Tests.Common;
 
     /// <summary>
     /// The competency controller tests.
@@ -16,17 +17,12 @@
     public class CompetencyControllerTests {
         private readonly Mock< IQueryRepository<Competency, string> > repositoryMock;
 
-        private readonly string testCompetencyId;
-        private readonly string testCompetencyName;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetencyControllerTests"/> class.
         /// </summary>
         public CompetencyControllerTests()
         {
             this.repositoryMock = new Mock<IQueryRepository<Competency, string>>();
-            this.testCompetencyId = Guid.NewGuid().ToString("D");
-            this.testCompetencyName = Guid.NewGuid().ToString("D");
         }
 
         /// <summary>
@@ -66,7 +62,7 @@
                 .ReturnsAsync(
                     new List<Competency>
                         {
-                            new Competency { Id = this.testCompetencyId, Name = this.testCompetencyName }
+                            new Competency { Id = Resources.TestCompetencyId.ToString(), Name = Resources.TestCompetencyName }
                         });
             var competencyController = new CompetencyController(this.repositoryMock.Object);
             var response = await competencyController.GetAll();

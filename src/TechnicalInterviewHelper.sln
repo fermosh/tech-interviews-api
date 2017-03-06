@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalInterviewHelper.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalInterviewHelper.Services", "TechnicalInterviewHelper.Services\TechnicalInterviewHelper.Services.csproj", "{FC4CBCD1-62C5-462E-A9BE-E834EF1651AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalInterviewHelper.Tests.Common", "TechnicalInterviewHelper.Tests.Common\TechnicalInterviewHelper.Tests.Common.csproj", "{2C89658C-31A0-4D61-8489-4319164BC7D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,11 +37,16 @@ Global
 		{FC4CBCD1-62C5-462E-A9BE-E834EF1651AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4CBCD1-62C5-462E-A9BE-E834EF1651AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4CBCD1-62C5-462E-A9BE-E834EF1651AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C89658C-31A0-4D61-8489-4319164BC7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C89658C-31A0-4D61-8489-4319164BC7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C89658C-31A0-4D61-8489-4319164BC7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C89658C-31A0-4D61-8489-4319164BC7D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{19FC338D-E510-4B5A-9E02-28921DAEE361} = {80941EC4-AA24-4E19-93EB-B1777517BC67}
+		{2C89658C-31A0-4D61-8489-4319164BC7D1} = {80941EC4-AA24-4E19-93EB-B1777517BC67}
 	EndGlobalSection
 EndGlobal
