@@ -1,0 +1,76 @@
+﻿namespace TechnicalInterviewHelper.WebApi.Controllers
+{    
+    using System.Configuration;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using Model;
+    using Services;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
+    [RoutePrefix("command/positionskill")]
+    public class CommandPositionSkillController : ApiController
+    {
+        #region Repository
+
+        /// <summary>
+        /// The command repository
+        /// </summary>
+        private readonly ICommandRepository<PositionSkill> commandRepository;
+
+        #endregion Repository
+
+        #region Constructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryPositionSkillController"/> class.
+        /// </summary>
+        public CommandPositionSkillController()
+        {
+            this.commandRepository = new DocumentDbCommandRepository<PositionSkill>(ConfigurationManager.AppSettings["SkillCollectionId"]);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryPositionSkillController"/> class.
+        /// </summary>
+        /// <param name="skillRepository">The skill repository.</param>
+        public CommandPositionSkillController(ICommandRepository<PositionSkill> commandRepository)
+        {
+            this.commandRepository = commandRepository;
+        }
+
+        #endregion Constructor
+
+        /// <summary>
+        /// Posts the specified position skills to save.
+        /// </summary>
+        /// <param name="positionSkillToSave">The position skill to save.</param>
+        /// <returns>A string as the ID of the just created document, error otherwise.</returns>
+        public async Task<IHttpActionResult> Post(PositionSkillInputModel positionSkillToSave)
+        {
+            if (positionSkillToSave.SkillIdentifiers.Count == 0)
+            {
+                return BadRequest("Cannot save a position without skills, add at least one of them.");
+            }
+
+            try
+            {
+                var positionSkillToAdd = new PositionSkill()
+                {
+                    Position = positionSkillToSave.Position,
+                    SkillIdentifiers = positionSkillToSave.SkillIdentifiers
+                };
+
+                var documentCreatedForPositionSkill = await this.commandRepository.Insert(positionSkillToAdd);
+
+                return Ok(documentCreatedForPositionSkill.Id);
+            }
+            catch (System.Exception)
+            {
+                return InternalServerError();
+            }
+        }
+    }
+}

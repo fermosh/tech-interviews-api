@@ -1,11 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using Services;
-    using System.Web.Http;
     using Model;
-    using System;
+    using Services;
     using System.Configuration;
-    using System.Threading.Tasks;
+    using System.Web.Http;
 
     [RoutePrefix("skill")]
     public class SkillsController : ApiController
@@ -49,15 +47,5 @@
         }
 
         #endregion Constructor
-
-        #region Get functions
-
-        [ActionName("matrix")]
-        public async Task<SkillMatrix> GetMatrix(string documentId)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion Get functions
     }
 }
