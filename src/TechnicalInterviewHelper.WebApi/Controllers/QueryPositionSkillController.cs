@@ -49,8 +49,13 @@
         /// </summary>
         /// <param name="positionToFind">The position to find.</param>
         /// <returns></returns>
-        public async Task<PositionSkillViewModel> Get(PositionInputModel positionToFind)
+        public async Task<IHttpActionResult> Get(PositionInputModel positionToFind)
         {
+            if (positionToFind == null)
+            {
+                return BadRequest("A position is required in order to get its skills.");
+            }
+
             var skillViewModelList = new List<SkillViewModel>();
 
             var skillsBelongingToPosition = await this.queryRepository.FindBy(
@@ -77,7 +82,7 @@
                 Skills = skillViewModelList
             };
 
-            return positionSkillVM;
+            return Ok(positionSkillVM);
         }
     }
 }

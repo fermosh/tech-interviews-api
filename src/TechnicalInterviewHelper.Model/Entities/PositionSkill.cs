@@ -14,7 +14,7 @@
         /// <value>
         /// The position.
         /// </value>
-        public PositionInputModel Position { get; set; }
+        public Position Position { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifiers.

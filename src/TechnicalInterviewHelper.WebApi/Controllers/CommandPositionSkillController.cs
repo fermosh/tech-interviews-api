@@ -7,7 +7,7 @@
     using Services;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("command/positionskill")]
@@ -50,6 +50,11 @@
         /// <returns>A string as the ID of the just created document, error otherwise.</returns>
         public async Task<IHttpActionResult> Post(PositionSkillInputModel positionSkillToSave)
         {
+            if (positionSkillToSave.Position == null)
+            {
+                return BadRequest("Request doesn't have a position to link with the skills.");
+            }
+
             if (positionSkillToSave.SkillIdentifiers.Count == 0)
             {
                 return BadRequest("Cannot save a position without skills, add at least one of them.");
@@ -57,13 +62,20 @@
 
             try
             {
-                var positionSkillToAdd = new PositionSkill()
+                var position = new Position
                 {
-                    Position = positionSkillToSave.Position,
+                    CompetencyId = positionSkillToSave.Position.CompetencyId,
+                    LevelId = positionSkillToSave.Position.LevelId,
+                    DomainId = positionSkillToSave.Position.DomainId
+                };
+
+                var positionSkillDocumentToSave = new PositionSkill()
+                {
+                    Position = position,
                     SkillIdentifiers = positionSkillToSave.SkillIdentifiers
                 };
 
-                var documentCreatedForPositionSkill = await this.commandRepository.Insert(positionSkillToAdd);
+                var documentCreatedForPositionSkill = await this.commandRepository.Insert(positionSkillDocumentToSave);
 
                 return Ok(documentCreatedForPositionSkill.Id);
             }

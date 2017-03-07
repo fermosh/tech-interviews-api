@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TechnicalInterviewHelper.Tests.Common
+﻿namespace TechnicalInterviewHelper.Tests.Common
 {
+    using System;
+    using System.Collections.Generic;
+    using Model;
 
     /// <summary>
     /// The resources.
@@ -71,8 +68,6 @@ namespace TechnicalInterviewHelper.Tests.Common
                 UserSkillLevel = 1,
                 Topics = new List<Topic>()
             };
-
         }
-
     }
 }
