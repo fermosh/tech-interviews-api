@@ -2,6 +2,7 @@
 {    
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using Model;
@@ -48,21 +49,30 @@
         /// Gets the specified position to find.
         /// </summary>
         /// <param name="positionToFind">The position to find.</param>
-        /// <returns></returns>
-        public async Task<IHttpActionResult> Get(PositionInputModel positionToFind)
+        /// <returns>An HttpResult with either an error or success code with the list of skills.</returns>
+        [HttpGet]
+        [ActionName("all")]
+        public async Task<IHttpActionResult> GetAll(PositionInputModel positionToFind)
         {
             if (positionToFind == null)
             {
                 return BadRequest("A position is required in order to get its skills.");
             }
 
-            var skillViewModelList = new List<SkillViewModel>();
-
             var skillsBelongingToPosition = await this.queryRepository.FindBy(
                     skill =>
                         skill.CompetencyId == positionToFind.CompetencyId &&
                         skill.LevelId == positionToFind.LevelId &&
                         skill.DomainId == positionToFind.DomainId);
+
+            // Exit early when there are not skills to return.
+            if (skillsBelongingToPosition.Count() == 0)
+            {
+                return NotFound();
+            }
+
+            // We have found documents that match the input criteria, so we proceed to include them in the response.
+            var skillViewModelList = new List<SkillViewModel>();
 
             foreach (var skill in skillsBelongingToPosition)
             {

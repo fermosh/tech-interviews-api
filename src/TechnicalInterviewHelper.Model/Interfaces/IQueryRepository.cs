@@ -24,6 +24,7 @@
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <returns>An enumeration of entities.</returns>
+        /// TODO: We'll have to include a sorting predicate paramater.
         Task<IEnumerable<T>> FindBy(Expression<Func<T, bool>> predicate);
 
         /// <summary>
