@@ -71,6 +71,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\CommandPositionSkillControllerTests.cs" />
     <Compile Include="Controllers\CompetencyControllerTests.cs" />
     <Compile Include="Controllers\SkillMatrixControllerTests.cs" />
     <Compile Include="Controllers\LevelControllerTests.cs" />

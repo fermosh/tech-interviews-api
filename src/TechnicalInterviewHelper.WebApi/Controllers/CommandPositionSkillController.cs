@@ -7,7 +7,7 @@
     using Services;
 
     /// <summary>
-    ///
+    /// Has commands that works over PositionSkill entities.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("command/positionskill")]
