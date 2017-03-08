@@ -1,10 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{    
+{
+    using Model;
+    using Services;
     using System.Configuration;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using Model;
-    using Services;
+    using TechnicalInterviewHelper.Model;
 
     /// <summary>
     /// Has commands that works over PositionSkill entities.

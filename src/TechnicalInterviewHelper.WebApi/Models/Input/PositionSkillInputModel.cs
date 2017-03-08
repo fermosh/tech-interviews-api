@@ -1,4 +1,4 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     using System.Collections.Generic;
 

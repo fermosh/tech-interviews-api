@@ -1,4 +1,4 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     using System.Collections.Generic;
 
@@ -13,14 +13,14 @@
         /// <value>
         /// The position.
         /// </value>
-        public PositionInputModel Position { get; set; }
+        public PositionViewModel Position { get; set; }
 
         /// <summary>
-        /// Gets or sets the skills.
+        /// Gets or sets the skills of a particular position.
         /// </summary>
         /// <value>
-        /// The skills.
+        /// The skills of a particular position.
         /// </value>
-        public IEnumerable<SkillViewModel> Skills { get; set; }
+        public IEnumerable<SkillForPositionViewModel> Skills { get; set; }
     }
 }

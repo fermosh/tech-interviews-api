@@ -1,9 +1,9 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     /// <summary>
     /// View model which represents a skill.
     /// </summary>
-    public class SkillViewModel
+    public class SkillForPositionViewModel
     {
         /// <summary>
         /// Gets or sets the skill identifier.

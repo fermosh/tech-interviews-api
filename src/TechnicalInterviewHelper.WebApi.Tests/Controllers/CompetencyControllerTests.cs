@@ -1,21 +1,21 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers
 {
-    using System;
+    using Moq;
+    using NUnit.Framework;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Model;
-    using Moq;
-    using NUnit.Framework;
-    using WebApi.Controllers;
+    using TechnicalInterviewHelper.Model;
     using TechnicalInterviewHelper.Tests.Common;
+    using WebApi.Controllers;
 
     /// <summary>
     /// The competency controller tests.
     /// </summary>
     [TestFixture]
-    public class CompetencyControllerTests {
-        private readonly Mock< IQueryRepository<Competency, string> > repositoryMock;
+    public class CompetencyControllerTests
+    {
+        private readonly Mock<IQueryRepository<Competency, string>> repositoryMock;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetencyControllerTests"/> class.

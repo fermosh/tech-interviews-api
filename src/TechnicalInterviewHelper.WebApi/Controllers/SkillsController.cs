@@ -1,9 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using Model;
     using Services;
     using System.Configuration;
     using System.Web.Http;
+    using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("skill")]
     public class SkillsController : ApiController

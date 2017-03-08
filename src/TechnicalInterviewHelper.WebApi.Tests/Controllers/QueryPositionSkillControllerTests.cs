@@ -1,13 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers
-{    
+{
+    using Model;
+    using Moq;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Web.Http.Results;
-    using Model;
-    using Moq;
-    using NUnit.Framework;
+    using TechnicalInterviewHelper.Model;
     using WebApi.Controllers;
 
     [TestFixture]
@@ -19,8 +20,9 @@
         public void WhenPositionInputValueIsMissing_ReturnsBadRequestHttpStatusCode()
         {
             // Arrange
-            var commandRepositoryMock = new Mock<IQueryRepository<Skill, string>>();
-            var queryPositionSkillController = new QueryPositionSkillController(commandRepositoryMock.Object);
+            var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
+
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(null).Result;
@@ -52,13 +54,13 @@
                 new Skill { Id = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design", ParentId = 1, LevelSet = 1 }
             };
 
-            var commandRepositoryMock = new Mock<IQueryRepository<Skill, string>>();
+            var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
-            commandRepositoryMock
+            querySkillMock
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(commandRepositoryMock.Object);
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -92,13 +94,13 @@
                 new Skill { CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design" }
             };
 
-            var commandRepositoryMock = new Mock<IQueryRepository<Skill, string>>();
+            var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
-            commandRepositoryMock
+            querySkillMock
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(commandRepositoryMock.Object);
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -131,13 +133,13 @@
                 new Skill { CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design" }
             };
 
-            var commandRepositoryMock = new Mock<IQueryRepository<Skill, string>>();
+            var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
-            commandRepositoryMock
+            querySkillMock
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(commandRepositoryMock.Object);
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -156,7 +158,7 @@
             {
                 CompetencyId = 2,
                 LevelId = 2,
-                DomainId = 11                
+                DomainId = 11
             };
 
             var dataCollection = new List<Skill>
@@ -169,13 +171,13 @@
                 new Skill { Id = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design", ParentId = 1, LevelSet = 1 }
             };
 
-            var commandRepositoryMock = new Mock<IQueryRepository<Skill, string>>();
+            var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
-            commandRepositoryMock
+            querySkillMock
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(commandRepositoryMock.Object);
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;

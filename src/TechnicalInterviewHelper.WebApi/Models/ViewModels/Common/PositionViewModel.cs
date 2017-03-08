@@ -1,9 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     /// <summary>
-    /// To receive input and know what fields to query in order to get information about a position.
+    /// A view model with the identifiers of a position.
     /// </summary>
-    public class PositionInputModel
+    public class PositionViewModel
     {
         /// <summary>
         /// Gets or sets the competency identifier.

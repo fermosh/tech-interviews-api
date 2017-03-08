@@ -1,10 +1,10 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using Model;
     using Services;
     using System.Configuration;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using TechnicalInterviewHelper.Model;
 
     public class TemplateController : ApiController
     {

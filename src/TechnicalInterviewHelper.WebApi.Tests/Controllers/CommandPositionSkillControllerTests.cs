@@ -1,11 +1,12 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers
-{    
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Http.Results;
+{
     using Model;
     using Moq;
     using NUnit.Framework;
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Http.Results;
+    using TechnicalInterviewHelper.Model;
     using WebApi.Controllers;
 
     [TestFixture]

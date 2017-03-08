@@ -169,6 +169,7 @@
     <Compile Include="Controllers\DomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LevelController.cs" />
+    <Compile Include="Controllers\QueryInterviewController.cs" />
     <Compile Include="Controllers\QueryPositionSkillController.cs" />
     <Compile Include="Controllers\SkillMatrixController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
@@ -179,8 +180,13 @@
     </Compile>
     <Compile Include="Models\Input\PositionInputModel.cs" />
     <Compile Include="Models\Input\PositionSkillInputModel.cs" />
-    <Compile Include="Models\ViewModels\PositionSkillViewModel.cs" />
-    <Compile Include="Models\ViewModels\SkillViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
+    <Compile Include="Models\ViewModels\Interview\InterviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
+    <Compile Include="Models\ViewModels\Interview\SkillForInterviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\PositionSkill\PositionSkillViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\PositionViewModel.cs" />
+    <Compile Include="Models\ViewModels\PositionSkill\SkillForPositionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

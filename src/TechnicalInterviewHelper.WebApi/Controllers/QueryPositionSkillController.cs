@@ -1,12 +1,13 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{    
+{
+    using Model;
+    using Services;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using Model;
-    using Services;
+    using TechnicalInterviewHelper.Model;
 
     /// <summary>
     /// API for Position-Skill operations.
@@ -18,9 +19,9 @@
         #region Repository
 
         /// <summary>
-        /// The query repository
+        /// The query skill
         /// </summary>
-        private readonly IQueryRepository<Skill, string> queryRepository;
+        private readonly IQueryRepository<Skill, string> querySkill;
 
         #endregion Repository
 
@@ -31,16 +32,16 @@
         /// </summary>
         public QueryPositionSkillController()
         {
-            this.queryRepository = new DocumentDbQueryRepository<Skill, string>(ConfigurationManager.AppSettings["SkillCollectionId"]);
+            this.querySkill = new DocumentDbQueryRepository<Skill, string>(ConfigurationManager.AppSettings["SkillCollectionId"]);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryPositionSkillController"/> class.
         /// </summary>
-        /// <param name="skillRepository">The skill repository.</param>
-        public QueryPositionSkillController(IQueryRepository<Skill, string> queryRepository)
+        /// <param name="querySkill">The query for skills.</param>
+        public QueryPositionSkillController(IQueryRepository<Skill, string> querySkill)
         {
-            this.queryRepository = queryRepository;
+            this.querySkill = querySkill;
         }
 
         #endregion Constructor
@@ -59,7 +60,7 @@
                 return BadRequest("A position is required in order to get its skills.");
             }
 
-            var skillsBelongingToPosition = await this.queryRepository.FindBy(
+            var skillsBelongingToPosition = await this.querySkill.FindBy(
                     skill =>
                         skill.CompetencyId == positionToFind.CompetencyId &&
                         skill.LevelId == positionToFind.LevelId &&
@@ -72,24 +73,32 @@
             }
 
             // We have found documents that match the input criteria, so we proceed to include them in the response.
-            var skillViewModelList = new List<SkillViewModel>();
+            var skillsVM = new List<SkillForPositionViewModel>();
 
             foreach (var skill in skillsBelongingToPosition)
             {
-                skillViewModelList.Add(new SkillViewModel
-                {
-                    Name = skill.Name,
-                    SkillId = skill.Id,
-                    ParentSkillId = skill.ParentId,
-                    HasChildren = false,
-                    SkillLevel = skill.LevelSet
-                });
+                skillsVM.Add(
+                    new SkillForPositionViewModel
+                    {
+                        Name = skill.Name,
+                        SkillId = skill.Id,
+                        ParentSkillId = skill.ParentId,
+                        HasChildren = false,
+                        SkillLevel = skill.LevelSet
+                    });
             }
+
+            var positionVM = new PositionViewModel
+            {
+                CompetencyId = positionToFind.CompetencyId,
+                LevelId = positionToFind.LevelId,
+                DomainId = positionToFind.DomainId
+            };
 
             var positionSkillVM = new PositionSkillViewModel()
             {
-                Position = positionToFind,
-                Skills = skillViewModelList
+                Position = positionVM,
+                Skills = skillsVM
             };
 
             return Ok(positionSkillVM);
