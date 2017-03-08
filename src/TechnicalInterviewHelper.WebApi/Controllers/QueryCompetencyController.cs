@@ -43,7 +43,7 @@
                 return NotFound();
             }
 
-            // Temporal solution to the ID property value.
+            // TODO: temporal solution to the ID property value.
             var counter = 0;
 
             var competenciesVM = new List<CompetencyViewModel>();

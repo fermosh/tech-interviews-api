@@ -75,7 +75,7 @@
     <Compile Include="Controllers\QueryCompetencyControllerTests.cs" />
     <Compile Include="Controllers\SkillMatrixControllerTests.cs" />
     <Compile Include="Controllers\QueryLevelControllerTests.cs" />
-    <Compile Include="Controllers\DomainControllerTests.cs" />
+    <Compile Include="Controllers\QueryDomainControllerTests.cs" />
     <Compile Include="Controllers\QueryPositionSkillControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
