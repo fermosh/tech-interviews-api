@@ -8,6 +8,14 @@
     public class Skill : BaseEntity
     {
         /// <summary>
+        /// Gets or sets the skill identifier supplied by a third party.
+        /// </summary>
+        /// <value>
+        /// The skill identifier.
+        /// </value>
+        public int SkillId { get; set; }
+
+        /// <summary>
         /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
