@@ -44,11 +44,11 @@
             // Arrange
             var competencies = new List<Competency>
             {
-                new Competency { Id = "7B21643E-A8B5-4FE0-B691-B45191FB2F30", Name = "NET Architect" },
-                new Competency { Id = "883KJKDF-A8B5-4FE0-B691-B45191FB2F30", Name = "NET Developer" },
-                new Competency { Id = "6MAMAZ8S-92KK-4FE0-B691-B45191FB2F30", Name = "Azure Architect" },
-                new Competency { Id = "729AA93E-A8B5-92SA-0MA3-B45191FB2F30", Name = "DevOp Agent" },
-                new Competency { Id = "7B22982K-92LL-92AA-MAR2-02KA82JAT521", Name = "Account Manager Staff" }
+                new Competency { EntityId = "7B21643E-A8B5-4FE0-B691-B45191FB2F30", Name = "NET Architect" },
+                new Competency { EntityId = "883KJKDF-A8B5-4FE0-B691-B45191FB2F30", Name = "NET Developer" },
+                new Competency { EntityId = "6MAMAZ8S-92KK-4FE0-B691-B45191FB2F30", Name = "Azure Architect" },
+                new Competency { EntityId = "729AA93E-A8B5-92SA-0MA3-B45191FB2F30", Name = "DevOp Agent" },
+                new Competency { EntityId = "7B22982K-92LL-92AA-MAR2-02KA82JAT521", Name = "Account Manager Staff" }
             };
 
             var queryCompetencyMock = new Mock<IQueryRepository<Competency, string>>();

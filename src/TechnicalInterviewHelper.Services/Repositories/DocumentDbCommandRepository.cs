@@ -11,7 +11,7 @@
     /// </summary>
     /// <typeparam name="T">Entity to apply the command operations.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.ICommandRepository{T, TKey}" />
-    public class DocumentDbCommandRepository<T> : IDisposable, ICommandRepository<T>
+    public class DocumentDbCommandRepository<T> : ICommandRepository<T>, IDisposable
             where T : BaseEntity
     {
         #region Private fields
@@ -85,7 +85,7 @@
         public async Task<T> Insert(T entity)
         {
             var documentCreated = await this.documentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), entity);
-            entity.Id = documentCreated.Resource.Id;
+            entity.EntityId = documentCreated.Resource.Id;
             return entity;
         }
 
@@ -100,7 +100,7 @@
         /// <returns>A task of void.</returns>
         public async Task Update(T entity)
         {
-            var updated = await this.documentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, entity.Id), entity);
+            var updated = await this.documentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, entity.EntityId), entity);
         }
 
         #endregion Udpate command
