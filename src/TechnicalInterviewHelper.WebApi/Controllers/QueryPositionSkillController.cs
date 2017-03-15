@@ -81,7 +81,7 @@
                     new SkillForPositionViewModel
                     {
                         Name = skill.Name,
-                        SkillId = skill.Id,
+                        SkillId = skill.EntityId,
                         ParentSkillId = skill.ParentId,
                         HasChildren = false,
                         SkillLevel = skill.LevelSet

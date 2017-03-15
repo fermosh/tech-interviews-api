@@ -15,6 +15,6 @@
         /// The identifier.
         /// </value>
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public string EntityId { get; set; }
     }
 }

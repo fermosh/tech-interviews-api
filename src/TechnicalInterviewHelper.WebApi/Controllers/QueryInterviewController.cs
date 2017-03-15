@@ -1,10 +1,10 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
+    using LinqKit;
     using Model;
     using Services;
-    using System;
+    using System.Collections.Generic;
     using System.Configuration;
-    using System.Linq.Expressions;
     using System.Threading.Tasks;
     using System.Web.Http;
     using TechnicalInterviewHelper.Model;
@@ -72,27 +72,75 @@
 
         public async Task<IHttpActionResult> Get(string positionSkillId)
         {
-            if (string.IsNullOrEmpty(positionSkillId.Trim()))
+            if (string.IsNullOrEmpty(positionSkillId?.Trim()))
             {
                 return BadRequest("Cannot get an interview without an identifier of filtered skills for a position.");
             }
 
             var positionSkill = await this.queryPositionSkill.FindById(positionSkillId);
-            if (positionSkillId == null)
+            if (positionSkill == null)
             {
                 return NotFound();
             }
 
-            var interviewVM = new InterviewViewModel();
+            // Set the different predicates to filter respective DataSet through SkillId field.
+            var predicateToGetSkills = PredicateBuilder.New<Skill>(false);
+            var predicateToGetQuestions = PredicateBuilder.New<Question>(false);
+            var predicateToGetExercises = PredicateBuilder.New<Exercise>(false);
 
-            Expression<Func<Skill, bool>> kk = (skill) => skill.Id == "1";
-
-            foreach (var skill in positionSkill.SkillIdentifiers)
+            foreach (var filteredSkillId in positionSkill.SkillIdentifiers)
             {
-
+                predicateToGetSkills = predicateToGetSkills.Or(skill => skill.SkillId == filteredSkillId);
+                predicateToGetQuestions = predicateToGetQuestions.Or(question => question.SkillId == filteredSkillId);
+                predicateToGetExercises = predicateToGetExercises.Or(exercise => exercise.SkillId == filteredSkillId);
             }
 
-            throw new NotImplementedException();
+            var skills = await this.querySkill.FindBy(predicateToGetSkills);
+            var questions = await this.queryQuestion.FindBy(predicateToGetQuestions);
+            var exercises = await this.queryExercise.FindBy(predicateToGetExercises);
+
+            // Proceed to create the different View Models as part of our response.
+            var skillsVM = new List<SkillInterviewViewModel>();
+            foreach (var skill in skills)
+            {
+                skillsVM.Add(new SkillInterviewViewModel
+                {
+                    SkillId = skill.SkillId,
+                    Name = skill.Name
+                });
+            }
+
+            var questionsVM = new List<QuestionViewModel>();
+            foreach (var question in questions)
+            {
+                questionsVM.Add(new QuestionViewModel
+                {
+                    QuestionId = question.EntityId,
+                    Description = question.Text
+                });
+            }
+
+            var exercisesVM = new List<ExerciseViewModel>();
+            foreach (var exercise in exercises)
+            {
+                exercisesVM.Add(new ExerciseViewModel
+                {
+                    ExerciseId = exercise.EntityId,
+                    Description = exercise.Text,
+                    ProposedSolution = exercise.ProposedSolution,
+                    Title = exercise.Title
+                });
+            }
+
+            var interviewViewModelToReturn = new InterviewViewModel
+            {
+                CompetencyId = positionSkill.Position.CompetencyId,
+                Skills = skillsVM,
+                Exercises = exercisesVM,
+                Questions = questionsVM
+            };
+
+            return Ok(interviewViewModelToReturn);
         }
     }
 }

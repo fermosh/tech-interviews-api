@@ -11,7 +11,7 @@
         /// <value>
         /// The question identifier.
         /// </value>
-        public int QuestionId { get; set; }
+        public string QuestionId { get; set; }
 
         /// <summary>
         /// Gets or sets the description.

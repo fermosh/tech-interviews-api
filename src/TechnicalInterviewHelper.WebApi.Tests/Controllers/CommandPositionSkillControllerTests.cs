@@ -85,7 +85,7 @@
                 .Setup(method => method.Insert(It.IsAny<PositionSkill>()))
                 .Callback<PositionSkill>((positionSkill) =>
                 {
-                    positionSkill.Id = newIdDocument;
+                    positionSkill.EntityId = newIdDocument;
                     newPositionSkill = positionSkill;
                 })
                 .ReturnsAsync((PositionSkill positionSkill) => positionSkill);
@@ -99,7 +99,7 @@
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(newPositionSkill, Is.Not.Null);
 
-            Assert.That(newPositionSkill.Id, Is.EqualTo(newIdDocument));
+            Assert.That(newPositionSkill.EntityId, Is.EqualTo(newIdDocument));
             Assert.That(newPositionSkill.Position.CompetencyId, Is.EqualTo(positionInput.CompetencyId));
             Assert.That(newPositionSkill.Position.LevelId, Is.EqualTo(positionInput.LevelId));
             Assert.That(newPositionSkill.Position.DomainId, Is.EqualTo(positionInput.DomainId));

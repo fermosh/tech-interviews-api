@@ -78,7 +78,7 @@
 
                 var documentCreatedForPositionSkill = await this.commandRepository.Insert(positionSkillDocumentToSave);
 
-                return Ok(documentCreatedForPositionSkill.Id);
+                return Ok(documentCreatedForPositionSkill.EntityId);
             }
             catch (System.Exception)
             {

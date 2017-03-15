@@ -1,11 +1,12 @@
-﻿namespace TechnicalInterviewHelper.WebApi.Model
+﻿namespace TechnicalInterviewHelper.Model
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// A view model with information regarding an interview.
+    /// Entity for interview.
     /// </summary>
-    public class InterviewViewModel
+    /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    public class Interview : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -13,7 +14,7 @@
         /// <value>
         /// The competency identifier.
         /// </value>
-        public int CompetencyId { get; set; }
+        public string CompetencyId { get; set; }
 
         /// <summary>
         /// Gets or sets the skills.
@@ -21,7 +22,7 @@
         /// <value>
         /// The skills.
         /// </value>
-        public IEnumerable<SkillInterviewViewModel> Skills { get; set; }
+        public IEnumerable<Skill> Skills { get; set; }
 
         /// <summary>
         /// Gets or sets the questions.
@@ -29,7 +30,7 @@
         /// <value>
         /// The questions.
         /// </value>
-        public IEnumerable<QuestionViewModel> Questions { get; set; }
+        public IEnumerable<Question> Questions { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.
@@ -37,6 +38,6 @@
         /// <value>
         /// The exercises.
         /// </value>
-        public IEnumerable<ExerciseViewModel> Exercises { get; set; }
+        public IEnumerable<Exercise> Exercises { get; set; }
     }
 }

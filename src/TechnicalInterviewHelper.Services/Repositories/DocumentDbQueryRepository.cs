@@ -17,7 +17,7 @@
     /// <typeparam name="T">An entity class.</typeparam>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{T, TKey}" />
-    public class DocumentDbQueryRepository<T, TKey> : IDisposable, IQueryRepository<T, TKey>
+    public class DocumentDbQueryRepository<T, TKey> : IQueryRepository<T, TKey>, IDisposable
         where T : class
     {
         #region Private fields
@@ -88,7 +88,11 @@
         /// </returns>
         public async Task<IEnumerable<T>> FindBy(Expression<Func<T, bool>> predicate)
         {
-            var documentQuery = this.documentClient.CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), new FeedOptions { MaxItemCount = -1 }).Where(predicate).AsDocumentQuery();
+            var documentQuery =
+                    this.documentClient
+                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), new FeedOptions { MaxItemCount = -1 })
+                        .Where(predicate)
+                        .AsDocumentQuery();
 
             var competencyList = new List<T>();
             while (documentQuery.HasMoreResults)
@@ -110,10 +114,8 @@
         {
             try
             {
-                var mm = Convert.ToString(id);
-
-                var competencyDocument = await this.documentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, mm));
-
+                var documentId = Convert.ToString(id);
+                var competencyDocument = await this.documentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, documentId));
                 return (T)(dynamic)competencyDocument;
             }
             catch (DocumentClientException e)

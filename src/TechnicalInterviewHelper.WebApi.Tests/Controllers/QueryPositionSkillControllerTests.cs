@@ -51,7 +51,7 @@
 
             var dataCollection = new List<Skill>
             {
-                new Skill { Id = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design", ParentId = 1, LevelSet = 1 }
+                new Skill { EntityId = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design", ParentId = 1, LevelSet = 1 }
             };
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
@@ -163,12 +163,12 @@
 
             var dataCollection = new List<Skill>
             {
-                new Skill { Id = "3A20A752-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 1, LevelId = 1, DomainId = 1, Name = "Design Patterns", ParentId = 1, LevelSet = 1 },
-                new Skill { Id = "38SKA752-652D-45ED-9AD8-8BACA37AC2F4", CompetencyId = 1, LevelId = 1, DomainId = 1, Name = "MVC Programming", ParentId = 1, LevelSet = 1 },
-                new Skill { Id = "8SKKNA72-652D-45ED-9EGH-8BACA37AC3E3", CompetencyId = 3, LevelId = 1, DomainId = 1, Name = "OOP Knowledge", ParentId = 1, LevelSet = 1 },
-                new Skill { Id = "3HGS7752-652D-45ED-99TT-8BACAUH7C3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Generics and Lambda expressions", ParentId = 2, LevelSet = 1 },
-                new Skill { Id = "9KJ7SJ7N-65FF-45ED-9AD8-7GVF537AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Test Driven Design", ParentId = 2, LevelSet = 2 },
-                new Skill { Id = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design", ParentId = 1, LevelSet = 1 }
+                new Skill { EntityId = "3A20A752-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 1, LevelId = 1, DomainId = 1, Name = "Design Patterns", ParentId = 1, LevelSet = 1 },
+                new Skill { EntityId = "38SKA752-652D-45ED-9AD8-8BACA37AC2F4", CompetencyId = 1, LevelId = 1, DomainId = 1, Name = "MVC Programming", ParentId = 1, LevelSet = 1 },
+                new Skill { EntityId = "8SKKNA72-652D-45ED-9EGH-8BACA37AC3E3", CompetencyId = 3, LevelId = 1, DomainId = 1, Name = "OOP Knowledge", ParentId = 1, LevelSet = 1 },
+                new Skill { EntityId = "3HGS7752-652D-45ED-99TT-8BACAUH7C3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Generics and Lambda expressions", ParentId = 2, LevelSet = 1 },
+                new Skill { EntityId = "9KJ7SJ7N-65FF-45ED-9AD8-7GVF537AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Test Driven Design", ParentId = 2, LevelSet = 2 },
+                new Skill { EntityId = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", CompetencyId = 2, LevelId = 2, DomainId = 11, Name = "Behaviour Driven Design", ParentId = 1, LevelSet = 1 }
             };
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();

@@ -62,7 +62,7 @@
 
         public async Task Put(SkillMatrix template)
         {
-            var templateId = template.Id.Trim();
+            var templateId = template.EntityId.Trim();
             if (string.IsNullOrEmpty(templateId))
             {
                 await Task.FromResult(BadRequest());
