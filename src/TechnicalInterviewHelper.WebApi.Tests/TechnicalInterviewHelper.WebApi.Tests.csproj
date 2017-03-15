@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CommandPositionSkillControllerTests.cs" />
     <Compile Include="Controllers\QueryCompetencyControllerTests.cs" />
+    <Compile Include="Controllers\QueryInterviewControllerTests.cs" />
     <Compile Include="Controllers\SkillMatrixControllerTests.cs" />
     <Compile Include="Controllers\QueryLevelControllerTests.cs" />
     <Compile Include="Controllers\QueryDomainControllerTests.cs" />

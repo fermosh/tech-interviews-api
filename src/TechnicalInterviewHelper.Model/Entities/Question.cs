@@ -20,13 +20,5 @@
         /// The text.
         /// </value>
         public string Text { get; set; }
-
-        /// <summary>
-        /// Gets or sets the answer.
-        /// </summary>
-        /// <value>
-        /// The answer.
-        /// </value>
-        public string Answer { get; set; }
     }
 }

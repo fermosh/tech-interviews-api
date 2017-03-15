@@ -49,6 +49,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LinqKit.Core, Version=1.1.8.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.Core.1.1.8.0\lib\net461\LinqKit.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Azure.Documents.Client, Version=1.12.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.DocumentDB.1.12.0\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
       <Private>True</Private>
@@ -185,7 +189,7 @@
     <Compile Include="Models\ViewModels\DomainViewModel.cs" />
     <Compile Include="Models\ViewModels\Interview\InterviewViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
-    <Compile Include="Models\ViewModels\Interview\SkillForInterviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\Interview\SkillInterviewViewModel.cs" />
     <Compile Include="Models\ViewModels\LevelViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\PositionSkillViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\PositionViewModel.cs" />
@@ -260,7 +264,9 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />

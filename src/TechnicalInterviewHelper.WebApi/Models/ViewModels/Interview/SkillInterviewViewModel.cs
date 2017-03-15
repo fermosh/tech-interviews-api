@@ -1,11 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
-    using System.Collections.Generic;
-
     /// <summary>
     /// A complete view model with information of the filtered skills its questions and exercies.
     /// </summary>
-    public class SkillForInterviewViewModel
+    public class SkillInterviewViewModel
     {
         /// <summary>
         /// Gets or sets the skill identifier.
@@ -22,13 +20,5 @@
         /// The name.
         /// </value>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the questions.
-        /// </summary>
-        /// <value>
-        /// The questions.
-        /// </value>
-        public IEnumerable<QuestionViewModel> Questions { get; set; }
     }
 }

@@ -11,7 +11,23 @@
         /// <value>
         /// The exercise identifier.
         /// </value>
-        public int ExerciseId { get; set; }
+        public string ExerciseId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the proposed solution.
+        /// </summary>
+        /// <value>
+        /// The proposed solution.
+        /// </value>
+        public string ProposedSolution { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
