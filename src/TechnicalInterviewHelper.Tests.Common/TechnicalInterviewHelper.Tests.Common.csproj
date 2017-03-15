@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC0E70F1-3960-4A16-9F11-EACC555099BC}</ProjectGuid>
+    <ProjectGuid>{2C89658C-31A0-4D61-8489-4319164BC7D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TechnicalInterviewHelper.Model</RootNamespace>
-    <AssemblyName>TechnicalInterviewHelper.Model</AssemblyName>
+    <RootNamespace>TechnicalInterviewHelper.Tests.Common</RootNamespace>
+    <AssemblyName>TechnicalInterviewHelper.Tests.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StyleCopTreatErrorsAsWarnings>False</StyleCopTreatErrorsAsWarnings>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,28 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\Domain.cs" />
-    <Compile Include="Entities\Competency.cs" />
-    <Compile Include="Entities\Exercise.cs" />
-    <Compile Include="Entities\Level.cs" />
-    <Compile Include="Entities\Position.cs" />
-    <Compile Include="Entities\PositionSkill.cs" />
-    <Compile Include="Entities\Question.cs" />
-    <Compile Include="Entities\Skill.cs" />
-    <Compile Include="Entities\SkillMatrix.cs" />
-    <Compile Include="Entities\Topic.cs" />
-    <Compile Include="Interfaces\ICommandRepository.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="Interfaces\IQueryRepository.cs" />
+    <Compile Include="Resources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\TechnicalInterviewHelper.Model\TechnicalInterviewHelper.Model.csproj">
+      <Project>{cc0e70f1-3960-4a16-9f11-eacc555099bc}</Project>
+      <Name>TechnicalInterviewHelper.Model</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

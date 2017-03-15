@@ -17,7 +17,7 @@
     /// <typeparam name="T">An entity class.</typeparam>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{T, TKey}" />
-    public class DocumentDbQueryRepository<T, TKey> : IQueryRepository<T, TKey>
+    public class DocumentDbQueryRepository<T, TKey> : IDisposable, IQueryRepository<T, TKey>
         where T : class
     {
         #region Private fields
@@ -47,6 +47,11 @@
         /// </summary>
         private string databaseId = ConfigurationManager.AppSettings["DatabaseId"];
 
+        /// <summary>
+        /// To know whether the class is already disposed.
+        /// </summary>
+        private bool disposedValue = false;
+
         #endregion Private fields
 
         #region Constructor
@@ -71,6 +76,8 @@
         }
 
         #endregion Constructor
+
+        #region Get functions
 
         /// <summary>
         /// Finds the by.
@@ -138,5 +145,36 @@
 
             return competencyList;
         }
+
+        #endregion Get functions
+
+        #region IDisposable Support
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposedValue)
+            {
+                if (disposing)
+                {
+                    this.documentClient.Dispose();
+                }
+
+                this.disposedValue = true;
+            }
+        }
+
+        #endregion
     }
 }

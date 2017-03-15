@@ -128,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Competency\" />
   </ItemGroup>
   <ItemGroup>
@@ -165,15 +164,32 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\CompetencyController.cs" />
-    <Compile Include="Controllers\DomainController.cs" />
+    <Compile Include="Controllers\CommandPositionSkillController.cs" />
+    <Compile Include="Controllers\QueryCompetencyController.cs" />
+    <Compile Include="Controllers\QueryDomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LevelController.cs" />
+    <Compile Include="Controllers\QueryLevelController.cs" />
+    <Compile Include="Controllers\QueryInterviewController.cs" />
+    <Compile Include="Controllers\QueryPositionSkillController.cs" />
     <Compile Include="Controllers\SkillMatrixController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Input\PositionInputModel.cs" />
+    <Compile Include="Models\Input\PositionSkillInputModel.cs" />
+    <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
+    <Compile Include="Models\ViewModels\CompetencyViewModel.cs" />
+    <Compile Include="Models\ViewModels\DomainViewModel.cs" />
+    <Compile Include="Models\ViewModels\Interview\InterviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
+    <Compile Include="Models\ViewModels\Interview\SkillForInterviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\LevelViewModel.cs" />
+    <Compile Include="Models\ViewModels\PositionSkill\PositionSkillViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\PositionViewModel.cs" />
+    <Compile Include="Models\ViewModels\PositionSkill\SkillForPositionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

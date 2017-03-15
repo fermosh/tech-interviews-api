@@ -3,16 +3,8 @@
     /// <summary>
     /// Question entity.
     /// </summary>
-    public class Question
+    public class Question : BaseEntity
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public string Id { get; set; }
-
         /// <summary>
         /// Gets or sets the text.
         /// </summary>

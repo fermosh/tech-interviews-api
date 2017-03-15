@@ -3,16 +3,8 @@
     /// <summary>
     /// Topic entity.
     /// </summary>
-    public class Topic
+    public class Topic : BaseEntity
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public string Id { get; set; }
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>

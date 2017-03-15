@@ -1,9 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
     /// <summary>
-    /// Domain entity.
+    /// To get information about a position.
     /// </summary>
-    public class Domain : BaseEntity
+    public class Position
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -22,11 +22,11 @@
         public int LevelId { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the domain identifier.
         /// </summary>
         /// <value>
-        /// The name.
+        /// The domain identifier.
         /// </value>
-        public string Name { get; set; }
+        public int DomainId { get; set; }
     }
 }

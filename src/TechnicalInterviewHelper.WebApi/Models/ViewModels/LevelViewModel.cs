@@ -1,18 +1,10 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     /// <summary>
-    /// Domain entity.
+    /// A view model which represents a level.
     /// </summary>
-    public class Domain : BaseEntity
+    public class LevelViewModel
     {
-        /// <summary>
-        /// Gets or sets the competency identifier.
-        /// </summary>
-        /// <value>
-        /// The competency identifier.
-        /// </value>
-        public int CompetencyId { get; set; }
-
         /// <summary>
         /// Gets or sets the level identifier.
         /// </summary>

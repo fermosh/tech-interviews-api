@@ -1,9 +1,9 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     /// <summary>
-    /// Domain entity.
+    /// A view model with the identifiers of a position.
     /// </summary>
-    public class Domain : BaseEntity
+    public class PositionViewModel
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -22,11 +22,11 @@
         public int LevelId { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the domain identifier.
         /// </summary>
         /// <value>
-        /// The name.
+        /// The domain identifier.
         /// </value>
-        public string Name { get; set; }
+        public int DomainId { get; set; }
     }
 }
