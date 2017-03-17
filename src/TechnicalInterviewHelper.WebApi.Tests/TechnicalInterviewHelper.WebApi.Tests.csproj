@@ -75,7 +75,6 @@
     <Compile Include="Controllers\Command\CommandPositionSkillControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryInterviewControllerTests.cs" />
-    <Compile Include="Controllers\SkillMatrixControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryLevelControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryDomainControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryPositionSkillControllerTests.cs" />
