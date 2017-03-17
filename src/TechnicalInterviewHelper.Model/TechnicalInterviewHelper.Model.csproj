@@ -58,7 +58,6 @@
     <Compile Include="Entities\PositionSkill.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Skill.cs" />
-    <Compile Include="Entities\SkillMatrix.cs" />
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Interfaces\ICommandRepository.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
