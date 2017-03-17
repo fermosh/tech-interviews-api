@@ -1,31 +1,31 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     /// <summary>
-    /// Question entity.
+    /// Input model to get captured information of a question.
     /// </summary>
-    public class Question : BaseEntity
+    public class QuestionInterviewInputModel
     {
         /// <summary>
-        /// Gets or sets the skill identifier, supplied by a third party, at which this question belongs.
+        /// Gets or sets the question identifier.
         /// </summary>
         /// <value>
-        /// The skill identifier.
+        /// The question identifier.
         /// </value>
-        public int SkillId { get; set; }
+        public string QuestionId { get; set; }
 
         /// <summary>
-        /// Gets or sets the text.
+        /// Gets or sets the description.
         /// </summary>
         /// <value>
-        /// The text.
+        /// The description.
         /// </value>
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets the captured answer.
+        /// Gets or sets the answer.
         /// </summary>
         /// <value>
-        /// The captured answer.
+        /// The answer.
         /// </value>
         public string CapturedAnswer { get; set; }
 

@@ -27,7 +27,7 @@
         /// <value>
         /// The text.
         /// </value>
-        public string Text { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or sets the complexity.
@@ -38,19 +38,27 @@
         public string Complexity { get; set; }
 
         /// <summary>
-        /// Gets or sets the solution.
-        /// </summary>
-        /// <value>
-        /// The solution.
-        /// </value>
-        public string Solution { get; set; }
-
-        /// <summary>
         /// Gets or sets the proposed solution.
         /// </summary>
         /// <value>
         /// The proposed solution.
         /// </value>
         public string ProposedSolution { get; set; }
+
+        /// <summary>
+        /// Gets or sets the solution.
+        /// </summary>
+        /// <value>
+        /// The solution.
+        /// </value>
+        public string CapturedSolution { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rating.
+        /// </summary>
+        /// <value>
+        /// The rating.
+        /// </value>
+        public float CapturedRating { get; set; }
     }
 }
