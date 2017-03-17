@@ -54,18 +54,11 @@
             TestSkill = new Skill()
             {
                 EntityId = TestSkillId.ToString(),
-                Name = TestDomainName,
-                CompetencyId = TestCompetencyId,
-                DisplayOrder = 1,
-                Exercises = new List<Exercise>(),
-                IsSelectable = true,
-                JobFunctionLevel = 1,
-                LevelSet = 1,
-                ParentId = null,
-                Questions = new List<Question>(),
-                RootId = 1,
-                RequiredSkillLevel = 1,
-                UserSkillLevel = 1,
+                Description = TestDomainName,
+                Position = new Position
+                {
+                    CompetencyId = TestCompetencyId
+                },
                 Topics = new List<Topic>()
             };
         }

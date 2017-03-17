@@ -71,13 +71,14 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Controllers\CommandPositionSkillControllerTests.cs" />
-    <Compile Include="Controllers\QueryCompetencyControllerTests.cs" />
-    <Compile Include="Controllers\QueryInterviewControllerTests.cs" />
+    <Compile Include="Controllers\Command\CommandInterviewControllerTests.cs" />
+    <Compile Include="Controllers\Command\CommandPositionSkillControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryCompetencyControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryInterviewControllerTests.cs" />
     <Compile Include="Controllers\SkillMatrixControllerTests.cs" />
-    <Compile Include="Controllers\QueryLevelControllerTests.cs" />
-    <Compile Include="Controllers\QueryDomainControllerTests.cs" />
-    <Compile Include="Controllers\QueryPositionSkillControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryLevelControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryDomainControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryPositionSkillControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -62,9 +62,9 @@
 
             var skillsBelongingToPosition = await this.querySkill.FindBy(
                     skill =>
-                        skill.CompetencyId == positionToFind.CompetencyId &&
-                        skill.LevelId == positionToFind.LevelId &&
-                        skill.DomainId == positionToFind.DomainId);
+                        skill.Position.CompetencyId == positionToFind.CompetencyId &&
+                        skill.Position.LevelId == positionToFind.LevelId &&
+                        skill.Position.DomainId == positionToFind.DomainId);
 
             // Exit early when there are not skills to return.
             if (skillsBelongingToPosition.Count() == 0)
@@ -80,11 +80,9 @@
                 skillsVM.Add(
                     new SkillForPositionViewModel
                     {
-                        Name = skill.Name,
+                        Name = skill.Description,
                         SkillId = skill.EntityId,
-                        ParentSkillId = skill.ParentId,
-                        HasChildren = false,
-                        SkillLevel = skill.LevelSet
+                        HasChildren = false
                     });
             }
 

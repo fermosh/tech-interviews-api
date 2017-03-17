@@ -14,28 +14,12 @@
         public string SkillId { get; set; }
 
         /// <summary>
-        /// Gets or sets the parent skill identifier.
-        /// </summary>
-        /// <value>
-        /// The parent skill identifier.
-        /// </value>
-        public int? ParentSkillId { get; set; }
-
-        /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the skill level.
-        /// </summary>
-        /// <value>
-        /// The skill level.
-        /// </value>
-        public int SkillLevel { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance has children.
