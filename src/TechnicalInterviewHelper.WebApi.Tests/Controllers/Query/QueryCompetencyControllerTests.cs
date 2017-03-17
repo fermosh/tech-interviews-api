@@ -1,4 +1,4 @@
-﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers
+﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers.Query
 {    
     using System.Collections.Generic;
     using System.Linq;

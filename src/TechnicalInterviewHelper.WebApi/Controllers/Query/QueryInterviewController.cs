@@ -106,7 +106,7 @@
                 skillsVM.Add(new SkillInterviewViewModel
                 {
                     SkillId = skill.SkillId,
-                    Name = skill.Name
+                    Description = skill.Description
                 });
             }
 
@@ -116,7 +116,7 @@
                 questionsVM.Add(new QuestionViewModel
                 {
                     QuestionId = question.EntityId,
-                    Description = question.Text
+                    Description = question.Description
                 });
             }
 
@@ -126,7 +126,7 @@
                 exercisesVM.Add(new ExerciseViewModel
                 {
                     ExerciseId = exercise.EntityId,
-                    Description = exercise.Text,
+                    Description = exercise.Description,
                     ProposedSolution = exercise.ProposedSolution,
                     Title = exercise.Title
                 });

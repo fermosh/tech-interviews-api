@@ -52,7 +52,7 @@
             var domain = await this.domainRepository.FindById(domainId.ToString());
             skillMatrixResult.Domain = domain;
 
-            var skills = await this.skillRepository.FindBy(skill => skill.CompetencyId == competencyId);
+            var skills = await this.skillRepository.FindBy(skill => skill.Position.CompetencyId == competencyId);
             skillMatrixResult.Skills = skills;
 
             return skillMatrixResult;

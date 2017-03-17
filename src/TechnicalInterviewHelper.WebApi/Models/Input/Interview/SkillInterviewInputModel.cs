@@ -1,9 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     /// <summary>
-    /// A complete view model with information of the filtered skills its questions and exercies.
+    /// Input model for a filtered skill in an Interview.
     /// </summary>
-    public class SkillInterviewViewModel
+    public class SkillInterviewInputModel
     {
         /// <summary>
         /// Gets or sets the skill identifier.

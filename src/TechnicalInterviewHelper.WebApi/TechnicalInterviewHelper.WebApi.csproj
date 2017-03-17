@@ -168,13 +168,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\CommandPositionSkillController.cs" />
-    <Compile Include="Controllers\QueryCompetencyController.cs" />
-    <Compile Include="Controllers\QueryDomainController.cs" />
+    <Compile Include="Controllers\Command\CommandInterviewController.cs" />
+    <Compile Include="Controllers\Command\CommandPositionSkillController.cs" />
+    <Compile Include="Controllers\Query\QueryCompetencyController.cs" />
+    <Compile Include="Controllers\Query\QueryDomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\QueryLevelController.cs" />
-    <Compile Include="Controllers\QueryInterviewController.cs" />
-    <Compile Include="Controllers\QueryPositionSkillController.cs" />
+    <Compile Include="Controllers\Query\QueryLevelController.cs" />
+    <Compile Include="Controllers\Query\QueryInterviewController.cs" />
+    <Compile Include="Controllers\Query\QueryPositionSkillController.cs" />
     <Compile Include="Controllers\SkillMatrixController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
@@ -182,8 +183,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Input\PositionInputModel.cs" />
-    <Compile Include="Models\Input\PositionSkillInputModel.cs" />
+    <Compile Include="Models\Input\Interview\InterviewInputModel.cs" />
+    <Compile Include="Models\Input\Interview\ExerciseInterviewInputModel.cs" />
+    <Compile Include="Models\Input\Interview\QuestionInterviewInputModel.cs" />
+    <Compile Include="Models\Input\Interview\SkillInterviewInputModel.cs" />
+    <Compile Include="Models\Input\Common\PositionInputModel.cs" />
+    <Compile Include="Models\Input\PositionSkill\PositionSkillInputModel.cs" />
     <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
     <Compile Include="Models\ViewModels\CompetencyViewModel.cs" />
     <Compile Include="Models\ViewModels\DomainViewModel.cs" />

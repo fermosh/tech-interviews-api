@@ -1,4 +1,4 @@
-﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers
+﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers.Command
 {
     using Model;
     using Moq;
