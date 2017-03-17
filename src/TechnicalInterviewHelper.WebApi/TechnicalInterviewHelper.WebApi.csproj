@@ -172,9 +172,9 @@
     <Compile Include="Controllers\Query\QueryCompetencyController.cs" />
     <Compile Include="Controllers\Query\QueryDomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\QueryLevelController.cs" />
-    <Compile Include="Controllers\QueryInterviewController.cs" />
-    <Compile Include="Controllers\QueryPositionSkillController.cs" />
+    <Compile Include="Controllers\Query\QueryLevelController.cs" />
+    <Compile Include="Controllers\Query\QueryInterviewController.cs" />
+    <Compile Include="Controllers\Query\QueryPositionSkillController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
