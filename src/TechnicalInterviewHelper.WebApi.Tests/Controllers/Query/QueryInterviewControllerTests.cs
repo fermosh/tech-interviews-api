@@ -1,17 +1,16 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers.Query
 {
+    using Model;
     using Moq;
     using NUnit.Framework;
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Linq.Expressions;
     using System.Threading.Tasks;
     using System.Web.Http.Results;
     using TechnicalInterviewHelper.Model;
     using WebApi.Controllers;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Web.Http;
-    using Model;
 
     [TestFixture]
     public class QueryInterviewControllerTests
@@ -23,12 +22,10 @@
         {
             // Arrange
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
-            var queryExerciseMock = new Mock<IQueryRepository< Exercise, string>>();
-            var queryQuestionMock = new Mock<IQueryRepository< Question, string>>();
+            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
             var queryPositionSkillMock = new Mock<IQueryRepository<PositionSkill, string>>();
 
             var controllerUnderTest = new QueryInterviewController(querySkillMock.Object,
-                                                                   queryExerciseMock.Object,
                                                                    queryQuestionMock.Object,
                                                                    queryPositionSkillMock.Object);
 
@@ -41,7 +38,6 @@
             Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Cannot get an interview without an identifier of filtered skills for a position."));
             queryPositionSkillMock.Verify(method => method.FindById(It.IsAny<string>()), Times.Never);
             querySkillMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()), Times.Never);
-            queryExerciseMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Exercise, bool>>>()), Times.Never);
             queryQuestionMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Question, bool>>>()), Times.Never);
         }
 
@@ -52,7 +48,6 @@
             var inputPositionSkillId = "7168AB98-5197-406A-A5DB-A5FF9548B32E";
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
-            var queryExerciseMock = new Mock<IQueryRepository<Exercise, string>>();
             var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
             var queryPositionSkillMock = new Mock<IQueryRepository<PositionSkill, string>>();
 
@@ -61,7 +56,6 @@
                 .Returns(Task.FromResult<PositionSkill>(null));
 
             var controllerUnderTest = new QueryInterviewController(querySkillMock.Object,
-                                                                   queryExerciseMock.Object,
                                                                    queryQuestionMock.Object,
                                                                    queryPositionSkillMock.Object);
 
@@ -73,7 +67,6 @@
             Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
             queryPositionSkillMock.Verify(method => method.FindById(It.IsAny<string>()), Times.Once);
             querySkillMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()), Times.Never);
-            queryExerciseMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Exercise, bool>>>()), Times.Never);
             queryQuestionMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Question, bool>>>()), Times.Never);
         }
 
@@ -120,24 +113,11 @@
                 new Question { EntityId = "9DFCA635-C1E5-4EA8-89B2-5B41A10FD8E7", SkillId = 1779, Description = "Is scrum a philosophy or a framework?." },
             };
 
-            var savedExercises = new List<Exercise>
-            {
-                new Exercise { EntityId = "DB909BFC-3030-4C0E-9B47-B13D3711336E", SkillId = 1610, Title = "OOP - Inheritance", Description = "Having a parent class named 'Father', write the code of a child class named 'Child' that descends from it.", ProposedSolution = "class Child : Parent { ... }" },
-                new Exercise { EntityId = "F542C661-932F-4E54-A44F-74DD74DA2511", SkillId = 56, Title = "Fixing a code review", Description = "Suppose you're intended to write a hash function using SHA-1 algorithm, please, ask your partner to make a code review of it.", ProposedSolution = "public byte*[] GetHashValue(char* entrance){ ... }" },
-                new Exercise { EntityId = "398086B0-1BE8-40AA-B18A-F6AE7D6B424D", SkillId = 1899, Title = "Writing a microservice", Description = "Using Azure Functions or AWS Lambda, propose a code that sums two digits and return its square root.", ProposedSolution = "public double GetSquareRootOfTheSum(int x, int y) { ... }" }
-            };
-
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
             querySkillMock
                 .Setup(method => method.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => savedSkills.Where(predicate.Compile()));
-
-            var queryExerciseMock = new Mock<IQueryRepository<Exercise, string>>();
-
-            queryExerciseMock
-               .Setup(method => method.FindBy(It.IsAny<Expression<Func<Exercise, bool>>>()))
-               .ReturnsAsync((Expression<Func<Exercise, bool>> predicate) => savedExercises.Where(predicate.Compile()));
 
             var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
 
@@ -152,7 +132,6 @@
                 .ReturnsAsync(savedPositionSkill);
 
             var controllerUnderTest = new QueryInterviewController(querySkillMock.Object,
-                                                                   queryExerciseMock.Object,
                                                                    queryQuestionMock.Object,
                                                                    queryPositionSkillMock.Object);
 
@@ -170,8 +149,7 @@
             Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Questions, Is.Not.Empty);
             Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Questions.Count(), Is.EqualTo(6));
             // -- Exercises --
-            Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Exercises, Is.Not.Empty);
-            Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Exercises.Count(), Is.EqualTo(3));
+            Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Exercises, Is.Null);
         }
     }
 }
