@@ -29,11 +29,6 @@
         /// </summary>
         private readonly IQueryRepository<Exercise, string> queryExercise;
 
-        /// <summary>
-        /// The query question
-        /// </summary>
-        private readonly IQueryRepository<Question, string> queryQuestion;
-
         #endregion Repositories
 
         #region Constructor
@@ -45,7 +40,6 @@
         {
             this.querySkill = new DocumentDbQueryRepository<Skill, string>(ConfigurationManager.AppSettings["SkillCollectionId"]);
             this.queryExercise = new DocumentDbQueryRepository<Exercise, string>(ConfigurationManager.AppSettings["ExerciseCollectionId"]);
-            this.queryQuestion = new DocumentDbQueryRepository<Question, string>(ConfigurationManager.AppSettings["QuestionCollectionId"]);
             this.queryPositionSkill = new DocumentDbQueryRepository<PositionSkill, string>(ConfigurationManager.AppSettings["PositionSkillCollectionId"]);
         }
 
@@ -54,17 +48,14 @@
         /// </summary>
         /// <param name="querySkill">The query skill.</param>
         /// <param name="queryExercise">The query exercise.</param>
-        /// <param name="queryQuestion">The query question.</param>
         /// <param name="queryPositionSkill">The query position skill.</param>
         public QueryInterviewController(
             IQueryRepository<Skill, string> querySkill,
             IQueryRepository<Exercise, string> queryExercise,
-            IQueryRepository<Question, string> queryQuestion,
             IQueryRepository<PositionSkill, string> queryPositionSkill)
         {
             this.querySkill = querySkill;
             this.queryExercise = queryExercise;
-            this.queryQuestion = queryQuestion;
             this.queryPositionSkill = queryPositionSkill;
         }
 
@@ -85,18 +76,15 @@
 
             // Set the different predicates to filter respective DataSet through SkillId field.
             var predicateToGetSkills = PredicateBuilder.New<Skill>(false);
-            var predicateToGetQuestions = PredicateBuilder.New<Question>(false);
             var predicateToGetExercises = PredicateBuilder.New<Exercise>(false);
 
             foreach (var filteredSkillId in positionSkill.SkillIdentifiers)
             {
                 predicateToGetSkills = predicateToGetSkills.Or(skill => skill.SkillId == filteredSkillId);
-                predicateToGetQuestions = predicateToGetQuestions.Or(question => question.SkillId == filteredSkillId);
                 predicateToGetExercises = predicateToGetExercises.Or(exercise => exercise.SkillId == filteredSkillId);
             }
 
             var skills = await this.querySkill.FindBy(predicateToGetSkills);
-            var questions = await this.queryQuestion.FindBy(predicateToGetQuestions);
             var exercises = await this.queryExercise.FindBy(predicateToGetExercises);
 
             // Proceed to create the different View Models as part of our response.
@@ -107,16 +95,6 @@
                 {
                     SkillId = skill.SkillId,
                     Description = skill.Description
-                });
-            }
-
-            var questionsVM = new List<QuestionViewModel>();
-            foreach (var question in questions)
-            {
-                questionsVM.Add(new QuestionViewModel
-                {
-                    QuestionId = question.EntityId,
-                    Description = question.Description
                 });
             }
 
@@ -136,8 +114,7 @@
             {
                 CompetencyId = positionSkill.Position.CompetencyId,
                 Skills = skillsVM,
-                Exercises = exercisesVM,
-                Questions = questionsVM
+                Exercises = exercisesVM
             };
 
             return Ok(interviewViewModelToReturn);
