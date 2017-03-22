@@ -24,10 +24,6 @@
         /// </summary>
         private readonly IQueryRepository<Skill, string> querySkill;
 
-        /// <summary>
-        /// The query question
-        /// </summary>
-        private readonly IQueryRepository<Question, string> queryQuestion;
 
         #endregion Repositories
 
@@ -39,7 +35,6 @@
         public QueryInterviewController()
         {
             this.querySkill = new DocumentDbQueryRepository<Skill, string>(ConfigurationManager.AppSettings["SkillCollectionId"]);
-            this.queryQuestion = new DocumentDbQueryRepository<Question, string>(ConfigurationManager.AppSettings["QuestionCollectionId"]);
             this.queryPositionSkill = new DocumentDbQueryRepository<PositionSkill, string>(ConfigurationManager.AppSettings["PositionSkillCollectionId"]);
         }
 
@@ -48,15 +43,12 @@
         /// </summary>
         /// <param name="querySkill">The query skill.</param>
         /// <param name="queryExercise">The query exercise.</param>
-        /// <param name="queryQuestion">The query question.</param>
         /// <param name="queryPositionSkill">The query position skill.</param>
         public QueryInterviewController(
             IQueryRepository<Skill, string> querySkill,
-            IQueryRepository<Question, string> queryQuestion,
             IQueryRepository<PositionSkill, string> queryPositionSkill)
         {
             this.querySkill = querySkill;
-            this.queryQuestion = queryQuestion;
             this.queryPositionSkill = queryPositionSkill;
         }
 
@@ -77,16 +69,13 @@
 
             // Set the different predicates to filter respective DataSet through SkillId field.
             var predicateToGetSkills = PredicateBuilder.New<Skill>(false);
-            var predicateToGetQuestions = PredicateBuilder.New<Question>(false);
 
             foreach (var filteredSkillId in positionSkill.SkillIdentifiers)
             {
                 predicateToGetSkills = predicateToGetSkills.Or(skill => skill.SkillId == filteredSkillId);
-                predicateToGetQuestions = predicateToGetQuestions.Or(question => question.SkillId == filteredSkillId);
             }
 
             var skills = await this.querySkill.FindBy(predicateToGetSkills);
-            var questions = await this.queryQuestion.FindBy(predicateToGetQuestions);
 
             // Proceed to create the different View Models as part of our response.
             var skillsVM = new List<SkillInterviewViewModel>();
@@ -99,21 +88,10 @@
                 });
             }
 
-            var questionsVM = new List<QuestionViewModel>();
-            foreach (var question in questions)
-            {
-                questionsVM.Add(new QuestionViewModel
-                {
-                    QuestionId = question.EntityId,
-                    Description = question.Description
-                });
-            }
-
             var interviewViewModelToReturn = new InterviewViewModel
             {
                 CompetencyId = positionSkill.Position.CompetencyId,
-                Skills = skillsVM,
-                Questions = questionsVM
+                Skills = skillsVM
             };
 
             return Ok(interviewViewModelToReturn);

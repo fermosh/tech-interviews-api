@@ -176,6 +176,7 @@
     <Compile Include="Controllers\Query\QueryLevelController.cs" />
     <Compile Include="Controllers\Query\QueryInterviewController.cs" />
     <Compile Include="Controllers\Query\QueryPositionSkillController.cs" />
+    <Compile Include="Controllers\Query\QueryQuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -79,6 +79,7 @@
     <Compile Include="Controllers\Query\QueryLevelControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryDomainControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryPositionSkillControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryQuestionControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
