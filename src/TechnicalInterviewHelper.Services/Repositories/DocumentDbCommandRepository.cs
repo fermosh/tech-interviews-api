@@ -85,7 +85,7 @@
         public async Task<T> Insert(T entity)
         {
             var documentCreated = await this.documentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), entity);
-            entity.EntityId = documentCreated.Resource.Id;
+            entity.Id = documentCreated.Resource.Id;
             return entity;
         }
 
@@ -100,7 +100,7 @@
         /// <returns>A task of void.</returns>
         public async Task Update(T entity)
         {
-            var updated = await this.documentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, entity.EntityId), entity);
+            var updated = await this.documentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, entity.Id), entity);
         }
 
         #endregion Udpate command

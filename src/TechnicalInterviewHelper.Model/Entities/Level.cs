@@ -1,5 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Level entity.
     /// </summary>
@@ -11,6 +13,7 @@
         /// <value>
         /// The competency identifier.
         /// </value>
+        [JsonProperty("competencyId")]
         public int CompetencyId { get; set; }
 
         /// <summary>
@@ -19,6 +22,7 @@
         /// <value>
         /// The name.
         /// </value>
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -27,6 +31,7 @@
         /// <value>
         /// The description.
         /// </value>
+        [JsonProperty("description")]
         public string Description { get; set; }
     }
 }

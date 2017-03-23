@@ -21,8 +21,9 @@
         {
             // Arrange
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
+            var queryPositionMock = new Mock<IQueryRepository<Position, string>>();
 
-            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object, queryPositionMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(null).Result;
@@ -51,7 +52,7 @@
 
             var dataCollection = new List<Skill>
             {
-                new Skill { EntityId = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Behaviour Driven Design" }
+                new Skill { Id = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", Description = "Behaviour Driven Design" }
             };
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
@@ -60,7 +61,9 @@
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
+            var queryPositionMock = new Mock<IQueryRepository<Position, string>>();
+
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object, queryPositionMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -86,12 +89,12 @@
 
             var dataCollection = new List<Skill>
             {
-                new Skill { Position = new Position { CompetencyId = 1, LevelId = 1, DomainId = 1 }, Description = "Design Patterns" },
-                new Skill { Position = new Position { CompetencyId = 1, LevelId = 1, DomainId = 1 }, Description = "MVC Programming" },
-                new Skill { Position = new Position { CompetencyId = 3, LevelId = 1, DomainId = 1 }, Description = "OOP Knowledge" },
-                new Skill { Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Generics and Lambda expressions" },
-                new Skill { Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Test Driven Design" },
-                new Skill { Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Behaviour Driven Design" }
+                new Skill { Description = "Design Patterns" },
+                new Skill { Description = "MVC Programming" },
+                new Skill { Description = "OOP Knowledge" },
+                new Skill { Description = "Generics and Lambda expressions" },
+                new Skill { Description = "Test Driven Design" },
+                new Skill { Description = "Behaviour Driven Design" }
             };
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
@@ -100,7 +103,9 @@
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
+            var queryPositionMock = new Mock<IQueryRepository<Position, string>>();
+
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object, queryPositionMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -123,23 +128,36 @@
                 LevelId = levelId
             };
 
-            var dataCollection = new List<Skill>
+            var savedSkills = new List<Skill>
             {
-                new Skill { Position = new Position { CompetencyId = 1, LevelId = 1, DomainId = 1 }, Description = "Design Patterns" },
-                new Skill { Position = new Position { CompetencyId = 1, LevelId = 1, DomainId = 1 }, Description = "MVC Programming" },
-                new Skill { Position = new Position { CompetencyId = 3, LevelId = 1, DomainId = 1 }, Description = "OOP Knowledge" },
-                new Skill { Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Generics and Lambda expressions" },
-                new Skill { Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Test Driven Design" },
-                new Skill { Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Behaviour Driven Design" }
+                new Skill { Id = "E9C96ABC-8D81-431A-B0C6-D884796710E8", SkillId = 1588, ParentSkillId = 899, PositionId = 1001, Description = "Design Patterns" },
+                new Skill { Id = "68F27973-9A35-45C0-B3B0-F47C89194929", SkillId = 450,  ParentSkillId = 0,   PositionId = 13,   Description = "MVC Programming" },
+                new Skill { Id = "21CEF7AB-0AE0-4D00-82F9-2695351673C4", SkillId = 654,  ParentSkillId = 0,   PositionId = 1001, Description = "OOP Knowledge" },
+                new Skill { Id = "810F3B2E-7CA0-486C-8350-53BCF2166780", SkillId = 667,  ParentSkillId = 654, PositionId = 14,   Description = "Generics and Lambda expressions" },
+                new Skill { Id = "9356718E-11E9-407A-8CAB-6926B9B6F532", SkillId = 899,  ParentSkillId = 0,   PositionId = 14,   Description = "Test Driven Design" },
+                new Skill { Id = "F1E15940-9EF7-4E86-B10D-44F4D6D201D5", SkillId = 4752, ParentSkillId = 899, PositionId = 14,   Description = "Behaviour Driven Design" }
+            };
+
+            var savedPositions = new List<Position>
+            {
+                new Position { Id = "6DAAB649-15E9-44B1-8FC1-5241E09AA8A8", PositionId = 1001, CompetencyId = 1, LevelId = 1, DomainId = 1 },
+                new Position { Id = "D2A796F4-484D-4196-AF12-9E7C82A74BFE", PositionId = 13,   CompetencyId = 3, LevelId = 1, DomainId = 1 },
+                new Position { Id = "934887BB-9845-4A13-A8AC-C9941D0F11AD", PositionId = 14,   CompetencyId = 2, LevelId = 2, DomainId = 11 }
             };
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
             querySkillMock
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
-                .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
+                .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return savedSkills.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
+            var queryPositionMock = new Mock<IQueryRepository<Position, string>>();
+
+            queryPositionMock
+                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Position, bool>>>()))
+                .ReturnsAsync((Expression<Func<Position, bool>> predicate) => savedPositions.Where(predicate.Compile()));
+
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object, queryPositionMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -161,23 +179,36 @@
                 DomainId = 11
             };
 
-            var dataCollection = new List<Skill>
+            var savedPositions = new List<Position>
             {
-                new Skill { EntityId = "3A20A752-652D-45ED-9AD8-8BACA37AC3E3", Position = new Position { CompetencyId = 1, LevelId = 1, DomainId = 1 }, Description = "Design Patterns" },
-                new Skill { EntityId = "38SKA752-652D-45ED-9AD8-8BACA37AC2F4", Position = new Position { CompetencyId = 1, LevelId = 1, DomainId = 1 }, Description = "MVC Programming" },
-                new Skill { EntityId = "8SKKNA72-652D-45ED-9EGH-8BACA37AC3E3", Position = new Position { CompetencyId = 3, LevelId = 1, DomainId = 1 }, Description = "OOP Knowledge" },
-                new Skill { EntityId = "3HGS7752-652D-45ED-99TT-8BACAUH7C3E3", Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Generics and Lambda expressions" },
-                new Skill { EntityId = "9KJ7SJ7N-65FF-45ED-9AD8-7GVF537AC3E3", Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Test Driven Design" },
-                new Skill { EntityId = "83JD8992-652D-45ED-9AD8-8BACA37AC3E3", Position = new Position { CompetencyId = 2, LevelId = 2, DomainId = 11 }, Description = "Behaviour Driven Design" }
+                new Position { Id = "6DAAB649-15E9-44B1-8FC1-5241E09AA8A8", PositionId = 1001, CompetencyId = 1, LevelId = 1, DomainId = 1 },
+                new Position { Id = "D2A796F4-484D-4196-AF12-9E7C82A74BFE", PositionId = 13,   CompetencyId = 3, LevelId = 1, DomainId = 1 },
+                new Position { Id = "934887BB-9845-4A13-A8AC-C9941D0F11AD", PositionId = 14,   CompetencyId = 2, LevelId = 2, DomainId = 11 }
+            };
+
+            var savedSkills = new List<Skill>
+            {
+                new Skill { Id = "E9C96ABC-8D81-431A-B0C6-D884796710E8", SkillId = 1588, ParentSkillId = 899, PositionId = 1001, Description = "Design Patterns" },
+                new Skill { Id = "68F27973-9A35-45C0-B3B0-F47C89194929", SkillId = 450,  ParentSkillId = 0,   PositionId = 13,   Description = "MVC Programming" },
+                new Skill { Id = "21CEF7AB-0AE0-4D00-82F9-2695351673C4", SkillId = 654,  ParentSkillId = 0,   PositionId = 1001, Description = "OOP Knowledge" },
+                new Skill { Id = "810F3B2E-7CA0-486C-8350-53BCF2166780", SkillId = 667,  ParentSkillId = 654, PositionId = 14,   Description = "Generics and Lambda expressions" },
+                new Skill { Id = "9356718E-11E9-407A-8CAB-6926B9B6F532", SkillId = 899,  ParentSkillId = 0,   PositionId = 14,   Description = "Test Driven Design" },
+                new Skill { Id = "F1E15940-9EF7-4E86-B10D-44F4D6D201D5", SkillId = 4752, ParentSkillId = 899, PositionId = 14,   Description = "Behaviour Driven Design" }
             };
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
             querySkillMock
                 .Setup(m => m.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
-                .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return dataCollection.Where(predicate.Compile()); });
+                .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => { return savedSkills.Where(predicate.Compile()); });
 
-            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object);
+            var queryPositionMock = new Mock<IQueryRepository<Position, string>>();
+
+            queryPositionMock
+                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Position, bool>>>()))
+                .ReturnsAsync((Expression<Func<Position, bool>> predicate) => savedPositions.Where(predicate.Compile()));
+
+            var queryPositionSkillController = new QueryPositionSkillController(querySkillMock.Object, queryPositionMock.Object);
 
             // Act
             var actionResult = queryPositionSkillController.GetAll(positionInput).Result;
@@ -186,9 +217,8 @@
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<PositionSkillViewModel>>());
             Assert.That((actionResult as OkNegotiatedContentResult<PositionSkillViewModel>).Content.Skills.Count, Is.EqualTo(3));
-            Assert.That((actionResult as OkNegotiatedContentResult<PositionSkillViewModel>).Content.Skills.ElementAt(0).SkillId, Is.EqualTo("3HGS7752-652D-45ED-99TT-8BACAUH7C3E3"));
+            Assert.That((actionResult as OkNegotiatedContentResult<PositionSkillViewModel>).Content.Skills.ElementAt(0).SkillId, Is.EqualTo(667));
             Assert.That((actionResult as OkNegotiatedContentResult<PositionSkillViewModel>).Content.Skills.ElementAt(0).Name, Is.EqualTo("Generics and Lambda expressions"));
-            Assert.That((actionResult as OkNegotiatedContentResult<PositionSkillViewModel>).Content.Skills.ElementAt(0).HasChildren, Is.EqualTo(false));
         }
     }
 }

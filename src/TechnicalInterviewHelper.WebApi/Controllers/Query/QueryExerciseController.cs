@@ -92,7 +92,7 @@
             {
                 exercisesVM.Add(new ExerciseViewModel
                 {
-                    ExerciseId = exercise.EntityId,
+                    ExerciseId = exercise.Id,
                     Description = exercise.Description,
                     ProposedSolution = exercise.ProposedSolution,
                     Title = exercise.Title

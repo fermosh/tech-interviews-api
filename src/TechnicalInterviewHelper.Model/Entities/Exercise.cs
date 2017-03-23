@@ -1,5 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Exercise entity.
     /// </summary>
@@ -11,6 +13,7 @@
         /// <value>
         /// The skill identifier.
         /// </value>
+        [JsonProperty("skillId")]
         public int SkillId { get; set; }
 
         /// <summary>
@@ -19,6 +22,7 @@
         /// <value>
         /// The title.
         /// </value>
+        [JsonProperty("title")]
         public string Title { get; set; }
 
         /// <summary>
@@ -27,6 +31,7 @@
         /// <value>
         /// The text.
         /// </value>
+        [JsonProperty("description")]
         public string Description { get; set; }
 
         /// <summary>
@@ -35,6 +40,7 @@
         /// <value>
         /// The complexity.
         /// </value>
+        [JsonProperty("complexity")]
         public string Complexity { get; set; }
 
         /// <summary>
@@ -43,6 +49,7 @@
         /// <value>
         /// The proposed solution.
         /// </value>
+        [JsonProperty("proposedSolution")]
         public string ProposedSolution { get; set; }
 
         /// <summary>
@@ -51,6 +58,7 @@
         /// <value>
         /// The solution.
         /// </value>
+        [JsonProperty("capturedSolution")]
         public string CapturedSolution { get; set; }
 
         /// <summary>
@@ -59,6 +67,7 @@
         /// <value>
         /// The rating.
         /// </value>
+        [JsonProperty("capturedRating")]
         public float CapturedRating { get; set; }
     }
 }

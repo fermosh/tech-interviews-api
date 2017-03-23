@@ -1,5 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Topic entity.
     /// </summary>
@@ -11,6 +13,7 @@
         /// <value>
         /// The name.
         /// </value>
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -19,6 +22,7 @@
         /// <value>
         /// <c>true</c> if this instance is required; otherwise, <c>false</c>.
         /// </value>
+        [JsonProperty("isRequired")]
         public bool IsRequired { get; set; }
     }
 }

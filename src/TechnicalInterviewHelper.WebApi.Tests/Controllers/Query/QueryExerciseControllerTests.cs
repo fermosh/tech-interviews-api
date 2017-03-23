@@ -64,7 +64,7 @@
 
             var savedPositionSkill = new PositionSkill
             {
-                EntityId = inputTemplateId,
+                Id = inputTemplateId,
                 Position = new Position { CompetencyId = 1, LevelId = 2, DomainId = 1 }
             };
 
@@ -94,7 +94,7 @@
 
             var savedPositionSkill = new PositionSkill
             {
-                EntityId = inputTemplateId,
+                Id = inputTemplateId,
                 Position = new Position { CompetencyId = 1, LevelId = 2, DomainId = 1 },
                 SkillIdentifiers = new List<int>()
             };
@@ -125,7 +125,7 @@
 
             var savedPositionSkill = new PositionSkill
             {
-                EntityId = inputTemplateId,
+                Id = inputTemplateId,
                 Position = new Position { CompetencyId = 1, LevelId = 2, DomainId = 1 },
                 SkillIdentifiers = new List<int> { 1001, 1912, 2000 }
             };
@@ -161,19 +161,19 @@
 
             var savedPositionSkill = new PositionSkill
             {
-                EntityId = inputTemplateId,
+                Id = inputTemplateId,
                 Position = new Position { CompetencyId = 1, LevelId = 2, DomainId = 1 },
                 SkillIdentifiers = new List<int> { 1001, 1912, 2000 }
             };
 
             var savedExercises = new List<Exercise>
             {
-                new Exercise { EntityId = "592F493B-E974-499F-9A49-F9A889D89EC8", SkillId = 1001, Title = "Fix the code following SOLID principles", Description = "If any, please, fix next code to meet the SOLID principles.", ProposedSolution = "public void main() { ... }" },
-                new Exercise { EntityId = "5336A7B8-09B3-4437-A53B-751107212A8B", SkillId = 1001, Title = "Bubble sort", Description = "Complete next code of bubble sort algorithm.", ProposedSolution = "public void main() { ... }" },
-                new Exercise { EntityId = "807D3020-ACB5-4BD1-94FA-A995866E4609", SkillId = 2002, Title = "OOP - Inheritance", Description = "Having a parent class named 'Father', write the code of a child class named 'Child' that descends from it.", ProposedSolution = "class Child : Parent { ... }" },
-                new Exercise { EntityId = "2FE75BAA-7C83-4E82-AC1C-CC0D81ED0725", SkillId = 1912, Title = "Fixing a code review", Description = "Suppose you're intended to write a hash function using SHA-1 algorithm, please, ask your partner to make a code review of it.", ProposedSolution = "public byte*[] GetHashValue(char* entrance){ ... }" },
-                new Exercise { EntityId = "EDFE0DC2-281B-4FCF-A20B-13BFDCDC6D43", SkillId = 2000, Title = "Writing a microservice", Description = "Using Azure Functions or AWS Lambda, propose a code that sums two digits and return its square root.", ProposedSolution = "public double GetSquareRootOfTheSum(int x, int y) { ... }" },
-                new Exercise { EntityId = "F120A901-0950-4F74-BAD3-218B5F980494", SkillId = 100,  Title = "Palindrome", Description = "Write a program to detect whether a phrase is a palindrome.", ProposedSolution = "public bool IsPalindrome(string phrase) { ... }" }
+                new Exercise { Id = "592F493B-E974-499F-9A49-F9A889D89EC8", SkillId = 1001, Title = "Fix the code following SOLID principles", Description = "If any, please, fix next code to meet the SOLID principles.", ProposedSolution = "public void main() { ... }" },
+                new Exercise { Id = "5336A7B8-09B3-4437-A53B-751107212A8B", SkillId = 1001, Title = "Bubble sort", Description = "Complete next code of bubble sort algorithm.", ProposedSolution = "public void main() { ... }" },
+                new Exercise { Id = "807D3020-ACB5-4BD1-94FA-A995866E4609", SkillId = 2002, Title = "OOP - Inheritance", Description = "Having a parent class named 'Father', write the code of a child class named 'Child' that descends from it.", ProposedSolution = "class Child : Parent { ... }" },
+                new Exercise { Id = "2FE75BAA-7C83-4E82-AC1C-CC0D81ED0725", SkillId = 1912, Title = "Fixing a code review", Description = "Suppose you're intended to write a hash function using SHA-1 algorithm, please, ask your partner to make a code review of it.", ProposedSolution = "public byte*[] GetHashValue(char* entrance){ ... }" },
+                new Exercise { Id = "EDFE0DC2-281B-4FCF-A20B-13BFDCDC6D43", SkillId = 2000, Title = "Writing a microservice", Description = "Using Azure Functions or AWS Lambda, propose a code that sums two digits and return its square root.", ProposedSolution = "public double GetSquareRootOfTheSum(int x, int y) { ... }" },
+                new Exercise { Id = "F120A901-0950-4F74-BAD3-218B5F980494", SkillId = 100,  Title = "Palindrome", Description = "Write a program to detect whether a phrase is a palindrome.", ProposedSolution = "public bool IsPalindrome(string phrase) { ... }" }
             };
 
             var queryExerciseMock = new Mock<IQueryRepository<Exercise, string>>();

@@ -79,7 +79,7 @@
 
             var savedPositionSkill = new PositionSkill
             {
-                EntityId = positionSkillIdToTest,
+                Id = positionSkillIdToTest,
                 Position = new Position
                 {
                     CompetencyId = positionToTest.CompetencyId,
@@ -91,10 +91,10 @@
 
             var savedSkills = new List<Skill>
             {
-                new Skill { SkillId = 1610, Position = new Position { CompetencyId = positionToTest.CompetencyId, LevelId = positionToTest.LevelId, DomainId = positionToTest.DomainId }, Description = "OOP Theory" },
-                new Skill { SkillId = 56, Position = new Position { CompetencyId = positionToTest.CompetencyId, LevelId = positionToTest.LevelId, DomainId = positionToTest.DomainId }, Description = "Code Reviews" },
-                new Skill { SkillId = 1779, Position = new Position { CompetencyId = positionToTest.CompetencyId, LevelId = positionToTest.LevelId, DomainId = positionToTest.DomainId }, Description = "Agile Teams" },
-                new Skill { SkillId = 1899, Position = new Position { CompetencyId = positionToTest.CompetencyId, LevelId = positionToTest.LevelId, DomainId = positionToTest.DomainId }, Description = "Cloud Based Applications" }
+                new Skill { SkillId = 1610, Description = "OOP Theory" },
+                new Skill { SkillId = 56, Description = "Code Reviews" },
+                new Skill { SkillId = 1779, Description = "Agile Teams" },
+                new Skill { SkillId = 1899, Description = "Cloud Based Applications" }
             };
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
 
