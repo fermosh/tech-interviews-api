@@ -9,12 +9,12 @@
     using System.Web.Http;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("query/level")]
+    [RoutePrefix("level")]
     public class QueryLevelController : ApiController
     {
         #region Repository
 
-        private readonly IQueryRepository<Level, string> queryLevel;
+        private readonly ILevelQueryRepository queryLevelCatalogTwo;
 
         #endregion Repository
 
@@ -22,37 +22,36 @@
 
         public QueryLevelController()
         {
-            this.queryLevel = new DocumentDbQueryRepository<Level, string>(ConfigurationManager.AppSettings["LevelCollectionId"]);
+            this.queryLevelCatalogTwo = new LevelDocumentDbQueryRepository(ConfigurationManager.AppSettings["LevelCollectionId"]);
         }
 
-        public QueryLevelController(IQueryRepository<Level, string> queryLevel)
+        public QueryLevelController(ILevelQueryRepository queryLevelCatalogTwo)
         {
-            this.queryLevel = queryLevel;
+            this.queryLevelCatalogTwo = queryLevelCatalogTwo;
         }
 
         #endregion Constructor
 
         [HttpGet]
         [ActionName("all")]
-        public async Task<IHttpActionResult> GetAllLevelsOfCompetency(int competencyId)
+        public async Task<IHttpActionResult> GetAll(int competencyId)
         {
-            var levels = await this.queryLevel.FindBy(level => level.CompetencyId == competencyId);
+            var levels = await this.queryLevelCatalogTwo.FindOnInternalCollection(level => level.CompetencyId == competencyId);
+
             if (levels.Count() == 0)
             {
                 return NotFound();
             }
 
-            // TODO: temporal solution to the ID property value.
-            var counter = 0;
-
             var levelsVM = new List<LevelViewModel>();
             foreach (var level in levels)
             {
-                counter++;
                 levelsVM.Add(new LevelViewModel
                 {
-                    LevelId = counter,
-                    Name = level.Name
+                    LevelId = level.LevelId,
+                    CompetencyId = level.CompetencyId,
+                    Name = level.Name,
+                    Description = level.Description
                 });
             }
 

@@ -5,8 +5,17 @@
     /// <summary>
     /// Level entity.
     /// </summary>
-    public class Level : BaseEntity
+    public class Level
     {
+        /// <summary>
+        /// Gets or sets the level identifier.
+        /// </summary>
+        /// <value>
+        /// The level identifier.
+        /// </value>
+        [JsonProperty("levelId")]
+        public int LevelId { get; set; }
+
         /// <summary>
         /// Gets or sets the competency identifier.
         /// </summary>

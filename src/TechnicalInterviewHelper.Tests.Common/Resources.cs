@@ -39,7 +39,7 @@
             };
             TestLevel = new Level()
             {
-                Id = TestLevelId.ToString(),
+                //Id = TestLevelId.ToString(),
                 Name = TestLevelName,
                 CompetencyId = TestCompetencyId,
                 Description = string.Empty

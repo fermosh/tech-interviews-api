@@ -55,6 +55,7 @@
     <Compile Include="Entities\Exercise.cs" />
     <Compile Include="Entities\Interview.cs" />
     <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\LevelCatalog.cs" />
     <Compile Include="Entities\Position.cs" />
     <Compile Include="Entities\PositionSkill.cs" />
     <Compile Include="Entities\Question.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Interfaces\ICommandRepository.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\ILevelQueryRepository.cs" />
     <Compile Include="Interfaces\IQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
