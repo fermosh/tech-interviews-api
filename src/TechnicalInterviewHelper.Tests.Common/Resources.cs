@@ -34,7 +34,7 @@
             TestLevelName = Guid.NewGuid().ToString("D");
             TestCompetency = new Competency()
             {
-                Id = TestCompetencyId.ToString(),
+                //Id = TestCompetencyId.ToString(),
                 Name = TestCompetencyName
             };
             TestLevel = new Level()

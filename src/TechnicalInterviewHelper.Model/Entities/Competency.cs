@@ -5,7 +5,7 @@
     /// <summary>
     /// Competency entity.
     /// </summary>
-    public class Competency : BaseEntity
+    public class Competency
     {
         /// <summary>
         /// Gets or sets the compentency identifier.

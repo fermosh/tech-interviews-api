@@ -14,7 +14,7 @@
     {
         #region Repository
 
-        private readonly IQueryRepository<Competency, string> queryCompetency;
+        private readonly IQueryRepository<CompetencyCatalog, string> queryCompetency;
 
         #endregion Repository
 
@@ -23,10 +23,10 @@
         public QueryCompetencyController()
         {
             var collectionId = ConfigurationManager.AppSettings["CompetencyCollectionId"];
-            this.queryCompetency = new DocumentDbQueryRepository<Competency, string>(collectionId);
+            this.queryCompetency = new DocumentDbQueryRepository<CompetencyCatalog, string>(collectionId);
         }
 
-        public QueryCompetencyController(IQueryRepository<Competency, string> competencyRepository)
+        public QueryCompetencyController(IQueryRepository<CompetencyCatalog, string> competencyRepository)
         {
             this.queryCompetency = competencyRepository;
         }
@@ -37,22 +37,26 @@
         [ActionName("all")]
         public async Task<IHttpActionResult> GetAll()
         {
-            var competencies = await this.queryCompetency.GetAll();
+            var competencyCatalogs = await this.queryCompetency.GetAll();
+            if (competencyCatalogs.Count() == 0)
+            {
+                return NotFound();
+            }
+
+            // TODO: we have to merge all the docs for competency catalog in order to have only one of it.
+            var competencies = competencyCatalogs.First().Competencies;
+
             if (competencies.Count() == 0)
             {
                 return NotFound();
             }
 
-            // TODO: temporal solution to the ID property value.
-            var counter = 0;
-
             var competenciesVM = new List<CompetencyViewModel>();
             foreach (var competency in competencies)
             {
-                counter++;
                 competenciesVM.Add(new CompetencyViewModel
                 {
-                    CompetencyId = counter,
+                    CompetencyId = competency.CompentencyId,
                     Name = competency.Name
                 });
             }

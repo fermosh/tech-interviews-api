@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\CompetencyCatalog.cs" />
     <Compile Include="Entities\Domain.cs" />
     <Compile Include="Entities\Competency.cs" />
     <Compile Include="Entities\Exercise.cs" />
