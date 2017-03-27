@@ -39,14 +39,12 @@
             };
             TestLevel = new Level()
             {
-                //Id = TestLevelId.ToString(),
                 Name = TestLevelName,
                 CompetencyId = TestCompetencyId,
                 Description = string.Empty
             };
             TestDomain = new Domain()
             {
-                Id = TestDomainId.ToString(),
                 Name = TestDomainName,
                 CompetencyId = TestCompetencyId,
                 LevelId = TestLevelId
