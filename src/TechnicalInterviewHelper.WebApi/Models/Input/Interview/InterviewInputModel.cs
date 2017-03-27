@@ -8,12 +8,12 @@
     public class InterviewInputModel
     {
         /// <summary>
-        /// Gets or sets the competency identifier.
+        /// Gets or sets the position identifier.
         /// </summary>
         /// <value>
-        /// The competency identifier.
+        /// The position identifier.
         /// </value>
-        public int CompetencyId { get; set; }
+        public int PositionId { get; set; }
 
         /// <summary>
         /// Gets or sets the skills.

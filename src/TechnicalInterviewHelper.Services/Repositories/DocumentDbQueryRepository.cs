@@ -1,5 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.Services
-{
+{    
     using System;
     using System.Collections.Generic;
     using System.Configuration;
@@ -20,17 +20,30 @@
     public class DocumentDbQueryRepository<T, TKey> : IQueryRepository<T, TKey>, IDisposable
         where T : class
     {
-        #region Private fields
+        #region Protected fields
 
         /// <summary>
         /// The collection identifier
         /// </summary>
-        private readonly string collectionId;
+        protected readonly string CollectionId;
+
+        //// public string CollectionId { get { return this.collectionId; } private set; }
 
         /// <summary>
         /// The document client
         /// </summary>
-        private readonly DocumentClient documentClient;
+        protected readonly DocumentClient DocumentClient;
+
+        //// public DocumentClient DocumentClient { get { return this.documentClient; } private set; }
+
+        #endregion Protected fields
+
+        #region Private fields
+
+        /// <summary>
+        /// The database identifier
+        /// </summary>
+        private string databaseId = ConfigurationManager.AppSettings["DatabaseId"];
 
         /// <summary>
         /// The database identifier
@@ -41,11 +54,6 @@
         /// The authorization key
         /// </summary>
         private string authorizationKey = ConfigurationManager.AppSettings["AuthorizationKey"];
-
-        /// <summary>
-        /// The database identifier
-        /// </summary>
-        private string databaseId = ConfigurationManager.AppSettings["DatabaseId"];
 
         /// <summary>
         /// To know whether the class is already disposed.
@@ -62,8 +70,8 @@
         /// <param name="collectionId">The collection identifier.</param>
         public DocumentDbQueryRepository(string collectionId)
         {
-            this.collectionId = collectionId;
-            this.documentClient = new DocumentClient(new Uri(this.endPointUrl), this.authorizationKey, new ConnectionPolicy { EnableEndpointDiscovery = false });
+            this.CollectionId = collectionId;
+            this.DocumentClient = new DocumentClient(new Uri(this.endPointUrl), this.authorizationKey, new ConnectionPolicy { EnableEndpointDiscovery = false });
         }
 
         /// <summary>
@@ -72,10 +80,28 @@
         /// <param name="documentClient">The document client.</param>
         public DocumentDbQueryRepository(DocumentClient documentClient)
         {
-            this.documentClient = documentClient;
+            this.DocumentClient = documentClient;
         }
 
         #endregion Constructor
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the database identifier.
+        /// </summary>
+        /// <value>
+        /// The database identifier.
+        /// </value>
+        public string DatabaseId
+        {
+            get
+            {
+                return this.databaseId;
+            }
+        }
+
+        #endregion Properties
 
         #region Get functions
 
@@ -89,8 +115,8 @@
         public async Task<IEnumerable<T>> FindBy(Expression<Func<T, bool>> predicate)
         {
             var documentQuery =
-                    this.documentClient
-                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), new FeedOptions { MaxItemCount = -1 })
+                    this.DocumentClient
+                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                         .Where(predicate)
                         .AsDocumentQuery();
 
@@ -115,7 +141,7 @@
             try
             {
                 var documentId = Convert.ToString(id);
-                var competencyDocument = await this.documentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, documentId));
+                var competencyDocument = await this.DocumentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.CollectionId, documentId));
                 return (T)(dynamic)competencyDocument;
             }
             catch (DocumentClientException e)
@@ -137,7 +163,7 @@
         /// </returns>
         public async Task<IEnumerable<T>> GetAll()
         {
-            var documentQuery = this.documentClient.CreateDocumentQuery(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), new FeedOptions { MaxItemCount = -1 }).AsDocumentQuery();
+            var documentQuery = this.DocumentClient.CreateDocumentQuery(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 }).AsDocumentQuery();
 
             var competencyList = new List<T>();
             while (documentQuery.HasMoreResults)
@@ -170,13 +196,13 @@
             {
                 if (disposing)
                 {
-                    this.documentClient.Dispose();
+                    this.DocumentClient.Dispose();
                 }
 
                 this.disposedValue = true;
             }
         }
 
-        #endregion
+        #endregion IDisposable Support
     }
 }

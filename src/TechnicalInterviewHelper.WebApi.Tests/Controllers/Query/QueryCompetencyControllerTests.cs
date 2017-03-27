@@ -19,22 +19,22 @@
         public void WhenThereAreNoCompetencies_ReturnsNotFoundStatusCode()
         {
             // Arrange
-            var competencies = new List<Competency>();
+            var competencies = new List<CompetencyCatalog>();
 
-            var queryCompetencyMock = new Mock<IQueryRepository<Competency, string>>();
+            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyCatalog, string>>();
 
-            queryCompetencyMock
+            queryCompetencyCatalogMock
                 .Setup(method => method.GetAll())
                 .ReturnsAsync(competencies);
 
-            var controllerUnderTest = new QueryCompetencyController(queryCompetencyMock.Object);
+            var controllerUnderTest = new QueryCompetencyController(queryCompetencyCatalogMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.GetAll().Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
-            queryCompetencyMock.Verify(method => method.GetAll(), Times.Once);
+            queryCompetencyCatalogMock.Verify(method => method.GetAll(), Times.Once);
             Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
         }
 
@@ -42,22 +42,29 @@
         public void WhenGetAllCompetencies_ReturnsAnEnumerationWithAllAvailableCompetencyViewModels()
         {
             // Arrange
-            var competencies = new List<Competency>
+            var competencies = new List<CompetencyCatalog>
             {
-                new Competency { EntityId = "7B21643E-A8B5-4FE0-B691-B45191FB2F30", Name = "NET Architect" },
-                new Competency { EntityId = "883KJKDF-A8B5-4FE0-B691-B45191FB2F30", Name = "NET Developer" },
-                new Competency { EntityId = "6MAMAZ8S-92KK-4FE0-B691-B45191FB2F30", Name = "Azure Architect" },
-                new Competency { EntityId = "729AA93E-A8B5-92SA-0MA3-B45191FB2F30", Name = "DevOp Agent" },
-                new Competency { EntityId = "7B22982K-92LL-92AA-MAR2-02KA82JAT521", Name = "Account Manager Staff" }
+                new CompetencyCatalog
+                {
+                    Id = "3FB6E6CC-4505-45AF-BC5F-73F45E33CC76",
+                    Competencies = new List<Competency>
+                    {
+                        new Competency { CompentencyId = 1,  Name = "NET Architect" },
+                        new Competency { CompentencyId = 10, Name = "NET Developer" },
+                        new Competency { CompentencyId = 78, Name = "Azure Architect" },
+                        new Competency { CompentencyId = 98, Name = "DevOp Agent" },
+                        new Competency { CompentencyId = 25, Name = "Account Manager Staff" }
+                    }
+                }
             };
 
-            var queryCompetencyMock = new Mock<IQueryRepository<Competency, string>>();
+            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyCatalog, string>>();
 
-            queryCompetencyMock
+            queryCompetencyCatalogMock
                 .Setup(method => method.GetAll())
                 .ReturnsAsync(competencies);
 
-            var controllerUnderTest = new QueryCompetencyController(queryCompetencyMock.Object);
+            var controllerUnderTest = new QueryCompetencyController(queryCompetencyCatalogMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.GetAll().Result;
@@ -65,10 +72,10 @@
             // Assert
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<List<CompetencyViewModel>>>());
-            queryCompetencyMock.Verify(method => method.GetAll(), Times.Once);
+            queryCompetencyCatalogMock.Verify(method => method.GetAll(), Times.Once);
             Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.Count(), Is.EqualTo(5));
-            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.First().CompetencyId, Is.EqualTo(1));
-            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.First().Name, Is.EqualTo("NET Architect"));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.First().CompetencyId, Is.EqualTo(competencies[0].Competencies.First().CompentencyId));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.First().Name, Is.EqualTo(competencies[0].Competencies.First().Name));
         }
     }
 }

@@ -92,7 +92,7 @@
             {
                 questionsVM.Add(new QuestionViewModel
                 {
-                    QuestionId = question.EntityId,
+                    QuestionId = question.Id,
                     Description = question.Description
                 });
             }

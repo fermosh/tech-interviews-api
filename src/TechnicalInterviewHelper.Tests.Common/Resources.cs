@@ -34,31 +34,25 @@
             TestLevelName = Guid.NewGuid().ToString("D");
             TestCompetency = new Competency()
             {
-                EntityId = TestCompetencyId.ToString(),
+                //Id = TestCompetencyId.ToString(),
                 Name = TestCompetencyName
             };
             TestLevel = new Level()
             {
-                EntityId = TestLevelId.ToString(),
                 Name = TestLevelName,
                 CompetencyId = TestCompetencyId,
                 Description = string.Empty
             };
             TestDomain = new Domain()
             {
-                EntityId = TestDomainId.ToString(),
                 Name = TestDomainName,
                 CompetencyId = TestCompetencyId,
                 LevelId = TestLevelId
             };
             TestSkill = new Skill()
             {
-                EntityId = TestSkillId.ToString(),
-                Description = TestDomainName,
-                Position = new Position
-                {
-                    CompetencyId = TestCompetencyId
-                },
+                Id = TestSkillId.ToString(),
+                Description = TestDomainName,               
                 Topics = new List<Topic>()
             };
         }

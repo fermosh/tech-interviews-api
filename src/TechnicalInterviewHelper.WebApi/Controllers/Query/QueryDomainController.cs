@@ -9,50 +9,64 @@
     using System.Web.Http;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("query/domain")]
+    [Route("domain")]
     public class QueryDomainController : ApiController
     {
         #region Repository
 
-        private readonly IQueryRepository<Domain, string> queryDomain;
+        /// <summary>
+        /// The query domain
+        /// </summary>
+        private readonly IDomainQueryRepository queryDomain;
 
         #endregion Repository
 
         #region Constructor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryDomainController"/> class.
+        /// </summary>
         public QueryDomainController()
         {
-            this.queryDomain = new DocumentDbQueryRepository<Domain, string>(ConfigurationManager.AppSettings["DomainCollectionId"]);
+            this.queryDomain = new DomainDocumentDbQueryRepository(ConfigurationManager.AppSettings["DomainCollectionId"]);
         }
 
-        public QueryDomainController(IQueryRepository<Domain, string> queryDomain)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryDomainController"/> class.
+        /// </summary>
+        /// <param name="queryDomain">The query domain.</param>
+        public QueryDomainController(IDomainQueryRepository queryDomain)
         {
             this.queryDomain = queryDomain;
         }
 
         #endregion Constructor
 
+        /// <summary>
+        /// Gets all domains that belong to certain competency and level.
+        /// </summary>
+        /// <param name="competencyId">The competency identifier.</param>
+        /// <param name="levelId">The level identifier.</param>
+        /// <returns>A list of domains that belong to certain competency and level.</returns>
         [HttpGet]
         [ActionName("all")]
-        public async Task<IHttpActionResult> GetAllDomainsOfCompetencyAndLevel(int competencyId, int levelId)
+        public async Task<IHttpActionResult> GetAll(int competencyId, int levelId)
         {
-            var domains = await this.queryDomain.FindBy(domain => domain.CompetencyId == competencyId && domain.LevelId == levelId);
+            var domains = await this.queryDomain.FindWithin(item => item.CompetencyId == competencyId && item.LevelId == levelId);
+
             if (domains.Count() == 0)
             {
                 return NotFound();
             }
 
-            // TODO: temporal solution to the ID property value.
-            var count = 0;
-
             var domainsVM = new List<DomainViewModel>();
             foreach (var domain in domains)
             {
-                count++;
-
                 domainsVM.Add(new DomainViewModel
                 {
-                    DomainId = count,
+                    CompetencyId = domain.CompetencyId,
+                    LevelId = domain.LevelId,
+                    DomainId = domain.DomainId,
                     Name = domain.Name
                 });
             }

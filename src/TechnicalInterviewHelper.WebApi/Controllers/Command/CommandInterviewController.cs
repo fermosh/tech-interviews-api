@@ -52,7 +52,7 @@
             {
                 var interviewToSave = new Interview
                 {
-                    CompetencyId = interviewInputModel.CompetencyId
+                    PositionId = interviewInputModel.PositionId
                 };
 
                 var skills = new List<Skill>();
@@ -72,7 +72,7 @@
                 {
                     questions.Add(new Question
                     {
-                        EntityId = question.QuestionId,
+                        Id = question.QuestionId,
                         Description = question.Description,
                         CapturedAnswer = question.CapturedAnswer,
                         CapturedRating = question.CapturedRating
@@ -86,7 +86,7 @@
                 {
                     exercises.Add(new Exercise
                     {
-                        EntityId = exercise.ExerciseId,
+                        Id = exercise.ExerciseId,
                         Title = exercise.Title,
                         Description = exercise.Description,
                         CapturedSolution = exercise.CapturedSolution,

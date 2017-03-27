@@ -1,6 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.Model
-{
+{    
     using System.Collections.Generic;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Skill entity.
@@ -13,15 +14,26 @@
         /// <value>
         /// The skill identifier.
         /// </value>
+        [JsonProperty("skillId")]
         public int SkillId { get; set; }
 
         /// <summary>
-        /// Gets or sets the position.
+        /// Gets or sets the parent skill identifier.
         /// </summary>
         /// <value>
-        /// The position.
+        /// The parent skill identifier.
         /// </value>
-        public Position Position { get; set; }
+        [JsonProperty("parentSkillId")]
+        public int ParentSkillId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position identifier.
+        /// </summary>
+        /// <value>
+        /// The position identifier.
+        /// </value>
+        [JsonProperty("positionId")]
+        public int PositionId { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -29,6 +41,7 @@
         /// <value>
         /// The name.
         /// </value>
+        [JsonProperty("description")]
         public string Description { get; set; }
 
         /// <summary>
@@ -37,6 +50,7 @@
         /// <value>
         /// The topics.
         /// </value>
-        public List<Topic> Topics { get; set; }
+        [JsonProperty("topics")]
+        public IList<Topic> Topics { get; set; }
     }
 }

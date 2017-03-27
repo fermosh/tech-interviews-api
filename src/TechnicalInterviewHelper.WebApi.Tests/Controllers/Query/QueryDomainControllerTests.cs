@@ -21,20 +21,20 @@
             int whateverCompetencyId = 1001;
             int whateverLevelId = 2001;
 
-            var queryDomainMock = new Mock<IQueryRepository<Domain, string>>();
+            var queryDomainMock = new Mock<IDomainQueryRepository>();
 
             queryDomainMock
-                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Domain, bool>>>()))
+                .Setup(method => method.FindWithin(It.IsAny<Expression<Func<Domain, bool>>>()))
                 .ReturnsAsync(new List<Domain>());
 
             var controllerUnderTest = new QueryDomainController(queryDomainMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAllDomainsOfCompetencyAndLevel(whateverCompetencyId, whateverLevelId).Result;
+            var actionResult = controllerUnderTest.GetAll(whateverCompetencyId, whateverLevelId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
-            queryDomainMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Domain, bool>>>()), Times.Once);
+            queryDomainMock.Verify(method => method.FindWithin(It.IsAny<Expression<Func<Domain, bool>>>()), Times.Once);
             Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
         }
 
@@ -47,29 +47,31 @@
 
             var domains = new List<Domain>
             {
-                new Domain { EntityId = "38CDE06E-DB3C-410C-872A-69AAAF0EA49A", CompetencyId = 1001, LevelId = 2001, Name = "FrontEnd Desktop" },
-                new Domain { EntityId = "256EB7CF-0D0F-4E9F-800C-A931716BF3DD", CompetencyId = 1001, LevelId = 2001, Name = "FrontEnd Web" },
-                new Domain { EntityId = "F2A5823F-7523-4EF3-9EF1-95812F685B12", CompetencyId = 1001, LevelId = 2002, Name = "BackEnd Desktop" },
-                new Domain { EntityId = "731AE99A-5E20-4674-ACD8-77A70441EC12", CompetencyId = 1001, LevelId = 2002, Name = "BackEnd Web" },
-                new Domain { EntityId = "2D5BE8E3-69D7-4F29-B27E-0EBE2100DF23", CompetencyId = 1001, LevelId = 2003, Name = "Azure" }
+                new Domain { CompetencyId = 1001, LevelId = 2001, DomainId = 1, Name = "FrontEnd Desktop" },
+                new Domain { CompetencyId = 1001, LevelId = 2001, DomainId = 1, Name = "FrontEnd Web" },
+                new Domain { CompetencyId = 1001, LevelId = 2002, DomainId = 18, Name = "BackEnd Desktop" },
+                new Domain { CompetencyId = 1001, LevelId = 2002, DomainId = 18, Name = "BackEnd Web" },
+                new Domain { CompetencyId = 1001, LevelId = 2003, DomainId = 10, Name = "Azure" }
             };
 
-            var queryDomainMock = new Mock<IQueryRepository<Domain, string>>();
+            var queryDomainMock = new Mock<IDomainQueryRepository>();
 
             queryDomainMock
-                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Domain, bool>>>()))
+                .Setup(method => method.FindWithin(It.IsAny<Expression<Func<Domain, bool>>>()))
                 .ReturnsAsync((Expression<Func<Domain, bool>> predicate) => domains.Where(predicate.Compile()));
 
             var controllerUnderTest = new QueryDomainController(queryDomainMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAllDomainsOfCompetencyAndLevel(competencyId, levelId).Result;
+            var actionResult = controllerUnderTest.GetAll(competencyId, levelId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
-            queryDomainMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Domain, bool>>>()), Times.Once);
+            queryDomainMock.Verify(method => method.FindWithin(It.IsAny<Expression<Func<Domain, bool>>>()), Times.Once);
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<List<DomainViewModel>>>());
             Assert.That((actionResult as OkNegotiatedContentResult<List<DomainViewModel>>).Content.Count(), Is.EqualTo(2));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<DomainViewModel>>).Content.First().CompetencyId, Is.EqualTo(1001));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<DomainViewModel>>).Content.First().LevelId, Is.EqualTo(2001));
             Assert.That((actionResult as OkNegotiatedContentResult<List<DomainViewModel>>).Content.First().DomainId, Is.EqualTo(1));
             Assert.That((actionResult as OkNegotiatedContentResult<List<DomainViewModel>>).Content.First().Name, Is.EqualTo("FrontEnd Desktop"));
         }

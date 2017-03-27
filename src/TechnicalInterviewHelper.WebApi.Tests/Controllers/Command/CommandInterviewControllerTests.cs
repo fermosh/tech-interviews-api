@@ -35,7 +35,7 @@
             // Arrange
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001
+                PositionId = 1001
             };
 
             var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
@@ -55,7 +55,7 @@
             // Arrange
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001,
+                PositionId = 1001,
                 Skills = new List<SkillInterviewInputModel>()
             };
 
@@ -76,7 +76,7 @@
             // Arrange
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001,
+                PositionId = 1001,
                 Skills = new List<SkillInterviewInputModel>(),
                 Questions = new List<QuestionInterviewInputModel>()
             };
@@ -109,7 +109,7 @@
 
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001,
+                PositionId = 1001,
                 Skills = skillInputModels,
                 Questions = new List<QuestionInterviewInputModel>(),
                 Exercises = new List<ExerciseInterviewInputModel>()
@@ -121,7 +121,7 @@
                 .Setup(method => method.Insert(It.IsAny<Interview>()))
                 .ReturnsAsync((Interview interview) =>
                 {
-                    interview.EntityId = newInterviewDocumentGUID;
+                    interview.Id = newInterviewDocumentGUID;
                     savedInterview = interview;
                     return interview;
                 });
@@ -141,13 +141,12 @@
 
             // -- Check that the data skills were  mapped correctly in the interview object.
             Assert.That(savedInterview, Is.Not.Null);
-            Assert.That(savedInterview.EntityId, Is.EqualTo(newInterviewDocumentGUID));
+            Assert.That(savedInterview.Id, Is.EqualTo(newInterviewDocumentGUID));
             Assert.That(savedInterview.Skills, Is.Not.Empty);
             Assert.That(savedInterview.Skills.First().SkillId, Is.EqualTo(skillInputModels.First().SkillId));
             Assert.That(savedInterview.Skills.First().Description, Is.EqualTo(skillInputModels.First().Description));
-            Assert.That(savedInterview.Skills.First().EntityId, Is.Null);
-            Assert.That(savedInterview.Skills.First().Topics, Is.Null);
-            Assert.That(savedInterview.Skills.First().Position, Is.Null);
+            Assert.That(savedInterview.Skills.First().Id, Is.Null);
+            Assert.That(savedInterview.Skills.First().Topics, Is.Null);            
         }
 
         [Test]
@@ -169,7 +168,7 @@
 
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001,
+                PositionId = 1001,
                 Skills = new List<SkillInterviewInputModel>(),
                 Questions = questionInputModels,
                 Exercises = new List<ExerciseInterviewInputModel>()
@@ -181,7 +180,7 @@
                 .Setup(method => method.Insert(It.IsAny<Interview>()))
                 .ReturnsAsync((Interview interview) =>
                 {
-                    interview.EntityId = newInterviewDocumentGUID;
+                    interview.Id = newInterviewDocumentGUID;
                     savedInterview = interview;
                     return interview;
                 });
@@ -201,9 +200,9 @@
 
             // -- Check that the data skills were  mapped correctly in the interview object.
             Assert.That(savedInterview, Is.Not.Null);
-            Assert.That(savedInterview.EntityId, Is.EqualTo(newInterviewDocumentGUID));
+            Assert.That(savedInterview.Id, Is.EqualTo(newInterviewDocumentGUID));
             Assert.That(savedInterview.Questions, Is.Not.Empty);
-            Assert.That(savedInterview.Questions.First().EntityId, Is.EqualTo(questionInputModels.First().QuestionId));
+            Assert.That(savedInterview.Questions.First().Id, Is.EqualTo(questionInputModels.First().QuestionId));
             Assert.That(savedInterview.Questions.First().Description, Is.EqualTo(questionInputModels.First().Description));
             Assert.That(savedInterview.Questions.First().CapturedAnswer, Is.EqualTo(questionInputModels.First().CapturedAnswer));
             Assert.That(savedInterview.Questions.First().CapturedRating, Is.EqualTo(questionInputModels.First().CapturedRating));
@@ -227,7 +226,7 @@
 
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001,
+                PositionId = 1001,
                 Skills = new List<SkillInterviewInputModel>(),
                 Questions = new List<QuestionInterviewInputModel>(),
                 Exercises = exerciseInputModels
@@ -239,7 +238,7 @@
                 .Setup(method => method.Insert(It.IsAny<Interview>()))
                 .ReturnsAsync((Interview interview) =>
                 {
-                    interview.EntityId = newInterviewDocumentGUID;
+                    interview.Id = newInterviewDocumentGUID;
                     savedInterview = interview;
                     return interview;
                 });
@@ -259,9 +258,9 @@
 
             // -- Check that the data skills were  mapped correctly in the interview object.
             Assert.That(savedInterview, Is.Not.Null);
-            Assert.That(savedInterview.EntityId, Is.EqualTo(newInterviewDocumentGUID));
+            Assert.That(savedInterview.Id, Is.EqualTo(newInterviewDocumentGUID));
             Assert.That(savedInterview.Exercises, Is.Not.Empty);
-            Assert.That(savedInterview.Exercises.First().EntityId, Is.EqualTo(exerciseInputModels.First().ExerciseId));
+            Assert.That(savedInterview.Exercises.First().Id, Is.EqualTo(exerciseInputModels.First().ExerciseId));
             Assert.That(savedInterview.Exercises.First().Title, Is.EqualTo(exerciseInputModels.First().Title));
             Assert.That(savedInterview.Exercises.First().Description, Is.EqualTo(exerciseInputModels.First().Description));
             Assert.That(savedInterview.Exercises.First().CapturedSolution, Is.EqualTo(exerciseInputModels.First().CapturedSolution));
@@ -277,7 +276,7 @@
             // Arrange
             InterviewInputModel interviewInputModel = new InterviewInputModel
             {
-                CompetencyId = 1001,
+                PositionId = 1001,
                 Skills = new List<SkillInterviewInputModel>(),
                 Questions = new List<QuestionInterviewInputModel>(),
                 Exercises = new List<ExerciseInterviewInputModel>()

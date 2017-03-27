@@ -20,20 +20,20 @@
             // Arrange
             int whateverCompetencyId = 1001;
 
-            var queryLevelMock = new Mock<IQueryRepository<Level, string>>();
+            var queryLevelCatalogMock = new Mock<ILevelQueryRepository>();  //new Mock<IQueryRepository<LevelCatalog, string>>();
 
-            queryLevelMock
-                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Level, bool>>>()))
+            queryLevelCatalogMock
+                .Setup(method => method.FindOnInternalCollection(It.IsAny<Expression<Func<Level, bool>>>()))
                 .ReturnsAsync(new List<Level>());
 
-            var controllerUnderTest = new QueryLevelController(queryLevelMock.Object);
+            var controllerUnderTest = new QueryLevelController(queryLevelCatalogMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAllLevelsOfCompetency(whateverCompetencyId).Result;
+            var actionResult = controllerUnderTest.GetAll(whateverCompetencyId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
-            queryLevelMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Level, bool>>>()), Times.Once);
+            queryLevelCatalogMock.Verify(method => method.FindOnInternalCollection(It.IsAny<Expression<Func<Level, bool>>>()), Times.Once);
             Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
         }
 
@@ -43,33 +43,44 @@
             // Arrange
             int validCompetencyId = 1001;
 
-            var levels = new List<Level>
+            var savedLevels = new List<Level>
             {
-                new Level { EntityId = "5FD42700-C9D8-46F8-97BB-7BB44B3312CA", CompetencyId = 1001, Name = "Level1" },
-                new Level { EntityId = "506534E2-4A7A-4CA0-A0AD-31475C2B5120", CompetencyId = 1001, Name = "Level2" },
-                new Level { EntityId = "A9B2C5C5-C7D0-403A-B1CB-61A4F077D10B", CompetencyId = 1001, Name = "Level3" },
-                new Level { EntityId = "76E7E37F-BECB-4BE0-8880-33AF18288AE7", CompetencyId = 1522, Name = "Level1" },
-                new Level { EntityId = "5F9478AC-9A1C-4A7D-BC22-67D762883DB9", CompetencyId = 1788, Name = "Level1" }
+                new Level { LevelId = 10, CompetencyId = 1001, Name = "Level1", Description = "" },
+                new Level { LevelId = 2,  CompetencyId = 1001, Name = "Level2", Description = "" },
+                new Level { LevelId = 22, CompetencyId = 1001, Name = "Level3", Description = "" },
+                new Level { LevelId = 25, CompetencyId = 1522, Name = "Level1", Description = "" },
+                new Level { LevelId = 89, CompetencyId = 1788, Name = "Level1", Description = "" }
             };
 
-            var queryLevelMock = new Mock<IQueryRepository<Level, string>>();
+            var savedLevelCatalog = new List<LevelCatalog>
+            {
+                new LevelCatalog
+                {
+                    Id = "8D4ED75F-1E40-4A43-918C-16753B0AA85C",
+                    Levels = savedLevels
+                }
+            };
 
-            queryLevelMock
-                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Level, bool>>>()))
-                .ReturnsAsync((Expression<Func<Level, bool>> predicate) => levels.Where(predicate.Compile()));
+            var queryLevelCatalogMock = new Mock<ILevelQueryRepository>();
 
-            var controllerUnderTest = new QueryLevelController(queryLevelMock.Object);
+            queryLevelCatalogMock
+                .Setup(method => method.FindOnInternalCollection(It.IsAny<Expression<Func<Level, bool>>>()))
+                .ReturnsAsync((Expression<Func<Level, bool>> predicate) => savedLevels.Where(predicate.Compile()));
+
+            var controllerUnderTest = new QueryLevelController(queryLevelCatalogMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAllLevelsOfCompetency(validCompetencyId).Result;
+            var actionResult = controllerUnderTest.GetAll(validCompetencyId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
-            queryLevelMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Level, bool>>>()), Times.Once);
+            queryLevelCatalogMock.Verify(method => method.FindOnInternalCollection(It.IsAny<Expression<Func<Level, bool>>>()), Times.Once);
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<List<LevelViewModel>>>());
             Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.Count(), Is.EqualTo(3));
-            Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.First().LevelId, Is.EqualTo(1));
-            Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.First().Name, Is.EqualTo("Level1"));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.First().LevelId, Is.EqualTo(savedLevels[0].LevelId));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.First().CompetencyId, Is.EqualTo(savedLevels[0].CompetencyId));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.First().Name, Is.EqualTo(savedLevels[0].Name));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<LevelViewModel>>).Content.First().Description, Is.EqualTo(savedLevels[0].Description));
         }
     }
 }

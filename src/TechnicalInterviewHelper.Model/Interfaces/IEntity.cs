@@ -12,6 +12,6 @@
         /// <value>
         /// The identifier.
         /// </value>
-        TKey EntityId { get; set; }
+        TKey Id { get; set; }
     }
 }
