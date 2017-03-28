@@ -1,0 +1,109 @@
+{
+    "id": "1AD14472-D9BD-47DF-8701-A9E1A057AD8E",
+    "competencies": [
+        {
+            "competencyId": 1,
+            "name": ".NET"
+        },
+        {
+            "competencyId": 76,
+            "name": "ADAM"
+        },
+        {
+            "competencyId": 64,
+            "name": "AEM"
+        },
+        {
+            "competencyId": 37,
+            "name": "Automated Testing"
+        },
+        {
+            "competencyId": 3,
+            "name": "Big Data"
+        },
+        {
+            "competencyId": 4,
+            "name": "Business Analysis"
+        },
+        {
+            "competencyId": 24,
+            "name": "Business Intelligence"
+        },
+        {
+            "competencyId": 58,
+            "name": "C\\C++"
+        },
+        {
+            "competencyId": 83,
+            "name": "Computer Graphic Art"
+        },
+        {
+            "competencyId": 5,
+            "name": "DB"
+        },
+        {
+            "competencyId": 30,
+            "name": "Delivery Management"
+        },
+        {
+            "competencyId": 8,
+            "name": "Design"
+        },
+        {
+            "competencyId": 32,
+            "name": "E-Commerce"
+        },
+        {
+            "competencyId": 9,
+            "name": "Front-end"
+        },
+        {
+            "competencyId": 6,
+            "name": "Functional Testing"
+        },
+        {
+            "competencyId": 7,
+            "name": "Java"
+        },
+        {
+            "competencyId": 2,
+            "name": "Mobile"
+        },
+        {
+            "competencyId": 35,
+            "name": "Performance Analysis"
+        },
+        {
+            "competencyId": 51,
+            "name": "PHP"
+        },
+        {
+            "competencyId": 74,
+            "name": "Salesforce"
+        },
+        {
+            "competencyId": 66,
+            "name": "SAP BI"
+        },
+        {
+            "competencyId": 61,
+            "name": "SAP Development"
+        },
+        {
+            "competencyId": 79,
+            "name": "SAP ERP"
+        },
+        {
+            "competencyId": 36,
+            "name": "Sharepoint"
+        },
+        {
+            "competencyId": 56,
+            "name": "Sitecore"
+        },
+        {
+            "competencyId": 70,
+            "name": "Solution Architecture"
+        }
+    ]
+}

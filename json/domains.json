@@ -1,0 +1,53 @@
+{
+    "id": "18C3A9BA-C72F-4D98-AEA0-52AED26EDF75",
+    "domains": [
+        {
+            "competencyId": 1,
+            "levelId": 1,
+            "domainId": 1,
+            "name": "Azure Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 2,
+            "domainId": 1,
+            "name": "Azure Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 3,
+            "domainId": 1,
+            "name": "Azure Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 4,
+            "domainId": 1,
+            "name": "Azure Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 5,
+            "domainId": 1,
+            "name": "Azure Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 1,
+            "domainId": 2,
+            "name": "Back-end Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 1,
+            "domainId": 3,
+            "name": "Front-end Desktop Development"
+        },
+        {
+            "competencyId": 1,
+            "levelId": 1,
+            "domainId": 4,
+            "name": "Front-end Web Development"
+        }
+    ]
+}

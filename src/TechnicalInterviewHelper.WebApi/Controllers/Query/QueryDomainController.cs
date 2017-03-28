@@ -9,7 +9,7 @@
     using System.Web.Http;
     using TechnicalInterviewHelper.Model;
 
-    [Route("domain")]
+    [RoutePrefix("api/domain")]
     public class QueryDomainController : ApiController
     {
         #region Repository
@@ -49,7 +49,7 @@
         /// <param name="levelId">The level identifier.</param>
         /// <returns>A list of domains that belong to certain competency and level.</returns>
         [HttpGet]
-        [ActionName("all")]
+        [Route("all")]
         public async Task<IHttpActionResult> GetAll(int competencyId, int levelId)
         {
             var domains = await this.queryDomain.FindWithin(item => item.CompetencyId == competencyId && item.LevelId == levelId);

@@ -1,0 +1,47 @@
+{
+    "id": "D092C9B7-AA25-4FC4-8747-881BFAB0DD66",
+    "levels": [
+        {
+            "levelId": 1,
+            "competencyId": 1,
+            "name": "L1",
+            "description": ""
+        },
+        {
+            "levelId": 2,
+            "competencyId": 1,
+            "name": "L2",
+            "description": ""
+        },
+        {
+            "levelId": 3,
+            "competencyId": 1,
+            "name": "L3",
+            "description": ""
+        },
+        {
+            "levelId": 4,
+            "competencyId": 1,
+            "name": "L4",
+            "description": ""
+        },
+        {
+            "levelId": 5,
+            "competencyId": 1,
+            "name": "L5",
+            "description": ""
+        },
+        {
+            "levelId": 6,
+            "competencyId": 76,
+            "name": "L1",
+            "description": ""
+        },
+        {
+            "levelId": 7,
+            "competencyId": 32,
+            "name": "L1",
+            "description": ""
+        }
+    ]
+}

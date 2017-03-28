@@ -9,7 +9,7 @@
     using System.Web.Http;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("level")]
+    [RoutePrefix("api/level")]
     public class QueryLevelController : ApiController
     {
         #region Repository
@@ -33,7 +33,7 @@
         #endregion Constructor
 
         [HttpGet]
-        [ActionName("all")]
+        [Route("all")]
         public async Task<IHttpActionResult> GetAll(int competencyId)
         {
             var levels = await this.queryLevelCatalogTwo.FindOnInternalCollection(level => level.CompetencyId == competencyId);

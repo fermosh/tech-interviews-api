@@ -9,7 +9,7 @@
     using System.Web.Http;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("query/competency")]
+    [RoutePrefix("api/competency")]
     public class QueryCompetencyController : ApiController
     {
         #region Repository
@@ -34,7 +34,7 @@
         #endregion Constructor
 
         [HttpGet]
-        [ActionName("all")]
+        [Route("all")]
         public async Task<IHttpActionResult> GetAll()
         {
             var competencyCatalogs = await this.queryCompetency.GetAll();
