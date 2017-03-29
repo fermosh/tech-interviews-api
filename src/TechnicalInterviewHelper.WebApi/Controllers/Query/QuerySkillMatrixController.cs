@@ -7,6 +7,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
 
     /// <summary>
@@ -14,6 +15,7 @@
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/skillmatrix")]
+    [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QuerySkillMatrixController : ApiController
     {
         #region Repositories
