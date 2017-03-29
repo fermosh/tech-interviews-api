@@ -43,22 +43,19 @@
                 return NotFound();
             }
 
-            // TODO: we have to merge all the docs for competency catalog in order to have only one of it.
-            var competencies = competencyCatalogs.First().Competencies;
-
-            if (competencies.Count() == 0)
-            {
-                return NotFound();
-            }
-
             var competenciesVM = new List<CompetencyViewModel>();
-            foreach (var competency in competencies)
+            foreach (var competencyCatalog in competencyCatalogs)
             {
-                competenciesVM.Add(new CompetencyViewModel
+                foreach(var competency in competencyCatalog.Competencies)
                 {
-                    CompetencyId = competency.CompentencyId,
-                    Name = competency.Name
-                });
+                    competenciesVM.Add(new CompetencyViewModel
+                    {
+                        Id = competency.Id,
+                        ParentId = competency.ParentId,
+                        Name = competency.Name,
+                        Code = competency.Code
+                    });
+                }
             }
 
             return Ok(competenciesVM);
