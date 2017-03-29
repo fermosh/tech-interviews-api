@@ -9,8 +9,26 @@
     /// <remarks>
     /// This view model is like the SkillMatrix model in the UI.
     /// </remarks>
-    public class PositionSkillViewModel
+    public class SkillMatrixViewModel
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance has content.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance has content; otherwise, <c>false</c>.
+        /// </value>
+        [JsonProperty("hasContent")]
+        public bool HasContent { get; set; }
+
+        /// <summary>
+        /// Gets or sets the competency identifier.
+        /// </summary>
+        /// <value>
+        /// The competency identifier.
+        /// </value>
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
+
         /// <summary>
         /// Gets or sets the skills of a particular position.
         /// </summary>

@@ -32,6 +32,7 @@
 
         #endregion Constructor
 
+        /*
         [HttpPost]
         [Route("save")]
         public async Task<IHttpActionResult> SaveInterview(InterviewInputModel interviewInputModel)
@@ -105,5 +106,6 @@
                 return InternalServerError(ex);
             }
         }
+        */
     }
 }

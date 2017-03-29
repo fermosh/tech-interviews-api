@@ -26,7 +26,7 @@
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryPositionSkillController"/> class.
+        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
         public CommandPositionSkillController()
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryPositionSkillController"/> class.
+        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
         /// <param name="skillRepository">The skill repository.</param>
         public CommandPositionSkillController(ICommandRepository<PositionSkill> commandRepository)

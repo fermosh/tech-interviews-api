@@ -1,0 +1,107 @@
+﻿namespace TechnicalInterviewHelper.WebApi.Controllers
+{
+    using Model;
+    using Services;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using TechnicalInterviewHelper.Model;
+
+    /// <summary>
+    /// API for Position-Skill operations.
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
+    [RoutePrefix("api/skillmatrix")]
+    public class QuerySkillMatrixController : ApiController
+    {
+        #region Repositories
+
+        /// <summary>
+        /// The query skill
+        /// </summary>
+        private readonly ISkillMatrixQueryRepository queryPositionSkill;
+
+        #endregion Repositories
+
+        #region Constructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
+        /// </summary>
+        public QuerySkillMatrixController()
+        {
+            this.queryPositionSkill = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
+        /// </summary>
+        /// <param name="queryPositionSkill">The query skill.</param>
+        public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
+        {
+            this.queryPositionSkill = queryPositionSkill;
+        }
+
+        #endregion Constructor
+
+        /// <summary>
+        /// Gets the specified position to find.
+        /// </summary>
+        /// <param name="positionToFind">The position to find.</param>
+        /// <returns>An HttpResult with either an error or success code with the list of skills.</returns>
+        [HttpGet]
+        [Route("all")]
+        public async Task<IHttpActionResult> GetAll(int competencyId, int jobFunctionLevel)
+        {
+            // Try to locate all skills that belong to the selected competency and level Id.
+            var skills = await this.queryPositionSkill.FindWithin(competencyId, skill => skill.JobFunctionLevel == jobFunctionLevel);
+
+            // We have found documents that match the input criteria, so we proceed to include them in the response.
+            var skillsVM = new List<SkillForPositionViewModel>();
+
+            foreach (var skill in skills)
+            {
+                // Map all the topics that the skill could have.
+                var topics = new List<TopicViewModel>();
+                foreach (var topic in skill.Topics)
+                {
+                    topics.Add(new TopicViewModel
+                    {
+                        Name = topic.Name,
+                        IsRequired = topic.IsRequired
+                    });
+                }
+
+                // Create the view model of the skill.
+                var skillVM = new SkillForPositionViewModel
+                {
+                    RootId = skill.RootId,
+                    DisplayOrder = skill.DisplayOrder,
+                    RequiredSkillLevel = skill.RequiredSkillLevel,
+                    UserSkillLevel = skill.UserSkillLevel,
+                    LevelsSet = skill.LevelsSet,
+                    CompetencyId = skill.CompetencyId,
+                    JobFunctionLevel = skill.JobFunctionLevel,
+                    Topics = topics,
+                    Id = skill.Id,
+                    ParentId = skill.ParentId,
+                    Name = skill.Name,
+                    IsSelectable = skill.IsSelectable
+                };
+
+                skillsVM.Add(skillVM);
+            }
+
+            var positionSkillVM = new SkillMatrixViewModel()
+            {
+                HasContent = skillsVM.Count() > 0,
+                CompetencyId = competencyId,
+                Skills = skillsVM
+            };
+
+            return Ok(positionSkillVM);
+        }
+    }
+}

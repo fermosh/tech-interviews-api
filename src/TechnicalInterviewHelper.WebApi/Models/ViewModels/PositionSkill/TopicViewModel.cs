@@ -1,11 +1,11 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Topic entity.
+    /// View model for a topic.
     /// </summary>
-    public class Topic
+    public class TopicViewModel
     {
         /// <summary>
         /// Gets or sets the name.

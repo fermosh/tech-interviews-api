@@ -51,8 +51,6 @@
             };
             TestSkill = new Skill()
             {
-                Id = TestSkillId.ToString(),
-                Description = TestDomainName,               
                 Topics = new List<Topic>()
             };
         }

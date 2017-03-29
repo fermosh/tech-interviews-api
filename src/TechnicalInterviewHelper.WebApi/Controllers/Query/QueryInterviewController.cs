@@ -54,6 +54,7 @@
 
         #endregion Constructor
 
+        /*
         public async Task<IHttpActionResult> Get(string positionSkillId)
         {
             if (string.IsNullOrEmpty(positionSkillId?.Trim()))
@@ -96,5 +97,6 @@
 
             return Ok(interviewViewModelToReturn);
         }
+        */
     }
 }

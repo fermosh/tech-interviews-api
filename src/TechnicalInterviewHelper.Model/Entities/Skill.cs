@@ -6,43 +6,71 @@
     /// <summary>
     /// Skill entity.
     /// </summary>
-    public class Skill : BaseEntity
+    public class Skill
     {
         /// <summary>
-        /// Gets or sets the skill identifier supplied by a third party.
+        /// Gets or sets the root identifier.
         /// </summary>
         /// <value>
-        /// The skill identifier.
+        /// The root identifier.
         /// </value>
-        [JsonProperty("skillId")]
-        public int SkillId { get; set; }
+        [JsonProperty("rootId")]
+        public int? RootId { get; set; }
 
         /// <summary>
-        /// Gets or sets the parent skill identifier.
+        /// Gets or sets the display order.
         /// </summary>
         /// <value>
-        /// The parent skill identifier.
+        /// The display order.
         /// </value>
-        [JsonProperty("parentSkillId")]
-        public int ParentSkillId { get; set; }
+        [JsonProperty("displayOrder")]
+        public int DisplayOrder { get; set; }
 
         /// <summary>
-        /// Gets or sets the position identifier.
+        /// Gets or sets the required skill level.
         /// </summary>
         /// <value>
-        /// The position identifier.
+        /// The required skill level.
         /// </value>
-        [JsonProperty("positionId")]
-        public int PositionId { get; set; }
+        [JsonProperty("requiredSkillLevel")]
+        public int RequiredSkillLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the user skill level.
         /// </summary>
         /// <value>
-        /// The name.
+        /// The user skill level.
         /// </value>
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("userSkillLevel")]
+        public int UserSkillLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the levels set.
+        /// Note that this property has a typo since our data source has it too.
+        /// </summary>
+        /// <value>
+        /// The levels set.
+        /// </value>
+        [JsonProperty("levelsSet")]
+        public int LevelsSet { get; set; }
+
+        /// <summary>
+        /// Gets or sets the competency identifier.
+        /// </summary>
+        /// <value>
+        /// The competency identifier.
+        /// </value>
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the job function level.
+        /// </summary>
+        /// <value>
+        /// The job function level.
+        /// </value>
+        [JsonProperty("jobFunctionLevel")]
+        public int JobFunctionLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the topics.
@@ -52,5 +80,41 @@
         /// </value>
         [JsonProperty("topics")]
         public IList<Topic> Topics { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the parent identifier.
+        /// </summary>
+        /// <value>
+        /// The parent identifier.
+        /// </value>
+        [JsonProperty("parentId")]
+        public int? ParentId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is selectable.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is selectable; otherwise, <c>false</c>.
+        /// </value>
+        [JsonProperty("isSelectable")]
+        public bool IsSelectable { get; set; }
     }
 }

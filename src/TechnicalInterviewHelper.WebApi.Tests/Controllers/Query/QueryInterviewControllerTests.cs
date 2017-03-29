@@ -15,6 +15,7 @@
     [TestFixture]
     public class QueryInterviewControllerTests
     {
+        /*
         [TestCase(null)]
         [TestCase("")]
         [TestCase("    ")]
@@ -125,5 +126,6 @@
             // -- Exercises --
             Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Exercises, Is.Null);
         }
+        */
     }
 }
