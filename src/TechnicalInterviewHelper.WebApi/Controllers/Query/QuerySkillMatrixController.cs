@@ -56,7 +56,8 @@
         public async Task<IHttpActionResult> GetAll(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
-            var skills = await this.queryPositionSkill.FindWithin(competencyId, skill => skill.JobFunctionLevel == jobFunctionLevel);
+            var skills = await this.queryPositionSkill.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
+                                                                                         skill.JobFunctionLevel == jobFunctionLevel);
 
             // We have found documents that match the input criteria, so we proceed to include them in the response.
             var skillsVM = new List<SkillForPositionViewModel>();
