@@ -1,11 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers.Query
-{    
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Http.Results;    
+{
     using Model;
     using Moq;
     using NUnit.Framework;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Http.Results;
     using TechnicalInterviewHelper.Model;
     using WebApi.Controllers;
 
@@ -49,11 +49,11 @@
                     Id = "3FB6E6CC-4505-45AF-BC5F-73F45E33CC76",
                     Competencies = new List<Competency>
                     {
-                        new Competency { CompentencyId = 1,  Name = "NET Architect" },
-                        new Competency { CompentencyId = 10, Name = "NET Developer" },
-                        new Competency { CompentencyId = 78, Name = "Azure Architect" },
-                        new Competency { CompentencyId = 98, Name = "DevOp Agent" },
-                        new Competency { CompentencyId = 25, Name = "Account Manager Staff" }
+                        new Competency { Id = 71, ParentId = 70,   Code = "SArchitect",  Name = "Solution Architect",    JobFunctions = new List<int>(),      IsSelectable = true },
+                        new Competency { Id = 70, ParentId = null, Code = "SA",          Name = "Solution Architecture", JobFunctions = new List<int>(),      IsSelectable = false },
+                        new Competency { Id = 82, ParentId = 79,   Code = "SAPHRCons",   Name = "SAP HR Consultant",     JobFunctions = new List<int>(),      IsSelectable = true },
+                        new Competency { Id = 69, ParentId = 66,   Code = "SAP-BI-HANA", Name = "SAP HANA Consultant",   JobFunctions = new List<int>(),      IsSelectable = true },
+                        new Competency { Id = 1,  ParentId = null, Code = "DotNET",      Name = ".NET",                  JobFunctions = new List<int> { 15 }, IsSelectable = false }
                     }
                 }
             };
@@ -74,8 +74,10 @@
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<List<CompetencyViewModel>>>());
             queryCompetencyCatalogMock.Verify(method => method.GetAll(), Times.Once);
             Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.Count(), Is.EqualTo(5));
-            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.First().CompetencyId, Is.EqualTo(competencies[0].Competencies.First().CompentencyId));
-            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.First().Name, Is.EqualTo(competencies[0].Competencies.First().Name));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.Last().Id, Is.EqualTo(competencies[0].Competencies.Last().Id));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.Last().ParentId, Is.EqualTo(competencies[0].Competencies.Last().ParentId));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.Last().Code, Is.EqualTo(competencies[0].Competencies.Last().Code));
+            Assert.That((actionResult as OkNegotiatedContentResult<List<CompetencyViewModel>>).Content.Last().Name, Is.EqualTo(competencies[0].Competencies.Last().Name));
         }
     }
 }
