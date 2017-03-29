@@ -169,7 +169,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Command\CommandInterviewController.cs" />
     <Compile Include="Controllers\Command\CommandPositionSkillController.cs" />
-    <Compile Include="Controllers\Query\LoginController.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyController.cs" />
     <Compile Include="Controllers\Query\QueryDomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
