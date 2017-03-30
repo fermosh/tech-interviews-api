@@ -15,15 +15,16 @@
     [TestFixture]
     public class QueryInterviewControllerTests
     {
-        /*
         [TestCase(null)]
         [TestCase("")]
         [TestCase("    ")]
+        [Ignore("This test needs some work. lpool 03/29/2017")]
         public void WhenInputPositionSkillIdIsNullOrEmpty_ReturnsBadRequestStatusCode(string positionSkillId)
         {
+            /*
             // Arrange
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
-            var queryPositionSkillMock = new Mock<IQueryRepository<PositionSkill, string>>();
+            var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
 
             var controllerUnderTest = new QueryInterviewController(querySkillMock.Object,
                                                                    queryPositionSkillMock.Object);
@@ -37,20 +38,23 @@
             Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Cannot get an interview without an identifier of filtered skills for a position."));
             queryPositionSkillMock.Verify(method => method.FindById(It.IsAny<string>()), Times.Never);
             querySkillMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()), Times.Never);
+            */
         }
 
         [Test]
+        [Ignore("This test needs some work. lpool 03/29/2017")]
         public void WhenPositionSkillDoesNotExist_ReturnsNotFoundStatusCode()
         {
+            /*
             // Arrange
             var inputPositionSkillId = "7168AB98-5197-406A-A5DB-A5FF9548B32E";
 
             var querySkillMock = new Mock<IQueryRepository<Skill, string>>();
-            var queryPositionSkillMock = new Mock<IQueryRepository<PositionSkill, string>>();
+            var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
 
             queryPositionSkillMock
                 .Setup(method => method.FindById(It.IsAny<string>()))
-                .Returns(Task.FromResult<PositionSkill>(null));
+                .Returns(Task.FromResult<TemplateCatalog>(null));
 
             var controllerUnderTest = new QueryInterviewController(querySkillMock.Object,
                                                                    queryPositionSkillMock.Object);
@@ -63,11 +67,14 @@
             Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
             queryPositionSkillMock.Verify(method => method.FindById(It.IsAny<string>()), Times.Once);
             querySkillMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()), Times.Never);
+            */
         }
 
         [Test]
+        [Ignore("This test needs some work. lpool 03/29/2017")]
         public void WhenPositionSkillIsValid_ReturnsOneInterviewViewModelWithAllItsFieldsFilledOut()
         {
+            /*
             // Arrange
             var positionToTest = new Position
             {
@@ -78,7 +85,7 @@
 
             var positionSkillIdToTest = "7168AB98-5197-406A-A5DB-A5FF9548B32E";
 
-            var savedPositionSkill = new PositionSkill
+            var savedPositionSkill = new TemplateCatalog
             {
                 Id = positionSkillIdToTest,
                 Position = new Position
@@ -87,7 +94,7 @@
                     LevelId = 10,
                     DomainId = 5
                 },
-                SkillIdentifiers = new int[] { 1610, 56, 1779, 1899 }
+                Skills = new int[] { 1610, 56, 1779, 1899 }
             };
 
             var savedSkills = new List<Skill>
@@ -102,7 +109,7 @@
             querySkillMock
                 .Setup(method => method.FindBy(It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((Expression<Func<Skill, bool>> predicate) => savedSkills.Where(predicate.Compile()));
-            var queryPositionSkillMock = new Mock<IQueryRepository<PositionSkill, string>>();
+            var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
 
             queryPositionSkillMock
                 .Setup(method => method.FindById(positionSkillIdToTest))
@@ -125,7 +132,7 @@
             Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Questions, Is.Null);
             // -- Exercises --
             Assert.That((actionResult as OkNegotiatedContentResult<InterviewViewModel>).Content.Exercises, Is.Null);
+            */
         }
-        */
     }
 }

@@ -17,7 +17,7 @@
         /// <summary>
         /// The query position skill
         /// </summary>
-        private readonly IQueryRepository<PositionSkill, string> queryPositionSkill;
+        private readonly IQueryRepository<TemplateCatalog, string> queryPositionSkill;
 
         /// <summary>
         /// The query skill
@@ -35,7 +35,7 @@
         public QueryInterviewController()
         {
             this.querySkill = new DocumentDbQueryRepository<Skill, string>(ConfigurationManager.AppSettings["SkillCollectionId"]);
-            this.queryPositionSkill = new DocumentDbQueryRepository<PositionSkill, string>(ConfigurationManager.AppSettings["PositionSkillCollectionId"]);
+            this.queryPositionSkill = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@
         /// <param name="queryPositionSkill">The query position skill.</param>
         public QueryInterviewController(
             IQueryRepository<Skill, string> querySkill,
-            IQueryRepository<PositionSkill, string> queryPositionSkill)
+            IQueryRepository<TemplateCatalog, string> queryPositionSkill)
         {
             this.querySkill = querySkill;
             this.queryPositionSkill = queryPositionSkill;
@@ -54,9 +54,11 @@
 
         #endregion Constructor
 
-        /*
         public async Task<IHttpActionResult> Get(string positionSkillId)
         {
+            return await Task.FromResult(Ok());
+
+            /*
             if (string.IsNullOrEmpty(positionSkillId?.Trim()))
             {
                 return BadRequest("Cannot get an interview without an identifier of filtered skills for a position.");
@@ -71,7 +73,7 @@
             // Set the different predicates to filter respective DataSet through SkillId field.
             var predicateToGetSkills = PredicateBuilder.New<Skill>(false);
 
-            foreach (var filteredSkillId in positionSkill.SkillIdentifiers)
+            foreach (var filteredSkillId in positionSkill.Skills)
             {
                 predicateToGetSkills = predicateToGetSkills.Or(skill => skill.SkillId == filteredSkillId);
             }
@@ -96,7 +98,7 @@
             };
 
             return Ok(interviewViewModelToReturn);
+            */
         }
-        */
     }
 }

@@ -174,12 +174,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Command\CommandInterviewController.cs" />
-    <Compile Include="Controllers\Command\CommandPositionSkillController.cs" />
+    <Compile Include="Controllers\Command\CommandTemplateController.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyController.cs" />
-    <Compile Include="Controllers\Query\QueryDomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Query\QueryExerciseController.cs" />
-    <Compile Include="Controllers\Query\QueryLevelController.cs" />
     <Compile Include="Controllers\Query\QueryInterviewController.cs" />
     <Compile Include="Controllers\Query\QuerySkillMatrixController.cs" />
     <Compile Include="Controllers\Query\QueryQuestionController.cs" />
@@ -191,7 +189,7 @@
     <Compile Include="Models\Input\Interview\QuestionInterviewInputModel.cs" />
     <Compile Include="Models\Input\Interview\SkillInterviewInputModel.cs" />
     <Compile Include="Models\Input\Common\PositionInputModel.cs" />
-    <Compile Include="Models\Input\PositionSkill\PositionSkillInputModel.cs" />
+    <Compile Include="Models\Input\Template\TemplateInputModel.cs" />
     <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
     <Compile Include="Models\ViewModels\CompetencyViewModel.cs" />
     <Compile Include="Models\ViewModels\DomainViewModel.cs" />

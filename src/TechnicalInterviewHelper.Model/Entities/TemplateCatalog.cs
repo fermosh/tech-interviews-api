@@ -7,25 +7,25 @@
     /// The way a bunch of filtered skill are saved for a queried position.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class PositionSkill : BaseEntity
+    public class TemplateCatalog : BaseEntity
     {
         /// <summary>
-        /// Gets or sets the position.
+        /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
-        /// The position.
+        /// The competency identifier.
         /// </value>
-        //// TODO: is this still needed?.
-        public Position Position { get; set; }
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
 
         /// <summary>
-        /// Gets or sets the position identifier.
+        /// Gets or sets the job function level.
         /// </summary>
         /// <value>
-        /// The position identifier.
+        /// The job function level.
         /// </value>
-        [JsonProperty("positionId")]
-        public int PositionId { get; set; }
+        [JsonProperty("jobFunctionLevel")]
+        public int JobFunctionLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifiers.
@@ -33,7 +33,7 @@
         /// <value>
         /// The skill identifiers.
         /// </value>
-        [JsonProperty("skillIdentifiers")]
-        public IList<int> SkillIdentifiers { get; set; }
+        [JsonProperty("skills")]
+        public IEnumerable<int> Skills { get; set; }
     }
 }

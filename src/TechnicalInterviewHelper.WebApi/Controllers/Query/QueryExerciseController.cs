@@ -22,7 +22,7 @@
         /// <summary>
         /// The query position skill
         /// </summary>
-        private readonly IQueryRepository<PositionSkill, string> queryPositionSkill;
+        private readonly IQueryRepository<TemplateCatalog, string> queryPositionSkill;
 
         #endregion Repositories
 
@@ -36,7 +36,7 @@
             var exerciseCollection = ConfigurationManager.AppSettings["ExerciseCollectionId"];
             this.queryExercise = new DocumentDbQueryRepository<Exercise, string>(exerciseCollection);
             var positionSkillCollection = ConfigurationManager.AppSettings["PositionSkillCollectionId"];
-            this.queryPositionSkill = new DocumentDbQueryRepository<PositionSkill, string>(positionSkillCollection);
+            this.queryPositionSkill = new DocumentDbQueryRepository<TemplateCatalog, string>(positionSkillCollection);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@
         /// <param name="queryPositionSkill">The query position skill.</param>
         public QueryExerciseController(
             IQueryRepository<Exercise, string> queryExercise,
-            IQueryRepository<PositionSkill, string> queryPositionSkill)
+            IQueryRepository<TemplateCatalog, string> queryPositionSkill)
         {
             this.queryExercise = queryExercise;
             this.queryPositionSkill = queryPositionSkill;
@@ -58,6 +58,9 @@
         [ActionName("All")]
         public async Task<IHttpActionResult> GetAll(string templateId)
         {
+            return await Task.FromResult(Ok());
+
+            /*
             if (string.IsNullOrEmpty(templateId?.Trim()))
             {
                 return BadRequest("Cannot get exercises without a valid identifier");
@@ -69,9 +72,9 @@
                 return NotFound();
             }
 
-            if (positionSkill.SkillIdentifiers == null
+            if (positionSkill.Skills == null
                 ||
-                positionSkill.SkillIdentifiers.Count == 0)
+                positionSkill.Skills.Count == 0)
             {
                 return BadRequest("There are no existing skill identifiers associated with the template '{templateId}'");
             }
@@ -79,7 +82,7 @@
             // Set the predicate to filter respective DataSet through SkillId field.
             var predicateToGetExercises = PredicateBuilder.New<Exercise>(false);
 
-            foreach (var filteredSkillId in positionSkill.SkillIdentifiers)
+            foreach (var filteredSkillId in positionSkill.Skills)
             {
                 predicateToGetExercises = predicateToGetExercises.Or(exercise => exercise.SkillId == filteredSkillId);
             }
@@ -100,6 +103,7 @@
             }
 
             return Ok(exercisesVM);
+            */
         }
     }
 }

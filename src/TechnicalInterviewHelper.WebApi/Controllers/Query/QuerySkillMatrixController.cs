@@ -23,7 +23,7 @@
         /// <summary>
         /// The query skill
         /// </summary>
-        private readonly ISkillMatrixQueryRepository queryPositionSkill;
+        private readonly ISkillMatrixQueryRepository querySkillMatrix;
 
         #endregion Repositories
 
@@ -34,7 +34,7 @@
         /// </summary>
         public QuerySkillMatrixController()
         {
-            this.queryPositionSkill = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
+            this.querySkillMatrix = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@
         /// <param name="queryPositionSkill">The query skill.</param>
         public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
         {
-            this.queryPositionSkill = queryPositionSkill;
+            this.querySkillMatrix = queryPositionSkill;
         }
 
         #endregion Constructor
@@ -58,7 +58,7 @@
         public async Task<IHttpActionResult> GetAll(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
-            var skills = await this.queryPositionSkill.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
+            var skills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
                                                                                          skill.JobFunctionLevel == jobFunctionLevel);
 
             // We have found documents that match the input criteria, so we proceed to include them in the response.
