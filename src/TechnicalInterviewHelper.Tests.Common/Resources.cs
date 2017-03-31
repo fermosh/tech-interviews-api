@@ -14,10 +14,8 @@
         public static readonly Competency TestCompetency;
         public static readonly int TestDomainId;
         public static readonly string TestDomainName;
-        public static readonly Domain TestDomain;
         public static readonly int TestLevelId;
         public static readonly string TestLevelName;
-        public static readonly Level TestLevel;
         public static readonly int TestSkillId;
         public static readonly Skill TestSkill;
 
@@ -36,18 +34,6 @@
             {
                 //Id = TestCompetencyId.ToString(),
                 Name = TestCompetencyName
-            };
-            TestLevel = new Level()
-            {
-                Name = TestLevelName,
-                CompetencyId = TestCompetencyId,
-                Description = string.Empty
-            };
-            TestDomain = new Domain()
-            {
-                Name = TestDomainName,
-                CompetencyId = TestCompetencyId,
-                LevelId = TestLevelId
             };
             TestSkill = new Skill()
             {

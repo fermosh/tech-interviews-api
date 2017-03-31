@@ -5,11 +5,14 @@
     using Services;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
 
-    [Route("query/exercise")]
+    [RoutePrefix("api/exercise")]
+    [EnableCors(origins: "*", headers: "*", methods: "get")]
     public class QueryExerciseController : ApiController
     {
         #region Repositories
@@ -22,7 +25,7 @@
         /// <summary>
         /// The query position skill
         /// </summary>
-        private readonly IQueryRepository<TemplateCatalog, string> queryPositionSkill;
+        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
         #endregion Repositories
 
@@ -33,10 +36,8 @@
         /// </summary>
         public QueryExerciseController()
         {
-            var exerciseCollection = ConfigurationManager.AppSettings["ExerciseCollectionId"];
-            this.queryExercise = new DocumentDbQueryRepository<Exercise, string>(exerciseCollection);
-            var positionSkillCollection = ConfigurationManager.AppSettings["PositionSkillCollectionId"];
-            this.queryPositionSkill = new DocumentDbQueryRepository<TemplateCatalog, string>(positionSkillCollection);
+            this.queryExercise = new DocumentDbQueryRepository<Exercise, string>(ConfigurationManager.AppSettings["ExerciseCollectionId"]);
+            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
@@ -49,24 +50,25 @@
             IQueryRepository<TemplateCatalog, string> queryPositionSkill)
         {
             this.queryExercise = queryExercise;
-            this.queryPositionSkill = queryPositionSkill;
+            this.queryTemplateCatalog = queryPositionSkill;
         }
 
         #endregion Constructor
 
         [HttpGet]
-        [ActionName("All")]
+        [Route("all/{templateId:int}")]
         public async Task<IHttpActionResult> GetAll(string templateId)
         {
-            return await Task.FromResult(Ok());
+            // --------------------------------------------------------------------------------
+            // Let's run some validations over the input data and the saved template as well.
+            // --------------------------------------------------------------------------------
 
-            /*
             if (string.IsNullOrEmpty(templateId?.Trim()))
             {
-                return BadRequest("Cannot get exercises without a valid identifier");
+                return BadRequest("Cannot get exercises without a valid template identifier.");
             }
 
-            var positionSkill = await this.queryPositionSkill.FindById(templateId);
+            var positionSkill = await this.queryTemplateCatalog.FindById(templateId);
             if (positionSkill == null)
             {
                 return NotFound();
@@ -74,23 +76,30 @@
 
             if (positionSkill.Skills == null
                 ||
-                positionSkill.Skills.Count == 0)
+                positionSkill.Skills.Count() == 0)
             {
-                return BadRequest("There are no existing skill identifiers associated with the template '{templateId}'");
+                return BadRequest($"The template '{templateId}' doesn't have associated skills.");
             }
 
-            // Set the predicate to filter respective DataSet through SkillId field.
-            var predicateToGetExercises = PredicateBuilder.New<Exercise>(false);
+            // -------------------------------------------------------------------------------
+            // Try to get all filteres skill information using its id, competency and level.
+            // -------------------------------------------------------------------------------
 
-            foreach (var filteredSkillId in positionSkill.Skills)
+            var filterToGetSkills = PredicateBuilder.New<Exercise>(false);
+
+            foreach (var skillId in positionSkill.Skills)
             {
-                predicateToGetExercises = predicateToGetExercises.Or(exercise => exercise.SkillId == filteredSkillId);
+                filterToGetSkills = filterToGetSkills.Or(exercise => exercise.SkillId == skillId);
             }
 
-            var exercises = await this.queryExercise.FindBy(predicateToGetExercises);
+            var exercises = await this.queryExercise.FindBy(filterToGetSkills);
 
-            // Proceed to create the ViewModels as part of our response.
+            // --------------------------------------
+            // Now it's time to build the response.
+            // --------------------------------------
+
             var exercisesVM = new List<ExerciseViewModel>();
+
             foreach (var exercise in exercises)
             {
                 exercisesVM.Add(new ExerciseViewModel
@@ -103,7 +112,6 @@
             }
 
             return Ok(exercisesVM);
-            */
         }
     }
 }

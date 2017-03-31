@@ -24,23 +24,5 @@
         /// </value>
         [JsonProperty("description")]
         public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or sets the captured answer.
-        /// </summary>
-        /// <value>
-        /// The captured answer.
-        /// </value>
-        [JsonProperty("capturedAnswer")]
-        public string CapturedAnswer { get; set; }
-
-        /// <summary>
-        /// Gets or sets the rating.
-        /// </summary>
-        /// <value>
-        /// The rating.
-        /// </value>
-        [JsonProperty("capturedRating")]
-        public int CapturedRating { get; set; }
     }
 }

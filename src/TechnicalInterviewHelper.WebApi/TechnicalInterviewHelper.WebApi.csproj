@@ -181,6 +181,7 @@
     <Compile Include="Controllers\Query\QueryInterviewController.cs" />
     <Compile Include="Controllers\Query\QuerySkillMatrixController.cs" />
     <Compile Include="Controllers\Query\QueryQuestionController.cs" />
+    <Compile Include="Controllers\Query\QueryTemplateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,15 +193,15 @@
     <Compile Include="Models\Input\Template\TemplateInputModel.cs" />
     <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
     <Compile Include="Models\ViewModels\CompetencyViewModel.cs" />
-    <Compile Include="Models\ViewModels\DomainViewModel.cs" />
     <Compile Include="Models\ViewModels\Interview\InterviewViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
     <Compile Include="Models\ViewModels\Interview\SkillInterviewViewModel.cs" />
-    <Compile Include="Models\ViewModels\LevelViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\SkillMatrixViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\PositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\SkillForPositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\TopicViewModel.cs" />
+    <Compile Include="Models\ViewModels\Template\SkillTemplateViewModel.cs" />
+    <Compile Include="Models\ViewModels\Template\TemplateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

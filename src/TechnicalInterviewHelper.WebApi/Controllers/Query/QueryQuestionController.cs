@@ -5,11 +5,14 @@
     using Services;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
 
-    [Route("query/question")]
+    [RoutePrefix("api/question")]
+    [EnableCors(origins: "*", headers: "*", methods: "get")]
     public class QueryQuestionController : ApiController
     {
         #region Repositories
@@ -22,7 +25,7 @@
         /// <summary>
         /// The query position skill
         /// </summary>
-        private readonly IQueryRepository<TemplateCatalog, string> queryPositionSkill;
+        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
         #endregion Repositories
 
@@ -33,11 +36,8 @@
         /// </summary>
         public QueryQuestionController()
         {
-            var questionCollectionId = ConfigurationManager.AppSettings["QuestionCollectionId"];
-            this.queryQuestion = new DocumentDbQueryRepository<Question, string>(questionCollectionId);
-
-            var positionSkillCollectionId = ConfigurationManager.AppSettings["PositionSkillCollectionId"];
-            this.queryPositionSkill = new DocumentDbQueryRepository<TemplateCatalog, string>(positionSkillCollectionId);
+            this.queryQuestion = new DocumentDbQueryRepository<Question, string>(ConfigurationManager.AppSettings["QuestionCollectionId"]);
+            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["PositionSkillCollectionId"]);
         }
 
         /// <summary>
@@ -50,47 +50,56 @@
             IQueryRepository<TemplateCatalog, string> queryPositionSkill)
         {
             this.queryQuestion = queryQuestion;
-            this.queryPositionSkill = queryPositionSkill;
+            this.queryTemplateCatalog = queryPositionSkill;
         }
 
         #endregion Constructor
 
         [HttpGet]
-        [ActionName("all")]
+        [Route("all/{templateId:string}")]
         public async Task<IHttpActionResult> GetAll(string templateId)
         {
-            return await Task.FromResult(Ok());
+            // --------------------------------------------------------------------------------
+            // Let's run some validations over the input data and the saved template as well.
+            // --------------------------------------------------------------------------------
 
-            /*
             if (string.IsNullOrEmpty(templateId?.Trim()))
             {
-                return BadRequest("Cannot get questions without a valid identifier");
+                return BadRequest("Cannot get questions without a valid template identifier.");
             }
 
-            var positionSkill = await this.queryPositionSkill.FindById(templateId);
-            if (positionSkill == null)
+            var templateCatalog = await this.queryTemplateCatalog.FindById(templateId);
+            if (templateCatalog == null)
             {
                 return NotFound();
             }
 
-            if (positionSkill.Skills == null
+            if (templateCatalog.Skills == null
                 ||
-                positionSkill.Skills.Count == 0)
+                templateCatalog.Skills.Count() == 0)
             {
-                return BadRequest("There are no existing skill identifiers associated with the template '{templateId}'");
+                return BadRequest($"The template '{templateId}' doesn't have associated skills.");
             }
 
-            // Set the predicate to filter the dataset through SkillId field.
-            var predicateToGetQuestions = PredicateBuilder.New<Question>(false);
-            foreach (var filteredSkillId in positionSkill.Skills)
+            // -------------------------------------------------------------------------------
+            // Try to get all filteres skill information using its id, competency and level.
+            // -------------------------------------------------------------------------------
+
+            var filterToGetSkills = PredicateBuilder.New<Question>(false);
+
+            foreach (var skillId in templateCatalog.Skills)
             {
-                predicateToGetQuestions = predicateToGetQuestions.Or(question => question.SkillId == filteredSkillId);
+                filterToGetSkills = filterToGetSkills.Or(question => question.SkillId == skillId);
             }
 
-            var questions = await this.queryQuestion.FindBy(predicateToGetQuestions);
+            var questions = await this.queryQuestion.FindBy(filterToGetSkills);
 
-            // Proceed to create the ViewModels as part of our response.
+            // --------------------------------------
+            // Now it's time to build the response.
+            // --------------------------------------
+
             var questionsVM = new List<QuestionViewModel>();
+
             foreach (var question in questions)
             {
                 questionsVM.Add(new QuestionViewModel
@@ -101,7 +110,6 @@
             }
 
             return Ok(questionsVM);
-            */
         }
     }
 }

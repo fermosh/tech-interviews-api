@@ -1,5 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
+    using Newtonsoft.Json;
+
     /// <summary>
     /// A view model of a question.
     /// </summary>
@@ -11,6 +13,7 @@
         /// <value>
         /// The question identifier.
         /// </value>
+        [JsonProperty("questionId")]
         public string QuestionId { get; set; }
 
         /// <summary>
@@ -19,6 +22,7 @@
         /// <value>
         /// The description.
         /// </value>
+        [JsonProperty("description")]
         public string Description { get; set; }
     }
 }

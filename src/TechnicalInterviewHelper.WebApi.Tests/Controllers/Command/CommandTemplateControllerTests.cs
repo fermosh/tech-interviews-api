@@ -48,7 +48,7 @@
             // Asserts
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<BadRequestErrorMessageResult>());
-            Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Request doesn't have skills, add some ones in order to save the template."));
+            Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Input template doesn't have skills, add some ones in order to save it."));
         }
 
         [Test]
@@ -71,7 +71,7 @@
             // Asserts
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<BadRequestErrorMessageResult>());
-            Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Request doesn't have skills, add some ones in order to save the template."));
+            Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Input template doesn't have skills, add some ones in order to save it."));
         }
 
         [Test]

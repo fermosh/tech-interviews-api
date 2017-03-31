@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
 
     /// <summary>
@@ -13,6 +14,7 @@
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/template")]
+    [EnableCors(origins: "*", headers: "*", methods: "post")]
     public class CommandTemplateController : ApiController
     {
         #region Repository
@@ -61,7 +63,7 @@
                 ||
                 templateInput.Skills.Count() == 0)
             {
-                return BadRequest("Request doesn't have skills, add some ones in order to save the template.");
+                return BadRequest("Input template doesn't have skills, add some ones in order to save it.");
             }
 
             try

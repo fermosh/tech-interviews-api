@@ -51,23 +51,5 @@
         /// </value>
         [JsonProperty("proposedSolution")]
         public string ProposedSolution { get; set; }
-
-        /// <summary>
-        /// Gets or sets the solution.
-        /// </summary>
-        /// <value>
-        /// The solution.
-        /// </value>
-        [JsonProperty("capturedSolution")]
-        public string CapturedSolution { get; set; }
-
-        /// <summary>
-        /// Gets or sets the rating.
-        /// </summary>
-        /// <value>
-        /// The rating.
-        /// </value>
-        [JsonProperty("capturedRating")]
-        public float CapturedRating { get; set; }
     }
 }

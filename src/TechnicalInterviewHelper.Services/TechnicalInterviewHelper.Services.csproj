@@ -56,8 +56,6 @@
     <Compile Include="Repositories\DocumentDbCommandRepository.cs" />
     <Compile Include="Repositories\DocumentDbQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DomainDocumentDbQueryRepository.cs" />
-    <Compile Include="Repositories\LevelDocumentDbQueryRepository.cs" />
     <Compile Include="Repositories\SkillMatrixDocumentDbQueryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
