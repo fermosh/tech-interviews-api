@@ -56,7 +56,7 @@
         #endregion Constructor
 
         [HttpGet]
-        [Route("all/{templateId:int}")]
+        [Route("all")]
         public async Task<IHttpActionResult> GetAll(string templateId)
         {
             // --------------------------------------------------------------------------------

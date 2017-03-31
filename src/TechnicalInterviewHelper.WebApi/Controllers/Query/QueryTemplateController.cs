@@ -60,7 +60,7 @@
         /// </summary>
         /// <param name="templateId">The template identifier.</param>
         /// <returns>200 HTTP status code with a template view model; otherwise, any other HTTP status code.</returns>
-        [Route("{templateId:string}")]
+        [HttpGet]
         public async Task<IHttpActionResult> Get(string templateId)
         {
             // --------------------------------------------------------------------------------

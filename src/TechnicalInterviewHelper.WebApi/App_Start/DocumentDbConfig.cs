@@ -28,6 +28,8 @@
         /// </summary>
         private readonly string authorizationKey = ConfigurationManager.AppSettings["AuthorizationKey"];
 
+        #region Collections
+
         /// <summary>
         /// The collection identifier
         /// </summary>
@@ -36,17 +38,29 @@
         /// <summary>
         /// The level collection identifier
         /// </summary>
-        private readonly string levelCollectionId = ConfigurationManager.AppSettings["LevelCollectionId"];
+        private readonly string questionCollectionId = ConfigurationManager.AppSettings["QuestionCollectionId"];
 
         /// <summary>
         /// The domain collection identifier
         /// </summary>
-        private readonly string domainCollectionId = ConfigurationManager.AppSettings["DomainCollectionId"];
+        private readonly string exerciseCollectionId = ConfigurationManager.AppSettings["ExerciseCollectionId"];
 
         /// <summary>
         /// The skill collection identifier
         /// </summary>
         private readonly string skillCollectionId = ConfigurationManager.AppSettings["SkillCollectionId"];
+
+        /// <summary>
+        /// The template collection identifier
+        /// </summary>
+        private readonly string templateCollectionId = ConfigurationManager.AppSettings["TemplateCollectionId"];
+
+        /// <summary>
+        /// The interview collection identifier
+        /// </summary>
+        private readonly string interviewCollectionId = ConfigurationManager.AppSettings["InterviewCollectionId"];
+
+        #endregion Collections
 
         /// <summary>
         /// The client
@@ -139,11 +153,11 @@
 
             #endregion Competency collection
 
-            #region Level collection
+            #region Question collection
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.levelCollectionId));
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.questionCollectionId));
             }
             catch (DocumentClientException e)
             {
@@ -151,7 +165,7 @@
                 {
                     await this.documentClient.CreateDocumentCollectionAsync(
                         UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.levelCollectionId },
+                        new DocumentCollection { Id = this.questionCollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
                 }
                 else
@@ -160,13 +174,13 @@
                 }
             }
 
-            #endregion Level collection
+            #endregion Question collection
 
-            #region Domain collection
+            #region Exercise collection
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.domainCollectionId));
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.exerciseCollectionId));
             }
             catch (DocumentClientException e)
             {
@@ -174,7 +188,7 @@
                 {
                     await this.documentClient.CreateDocumentCollectionAsync(
                         UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.domainCollectionId },
+                        new DocumentCollection { Id = this.exerciseCollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
                 }
                 else
@@ -183,7 +197,7 @@
                 }
             }
 
-            #endregion Domain collection
+            #endregion Skill collection
 
             #region Skill collection
 
@@ -207,6 +221,52 @@
             }
 
             #endregion Skill collection
+
+            #region Template collection
+
+            try
+            {
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.templateCollectionId));
+            }
+            catch (DocumentClientException e)
+            {
+                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    await this.documentClient.CreateDocumentCollectionAsync(
+                        UriFactory.CreateDatabaseUri(this.databaseId),
+                        new DocumentCollection { Id = this.templateCollectionId },
+                        new RequestOptions { OfferThroughput = 1000 });
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            #endregion Template collection
+
+            #region Interview collection
+
+            try
+            {
+                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.interviewCollectionId));
+            }
+            catch (DocumentClientException e)
+            {
+                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    await this.documentClient.CreateDocumentCollectionAsync(
+                        UriFactory.CreateDatabaseUri(this.databaseId),
+                        new DocumentCollection { Id = this.interviewCollectionId },
+                        new RequestOptions { OfferThroughput = 1000 });
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            #endregion Interview collection
         }
 
         #endregion Create Collections

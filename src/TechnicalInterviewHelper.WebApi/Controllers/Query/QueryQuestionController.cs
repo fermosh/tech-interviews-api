@@ -37,7 +37,7 @@
         public QueryQuestionController()
         {
             this.queryQuestion = new DocumentDbQueryRepository<Question, string>(ConfigurationManager.AppSettings["QuestionCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["PositionSkillCollectionId"]);
+            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@
         #endregion Constructor
 
         [HttpGet]
-        [Route("all/{templateId:string}")]
+        [Route("all")]
         public async Task<IHttpActionResult> GetAll(string templateId)
         {
             // --------------------------------------------------------------------------------
