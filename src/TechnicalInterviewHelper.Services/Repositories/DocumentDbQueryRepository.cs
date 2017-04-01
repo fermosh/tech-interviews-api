@@ -142,7 +142,7 @@
             {
                 var documentId = Convert.ToString(id);
                 var competencyDocument = await this.DocumentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.CollectionId, documentId));
-                return (T)(dynamic)competencyDocument;
+                return (T)(dynamic)competencyDocument.Resource;
             }
             catch (DocumentClientException e)
             {
@@ -151,6 +151,10 @@
                     return default(T);
                 }
 
+                throw;
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

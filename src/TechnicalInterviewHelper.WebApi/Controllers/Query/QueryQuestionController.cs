@@ -1,6 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using LinqKit;
     using Model;
     using Services;
     using System.Collections.Generic;
@@ -18,12 +17,12 @@
         #region Repositories
 
         /// <summary>
-        /// The query question
+        /// Question repository.
         /// </summary>
-        private readonly IQueryRepository<Question, string> queryQuestion;
+        private readonly IQuestionQueryRepository queryQuestion;
 
         /// <summary>
-        /// The query position skill
+        /// Template catalog repository.
         /// </summary>
         private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
@@ -36,21 +35,21 @@
         /// </summary>
         public QueryQuestionController()
         {
-            this.queryQuestion = new DocumentDbQueryRepository<Question, string>(ConfigurationManager.AppSettings["QuestionCollectionId"]);
+            this.queryQuestion = new QuestionDocumentDbQueryRepository(ConfigurationManager.AppSettings["QuestionCollectionId"]);
             this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryQuestionController"/> class.
         /// </summary>
-        /// <param name="queryQuestion">The query question.</param>
-        /// <param name="queryPositionSkill">The query position skill.</param>
+        /// <param name="queryQuestion">Question repository.</param>
+        /// <param name="queryTemplateCatalog">Template catalog repository.</param>
         public QueryQuestionController(
-            IQueryRepository<Question, string> queryQuestion,
-            IQueryRepository<TemplateCatalog, string> queryPositionSkill)
+            IQuestionQueryRepository queryQuestion,
+            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
         {
             this.queryQuestion = queryQuestion;
-            this.queryTemplateCatalog = queryPositionSkill;
+            this.queryTemplateCatalog = queryTemplateCatalog;
         }
 
         #endregion Constructor
@@ -85,14 +84,7 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var filterToGetSkills = PredicateBuilder.New<Question>(false);
-
-            foreach (var skillId in templateCatalog.Skills)
-            {
-                filterToGetSkills = filterToGetSkills.Or(question => question.SkillId == skillId);
-            }
-
-            var questions = await this.queryQuestion.FindBy(filterToGetSkills);
+            var questions = await this.queryQuestion.FindWithinQuestions(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
 
             // --------------------------------------
             // Now it's time to build the response.

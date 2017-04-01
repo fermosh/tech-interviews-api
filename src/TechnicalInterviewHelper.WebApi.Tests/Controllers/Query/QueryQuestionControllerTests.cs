@@ -20,9 +20,9 @@
         public void WhenInputTemplateIdIsNullOrEmpty_ReturnsBadRequestStatusCode(string inputTemplateId)
         {
             // Arrange
-            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
-            var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
-            var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryPositionSkillMock.Object);
+            var queryQuestionMock = new Mock<IQuestionQueryRepository>();
+            var queryTemplateCatalogMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
+            var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryTemplateCatalogMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
@@ -39,7 +39,7 @@
             // Arrange
             var inputTemplateId = "07CFB7D0-5C3C-4433-8BAE-F79945B90376";
 
-            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
+            var queryQuestionMock = new Mock<IQuestionQueryRepository>();
 
             var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
             queryPositionSkillMock
@@ -69,7 +69,7 @@
                 JobFunctionLevel = 1
             };
 
-            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
+            var queryQuestionMock = new Mock<IQuestionQueryRepository>();
 
             var queryTemplateCatalogMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
             queryTemplateCatalogMock
@@ -101,7 +101,7 @@
                 Skills = new List<int>()
             };
 
-            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
+            var queryQuestionMock = new Mock<IQuestionQueryRepository>();
 
             var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
             queryPositionSkillMock
@@ -135,10 +135,10 @@
                 Skills = new List<int> { 1001, 1912, 2000 }
             };
 
-            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
+            var queryQuestionMock = new Mock<IQuestionQueryRepository>();
             queryQuestionMock
-                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Question, bool>>>()))
-                .ReturnsAsync((Expression<Func<Question, bool>> predicate) => savedQuestions);
+                .Setup(method => method.FindWithinQuestions(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>()))
+                .ReturnsAsync(savedQuestions);
 
             var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
             queryPositionSkillMock
@@ -155,7 +155,7 @@
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<List<QuestionViewModel>>>());
             Assert.That((actionResult as OkNegotiatedContentResult<List<QuestionViewModel>>).Content, Is.Empty);
             queryPositionSkillMock.Verify(method => method.FindById(It.IsAny<string>()), Times.Once);
-            queryQuestionMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Question, bool>>>()), Times.Once);
+            queryQuestionMock.Verify(method => method.FindWithinQuestions(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>()), Times.Once);
         }
 
         [Test]
@@ -174,18 +174,29 @@
 
             var savedQuestions = new List<Question>
             {
-                new Question { Id = "FB8BA409-D56D-4E92-AE15-2D25B757F3AA", SkillId = 1610, Description = "What's OOP purpose?." },
-                new Question { Id = "8A7359B0-AA5D-406B-8124-1100AAF48C0A", SkillId = 1610, Description = "What are the OOP foundamentals?." },
-                new Question { Id = "45092883-D65B-4004-B87F-8A00A19CCF7A", SkillId = 56,   Description = "Can you describe the code review phase?." },
-                new Question { Id = "EFFB19C6-7735-425C-B810-4D022DEFA600", SkillId = 1779, Description = "Can you describe all scrum's ceremonies?." },
-                new Question { Id = "051E2FC1-56A1-4EFE-8375-D68FE1DEAFF3", SkillId = 1779, Description = "What's the role of the product owner?." },
-                new Question { Id = "9DFCA635-C1E5-4EA8-89B2-5B41A10FD8E7", SkillId = 56,   Description = "Is scrum a philosophy or a framework?." },
+                new Question { Id = "FB8BA409-D56D-4E92-AE15-2D25B757F3AA", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1610, Description = "What's OOP purpose?." },
+                new Question { Id = "8A7359B0-AA5D-406B-8124-1100AAF48C0A", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1610, Description = "What are the OOP foundamentals?." },
+                new Question { Id = "45092883-D65B-4004-B87F-8A00A19CCF7A", CompetencyId = 1,  JobFunctionLevel = 1, SkillId = 56,   Description = "Can you describe the code review phase?." },
+                new Question { Id = "EFFB19C6-7735-425C-B810-4D022DEFA600", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1779, Description = "Can you describe all scrum's ceremonies?." },
+                new Question { Id = "051E2FC1-56A1-4EFE-8375-D68FE1DEAFF3", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1779, Description = "What's the role of the product owner?." },
+                new Question { Id = "9DFCA635-C1E5-4EA8-89B2-5B41A10FD8E7", CompetencyId = 1,  JobFunctionLevel = 1, SkillId = 56,   Description = "Is scrum a philosophy or a framework?." },
             };
 
-            var queryQuestionMock = new Mock<IQueryRepository<Question, string>>();
+            var queryQuestionMock = new Mock<IQuestionQueryRepository>();
             queryQuestionMock
-                .Setup(method => method.FindBy(It.IsAny<Expression<Func<Question, bool>>>()))
-                .ReturnsAsync((Expression<Func<Question, bool>> predicate) => savedQuestions.Where(predicate.Compile()));
+                .Setup(method => method.FindWithinQuestions(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>()))
+                .ReturnsAsync((int competencyId, int jobFunctionId, int[] skillIds) =>
+                {
+                    var result = new List<Question>();
+
+                    foreach (var skillId in skillIds)
+                    {
+                        var filteredQuestions = savedQuestions.Where(item => item.CompetencyId == competencyId && item.JobFunctionLevel == jobFunctionId && item.SkillId == skillId);
+                        result.AddRange(filteredQuestions);
+                    }
+
+                    return result;
+                });
 
             var queryPositionSkillMock = new Mock<IQueryRepository<TemplateCatalog, string>>();
             queryPositionSkillMock
@@ -202,7 +213,7 @@
             Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<List<QuestionViewModel>>>());
             // -- Checks that the methods were called as expected.
             queryPositionSkillMock.Verify(method => method.FindById(It.IsAny<string>()), Times.Once);
-            queryQuestionMock.Verify(method => method.FindBy(It.IsAny<Expression<Func<Question, bool>>>()), Times.Once);
+            queryQuestionMock.Verify(method => method.FindWithinQuestions(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>()), Times.Once);
             // -- Checks the quantity of records.
             Assert.That((actionResult as OkNegotiatedContentResult<List<QuestionViewModel>>).Content, Is.Not.Empty);
             Assert.That((actionResult as OkNegotiatedContentResult<List<QuestionViewModel>>).Content.Count, Is.EqualTo(4));

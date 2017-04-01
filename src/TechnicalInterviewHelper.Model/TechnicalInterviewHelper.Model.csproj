@@ -61,6 +61,8 @@
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Interfaces\ICommandRepository.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IExerciseQueryRepository.cs" />
+    <Compile Include="Interfaces\IQuestionQueryRepository.cs" />
     <Compile Include="Interfaces\ISkillMatrixQueryRepository.cs" />
     <Compile Include="Interfaces\IQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

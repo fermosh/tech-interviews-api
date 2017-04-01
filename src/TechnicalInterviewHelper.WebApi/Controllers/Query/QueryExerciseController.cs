@@ -1,6 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using LinqKit;
     using Model;
     using Services;
     using System.Collections.Generic;
@@ -18,12 +17,12 @@
         #region Repositories
 
         /// <summary>
-        /// The query exercise
+        /// The Exercise repository.
         /// </summary>
-        private readonly IQueryRepository<Exercise, string> queryExercise;
+        private readonly IExerciseQueryRepository queryExercise;
 
         /// <summary>
-        /// The query position skill
+        /// The TemplateCatalog repository.
         /// </summary>
         private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
@@ -36,21 +35,21 @@
         /// </summary>
         public QueryExerciseController()
         {
-            this.queryExercise = new DocumentDbQueryRepository<Exercise, string>(ConfigurationManager.AppSettings["ExerciseCollectionId"]);
+            this.queryExercise = new ExerciseDocumentDbQueryRepository(ConfigurationManager.AppSettings["ExerciseCollectionId"]);
             this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryExerciseController"/> class.
         /// </summary>
-        /// <param name="queryExercise">The query exercise.</param>
-        /// <param name="queryPositionSkill">The query position skill.</param>
+        /// <param name="queryExercise">Exercise repository.</param>
+        /// <param name="queryTemplateCatalog">TemplateCatalog repository.</param>
         public QueryExerciseController(
-            IQueryRepository<Exercise, string> queryExercise,
-            IQueryRepository<TemplateCatalog, string> queryPositionSkill)
+            IExerciseQueryRepository queryExercise,
+            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
         {
             this.queryExercise = queryExercise;
-            this.queryTemplateCatalog = queryPositionSkill;
+            this.queryTemplateCatalog = queryTemplateCatalog;
         }
 
         #endregion Constructor
@@ -68,15 +67,15 @@
                 return BadRequest("Cannot get exercises without a valid template identifier.");
             }
 
-            var positionSkill = await this.queryTemplateCatalog.FindById(templateId);
-            if (positionSkill == null)
+            var template = await this.queryTemplateCatalog.FindById(templateId);
+            if (template == null)
             {
                 return NotFound();
             }
 
-            if (positionSkill.Skills == null
+            if (template.Skills == null
                 ||
-                positionSkill.Skills.Count() == 0)
+                template.Skills.Count() == 0)
             {
                 return BadRequest($"The template '{templateId}' doesn't have associated skills.");
             }
@@ -85,14 +84,7 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var filterToGetSkills = PredicateBuilder.New<Exercise>(false);
-
-            foreach (var skillId in positionSkill.Skills)
-            {
-                filterToGetSkills = filterToGetSkills.Or(exercise => exercise.SkillId == skillId);
-            }
-
-            var exercises = await this.queryExercise.FindBy(filterToGetSkills);
+            var exercises = await this.queryExercise.FindWithinExercises(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
 
             // --------------------------------------
             // Now it's time to build the response.

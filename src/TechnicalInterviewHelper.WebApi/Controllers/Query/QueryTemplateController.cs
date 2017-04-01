@@ -1,6 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using LinqKit;
     using Model;
     using Services;
     using System.Collections.Generic;
@@ -11,7 +10,7 @@
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
     
-    [RoutePrefix("api/template")]
+    [Route("api/template")]
     [EnableCors(origins: "*", headers: "*", methods: "get")]
     public class QueryTemplateController : ApiController
     {
@@ -89,16 +88,7 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var filterToGetSkills = PredicateBuilder.New<Skill>(false);
-
-            foreach (var skillId in template.Skills)
-            {
-                filterToGetSkills = filterToGetSkills.Or(skill => skill.Id == skillId &&
-                                                                  skill.CompetencyId == template.CompetencyId &&
-                                                                  skill.JobFunctionLevel == template.JobFunctionLevel);
-            }
-
-            var skillsList = await this.querySkillMatrixCatalog.FindWithin(template.CompetencyId, filterToGetSkills);
+            var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
 
             // --------------------------------------
             // Now it's time to build the response.

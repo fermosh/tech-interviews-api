@@ -13,7 +13,7 @@
     /// Has commands that affect template entities.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [RoutePrefix("api/template")]
+    [Route("command/template")]
     [EnableCors(origins: "*", headers: "*", methods: "post")]
     public class CommandTemplateController : ApiController
     {
@@ -52,6 +52,7 @@
         /// </summary>
         /// <param name="templateInput">The template with skills to save.</param>
         /// <returns>An identifier of the just created record.</returns>
+        [HttpPost]
         public async Task<IHttpActionResult> Post(TemplateInputModel templateInput)
         {
             if (templateInput == null)
