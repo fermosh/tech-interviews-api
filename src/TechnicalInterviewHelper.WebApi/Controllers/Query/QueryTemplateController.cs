@@ -135,7 +135,9 @@
             {
                 CompetencyId = template.CompetencyId,
                 JobFunctionLevel = template.JobFunctionLevel,
-                Skills = skillTemplateViewModelList
+                Skills = skillTemplateViewModelList,
+                Questions = new List<object>(),
+                Exercises = new List<object>()
             };
 
             return Ok(templateViewModel);

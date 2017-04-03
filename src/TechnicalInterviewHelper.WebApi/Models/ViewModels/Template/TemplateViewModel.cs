@@ -34,5 +34,25 @@
         /// </value>
         [JsonProperty("skills")]
         public IEnumerable<SkillTemplateViewModel> Skills { get; set; }
+
+        /// <summary>
+        /// Gets or sets the exercises.
+        /// <para />This property will be always empty.
+        /// </summary>
+        /// <value>
+        /// The exercises.
+        /// </value>
+        [JsonProperty("exercises")]
+        public IEnumerable<object> Exercises { get; set; }
+
+        /// <summary>
+        /// Gets or sets the questions.
+        /// <para/>This property will be always empty.
+        /// </summary>
+        /// <value>
+        /// The questions.
+        /// </value>
+        [JsonProperty("questions")]
+        public IEnumerable<object> Questions { get; set; }
     }
 }
