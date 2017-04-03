@@ -49,13 +49,13 @@
         #endregion Constructor
 
         /// <summary>
-        /// Gets the specified position to find.
+        /// Gets the skill matrix by competency and level.
         /// </summary>
-        /// <param name="positionToFind">The position to find.</param>
+        /// <param name="competencyId">The competency identifier.</param>
+        /// <param name="jobFunctionLevel">The job function level.</param>
         /// <returns>An HttpResult with either an error or success code with the list of skills.</returns>
-        [HttpGet]
-        [Route("all")]
-        public async Task<IHttpActionResult> GetAll(int competencyId, int jobFunctionLevel)
+        [Route("{competencyId:int}/{jobFunctionLevel:int}")]
+        public async Task<IHttpActionResult> GetSkillMatrixByCompetencyAndLevel(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
             var skills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&

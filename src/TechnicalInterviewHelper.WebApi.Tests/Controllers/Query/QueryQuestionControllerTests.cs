@@ -1,13 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers.Query
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Http.Results;
     using Model;
     using Moq;
     using NUnit.Framework;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.Web.Http.Results;
     using TechnicalInterviewHelper.Model;
     using WebApi.Controllers;
 
@@ -25,7 +23,7 @@
             var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryTemplateCatalogMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
+            var actionResult = controllerUnderTest.GetQuestionsByTemplate(inputTemplateId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -49,7 +47,7 @@
             var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryPositionSkillMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
+            var actionResult = controllerUnderTest.GetQuestionsByTemplate(inputTemplateId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -79,7 +77,7 @@
             var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryTemplateCatalogMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
+            var actionResult = controllerUnderTest.GetQuestionsByTemplate(inputTemplateId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -111,7 +109,7 @@
             var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryPositionSkillMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
+            var actionResult = controllerUnderTest.GetQuestionsByTemplate(inputTemplateId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -148,7 +146,7 @@
             var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryPositionSkillMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
+            var actionResult = controllerUnderTest.GetQuestionsByTemplate(inputTemplateId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -206,7 +204,7 @@
             var controllerUnderTest = new QueryQuestionController(queryQuestionMock.Object, queryPositionSkillMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(inputTemplateId).Result;
+            var actionResult = controllerUnderTest.GetQuestionsByTemplate(inputTemplateId).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);

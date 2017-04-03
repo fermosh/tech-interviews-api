@@ -10,7 +10,7 @@
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
     
-    [Route("api/template")]
+    [RoutePrefix("api/template")]
     [EnableCors(origins: "*", headers: "*", methods: "get")]
     public class QueryTemplateController : ApiController
     {
@@ -59,7 +59,8 @@
         /// </summary>
         /// <param name="templateId">The template identifier.</param>
         /// <returns>200 HTTP status code with a template view model; otherwise, any other HTTP status code.</returns>
-        [HttpGet]
+        /// <example>api/template/04278e7f-2d35-49b8-a8f9-ebd0d794c434</example>
+        [Route("{templateId}")]
         public async Task<IHttpActionResult> Get(string templateId)
         {
             // --------------------------------------------------------------------------------

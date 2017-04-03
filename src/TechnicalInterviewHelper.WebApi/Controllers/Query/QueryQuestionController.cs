@@ -10,7 +10,7 @@
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("api/question")]
+    [RoutePrefix("api")]
     [EnableCors(origins: "*", headers: "*", methods: "get")]
     public class QueryQuestionController : ApiController
     {
@@ -54,9 +54,8 @@
 
         #endregion Constructor
 
-        [HttpGet]
-        [Route("all")]
-        public async Task<IHttpActionResult> GetAll(string templateId)
+        [Route("template/{templateId}/questions")]
+        public async Task<IHttpActionResult> GetQuestionsByTemplate(string templateId)
         {
             // --------------------------------------------------------------------------------
             // Let's run some validations over the input data and the saved template as well.

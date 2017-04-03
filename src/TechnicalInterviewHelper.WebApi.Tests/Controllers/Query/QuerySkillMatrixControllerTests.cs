@@ -1,13 +1,13 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Tests.Controllers.Query
-{
-    using Model;
-    using Moq;
-    using NUnit.Framework;
+{    
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Web.Http.Results;
+    using Model;
+    using Moq;
+    using NUnit.Framework;
     using TechnicalInterviewHelper.Model;
     using WebApi.Controllers;
 
@@ -41,7 +41,7 @@
             var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(competencyId, jobFunctionLevel).Result;
+            var actionResult = controllerUnderTest.GetSkillMatrixByCompetencyAndLevel(competencyId, jobFunctionLevel).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -89,7 +89,7 @@
             var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(competencyId, jobFunctionLevel).Result;
+            var actionResult = controllerUnderTest.GetSkillMatrixByCompetencyAndLevel(competencyId, jobFunctionLevel).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);
@@ -137,7 +137,7 @@
             var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object);
 
             // Act
-            var actionResult = controllerUnderTest.GetAll(validCompetencyId, validJobFunctionLevel).Result;
+            var actionResult = controllerUnderTest.GetSkillMatrixByCompetencyAndLevel(validCompetencyId, validJobFunctionLevel).Result;
 
             // Assert
             Assert.That(actionResult, Is.Not.Null);

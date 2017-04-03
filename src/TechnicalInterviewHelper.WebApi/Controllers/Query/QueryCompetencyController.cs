@@ -35,7 +35,6 @@
 
         #endregion Constructor
 
-        [HttpGet]
         [Route("all")]
         public async Task<IHttpActionResult> GetAll()
         {
