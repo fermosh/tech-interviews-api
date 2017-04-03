@@ -123,7 +123,7 @@
             // Arrange
             var inputTemplateId = "07CFB7D0-5C3C-4433-8BAE-F79945B90376";
 
-            var savedExercises = new List<Exercise>();
+            var savedExercises = new List<ExerciseCatalog>();
 
             var savedPositionSkill = new TemplateCatalog
             {
@@ -170,14 +170,14 @@
                 Skills = new List<int> { 1001, 1912, 2000 }
             };
 
-            var savedExercises = new List<Exercise>
+            var savedExercises = new List<ExerciseCatalog>
             {
-                new Exercise { Id = "592F493B-E974-499F-9A49-F9A889D89EC8", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1001, Title = "Fix the code following SOLID principles", Description = "If any, please, fix next code to meet the SOLID principles.", ProposedSolution = "public void main() { ... }" },
-                new Exercise { Id = "5336A7B8-09B3-4437-A53B-751107212A8B", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1001, Title = "Bubble sort", Description = "Complete next code of bubble sort algorithm.", ProposedSolution = "public void main() { ... }" },
-                new Exercise { Id = "807D3020-ACB5-4BD1-94FA-A995866E4609", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 2002, Title = "OOP - Inheritance", Description = "Having a parent class named 'Father', write the code of a child class named 'Child' that descends from it.", ProposedSolution = "class Child : Parent { ... }" },
-                new Exercise { Id = "2FE75BAA-7C83-4E82-AC1C-CC0D81ED0725", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1912, Title = "Fixing a code review", Description = "Suppose you're intended to write a hash function using SHA-1 algorithm, please, ask your partner to make a code review of it.", ProposedSolution = "public byte*[] GetHashValue(char* entrance){ ... }" },
-                new Exercise { Id = "EDFE0DC2-281B-4FCF-A20B-13BFDCDC6D43", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 2000, Title = "Writing a microservice", Description = "Using Azure Functions or AWS Lambda, propose a code that sums two digits and return its square root.", ProposedSolution = "public double GetSquareRootOfTheSum(int x, int y) { ... }" },
-                new Exercise { Id = "F120A901-0950-4F74-BAD3-218B5F980494", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 100,  Title = "Palindrome", Description = "Write a program to detect whether a phrase is a palindrome.", ProposedSolution = "public bool IsPalindrome(string phrase) { ... }" }
+                new ExerciseCatalog { Id = "592F493B-E974-499F-9A49-F9A889D89EC8", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1001, Title = "Fix the code following SOLID principles", Description = "If any, please, fix next code to meet the SOLID principles.", ProposedSolution = "public void main() { ... }" },
+                new ExerciseCatalog { Id = "5336A7B8-09B3-4437-A53B-751107212A8B", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1001, Title = "Bubble sort", Description = "Complete next code of bubble sort algorithm.", ProposedSolution = "public void main() { ... }" },
+                new ExerciseCatalog { Id = "807D3020-ACB5-4BD1-94FA-A995866E4609", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 2002, Title = "OOP - Inheritance", Description = "Having a parent class named 'Father', write the code of a child class named 'Child' that descends from it.", ProposedSolution = "class Child : Parent { ... }" },
+                new ExerciseCatalog { Id = "2FE75BAA-7C83-4E82-AC1C-CC0D81ED0725", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1912, Title = "Fixing a code review", Description = "Suppose you're intended to write a hash function using SHA-1 algorithm, please, ask your partner to make a code review of it.", ProposedSolution = "public byte*[] GetHashValue(char* entrance){ ... }" },
+                new ExerciseCatalog { Id = "EDFE0DC2-281B-4FCF-A20B-13BFDCDC6D43", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 2000, Title = "Writing a microservice", Description = "Using Azure Functions or AWS Lambda, propose a code that sums two digits and return its square root.", ProposedSolution = "public double GetSquareRootOfTheSum(int x, int y) { ... }" },
+                new ExerciseCatalog { Id = "F120A901-0950-4F74-BAD3-218B5F980494", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 100,  Title = "Palindrome", Description = "Write a program to detect whether a phrase is a palindrome.", ProposedSolution = "public bool IsPalindrome(string phrase) { ... }" }
             };
 
             var queryExerciseMock = new Mock<IExerciseQueryRepository>();
@@ -185,7 +185,7 @@
                 .Setup(method => method.FindWithinExercises(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>()))
                 .ReturnsAsync((int competencyId, int jobFunctionId, int[] skillIds) =>
                 {
-                    var result = new List<Exercise>();
+                    var result = new List<ExerciseCatalog>();
 
                     foreach (var skillId in skillIds)
                     {

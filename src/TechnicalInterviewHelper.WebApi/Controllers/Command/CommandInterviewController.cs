@@ -14,7 +14,7 @@
     {
         #region Repository
 
-        private readonly ICommandRepository<Interview> commandInterview;
+        private readonly ICommandRepository<InterviewCatalog> commandInterview;
 
         #endregion Repository
 
@@ -22,10 +22,10 @@
 
         public CommandInterviewController()
         {
-            this.commandInterview = new DocumentDbCommandRepository<Interview>(ConfigurationManager.AppSettings["InterviewCollection"]);
+            this.commandInterview = new DocumentDbCommandRepository<InterviewCatalog>(ConfigurationManager.AppSettings["InterviewCollection"]);
         }
 
-        public CommandInterviewController(ICommandRepository<Interview> commandInterview)
+        public CommandInterviewController(ICommandRepository<InterviewCatalog> commandInterview)
         {
             this.commandInterview = commandInterview;
         }

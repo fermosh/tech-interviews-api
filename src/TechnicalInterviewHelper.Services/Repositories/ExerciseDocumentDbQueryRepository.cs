@@ -12,9 +12,9 @@
     /// <summary>
     /// Repository for specific operation related to exercises.
     /// </summary>
-    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.Exercise, System.String}" />
+    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.ExerciseCatalog, System.String}" />
     /// <seealso cref="TechnicalInterviewHelper.Model.IExerciseQueryRepository" />
-    public class ExerciseDocumentDbQueryRepository : DocumentDbQueryRepository<Exercise, string>, IExerciseQueryRepository
+    public class ExerciseDocumentDbQueryRepository : DocumentDbQueryRepository<ExerciseCatalog, string>, IExerciseQueryRepository
     {
         #region Constructor
 
@@ -47,7 +47,7 @@
         /// <returns>
         /// An enumeration of exercises.
         /// </returns>
-        public async Task<IEnumerable<Exercise>> FindWithinExercises(int competencyId, int jobFunctionLevel, int[] skillIds)
+        public async Task<IEnumerable<ExerciseCatalog>> FindWithinExercises(int competencyId, int jobFunctionLevel, int[] skillIds)
         {
             var predicate = new StringBuilder();
 
@@ -60,14 +60,14 @@
 
             var documentQuery =
                     this.DocumentClient
-                    .CreateDocumentQuery<Exercise>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .CreateDocumentQuery<ExerciseCatalog>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(predicate.ToString())
                     .AsDocumentQuery();
 
-            var queryResult = new List<Exercise>();
+            var queryResult = new List<ExerciseCatalog>();
             while (documentQuery.HasMoreResults)
             {
-                var exercises = await documentQuery.ExecuteNextAsync<Exercise>();
+                var exercises = await documentQuery.ExecuteNextAsync<ExerciseCatalog>();
                 queryResult.AddRange(exercises);
             }
 

@@ -3,9 +3,9 @@
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Question entity.
+    /// Entity model for an answered question.
     /// </summary>
-    public class Question : BaseEntity
+    public class AnsweredQuestion
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -26,7 +26,7 @@
         public int JobFunctionLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets the skill identifier, supplied by a third party, at which this question belongs.
+        /// Gets or sets the skill identifier.
         /// </summary>
         /// <value>
         /// The skill identifier.
@@ -42,5 +42,23 @@
         /// </value>
         [JsonProperty("description")]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the answer.
+        /// </summary>
+        /// <value>
+        /// The answer.
+        /// </value>
+        [JsonProperty("answer")]
+        public string Answer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rating.
+        /// </summary>
+        /// <value>
+        /// The rating.
+        /// </value>
+        [JsonProperty("rating")]
+        public float Rating { get; set; }
     }
 }
