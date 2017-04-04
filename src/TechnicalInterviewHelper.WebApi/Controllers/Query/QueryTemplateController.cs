@@ -58,10 +58,12 @@
         /// Gets the specified template identifier.
         /// </summary>
         /// <param name="templateId">The template identifier.</param>
-        /// <returns>200 HTTP status code with a template view model; otherwise, any other HTTP status code.</returns>
+        /// <returns>
+        /// 200 HTTP status code with a template view model; otherwise, any other HTTP status code.
+        /// </returns>
         /// <example>api/template/04278e7f-2d35-49b8-a8f9-ebd0d794c434</example>
         [Route("{templateId}")]
-        public async Task<IHttpActionResult> Get(string templateId)
+         public async Task<IHttpActionResult> Get(string templateId)
         {
             // --------------------------------------------------------------------------------
             // Let's run some validations over the input data and the saved template as well.
@@ -124,19 +126,31 @@
                     Id = skill.Id,
                     ParentId = skill.ParentId,
                     Name = skill.Name,
-                    IsSelectable = skill.IsSelectable
+                    IsSelectable = skill.IsSelectable,
+                    Questions = new List<object>()
                 };
 
                 // Add the view model to the result list.
                 skillTemplateViewModelList.Add(skillTemplateViewModel);
             }
 
+            //// TODO: Need to fill out "Description" with proper information.
+            var levelViewModel = new LevelViewModel
+            {
+                Id = template.JobFunctionLevel,
+                Name = $"L{template.JobFunctionLevel}",
+                Description = "Work in progress."
+            };
+
+            //// TODO: Need to fill out "Competency" and "DomainName" with proper information.
             var templateViewModel = new TemplateViewModel
             {
                 CompetencyId = template.CompetencyId,
                 JobFunctionLevel = template.JobFunctionLevel,
+                Level = levelViewModel,
+                CompetencyName = "Work in progress.",
+                DomainName = "Work in progress.",
                 Skills = skillTemplateViewModelList,
-                Questions = new List<object>(),
                 Exercises = new List<object>()
             };
 

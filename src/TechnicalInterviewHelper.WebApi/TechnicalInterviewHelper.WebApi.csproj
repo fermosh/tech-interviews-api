@@ -197,6 +197,7 @@
     <Compile Include="Models\ViewModels\Common\PositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\SkillForPositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\TopicViewModel.cs" />
+    <Compile Include="Models\ViewModels\Template\LevelViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\SkillTemplateViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\TemplateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
