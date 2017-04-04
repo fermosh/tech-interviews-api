@@ -15,7 +15,7 @@
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/skillmatrix")]
-    [EnableCors(origins: "*", headers: "*", methods: "get")]
+    [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QuerySkillMatrixController : ApiController
     {
         #region Repositories

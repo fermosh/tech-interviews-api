@@ -14,7 +14,7 @@
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/template")]
-    [EnableCors(origins: "*", headers: "*", methods: "post")]
+    [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandTemplateController : ApiController
     {
         #region Repository

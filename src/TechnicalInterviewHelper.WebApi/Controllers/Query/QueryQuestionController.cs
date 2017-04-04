@@ -11,7 +11,7 @@
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api")]
-    [EnableCors(origins: "*", headers: "*", methods: "get")]
+    [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QueryQuestionController : ApiController
     {
         #region Repositories
