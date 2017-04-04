@@ -10,7 +10,7 @@
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
     
-    [RoutePrefix("api/template")]
+    [RoutePrefix("api/templates")]
     [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QueryTemplateController : ApiController
     {
