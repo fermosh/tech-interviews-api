@@ -10,7 +10,7 @@
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("api/competency")]
+    [RoutePrefix("api/competencies")]
     [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QueryCompetencyController : ApiController
     {
