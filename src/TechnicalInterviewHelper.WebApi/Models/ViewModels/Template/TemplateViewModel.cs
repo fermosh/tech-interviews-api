@@ -27,6 +27,33 @@
         public int JobFunctionLevel { get; set; }
 
         /// <summary>
+        /// Gets or sets the level.
+        /// </summary>
+        /// <value>
+        /// The level.
+        /// </value>
+        [JsonProperty("level")]
+        public LevelViewModel Level { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the competency.
+        /// </summary>
+        /// <value>
+        /// The name of the competency.
+        /// </value>
+        [JsonProperty("competencyName")]
+        public string CompetencyName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the domain.
+        /// </summary>
+        /// <value>
+        /// The name of the domain.
+        /// </value>
+        [JsonProperty("domain")]
+        public string DomainName { get; set; }
+
+        /// <summary>
         /// Gets or sets the skills.
         /// </summary>
         /// <value>
