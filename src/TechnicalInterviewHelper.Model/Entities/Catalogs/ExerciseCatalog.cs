@@ -5,7 +5,7 @@
     /// <summary>
     /// Exercise entity.
     /// </summary>
-    public class Exercise : BaseEntity
+    public class ExerciseCatalog : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.

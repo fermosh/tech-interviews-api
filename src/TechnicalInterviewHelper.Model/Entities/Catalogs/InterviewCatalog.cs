@@ -4,19 +4,37 @@
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Entity for interview.
+    /// Entity model for an interview catalog.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class Interview : BaseEntity
+    public class InterviewCatalog : BaseEntity
     {
         /// <summary>
-        /// Gets or sets the position identifier.
+        /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
-        /// The position identifier.
+        /// The competency identifier.
         /// </value>
-        [JsonProperty("positionId")]
-        public int PositionId { get; set; }
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the job function level.
+        /// </summary>
+        /// <value>
+        /// The job function level.
+        /// </value>
+        [JsonProperty("jobFunctionLevel")]
+        public int JobFunctionLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template identifier.
+        /// </summary>
+        /// <value>
+        /// The template identifier.
+        /// </value>
+        [JsonProperty("templateId")]
+        public string TemplateId { get; set; }
 
         /// <summary>
         /// Gets or sets the skills.
@@ -34,7 +52,7 @@
         /// The questions.
         /// </value>
         [JsonProperty("questions")]
-        public IEnumerable<Question> Questions { get; set; }
+        public IEnumerable<AnsweredQuestion> Questions { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.
@@ -43,6 +61,6 @@
         /// The exercises.
         /// </value>
         [JsonProperty("exercises")]
-        public IEnumerable<Exercise> Exercises { get; set; }
+        public IEnumerable<AnsweredExercise> Exercises { get; set; }
     }
 }

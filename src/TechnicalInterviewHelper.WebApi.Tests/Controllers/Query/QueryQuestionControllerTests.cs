@@ -123,7 +123,7 @@
             // Arrange
             var inputTemplateId = "07CFB7D0-5C3C-4433-8BAE-F79945B90376";
 
-            var savedQuestions = new List<Question>();
+            var savedQuestions = new List<QuestionCatalog>();
 
             var savedPositionSkill = new TemplateCatalog
             {
@@ -170,14 +170,14 @@
                 Skills = new List<int> { 1610, 1779 }
             };
 
-            var savedQuestions = new List<Question>
+            var savedQuestions = new List<QuestionCatalog>
             {
-                new Question { Id = "FB8BA409-D56D-4E92-AE15-2D25B757F3AA", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1610, Description = "What's OOP purpose?." },
-                new Question { Id = "8A7359B0-AA5D-406B-8124-1100AAF48C0A", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1610, Description = "What are the OOP foundamentals?." },
-                new Question { Id = "45092883-D65B-4004-B87F-8A00A19CCF7A", CompetencyId = 1,  JobFunctionLevel = 1, SkillId = 56,   Description = "Can you describe the code review phase?." },
-                new Question { Id = "EFFB19C6-7735-425C-B810-4D022DEFA600", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1779, Description = "Can you describe all scrum's ceremonies?." },
-                new Question { Id = "051E2FC1-56A1-4EFE-8375-D68FE1DEAFF3", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1779, Description = "What's the role of the product owner?." },
-                new Question { Id = "9DFCA635-C1E5-4EA8-89B2-5B41A10FD8E7", CompetencyId = 1,  JobFunctionLevel = 1, SkillId = 56,   Description = "Is scrum a philosophy or a framework?." },
+                new QuestionCatalog { Id = "FB8BA409-D56D-4E92-AE15-2D25B757F3AA", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1610, Description = "What's OOP purpose?." },
+                new QuestionCatalog { Id = "8A7359B0-AA5D-406B-8124-1100AAF48C0A", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1610, Description = "What are the OOP foundamentals?." },
+                new QuestionCatalog { Id = "45092883-D65B-4004-B87F-8A00A19CCF7A", CompetencyId = 1,  JobFunctionLevel = 1, SkillId = 56,   Description = "Can you describe the code review phase?." },
+                new QuestionCatalog { Id = "EFFB19C6-7735-425C-B810-4D022DEFA600", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1779, Description = "Can you describe all scrum's ceremonies?." },
+                new QuestionCatalog { Id = "051E2FC1-56A1-4EFE-8375-D68FE1DEAFF3", CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1779, Description = "What's the role of the product owner?." },
+                new QuestionCatalog { Id = "9DFCA635-C1E5-4EA8-89B2-5B41A10FD8E7", CompetencyId = 1,  JobFunctionLevel = 1, SkillId = 56,   Description = "Is scrum a philosophy or a framework?." },
             };
 
             var queryQuestionMock = new Mock<IQuestionQueryRepository>();
@@ -185,7 +185,7 @@
                 .Setup(method => method.FindWithinQuestions(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>()))
                 .ReturnsAsync((int competencyId, int jobFunctionId, int[] skillIds) =>
                 {
-                    var result = new List<Question>();
+                    var result = new List<QuestionCatalog>();
 
                     foreach (var skillId in skillIds)
                     {

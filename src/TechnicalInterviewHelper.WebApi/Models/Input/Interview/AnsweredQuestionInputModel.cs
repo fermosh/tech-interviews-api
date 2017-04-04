@@ -1,11 +1,11 @@
-﻿namespace TechnicalInterviewHelper.Model
+﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Question entity.
+    /// An input model to get information of a submited question.
     /// </summary>
-    public class Question : BaseEntity
+    public class AnsweredQuestionInputModel
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -26,13 +26,22 @@
         public int JobFunctionLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets the skill identifier, supplied by a third party, at which this question belongs.
+        /// Gets or sets the skill identifier.
         /// </summary>
         /// <value>
         /// The skill identifier.
         /// </value>
         [JsonProperty("skillId")]
         public int SkillId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
         /// <summary>
         /// Gets or sets the text.
@@ -42,5 +51,23 @@
         /// </value>
         [JsonProperty("description")]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the answer.
+        /// </summary>
+        /// <value>
+        /// The answer.
+        /// </value>
+        [JsonProperty("answer")]
+        public string Answer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rating.
+        /// </summary>
+        /// <value>
+        /// The rating.
+        /// </value>
+        [JsonProperty("rating")]
+        public float Rating { get; set; }
     }
 }
