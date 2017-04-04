@@ -54,7 +54,7 @@
 
         #endregion Constructor
 
-        [Route("template/{templateId}/exercises")]
+        [Route("templates/{templateId}/exercises")]
         public async Task<IHttpActionResult> GetExercisesByTemplate(string templateId)
         {
             // --------------------------------------------------------------------------------

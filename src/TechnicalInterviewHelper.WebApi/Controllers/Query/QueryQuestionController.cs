@@ -54,7 +54,7 @@
 
         #endregion Constructor
 
-        [Route("template/{templateId}/questions")]
+        [Route("templates/{templateId}/questions")]
         public async Task<IHttpActionResult> GetQuestionsByTemplate(string templateId)
         {
             // --------------------------------------------------------------------------------
