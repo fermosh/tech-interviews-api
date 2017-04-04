@@ -1,0 +1,158 @@
+{
+    "jobFunction": {
+        "id": 18,
+        "name": "Test Automation",
+        "mnemonicBase": "E",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Software Engineering Experience and Knowledge",
+                    "cells": [
+                        "<p>Some experience of programming languages and/or appropriate education. Ability to record and playback automated test scripts and analyze results.</p>",
+                        "<p>At least 1 year Software Engineering experience (in the fields of Software Testing, Test Automation, and Software Development) with Intermediate Level of Test Automation: perform test automation tasks, solve test automation issues by standard capabilities of test automation tools</p>",
+                        "<p>At least 3 years Software Engineering experience (in the fields of Software Testing, Test Automation, Software Development) with Advanced level of Test Automation: ability to solve complex test automation tasks beyond standard capabilities of test automation tools, ability to perform test automation tool evaluations in focus area, ability to setup test automation on the project.</p>",
+                        "<p>At least 5 years Software Engineering experience (in the fields of Software Testing, Test Automation, Software Development) with Expert level of Test Automation and Advanced level of secondary skill(s). Know and use architectural principals and best practices for maintainable test automation solution creation, define test automation goals, measure effectiveness of test automation, perform test automation tool evaluations and work effectively irrespective of test automation tool(s) and/or programming language(s) used.</p>",
+                        "<p>At least 7 years Software Engineering experience with Expert level of Test Automation (see profile for E4) and one of the secondary skills.</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Is able to follow a defined Software Testing and Test Automation process under supervision.</p>",
+                        "<p>Possesses a basic knowledge of SDLC. Has a knowledge and understanding of Software Development, Software Testing, and Test Automation processes.</p>",
+                        "<p>Possesses a basic knowledge and understanding of SDLC and a Software Development process. Has a fundamental knowledge of Software Testing process, is able to follow and enhance an already defined Software Testing process, to outline the subject of test automation, to propose tools and approaches. Understands the role of test automation in the framework of a Software Development process.</p>",
+                        "<p>Possesses the knowledge and understanding of SDLC and a Software Development process. Can evaluate an existing Software Testing and Test Automation processes, make a decision whether to enhance or actively influence it, is able to choose, adopt or set up the most appropriate edition of it. Is able to select, approve, and introduce the subject of test automation, tools, and approaches.</p>",
+                        "<p>Possesses the knowledge and understanding of SDLC and a Software Development process. Can evaluate an existing Software Testing and Test Automation processes, make a decision whether to enhance or actively influence it, is able to choose, adopt or set up the most appropriate edition of it. Is able to select, approve, and introduce the subject of test automation, tools, and approaches.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read and understand project and requirement documentation</p><p> </p><p> </p>",
+                        "<p>Able to read and understand project and requirement documentation, perform review and creation test scenarios from automation point of view. Able to create documentation describing his/her code. Able to create test result reports.</p>",
+                        "<p>Shows good understanding of project and requirement documentation. Being able to create high-quality test automation plans, test automation design documentation, test scenarios, test automation scripts and test result reports.</p>",
+                        "<p>Shows strong understanding of project and requirement documentation. Being able to create high-quality test plans, test automation plans, test automation design documentation, test scenarios, test automation scripts and test result reports.</p>",
+                        "<p>Shows perfect understanding of project and requirement documentation. Creates high-quality test plans, test automation plans, test automation design documentation, test scenarios, test automation scripts and test result reports.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Junior Software Test Automation Engineer</p>",
+                        "<p>Software Test Automation Engineer</p>",
+                        "<p>Senior Software Test Automation Engineer</p>",
+                        "<p>Lead Software Test Automation Engineer</p>",
+                        "<p>Chief Software Test Automation Engineer</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the Automation Tester or Tester role</p>",
+                        "<p>Plays the Automation Tester role</p>",
+                        "<p>Plays the Automation Tester or Key Automation Tester role</p>",
+                        "<p>Plays the Key Automation Tester role, and usually also performs a Test Automation Team Lead, Testing Team Lead, Project Coordinator, Reviewer or Auditor role</p>",
+                        "<p>Can play any role, typically a senior position. Responsibilities can include Key Tester, Key Automation Tester, Testing Team Lead, Test Automation Team Lead, Project Coordinator, Reviewer, Auditor, Technical Trainer and Process Engineer.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under close supervision</p>",
+                        "<p>Expected to perform primary test automation tasks without direct supervision.</p>",
+                        "<p>Expected to be self-managing and perform primary test automation tasks without supervision. Takes test automation responsibility for a subsystem or a whole project.</p>",
+                        "<p>Expected to be self-managing and perform any tasks without supervision. Takes test automation responsibility for a subsystem or a whole project.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>",
+                        "<p>Expected to be self-managing and perform any tasks without supervision. Takes test automation responsibility for a subsystem or a whole project.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>No specific expectations regarding quality</p>",
+                        "<p>Must show a sense of responsibility for the results of primary test automation tasks he/she performs.</p><p>Creates deliverables in normal quality.</p>",
+                        "<p>Takes full responsibility for the results of primary test automation tasks he/she performs.</p><p>Creates deliverables in good quality.</p>",
+                        "<p>Takes full responsibility for the results of performing any tasks he/she is assigned for.</p><p>Must be a role model for colleagues; creates deliverables in high quality.</p>",
+                        "<p>Takes full responsibility for the results of performing any tasks he/she is assigned for.</p><p>Must be a role model for colleagues, on a par with the best industry standards. Creates deliverables in excellent quality.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>",
+                        "<p>Expected to have good customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                },
+                {
+                    "name": "Language Level in the Customer’s Communication Language",
+                    "cells": [
+                        "<p>Able to read and understand the Customer’s Communication Language</p>",
+                        "<p>Able to read and write the Customer’s Communication Language and have some speaking ability</p>",
+                        "<p>Comfortably able to read, write and speak the Customer’s Communication Language</p>",
+                        "<p>Comfortably able to read, write and speak the Customer’s Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer’s Communication Language; able to write high-quality unambiguous texts</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Software Test Automation Engineer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Software Test Automation Engineer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Software Test Automation Engineer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Software Test Automation Engineer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Software Test Automation Engineer"
+            ]
+        }
+    ],
+    "id": "1e8378d7-b4d1-bb00-418a-5760fef9714d",
+    "_rid": "nEl0AILL7gIQAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIQAAAAAAAAAA==/",
+    "_etag": "\"00001800-0000-0000-0000-58e3ffa40000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337124
+}

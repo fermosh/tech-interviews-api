@@ -1,0 +1,138 @@
+{
+    "jobFunction": {
+        "id": 6,
+        "name": "Account Management",
+        "mnemonicBase": "AM",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Expected to have at least 3 year of relevant experience</p>",
+                        "<p>Expected to have at least 5 year of relevant client, account or delivery management experience. Able to define, estimate and execute tasks related to the account management including strategic planning, opportunity qualification, resource management, commercial management and cost center P&L financials.</p>",
+                        "<p>Expected to have at least 7 years of services management experience. Experienced in the creation and delivery of successful managed/ outsourced IT service solutions tailored to the unique requirements of the client that deliver measurable business value.</p>",
+                        "<p>Expected to have at least 9 years of professional services management experience. Proven record of growing accounts revenue through consultative sales.</p>",
+                        "<p>Expected to have at least 11 years of professional services management experience. Extensive experience in a global Account Management or Professional Services delivery role.</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Expected to have understanding of software development processes</p>",
+                        "<p>Expected to have understanding of software development processes</p>",
+                        "<p>Expected to have a very good  understanding of software development processes</p>",
+                        "<p>Expected to have a very good understanding of software development processes</p>",
+                        "<p>Expected to have a very good understanding of software development processes</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Coordinates preparation of presentations, demos and customer proposals. Account billing, orders and contract management.</p>",
+                        "<p>Co-ordinate the preparation of customer value propositions and statements of work. Compile, analyses and interpret data to monitor performance against account plans in respect to services, revenues, fees and billing. Prepare and oversee the accounts forecasts and P&L and manages revenue pipeline.</p>",
+                        "<p>Collaborate and create proposals and scope of services definitions and develop tailored or customized solutions to meet client needs. Responsible for budgeting, forecasting, and meeting set targets. Prepare monthly and quarterly account plans and reports.</p>",
+                        "<p>Develops and implements account strategies to achieve revenue targets and service goals for the largest and most complex accounts in the organization.  Manage and monitor P&L across large scale accounts and account portfolios.</p>",
+                        "<p>Managing major accounts and multiple operational teams by developing long term account strategies and plans to increase accounts growth and profitability.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Account Manager</p>",
+                        "<p>Account Manager</p>",
+                        "<p>Senior Account Manager</p>",
+                        "<p>Director, Account Management</p>",
+                        "<p>Senior Director, Account Management</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision. Assist the Account Management team with the accounts delivery and growth, team management, administration and profitability on the assigned accounts. Able to respond to customer requests. Fast learner, who demonstrate drive and commitment for further development. Strong team player with proactive attitude. </p>",
+                        "<p>Expected to work independently without direct supervision. Participate in overall project management, time and cost estimation. Responsible for quality and quantity of the resources required to successful implementation of the assigned projects and optimizing the effective utilization of available resources. Oversee and coordinate billing process by managing timely and accurate billing and invoicing, approve all project-related expenditures. Address customer issues and identify and manage engagement risks. Provide recommendations and create plans to improve projects profitability and ways to generate increased revenue by creating new opportunities.</p>",
+                        "<p>Identify opportunities to develop and maximize revenues whilst ensuring the provision of exceptional service delivery. Expected to oversee the activities of the related delivery teams and manage customer expectations and relationship. Act as the senior point of escalation for issue resolution. Develops account strategy, leads and manages account management process and is involved in pricing strategies and contract negotiations. Participates in business development and cross-selling activities to grow the existing accounts. Regularly review the project P&L reports and account plans.</p>",
+                        "<p>Ensure projects profitability are met and revenue objectives are achieved.  Proactively identify ways to achieve additional margins on the accounts. Accountable to develop challenging account goals, plans and objectives that reflect high profitability and successful projects delivery.</p>",
+                        "<p>Deliver the Strategic Account Financial Plans through leadership and effective management on the assigned accounts. Set strategic directions and successfully manage and grow the core Account Management teams.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Understands and follows the quality metrics, procedures and guidelines to promote and sell the organization's products and services within the existing accounts.</p>",
+                        "<p>Further develop account management skills and deeper knowledge of the organization's products, services, and customers by working closely with other account managers on local and global level. </p>",
+                        "<p>Able to coach and mentor less senior members of the Accounts team and help them to achieve their revenue objectives and targets.</p>",
+                        "<p>Develop and sets quality metrics (annual targets, plans, budgets and forecasts), procedures and guidelines.</p>",
+                        "<p>Reflect high standards of excellence and lead by example.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Able to communicate directly with the customer.</p>",
+                        "<p>Able to communicate and manage the business relationships directly with the customer.</p>",
+                        "<p>Able to communicate directly with the customer for clarification of escalation issues. Expected to be self-managed, strong problem solving skills and account management experience; understand the business environment and able to  identify opportunities for adding value to the Customer</p>",
+                        "<p>Able to manage a group of customers to achieve designated accounts target levels. Expected to have exceptional organization, leadership and stakeholder management skills; be able to resolve the most difficult and complicated issues when dealing with the Customers; ability to multi-task in fast paced environment and to lead various account management initiatives.</p>",
+                        "<p>Able to manage multiple regional or global accounts. Expected to be a strong leader with ability to drive results, manage and influence others.</p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B2</p>",
+                        "<p>C1</p>",
+                        "<p>C1</p>",
+                        "<p>C1</p>",
+                        "<p>C2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Account Manager"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Account Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Account Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Director, Account Management"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Director, Account Management"
+            ]
+        }
+    ],
+    "id": "cd159f87-68ad-b17d-6cb9-c1059b6b17a9",
+    "_rid": "nEl0AILL7gIEAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIEAAAAAAAAAA==/",
+    "_etag": "\"00000c00-0000-0000-0000-58e3ff130000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491336979
+}

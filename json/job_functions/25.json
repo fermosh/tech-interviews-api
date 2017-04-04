@@ -1,0 +1,168 @@
+{
+    "jobFunction": {
+        "id": 25,
+        "name": "Algorithm Development",
+        "mnemonicBase": "AD",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Education, Scientific and Pedagogical Qualification",
+                    "cells": [
+                        "<p>Final year student, BS, MS, or Specialist Degree in mathematical specialty.</p>",
+                        "<p>MS or Specialist Degree in mathematical specialty.</p>",
+                        "<p>MS or Specialist Degree in mathematical specialty.</p>",
+                        "<p>MS or Specialist Degree in mathematical specialty. Preferably Ph.D. Preferably experience in teaching mathematics (applied mathematics) in the university</p><p> </p>",
+                        "<p>MS or Specialist Degree in mathematical specialty, Ph.D. or Doctor of Science. Experience in teaching mathematics (applied mathematics) in the university, academic title of associate professor or professor.</p>"
+                    ]
+                },
+                {
+                    "name": "Professional Experience ",
+                    "cells": [
+                        "<p>Entry-level position - not expected to have previous work experience.</p>",
+                        "<p>At least 1 year of relevant experience.</p>",
+                        "<p>At least 3 years of relevant experience.</p>",
+                        "<p>An experienced professional with a minimum of 5 years’ experience in a similar role.</p>",
+                        "<p>A professional with a minimum of 7 years’ experience.</p>"
+                    ]
+                },
+                {
+                    "name": "Professional Skills",
+                    "cells": [
+                        "<p>Solve formalized and strictly stated problems in the area of applied mathematics using known methods.</p>",
+                        "<p>Use literature analysis and numeric experiments, select the most suitable known method for solving formalized problems in applied mathematics.</p>",
+                        "<p>Upgrade known methods to elaborate the best approach to solving a given applied mathematical problem.</p>",
+                        "<p>Develop new methods for solving given applied mathematical problems.</p>",
+                        "<p>Propose a new substantial and appropriate formalization for a given applied problem and develop a method for solving the problem.</p>"
+                    ]
+                },
+                {
+                    "name": "Software Development Skills ",
+                    "cells": [
+                        "<p>Basic software development skills.</p>",
+                        "<p>Ability to develop a software application that implements a found solution for the applied mathematical problem.</p>",
+                        "<p>Ability to develop a software application that implements a found solution for the applied mathematical problem.</p>",
+                        "<p>Ability to develop a software application that analyzes characteristics for approaches to the solution for the applied mathematical problem.</p>",
+                        "<p>Ability to develop a software application that analyzes characteristics for approaches to the solution for the applied mathematical problem.</p>"
+                    ]
+                },
+                {
+                    "name": "Data Analysis Skills",
+                    "cells": [
+                        "<p>Basic data analysis skills, working knowledge of main statistical methods and some statistical analysis software (e.g. SAS, SPSS, MATLAB, R)</p>",
+                        "<p>Confident data analysis skills, working knowledge of main statistical methods and some statistical analysis software (e.g. SAS, SPSS, MATLAB, R)</p><p> </p>",
+                        "<p>Professional data analysis skills, working knowledge of main statistical methods and main statistical analysis software (e.g. SAS, SPSS, MATLAB, R)</p>",
+                        "<p>Professional data analysis skills, perfect knowledge of main statistical methods and main statistical analysis software (e.g. SAS, SPSS, MATLAB, R)</p>",
+                        "<p>Professional data analysis skills, perfect knowledge of statistical methods, experience in developing new approaches to data analysis.</p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read and understand project and requirement documentation</p>",
+                        "<p>Able to create required documentation</p>",
+                        "<p>Able to create high-quality project documentation</p>",
+                        "<p>Able to create high-quality project documentation and analytical documents</p>",
+                        "<p>Able to create high-quality project documentation and analytical documents</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Algorithm Developer</p>",
+                        "<p>Algorithm Developer</p>",
+                        "<p>Senior Algorithm Developer</p>",
+                        "<p>Lead Algorithm Developer</p>",
+                        "<p>Principal Algorithm Developer</p>"
+                    ]
+                },
+                {
+                    "name": "Roles played/Specialization",
+                    "cells": [
+                        "<p>Plays the Algorithm Developer role</p>",
+                        "<p>Plays the Algorithm Developer role</p>",
+                        "<p>Plays the Algorithm Developer or Key Algorithm Developer role</p>",
+                        "<p>Plays the Algorithm Developer or Key Algorithm Developer role.</p>",
+                        "<p>Plays the Algorithm Developer or Key Algorithm Developer role.</p>"
+                    ]
+                },
+                {
+                    "name": "Responsibility and Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision.</p>",
+                        "<p>Expected to work without direct supervision.</p>",
+                        "<p>Expected to be self-managing, work without supervision and check his/her own work thoroughly.</p>",
+                        "<p>Expected to be self-managing, take full responsibility for a concrete problem or a whole project, work without supervision and check his/her own work thoroughly.</p><p>Can manage groups of 2-3 employees working on the same problem.</p>",
+                        "<p>Expected to be self-managing, take full responsibility for a concrete problem, whole project or a set of projects, work without supervision and check his/her own work thoroughly.</p><p> Can manage several groups of 2-3 employees working on different problems.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>No specific expectations regarding quality.</p>",
+                        "<p>Must show a sense of responsibility for the quality of the solutions created by him/her</p>",
+                        "<p>Creates solutions in good quality</p>",
+                        "<p>Must be a role model for colleagues; creates solutions in high quality.</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates solutions in excellent-quality.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Algorithm Developer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Algorithm Developer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Algorithm Developer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Algorithm Developer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Principal Algorithm Developer"
+            ]
+        }
+    ],
+    "id": "edfa36e9-4d76-9f3b-c65c-51d2e2fbd031",
+    "_rid": "nEl0AILL7gIVAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIVAAAAAAAAAA==/",
+    "_etag": "\"00001d00-0000-0000-0000-58e4000e0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337230
+}

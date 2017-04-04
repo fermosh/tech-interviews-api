@@ -1,0 +1,133 @@
+{
+    "jobFunction": {
+        "id": 22,
+        "name": "Pre-Production Training and Development",
+        "mnemonicBase": "RD",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Not expected to have previous work experience in Resource Development. <br> Skill knowledge at the level of external training. <br> Expected to have basic experience by primary skill.</p>",
+                        "<p>At least 1 year of relevant experience.</p>",
+                        "<p>At least 2 years of relevant experience.</p>",
+                        "<p>An experienced professional with a minimum 3 years’ experience in a similar role in Resource Development or high education.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Administration and Documentation Skills",
+                    "cells": [
+                        "<p>Keeps records about Resource Development process he/she works with. <br> Basic Microsoft Office User.</p>",
+                        "<p>Handles records of external groups & trainers. <br> Basic administration skills (status and reports). <br> Performs resource management actions for students.<br> Experienced Microsoft Office User.</p>",
+                        "<p>Performs resource management actions for students. <br> Moderator for Webinars, meetings, conferences.<br> Effectively works with Shared Services to supply RD laboratory needs. <br> Can handle flow of documents with Universities. <br> Advanced Microsoft Office User including ability to create education materials.</p>",
+                        "<p>Able to troubleshoot issues with other departments and external organizations (universities, providers, etc.).  <br> Organizer & Moderator for Webinars, meetings, conferences.<br> Sets up working relations with Universities. <br> Advanced Microsoft Office User.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Resource Development Instructor;</p><p>Junior Resource Development Administrator</p>",
+                        "<p>Resource Development Trainer;</p><p>Resource Development Lab Head;</p><p>Resource Development Administrator</p>",
+                        "<p>Senior Resource Development Trainer;</p><p>Senior Resource Development Lab Head;</p><p>Senior Resource Development Administrator</p><p> </p>",
+                        "<p>Lead Resource Development Trainer</p><p>Lead Resource Development Lab Head</p><p>Lead Resource Development Administrator</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Responsibility and Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision and develop good understanding of the knowledge, skills and behavior required by his/her role.</p>",
+                        "<p>Works according to existing workflows. <br> Asks for instructions in case of new and unfamiliar situations.</p>",
+                        "<p>Able to work on their own or as part of a team. <br> Organizes and executes education group formation & interviews of students. <br> Can play a role of Resource Manager L1 for trainees. Able to coach and mentor less L3 RD specialists. <br> Can lead up to 2 Lab education directions. <br> Responsible for Juniors adaptation.</p>",
+                        "<p>Can play a role of Resource Manager L2 for trainees. <br> Responsible for Juniors adaptation. <br> Identify and engage new trainers and improve their skills. <br> Acts as corporate culture delivery agent to the RD laboratories. <br> Supervises several Laboratories and/or Lab Heads on office level. <br> Responsible for education plan in the office level with the RD target less than 25 Juniors.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Trainers and Public Speaking Skills ",
+                    "cells": [
+                        "<p>Specializes on one of the basic IT education directions (Java, NET, SFT, RDBMS, Ux, etc.) or to Administrative/RM Skill. <br> Basic presentation skill (using existing materials).</p>",
+                        "<p>Public speaker to middle audience size (up to 50 ppl). <br> Solid presentation skill (can create own materials). <br> Experience equal to L1 in any basic Production skill is recommended.</p>",
+                        "<p>Public speaker for any audience size.  <br> Advanced presentation skill (create reusable materials). Can run remote sessions. <br> Experience equal to L2 in any basic Production skill is recommended.</p>",
+                        "<p>Public speaker for any audience size. <br> Experience equal to L3 in any basic Production skill (except Administrator).</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Can perform basic actions in education process as an instructor or administration support.</p>",
+                        "<p>Effectively preselects, trains and motivates up to 15 trainees. Performs routine actions according to clear instructions. Good understanding of EPAM and RD working practices and culture.</p>",
+                        "<p>Effectively preselects, trains and motivates up to 25 trainees.  Controls and evaluates trainers (rewards planning). Able to control /support Lab in other location on demand. Plans and adjusts production needs in Juniors with local Production RMs.</p>",
+                        "<p>Effectively preselects and motivates more than 25 trainees. <br> Organizes education cycle for more than 25 ppl. <br> Can play a role of Resource Manager for other RD trainers. <br> Has deep knowledge and skilled in current production best practices.<br> Can adjust RD practices to local needs. </p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>A1</p>",
+                        "<p>A2</p>",
+                        "<p>A2</p>",
+                        "<p>B1</p>",
+                        null
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Resource Development Instructor",
+                "Junior Resource Development Administrator"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Resource Development Trainer",
+                "Resource Development Lab Head",
+                "Resource Development Administrator"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Resource Development Trainer",
+                "Senior Resource Development Lab Head",
+                "Senior Resource Development Administrator"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Resource Development Trainer",
+                "Lead Resource Development Administrator",
+                "Lead Resource Development Lab Head"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        }
+    ],
+    "id": "8dd22ddd-64a0-b07c-bebf-db1241009141",
+    "_rid": "nEl0AILL7gITAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gITAAAAAAAAAA==/",
+    "_etag": "\"00001b00-0000-0000-0000-58e3ffdf0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337183
+}

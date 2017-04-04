@@ -1,0 +1,140 @@
+{
+    "jobFunction": {
+        "id": 4,
+        "name": "Marketing",
+        "mnemonicBase": "M",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Entry level position - not expected to have work experience in marketing role.</p>",
+                        "<p>At least 1-2 year of relevant experience in marketing role with good understanding of the end to end marketing processes. Experience managing non-personal social media accounts like Twitter, Facebook, YouTube, LinkedIn, Google+, etc.</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Design, Marketing and Documentation Skills",
+                    "cells": [
+                        "<p>Copy writing, project management, database maintenance. Proficiency in Excel, Word, PowerPoint and Outlook.  Ability to leverage analytical and software tools, especially CRM.</p>",
+                        "<p>Copy writing, event planning, website editing, marketing collateral creation, project coordination, database maintenance and management. Proficiency in using software tools and platforms, including Microsoft Office, Content Management Systems, Google Analytics, Adobe Creative Suite (InDesign, Illustrator and Photoshop). Ability to leverage analytical and software tools, especially CRM.</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Marketing Assistant,</p><p>Inside Sales Assistant,</p><p>Associate Communications Specialist</p><p> </p>",
+                        "<p>Marketing Specialist,</p><p>Inside Sales Specialist,</p><p>Communications Specialist</p>",
+                        "<p>Senior Inside Sales Specialist,</p><p>Senior Marketing Specialist, Senior Communications Specialist</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Specialization",
+                    "cells": [
+                        "<p>Assistant, Researcher</p>",
+                        "<p>Marketing Specialist, Social Media Specialist, Blogger, Content Specialist, etc.</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Responsibilities and Marketing Disciplines/Specialties ",
+                    "cells": [
+                        "<p>The junior marketing specialist is a member of the EPAM Marketing team and assists with the day to day administrative support of the department including database management, shipping, event logistics, sales support and collateral fulfillment.</p><p> </p><p>Specialty: Marketing Support, Sales Support, Administrative, Program Management</p>",
+                        "<p>The marketing specialist works effectively as part of a multi-disciplinary EPAM Marketing team and assists with the development and completion of Marketing plans, regional event planning and coordination, writing and editing of promotional literature, newsletters, direct marketing, internet marketing projects and presentations. Experience using social media analytics tools and the ability to tweak social strategies based on findings.</p><p> </p><p>Specialty: Sales Support, Marketing, Advertising, PR, Graphic Design, Award and Partner Program Management, Tradeshow & Seminar Management</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Marketing Program/Project Management",
+                    "cells": [
+                        "<p>Contribute to marketing events and campaigns, and coordinates production, internal rollout, communications and distribution of key marketing aids/tools such as leaflets, signage and promotional material.</p>",
+                        "<p>Project management of marketing plans including budget tracking, stakeholder support and marketing team coordination. Prepare, recommend and execute promotional, communication strategies and direct their application.</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Quality and Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision and develop sound understanding of the knowledge, skills and behavior required for a marketing specialist. High integrity and ability to learn quickly new processes and tools.</p>",
+                        "<p>Understands and follows the quality metrics, procedures and guidelines. Looks for continues improvement of marketing policies, processes and procedures.</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "English Language and Communication Skills",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p> </p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Marketing Assistant",
+                "Associate Communications Specialist",
+                "Inside Sales Assistant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Marketing Specialist",
+                "Communications Specialist",
+                "Inside Sales Specialist"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Marketing Specialist",
+                "Senior Communications Specialist",
+                "Senior Inside Sales Specialist"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        }
+    ],
+    "id": "2fcdc915-921a-a405-ecd5-291bc3af9b95",
+    "_rid": "nEl0AILL7gICAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gICAAAAAAAAAA==/",
+    "_etag": "\"00000a00-0000-0000-0000-58e3fe160000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491336726
+}

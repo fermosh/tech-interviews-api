@@ -1,0 +1,134 @@
+{
+    "jobFunction": {
+        "id": 31,
+        "name": "Content Strategy",
+        "mnemonicBase": "U",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience ",
+                    "cells": [
+                        "<p>0-2 years’ experience in content strategy.</p><p>Minimal knowledge of CMS platform capabilities</p>",
+                        "<p>2-4 years’ experience in content strategy. Growing knowledge of CMS platform capabilities</p><p> </p>",
+                        "<p>4-6 years’ experience in content strategy. Proven ability to provide oversight and creative direction on large content initiatives</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "UX&D Process Knowledge and Documentation",
+                    "cells": [
+                        "<p>Expected to have working knowledge of experience design processes. Able to comprehend project, creative, user research and content requirements; able to conduct content inventories, audits and general content analysis</p>",
+                        "<p>Expected to be able to follow and understand a defined experience design process. Able to creative strategy documentation, content type definition and content mapping documentation</p>",
+                        "<p>Expected to be able to follow, understand and enhance a defined experience design process. Able to comprehend, interpret and contribute to project, creative, user research and content requirements; able to conduct research, create strategy documentation and training materials</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge",
+                    "cells": [
+                        "<p>Limited working knowledge of customer verticals</p>",
+                        "<p>Capable of working within multiple customer verticals</p><p> </p>",
+                        "<p>Has experience working within multiple customer verticals</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Content Specialist</p>",
+                        "<p>Content Strategist</p>",
+                        "<p>Senior Content Strategist</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Reliability and Independence",
+                    "cells": [
+                        "<p>Can provide minimal communications and editorial advice/direction. Follows standards, systems and best practices for content creation, distribution, maintenance, content retrieval and content re-purposing. Expected to work effectively under supervision</p>",
+                        "<p>Growing ability to provide oversight and creative direction on large content initiatives. Expected to work effectively under supervision</p>",
+                        "<p>Expected to create content without direct supervision</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Must show a sense of responsibility for the quality of the deliverables created by him/her</p>",
+                        "<p>Must show a sense of responsibility for the quality of the deliverables created by him/her</p>",
+                        "<p>Creates deliverables in good quality</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "Client Relations",
+                    "cells": [
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                },
+                {
+                    "name": "English Language Level",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p> </p>",
+                        "<p> </p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Content Specialist"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Content Strategist"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Content Strategist"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        }
+    ],
+    "id": "d01a9a72-97e3-0ac6-47f7-98c238a899c3",
+    "_rid": "nEl0AILL7gIbAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIbAAAAAAAAAA==/",
+    "_etag": "\"00002300-0000-0000-0000-58e400830000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337347
+}
