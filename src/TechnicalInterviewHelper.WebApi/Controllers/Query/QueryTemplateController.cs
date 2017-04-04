@@ -126,7 +126,8 @@
                     Id = skill.Id,
                     ParentId = skill.ParentId,
                     Name = skill.Name,
-                    IsSelectable = skill.IsSelectable
+                    IsSelectable = skill.IsSelectable,
+                    Questions = new List<object>()
                 };
 
                 // Add the view model to the result list.
@@ -136,8 +137,8 @@
             //// TODO: Need to fill out "Description" with proper information.
             var levelViewModel = new LevelViewModel
             {
-                Id = template.CompetencyId,
-                Name = $"L{template.CompetencyId}",
+                Id = template.JobFunctionLevel,
+                Name = $"L{template.JobFunctionLevel}",
                 Description = "Work in progress."
             };
 
@@ -150,7 +151,6 @@
                 CompetencyName = "Work in progress.",
                 DomainName = "Work in progress.",
                 Skills = skillTemplateViewModelList,
-                Questions = new List<object>(),
                 Exercises = new List<object>()
             };
 

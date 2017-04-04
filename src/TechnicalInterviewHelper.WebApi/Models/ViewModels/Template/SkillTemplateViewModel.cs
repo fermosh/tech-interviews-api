@@ -83,6 +83,16 @@
         public IList<TopicViewModel> Topics { get; set; }
 
         /// <summary>
+        /// Gets or sets the questions.
+        /// <para/>This property will be always empty.
+        /// </summary>
+        /// <value>
+        /// The questions.
+        /// </value>
+        [JsonProperty("interviewQuestions")]
+        public IEnumerable<object> Questions { get; set; }
+
+        /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>

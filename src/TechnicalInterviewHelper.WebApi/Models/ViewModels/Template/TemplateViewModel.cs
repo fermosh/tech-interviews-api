@@ -69,17 +69,7 @@
         /// <value>
         /// The exercises.
         /// </value>
-        [JsonProperty("exercises")]
+        [JsonProperty("interviewExercises")]
         public IEnumerable<object> Exercises { get; set; }
-
-        /// <summary>
-        /// Gets or sets the questions.
-        /// <para/>This property will be always empty.
-        /// </summary>
-        /// <value>
-        /// The questions.
-        /// </value>
-        [JsonProperty("questions")]
-        public IEnumerable<object> Questions { get; set; }
     }
 }
