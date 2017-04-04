@@ -9,6 +9,8 @@ namespace TechnicalInterviewHelper.WebApi
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
