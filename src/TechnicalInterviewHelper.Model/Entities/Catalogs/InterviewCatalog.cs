@@ -52,7 +52,7 @@
         /// The questions.
         /// </value>
         [JsonProperty("questions")]
-        public IEnumerable<QuestionCatalog> Questions { get; set; }
+        public IEnumerable<AnsweredQuestion> Questions { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.
@@ -61,6 +61,6 @@
         /// The exercises.
         /// </value>
         [JsonProperty("exercises")]
-        public IEnumerable<ExerciseCatalog> Exercises { get; set; }
+        public IEnumerable<AnsweredExercise> Exercises { get; set; }
     }
 }

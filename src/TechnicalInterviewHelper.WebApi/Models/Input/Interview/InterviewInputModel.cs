@@ -1,6 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
     using System.Collections.Generic;
+    using TechnicalInterviewHelper.Model;
 
     /// <summary>
     /// View model for an Interview.
@@ -8,12 +9,28 @@
     public class InterviewInputModel
     {
         /// <summary>
-        /// Gets or sets the position identifier.
+        /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
-        /// The position identifier.
+        /// The competency identifier.
         /// </value>
-        public int PositionId { get; set; }
+        public int CompetencyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the job function level.
+        /// </summary>
+        /// <value>
+        /// The job function level.
+        /// </value>
+        public int JobFunctionLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template identifier.
+        /// </summary>
+        /// <value>
+        /// The template identifier.
+        /// </value>
+        public string TemplateId { get; set; }
 
         /// <summary>
         /// Gets or sets the skills.
@@ -21,7 +38,7 @@
         /// <value>
         /// The skills.
         /// </value>
-        public IEnumerable<SkillInterviewInputModel> Skills { get; set; }
+        public IEnumerable<Skill> Skills { get; set; }
 
         /// <summary>
         /// Gets or sets the questions.
@@ -29,7 +46,7 @@
         /// <value>
         /// The questions.
         /// </value>
-        public IEnumerable<QuestionInterviewInputModel> Questions { get; set; }
+        public IEnumerable<AnsweredQuestionInputModel> Questions { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.
@@ -37,6 +54,6 @@
         /// <value>
         /// The exercises.
         /// </value>
-        public IEnumerable<ExerciseInterviewInputModel> Exercises { get; set; }
+        public IEnumerable<AnsweredExerciseInputModel> Exercises { get; set; }
     }
 }

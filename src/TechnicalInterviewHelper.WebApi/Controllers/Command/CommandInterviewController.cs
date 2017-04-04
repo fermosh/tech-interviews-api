@@ -1,30 +1,42 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
+{    
     using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using System.Web.Http.Cors;
+    using Model;
+    using Services;
     using TechnicalInterviewHelper.Model;
 
-    [Route("interview")]
+    [RoutePrefix("api/interview")]
+    [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandInterviewController : ApiController
     {
         #region Repository
 
+        /// <summary>
+        /// The command for interview.
+        /// </summary>
         private readonly ICommandRepository<InterviewCatalog> commandInterview;
 
         #endregion Repository
 
         #region Constructor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
+        /// </summary>
         public CommandInterviewController()
         {
             this.commandInterview = new DocumentDbCommandRepository<InterviewCatalog>(ConfigurationManager.AppSettings["InterviewCollection"]);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
+        /// </summary>
+        /// <param name="commandInterview">The command interview.</param>
         public CommandInterviewController(ICommandRepository<InterviewCatalog> commandInterview)
         {
             this.commandInterview = commandInterview;
@@ -32,10 +44,13 @@
 
         #endregion Constructor
 
-        /*
-        [HttpPost]
-        [Route("save")]
-        public async Task<IHttpActionResult> SaveInterview(InterviewInputModel interviewInputModel)
+        /// <summary>
+        /// Posts the interview.
+        /// </summary>
+        /// <param name="interviewInputModel">The interview input model.</param>
+        /// <returns></returns>
+        [Route("")]
+        public async Task<IHttpActionResult> PostInterview(InterviewInputModel interviewInputModel)
         {
             // Exit early from method when any of next validations are not meet.
             if (interviewInputModel == null
@@ -51,47 +66,44 @@
 
             try
             {
-                var interviewToSave = new Interview
+                var interviewToSave = new InterviewCatalog
                 {
-                    PositionId = interviewInputModel.PositionId
+                    CompetencyId = interviewInputModel.CompetencyId,
+                    JobFunctionLevel = interviewInputModel.JobFunctionLevel,
+                    TemplateId = interviewInputModel.TemplateId,
+                    Skills = interviewInputModel.Skills
                 };
 
-                var skills = new List<Skill>();
-                foreach (var skill in interviewInputModel.Skills)
-                {
-                    skills.Add(new Skill
-                    {
-                        SkillId = skill.SkillId,
-                        Description = skill.Description
-                    });
-                }
-
-                interviewToSave.Skills = skills;
-
-                var questions = new List<Question>();
+                var questions = new List<AnsweredQuestion>();
                 foreach (var question in interviewInputModel.Questions)
                 {
-                    questions.Add(new Question
+                    questions.Add(new AnsweredQuestion
                     {
-                        Id = question.QuestionId,
+                        CompetencyId = question.CompetencyId,
+                        JobFunctionLevel = question.JobFunctionLevel,
+                        SkillId = question.SkillId,
                         Description = question.Description,
-                        CapturedAnswer = question.CapturedAnswer,
-                        CapturedRating = question.CapturedRating
+                        Answer = question.Answer,
+                        Rating = question.Rating
                     });
                 }
 
                 interviewToSave.Questions = questions;
 
-                var exercises = new List<Exercise>();
+                var exercises = new List<AnsweredExercise>();
                 foreach (var exercise in interviewInputModel.Exercises)
                 {
-                    exercises.Add(new Exercise
+                    exercises.Add(new AnsweredExercise
                     {
-                        Id = exercise.ExerciseId,
+                        CompetencyId = exercise.CompetencyId,
+                        JobFunctionLevel = exercise.JobFunctionLevel,
+                        SkillId = exercise.SkillId,
                         Title = exercise.Title,
                         Description = exercise.Description,
-                        CapturedSolution = exercise.CapturedSolution,
-                        CapturedRating = exercise.CapturedRating
+                        Complexity = exercise.Complexity,
+                        ProposedSolution = exercise.ProposedSolution,
+                        Answer = exercise.Answer,
+                        Rating = exercise.Rating
                     });
                 }
 
@@ -99,13 +111,12 @@
 
                 var savedInterview = await this.commandInterview.Insert(interviewToSave);
 
-                return Ok("interview.saved");
+                return Ok();
             }
             catch (Exception ex)
             {
                 return InternalServerError(ex);
             }
         }
-        */
     }
 }
