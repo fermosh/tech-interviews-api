@@ -1,4 +1,5 @@
 {
+	"id": "6c1ee435-53f2-a6b2-bf35-7d7c9260a2a3",
     "jobFunction": {
         "id": 8,
         "name": "Business Analysis",
@@ -158,11 +159,5 @@
                 "Chief Business Analyst"
             ]
         }
-    ],
-    "id": "6c1ee435-53f2-a6b2-bf35-7d7c9260a2a3",
-    "_rid": "nEl0AILL7gIGAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIGAAAAAAAAAA==/",
-    "_etag": "\"00000e00-0000-0000-0000-58e3ff280000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337000
+    ]
 }

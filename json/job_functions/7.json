@@ -1,4 +1,5 @@
 {
+	"id": "e1088616-fdee-e3b9-dc0c-e559a9a3df8f",
     "jobFunction": {
         "id": 7,
         "name": "Business Consulting",
@@ -163,11 +164,5 @@
                 "Senior Director, Client Engagement"
             ]
         }
-    ],
-    "id": "e1088616-fdee-e3b9-dc0c-e559a9a3df8f",
-    "_rid": "nEl0AILL7gIFAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIFAAAAAAAAAA==/",
-    "_etag": "\"00000d00-0000-0000-0000-58e3ff1d0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491336989
+    ]
 }

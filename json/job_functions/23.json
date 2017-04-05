@@ -1,4 +1,5 @@
 {
+	"id": "0135c838-8fd4-2ab4-2182-71ef1ebbb7bf",
     "jobFunction": {
         "id": 23,
         "name": "Pre-Sales",
@@ -148,11 +149,5 @@
                 "Principal Pre-sales Consultant"
             ]
         }
-    ],
-    "id": "0135c838-8fd4-2ab4-2182-71ef1ebbb7bf",
-    "_rid": "nEl0AILL7gIUAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIUAAAAAAAAAA==/",
-    "_etag": "\"00001c00-0000-0000-0000-58e3fff90000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337209
+    ]
 }

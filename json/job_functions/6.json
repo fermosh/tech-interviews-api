@@ -1,4 +1,5 @@
 {
+	"id": "cd159f87-68ad-b17d-6cb9-c1059b6b17a9",
     "jobFunction": {
         "id": 6,
         "name": "Account Management",
@@ -128,11 +129,5 @@
                 "Senior Director, Account Management"
             ]
         }
-    ],
-    "id": "cd159f87-68ad-b17d-6cb9-c1059b6b17a9",
-    "_rid": "nEl0AILL7gIEAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIEAAAAAAAAAA==/",
-    "_etag": "\"00000c00-0000-0000-0000-58e3ff130000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491336979
+    ]
 }

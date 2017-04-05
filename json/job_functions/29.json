@@ -1,4 +1,5 @@
 {
+	"id": "d07322bb-7504-3821-0576-4f2ea91b6537",
     "jobFunction": {
         "id": 29,
         "name": "Experience Design",
@@ -153,11 +154,5 @@
                 "Principal Game Designer"
             ]
         }
-    ],
-    "id": "d07322bb-7504-3821-0576-4f2ea91b6537",
-    "_rid": "nEl0AILL7gIZAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIZAAAAAAAAAA==/",
-    "_etag": "\"00002100-0000-0000-0000-58e4005c0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337308
+    ]
 }

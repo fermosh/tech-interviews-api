@@ -1,4 +1,5 @@
 {
+	"id": "16e696e5-2be4-8e23-743e-64254b8df65c",
     "jobFunction": {
         "id": 34,
         "name": "Agile Coach",
@@ -158,11 +159,5 @@
                 "Chief Agile Coach"
             ]
         }
-    ],
-    "id": "16e696e5-2be4-8e23-743e-64254b8df65c",
-    "_rid": "nEl0AILL7gIeAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIeAAAAAAAAAA==/",
-    "_etag": "\"00002600-0000-0000-0000-58e400ab0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337387
+    ]
 }

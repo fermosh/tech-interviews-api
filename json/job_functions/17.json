@@ -1,4 +1,5 @@
 {
+	"id": "d51a4a80-2b35-1607-0603-1fda6b36f163",
     "jobFunction": {
         "id": 17,
         "name": "Testing",
@@ -148,11 +149,5 @@
                 "Chief Software Testing Engineer"
             ]
         }
-    ],
-    "id": "d51a4a80-2b35-1607-0603-1fda6b36f163",
-    "_rid": "nEl0AILL7gIPAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIPAAAAAAAAAA==/",
-    "_etag": "\"00001700-0000-0000-0000-58e3ff9a0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337114
+    ]
 }

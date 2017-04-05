@@ -1,4 +1,5 @@
 {
+	"id": "8dd22ddd-64a0-b07c-bebf-db1241009141",
     "jobFunction": {
         "id": 22,
         "name": "Pre-Production Training and Development",
@@ -123,11 +124,5 @@
             "isEligibleForAsmt": false,
             "jobTitles": []
         }
-    ],
-    "id": "8dd22ddd-64a0-b07c-bebf-db1241009141",
-    "_rid": "nEl0AILL7gITAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gITAAAAAAAAAA==/",
-    "_etag": "\"00001b00-0000-0000-0000-58e3ffdf0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337183
+    ]
 }

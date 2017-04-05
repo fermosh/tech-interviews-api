@@ -1,4 +1,5 @@
 {
+	"id": "7f500b9b-7388-17d7-22e6-de8a32e406b2",
     "jobFunction": {
         "id": 32,
         "name": "DB Development and Administration",
@@ -153,11 +154,5 @@
                 "Chief DB Developer"
             ]
         }
-    ],
-    "id": "7f500b9b-7388-17d7-22e6-de8a32e406b2",
-    "_rid": "nEl0AILL7gIcAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIcAAAAAAAAAA==/",
-    "_etag": "\"00002400-0000-0000-0000-58e4008e0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337358
+    ]
 }

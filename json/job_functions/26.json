@@ -1,4 +1,5 @@
 {
+	"id": "0e503314-c72f-0549-f4de-436f574e7482",
     "jobFunction": {
         "id": 26,
         "name": "Application Support",
@@ -128,11 +129,5 @@
                 "Chief Application Support Analyst"
             ]
         }
-    ],
-    "id": "0e503314-c72f-0549-f4de-436f574e7482",
-    "_rid": "nEl0AILL7gIWAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIWAAAAAAAAAA==/",
-    "_etag": "\"00001e00-0000-0000-0000-58e4001a0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337242
+    ]
 }

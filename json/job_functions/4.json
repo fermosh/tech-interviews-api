@@ -1,4 +1,5 @@
 {
+	"id": "2fcdc915-921a-a405-ecd5-291bc3af9b95",
     "jobFunction": {
         "id": 4,
         "name": "Marketing",
@@ -130,11 +131,5 @@
             "isEligibleForAsmt": false,
             "jobTitles": []
         }
-    ],
-    "id": "2fcdc915-921a-a405-ecd5-291bc3af9b95",
-    "_rid": "nEl0AILL7gICAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gICAAAAAAAAAA==/",
-    "_etag": "\"00000a00-0000-0000-0000-58e3fe160000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491336726
+    ]
 }

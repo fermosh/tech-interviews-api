@@ -1,4 +1,5 @@
 {
+	"id": "e53f2304-4389-aaf2-5279-7dbd2dca62a5",
     "jobFunction": {
         "id": 10,
         "name": "Performance Optimization",
@@ -158,11 +159,5 @@
                 "Chief Performance Analyst"
             ]
         }
-    ],
-    "id": "e53f2304-4389-aaf2-5279-7dbd2dca62a5",
-    "_rid": "nEl0AILL7gIIAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIIAAAAAAAAAA==/",
-    "_etag": "\"00001000-0000-0000-0000-58e3ff430000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337027
+    ]
 }

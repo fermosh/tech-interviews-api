@@ -1,4 +1,5 @@
 {
+	"id": "8b09aafe-6101-9159-a49f-0b1b15ad1dae",
     "jobFunction": {
         "id": 28,
         "name": "Systems Engineering",
@@ -123,11 +124,5 @@
                 "Chief Systems Engineer"
             ]
         }
-    ],
-    "id": "8b09aafe-6101-9159-a49f-0b1b15ad1dae",
-    "_rid": "nEl0AILL7gIYAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIYAAAAAAAAAA==/",
-    "_etag": "\"00002000-0000-0000-0000-58e400510000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337297
+    ]
 }

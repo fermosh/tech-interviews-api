@@ -1,4 +1,5 @@
 {
+	"id": "400afcd9-f3ee-5ee2-5ae2-9ef10dbdb755",
     "jobFunction": {
         "id": 9,
         "name": "Delivery Management",
@@ -150,11 +151,5 @@
                 "Senior Director, Delivery Management"
             ]
         }
-    ],
-    "id": "400afcd9-f3ee-5ee2-5ae2-9ef10dbdb755",
-    "_rid": "nEl0AILL7gIHAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIHAAAAAAAAAA==/",
-    "_etag": "\"00000f00-0000-0000-0000-58e3ff340000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337012
+    ]
 }

@@ -1,4 +1,5 @@
 {
+	"id": "8abe8c11-701c-350c-0d3b-84870c3e61b7",
     "jobFunction": {
         "id": 14,
         "name": "Scientific Curation",
@@ -120,11 +121,5 @@
                 "Principal Scientific Curation Specialist"
             ]
         }
-    ],
-    "id": "8abe8c11-701c-350c-0d3b-84870c3e61b7",
-    "_rid": "nEl0AILL7gIMAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIMAAAAAAAAAA==/",
-    "_etag": "\"00001400-0000-0000-0000-58e3ff790000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337081
+    ]
 }

@@ -60,6 +60,11 @@
         /// </summary>
         private readonly string interviewCollectionId = ConfigurationManager.AppSettings["InterviewCollectionId"];
 
+        /// <summary>
+        /// The job function collectionid
+        /// </summary>
+        private readonly string jobFunctionCollectionId = ConfigurationManager.AppSettings["JobFunctionCollectionId"];
+
         #endregion Collections
 
         /// <summary>
@@ -130,25 +135,18 @@
         /// <returns></returns>
         private async Task CreateCollectionIfNotExistsAsync()
         {
+            var databaseUri = UriFactory.CreateDatabaseUri(this.databaseId);
+            var requestOptions = new RequestOptions { OfferThroughput = 400 };
+
             #region Competency collection
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.competencyCollectionId));
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.competencyCollectionId }, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.competencyCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             #endregion Competency collection
@@ -157,21 +155,11 @@
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.questionCollectionId));
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.questionCollectionId }, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.questionCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             #endregion Question collection
@@ -180,21 +168,11 @@
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.exerciseCollectionId));
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.exerciseCollectionId }, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.exerciseCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             #endregion Skill collection
@@ -203,22 +181,12 @@
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.skillCollectionId));
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.skillCollectionId }, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.skillCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
-            }
+                throw;
+            }            
 
             #endregion Skill collection
 
@@ -226,21 +194,11 @@
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.templateCollectionId));
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.templateCollectionId }, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.templateCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             #endregion Template collection
@@ -249,24 +207,27 @@
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.interviewCollectionId));
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.interviewCollectionId }, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.interviewCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             #endregion Interview collection
+
+            #region Job function collection
+
+            try
+            {
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.jobFunctionCollectionId }, requestOptions);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            #endregion Job function collection
         }
 
         #endregion Create Collections

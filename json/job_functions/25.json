@@ -1,4 +1,5 @@
 {
+	"id": "edfa36e9-4d76-9f3b-c65c-51d2e2fbd031",
     "jobFunction": {
         "id": 25,
         "name": "Algorithm Development",
@@ -158,11 +159,5 @@
                 "Principal Algorithm Developer"
             ]
         }
-    ],
-    "id": "edfa36e9-4d76-9f3b-c65c-51d2e2fbd031",
-    "_rid": "nEl0AILL7gIVAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIVAAAAAAAAAA==/",
-    "_etag": "\"00001d00-0000-0000-0000-58e4000e0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337230
+    ]
 }
