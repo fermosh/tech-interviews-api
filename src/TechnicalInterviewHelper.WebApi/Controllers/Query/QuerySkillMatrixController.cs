@@ -14,7 +14,7 @@
     /// API for Position-Skill operations.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [RoutePrefix("api/skillmatrix")]
+    [RoutePrefix("api/skillMatrix")]
     [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QuerySkillMatrixController : ApiController
     {
@@ -34,7 +34,7 @@
         /// </summary>
         public QuerySkillMatrixController()
         {
-            this.querySkillMatrix = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
+            querySkillMatrix = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@
         /// <param name="queryPositionSkill">The query skill.</param>
         public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
         {
-            this.querySkillMatrix = queryPositionSkill;
+            querySkillMatrix = queryPositionSkill;
         }
 
         #endregion Constructor
@@ -58,7 +58,7 @@
         public async Task<IHttpActionResult> GetSkillMatrixByCompetencyAndLevel(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
-            var skills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
+            var skills = await querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
                                                                                          skill.JobFunctionLevel == jobFunctionLevel);
 
             // We have found documents that match the input criteria, so we proceed to include them in the response.
@@ -99,7 +99,7 @@
 
             var positionSkillVM = new SkillMatrixViewModel()
             {
-                HasContent = skillsVM.Count() > 0,
+                HasContent = skillsVM.Any(),
                 CompetencyId = competencyId,
                 Skills = skillsVM
             };

@@ -24,7 +24,7 @@
         /// <summary>
         /// The TemplateCatalog repository.
         /// </summary>
-        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
+        private readonly IQueryRepository<Template, string> queryTemplateCatalog;
 
         #endregion Repositories
 
@@ -36,7 +36,7 @@
         public QueryExerciseController()
         {
             this.queryExercise = new ExerciseDocumentDbQueryRepository(ConfigurationManager.AppSettings["ExerciseCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
+            this.queryTemplateCatalog = new DocumentDbQueryRepository<Template, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@
         /// <param name="queryTemplateCatalog">TemplateCatalog repository.</param>
         public QueryExerciseController(
             IExerciseQueryRepository queryExercise,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
+            IQueryRepository<Template, string> queryTemplateCatalog)
         {
             this.queryExercise = queryExercise;
             this.queryTemplateCatalog = queryTemplateCatalog;
@@ -83,7 +83,7 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var exercises = await this.queryExercise.FindWithinExercises(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
+            var exercises = await queryExercise.GetAll();
 
             // --------------------------------------
             // Now it's time to build the response.
@@ -95,14 +95,38 @@
             {
                 exercisesVM.Add(new ExerciseViewModel
                 {
-                    ExerciseId = exercise.Id,
-                    Description = exercise.Description,
-                    ProposedSolution = exercise.ProposedSolution,
+                    Id = exercise.Id,
+                    Body = exercise.Body,
+                    Solution = exercise.Solution,
                     Title = exercise.Title
                 });
             }
 
             return Ok(exercisesVM);
+        }
+
+        /// <summary>
+        /// Gets a list of exercises
+        /// </summary>
+        /// <returns>An HttpResult with either an error or success code with the list of exercises.</returns>
+        [Route("exercises")]
+        public async Task<IHttpActionResult> GetExercises()
+        {
+            var exercises = await queryExercise.GetAll();
+
+            return Ok(exercises);
+        }
+
+        /// <summary>
+        /// Gets a list of exercises
+        /// </summary>
+        /// <returns>An HttpResult with either an error or success code with the list of exercises.</returns>
+        [Route("exercises/{id}")]
+        public async Task<IHttpActionResult> GetExercise(string id)
+        {
+            var exercises = await queryExercise.FindById(id);
+
+            return Ok(exercises);
         }
     }
 }

@@ -13,8 +13,8 @@
         /// <value>
         /// The exercise identifier.
         /// </value>
-        [JsonProperty("exerciseId")]
-        public string ExerciseId { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
@@ -31,8 +31,8 @@
         /// <value>
         /// The proposed solution.
         /// </value>
-        [JsonProperty("proposedSolution")]
-        public string ProposedSolution { get; set; }
+        [JsonProperty("solution")]
+        public string Solution { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
@@ -40,7 +40,7 @@
         /// <value>
         /// The description.
         /// </value>
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("Body")]
+        public string Body { get; set; }
     }
 }

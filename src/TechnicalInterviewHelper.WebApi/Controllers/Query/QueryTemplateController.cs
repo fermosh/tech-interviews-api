@@ -24,7 +24,7 @@
         /// <summary>
         /// The query template catalog
         /// </summary>
-        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
+        private readonly IQueryRepository<Template, string> queryTemplateCatalog;
 
         #endregion Repository
 
@@ -36,7 +36,7 @@
         public QueryTemplateController()
         {
             this.querySkillMatrixCatalog = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
+            this.queryTemplateCatalog = new DocumentDbQueryRepository<Template, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@
         /// <param name="queryTemplateCatalog">The query template catalog.</param>
         public QueryTemplateController(
             SkillMatrixDocumentDbQueryRepository querySkillMatrixCatalog,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
+            IQueryRepository<Template, string> queryTemplateCatalog)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;
             this.querySkillMatrixCatalog = querySkillMatrixCatalog;

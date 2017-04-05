@@ -7,7 +7,7 @@
     /// Entity which models a document with skills.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class SkillMatrixCatalog : BaseEntity
+    public class SkillMatrix : BaseEntity
     {
         /// <summary>
         /// Gets or sets a value indicating whether this instance has content.

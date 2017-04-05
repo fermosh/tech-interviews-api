@@ -53,11 +53,11 @@
     <Compile Include="Entities\Catalogs\CompetencyCatalog.cs" />
     <Compile Include="Entities\Common\AnsweredQuestion.cs" />
     <Compile Include="Entities\Common\Competency.cs" />
-    <Compile Include="Entities\Catalogs\ExerciseCatalog.cs" />
+    <Compile Include="Entities\Common\Exercise.cs" />
     <Compile Include="Entities\Catalogs\InterviewCatalog.cs" />
-    <Compile Include="Entities\Catalogs\TemplateCatalog.cs" />
-    <Compile Include="Entities\Catalogs\SkillMatrixCatalog.cs" />
-    <Compile Include="Entities\Catalogs\QuestionCatalog.cs" />
+    <Compile Include="Entities\Catalogs\Template.cs" />
+    <Compile Include="Entities\Catalogs\SkillMatrix.cs" />
+    <Compile Include="Entities\Common\Question.cs" />
     <Compile Include="Entities\Common\Skill.cs" />
     <Compile Include="Entities\Common\Topic.cs" />
     <Compile Include="Interfaces\Command\ICommandRepository.cs" />

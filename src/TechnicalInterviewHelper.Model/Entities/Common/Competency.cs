@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;
-
+    
     /// <summary>
     /// Competency entity.
     /// </summary>

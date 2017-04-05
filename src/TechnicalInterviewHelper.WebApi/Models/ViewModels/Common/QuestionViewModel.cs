@@ -13,16 +13,16 @@
         /// <value>
         /// The question identifier.
         /// </value>
-        [JsonProperty("questionId")]
-        public string QuestionId { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the question body.
         /// </summary>
         /// <value>
-        /// The description.
+        /// The body.
         /// </value>
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("body")]
+        public string Body { get; set; }
     }
 }

@@ -12,9 +12,9 @@
     /// <summary>
     /// Repository for specific operation related to questions.
     /// </summary>
-    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.QuestionCatalog, System.String}" />
+    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.Question, System.String}" />
     /// <seealso cref="TechnicalInterviewHelper.Model.IQuestionQueryRepository" />
-    public class QuestionDocumentDbQueryRepository : DocumentDbQueryRepository<QuestionCatalog, string>, IQuestionQueryRepository
+    public class QuestionDocumentDbQueryRepository : DocumentDbQueryRepository<Question, string>, IQuestionQueryRepository
     {
         #region Constructor
 
@@ -47,7 +47,7 @@
         /// <returns>
         /// An enumeration of questions.
         /// </returns>
-        public async Task<IEnumerable<QuestionCatalog>> FindWithinQuestions(int competencyId, int jobFunctionLevel, int[] skillIds)
+        public async Task<IEnumerable<Question>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds)
         {
             var predicate = new StringBuilder();
 
@@ -60,14 +60,14 @@
 
             var documentQuery =
                     this.DocumentClient
-                    .CreateDocumentQuery<QuestionCatalog>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .CreateDocumentQuery<Question>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(predicate.ToString())
                     .AsDocumentQuery();
 
-            var questionResult = new List<QuestionCatalog>();
+            var questionResult = new List<Question>();
             while (documentQuery.HasMoreResults)
             {
-                var questions = await documentQuery.ExecuteNextAsync<QuestionCatalog>();
+                var questions = await documentQuery.ExecuteNextAsync<Question>();
                 questionResult.AddRange(questions);
             }
 

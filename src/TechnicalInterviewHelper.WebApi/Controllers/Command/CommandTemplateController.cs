@@ -13,7 +13,7 @@
     /// Has commands that affect template entities.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [RoutePrefix("api/template")]
+    [RoutePrefix("api/templates")]
     [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandTemplateController : ApiController
     {
@@ -22,7 +22,7 @@
         /// <summary>
         /// The command repository
         /// </summary>
-        private readonly ICommandRepository<TemplateCatalog> commandRepository;
+        private readonly ICommandRepository<Template> commandRepository;
 
         #endregion Repository
 
@@ -33,14 +33,14 @@
         /// </summary>
         public CommandTemplateController()
         {
-            this.commandRepository = new DocumentDbCommandRepository<TemplateCatalog>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
+            this.commandRepository = new DocumentDbCommandRepository<Template>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
         /// <param name="skillRepository">The skill repository.</param>
-        public CommandTemplateController(ICommandRepository<TemplateCatalog> commandRepository)
+        public CommandTemplateController(ICommandRepository<Template> commandRepository)
         {
             this.commandRepository = commandRepository;
         }
@@ -70,7 +70,7 @@
 
             try
             {
-                var templateToSave = new TemplateCatalog()
+                var templateToSave = new Template()
                 {
                     CompetencyId = templateInput.CompetencyId,
                     JobFunctionLevel = templateInput.JobFunctionLevel,

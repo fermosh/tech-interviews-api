@@ -5,7 +5,7 @@
     /// <summary>
     /// Exercise entity.
     /// </summary>
-    public class ExerciseCatalog : BaseEntity
+    public class Exercise : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -13,17 +13,8 @@
         /// <value>
         /// The competency identifier.
         /// </value>
-        [JsonProperty("competencyId")]
-        public int CompetencyId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the job function level.
-        /// </summary>
-        /// <value>
-        /// The job function level.
-        /// </value>
-        [JsonProperty("jobFunctionLevel")]
-        public int JobFunctionLevel { get; set; }
+        [JsonProperty("competency")]
+        public Competency Competency { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifier, supplied by a third party, at which this question belongs.
@@ -31,8 +22,8 @@
         /// <value>
         /// The skill identifier.
         /// </value>
-        [JsonProperty("skillId")]
-        public int SkillId { get; set; }
+        [JsonProperty("skills")]
+        public Skill Tags { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
@@ -49,25 +40,16 @@
         /// <value>
         /// The text.
         /// </value>
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("body")]
+        public string Body { get; set; }
 
         /// <summary>
-        /// Gets or sets the complexity.
+        /// Gets or sets the text.
         /// </summary>
         /// <value>
-        /// The complexity.
+        /// The text.
         /// </value>
-        [JsonProperty("complexity")]
-        public string Complexity { get; set; }
-
-        /// <summary>
-        /// Gets or sets the proposed solution.
-        /// </summary>
-        /// <value>
-        /// The proposed solution.
-        /// </value>
-        [JsonProperty("proposedSolution")]
-        public string ProposedSolution { get; set; }
+        [JsonProperty("Solution")]
+        public string Solution { get; set; }
     }
 }

@@ -8,8 +8,8 @@
     /// <summary>
     /// Proper interface for specific operations in the PositionSkill catalog.
     /// </summary>
-    /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{TechnicalInterviewHelper.Model.SkillMatrixCatalog, System.String}" />
-    public interface ISkillMatrixQueryRepository : IQueryRepository<SkillMatrixCatalog, string>
+    /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{TechnicalInterviewHelper.Model.SkillMatrix, System.String}" />
+    public interface ISkillMatrixQueryRepository : IQueryRepository<SkillMatrix, string>
     {
         /// <summary>
         /// Finds the within.

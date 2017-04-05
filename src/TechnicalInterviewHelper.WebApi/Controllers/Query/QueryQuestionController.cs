@@ -24,7 +24,7 @@
         /// <summary>
         /// Template catalog repository.
         /// </summary>
-        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
+        private readonly IQueryRepository<Template, string> queryTemplateCatalog;
 
         #endregion Repositories
 
@@ -36,7 +36,7 @@
         public QueryQuestionController()
         {
             this.queryQuestion = new QuestionDocumentDbQueryRepository(ConfigurationManager.AppSettings["QuestionCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
+            this.queryTemplateCatalog = new DocumentDbQueryRepository<Template, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@
         /// <param name="queryTemplateCatalog">Template catalog repository.</param>
         public QueryQuestionController(
             IQuestionQueryRepository queryQuestion,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
+            IQueryRepository<Template, string> queryTemplateCatalog)
         {
             this.queryQuestion = queryQuestion;
             this.queryTemplateCatalog = queryTemplateCatalog;
@@ -66,7 +66,7 @@
                 return BadRequest("Cannot get questions without a valid template identifier.");
             }
 
-            var templateCatalog = await this.queryTemplateCatalog.FindById(templateId);
+            var templateCatalog = await queryTemplateCatalog.FindById(templateId);
             if (templateCatalog == null)
             {
                 return NotFound();
@@ -83,7 +83,7 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var questions = await this.queryQuestion.FindWithinQuestions(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
+            var questions = await queryQuestion.GetAll(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
 
             // --------------------------------------
             // Now it's time to build the response.
@@ -95,12 +95,38 @@
             {
                 questionsVM.Add(new QuestionViewModel
                 {
-                    QuestionId = question.Id,
-                    Description = question.Description
+                    Id = question.Id,
+                    Body = question.Body
                 });
             }
 
             return Ok(questionsVM);
+        }
+
+        /// <summary>
+        /// Gets a list of questions
+        /// </summary>
+        /// <returns>An HttpResult with either an error or success code with the list of questions.</returns>
+        [Route("questions")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetQuestions()
+        {
+            var questions = await queryQuestion.GetAll();
+
+            return Ok(questions);
+        }
+
+        /// <summary>
+        /// Gets a list of exercises
+        /// </summary>
+        /// <returns>An HttpResult with either an error or success code with the questions.</returns>
+        [Route("questions/{id}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetQuestion(string id)
+        {
+            var question = await queryQuestion.FindById(id);
+
+            return Ok(question);
         }
     }
 }
