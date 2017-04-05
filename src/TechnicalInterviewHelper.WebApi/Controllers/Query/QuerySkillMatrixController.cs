@@ -32,14 +32,6 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
-        public QuerySkillMatrixController()
-        {
-            this.querySkillMatrix = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
-        /// </summary>
         /// <param name="queryPositionSkill">The query skill.</param>
         public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
         {

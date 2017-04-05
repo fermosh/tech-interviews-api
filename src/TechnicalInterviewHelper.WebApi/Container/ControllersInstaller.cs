@@ -12,7 +12,7 @@
             container.Register(Classes.FromThisAssembly()
                 .Pick().If(item => item.Name.EndsWith("controller", true, CultureInfo.InvariantCulture))
                 .Configure(configurer => configurer.Named(configurer.Implementation.Name))
-                .LifestylePerWebRequest());
+                .LifestyleTransient());
         }
     }
 }

@@ -33,15 +33,6 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryQuestionController"/> class.
         /// </summary>
-        public QueryQuestionController()
-        {
-            this.queryQuestion = new QuestionDocumentDbQueryRepository(ConfigurationManager.AppSettings["QuestionCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryQuestionController"/> class.
-        /// </summary>
         /// <param name="queryQuestion">Question repository.</param>
         /// <param name="queryTemplateCatalog">Template catalog repository.</param>
         public QueryQuestionController(

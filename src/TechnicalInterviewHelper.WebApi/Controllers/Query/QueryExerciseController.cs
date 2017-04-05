@@ -33,15 +33,6 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryExerciseController"/> class.
         /// </summary>
-        public QueryExerciseController()
-        {
-            this.queryExercise = new ExerciseDocumentDbQueryRepository(ConfigurationManager.AppSettings["ExerciseCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<TemplateCatalog, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryExerciseController"/> class.
-        /// </summary>
         /// <param name="queryExercise">Exercise repository.</param>
         /// <param name="queryTemplateCatalog">TemplateCatalog repository.</param>
         public QueryExerciseController(

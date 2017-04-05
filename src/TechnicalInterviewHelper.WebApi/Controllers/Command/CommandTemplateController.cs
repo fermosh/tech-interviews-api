@@ -31,14 +31,6 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
-        public CommandTemplateController()
-        {
-            this.commandRepository = new DocumentDbCommandRepository<TemplateCatalog>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
-        /// </summary>
         /// <param name="skillRepository">The skill repository.</param>
         public CommandTemplateController(ICommandRepository<TemplateCatalog> commandRepository)
         {

@@ -28,14 +28,6 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
         /// </summary>
-        public CommandInterviewController()
-        {
-            this.commandInterview = new DocumentDbCommandRepository<InterviewCatalog>(ConfigurationManager.AppSettings["InterviewCollection"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
-        /// </summary>
         /// <param name="commandInterview">The command interview.</param>
         public CommandInterviewController(ICommandRepository<InterviewCatalog> commandInterview)
         {
