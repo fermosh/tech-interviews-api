@@ -1,0 +1,168 @@
+{
+    "jobFunction": {
+        "id": 8,
+        "name": "Business Analysis",
+        "mnemonicBase": "BA",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Development Experience and Knowledge",
+                    "cells": [
+                        "<p>Good sense to understand and analyze business processes, requirements, and formulate them in a written form. At least 1 year of relevant experience desirable but not essential.</p>",
+                        "<p>At least 3 year of relevant experience.</p>",
+                        "<p>At least 5 years of relevant experience, including UML, Modeling and Design skills</p>",
+                        "<p>At least 7 years of relevant experience, including UML, Modeling and Design skills, expert knowledge of at least one business area, ability to coach and train others</p>",
+                        "<p>At least 8 years of relevant experience, including UML, Modeling and Design skills, expert knowledge of at least one business area, ability to coach and train others</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience of the software development processes</p>",
+                        "<p>Expected to be able to follow a defined software development process</p>",
+                        "<p>Expected to be able to follow and understand a defined software development process</p>",
+                        "<p>Expected to be able to follow, understand, and enhance a defined software development process</p>",
+                        "<p>Expected to be able to follow, understand, actively influence and enhance a defined software development process</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Reads and understands project documentation, creates analysis and requirement documentation with supervision</p>",
+                        "<p>Reads and understands project documentation, creates analysis and requirement documentation</p>",
+                        "<p>Reads and understands project documentation, creates high-quality analysis and requirement documentation</p>",
+                        "<p>Reads and understands project documentation, creates high-quality analysis, requirement and audit documentation</p>",
+                        "<p>Reads and understands project documentation, creates high-quality analysis, requirement and audit documentation</p>"
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge",
+                    "cells": [
+                        "<p>Not expected to have business domain knowledge or experience working with specific business areas</p>",
+                        "<p>Has basic understanding of one business domain area. Expected to demonstrate ability to learn and systematize business knowledge</p>",
+                        "<p>Has good knowledge and understanding of one business domain area. Proven abilities to quickly learn, systematize, and retain business knowledge.</p>",
+                        "<p>Has expert knowledge and understanding of one business domain area. Has had exposure into other business areas and confirmed abilities to quickly learn, systematize, retain, and re-apply business knowledge. Can teach and tutor business concepts to project teams and colleagues.</p>",
+                        "<p>Has expert knowledge in either a wide business knowledge area or multiple smaller areas.  Can teach and tutor business concepts to project teams and colleagues, can prepare training materials for a wider audience. On a par with industry SMEs in the area of business specialization. Demonstrates continuous self-education in the area of business specialization</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Business Analyst</p>",
+                        "<p>Business Analyst</p>",
+                        "<p>Senior Business Analyst</p>",
+                        "<p>Lead Business Analyst</p>",
+                        "<p>Chief Business Analyst</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the Business/System Analyst role</p>",
+                        "<p>Plays the Business/System Analyst role</p>",
+                        "<p>Plays the role of a Key Business/System Analyst or a Team Lead of 2-5 Analysts</p>",
+                        "<p>Plays the Key Business/System Analyst role, and usually also performs a Team Lead, Reviewer or Auditor role</p>",
+                        "<p>Can play any Business/System Analyst role, typically a senior position. Responsibilities can include Team Lead, Reviewer, Auditor and Technical Trainer</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision</p>",
+                        "<p>Expected to work without direct supervision</p>",
+                        "<p>Expected to be self-managing, work without supervision and check his/her own work thoroughly</p>",
+                        "<p>Expected to be self-managing, take full responsibility for a subsystem or a whole project, work without supervision and check his/her own work thoroughly. Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</p>",
+                        "<p>Expected to be self-managing, take full responsibility for a subsystem or a whole project, work without supervision and check his/her own work thoroughly. Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>No specific expectations regarding quality</p>",
+                        "<p>Must show a sense of responsibility for the quality of the deliverables created by him/her</p>",
+                        "<p>Creates deliverables in good quality</p>",
+                        "<p>Must be a role model for colleagues; creates deliverables in high quality</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent-quality.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>",
+                        "<p>Expected to participate in phone conference; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>",
+                        "<p>Expected to be on a par with the best industry experts in customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>",
+                        "<p>Expected to be on a par with the best industry experts in customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                },
+                {
+                    "name": "Language Level in the Customer's Communication Language",
+                    "cells": [
+                        "<p>Able to read and write the Customer's Communication Language and have advanced speaking ability</p>",
+                        "<p>Able to read and write the Customer's Communication Language and have advanced speaking ability</p>",
+                        "<p>Comfortably able to read and write and speak Customer's Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer's Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer's Communication Language; able to write high-quality unambiguous texts</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Business Analyst"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Business Analyst"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Business Analyst"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Business Analyst"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Business Analyst"
+            ]
+        }
+    ],
+    "id": "6c1ee435-53f2-a6b2-bf35-7d7c9260a2a3",
+    "_rid": "nEl0AILL7gIGAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIGAAAAAAAAAA==/",
+    "_etag": "\"00000e00-0000-0000-0000-58e3ff280000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337000
+}

@@ -1,0 +1,163 @@
+{
+    "jobFunction": {
+        "id": 29,
+        "name": "Experience Design",
+        "mnemonicBase": "XD",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p> </p><p>Having of 0-1 years of relevant experience. Basic proficiency of industry standard design/CG art tools.</p>",
+                        "<p> </p><p>Having at least 1-2 years of relevant experience. Developing or has developed proficiency and effectiveness of industry standard design/CG art tools and processes.</p>",
+                        "<p> </p><p>Having at least 3 years of relevant experience. Highly proficient and developing or has developed a comprehensive knowledge of industry standard design/game industry artistic tools and processes and having the ability to interface directly with clients to present design/art  work without the support of an Account Manager.</p>",
+                        "<p> </p><p>Having at least 5 years of relevant experience. Has proven depth and breadth of knowledge of industry standard design/game industry artistic tools and processes. Recognized as an authority in multiple function areas. Experience leading client presentations, workshops, and discussions. Experience estimating the efforts for various project types. Understanding of the latest trends in design/game industry.</p>",
+                        "<p>Having at least 7 years of relevant design/CG art experience.  Recognized as a resource for innovation and groundbreaking design/CG art. Experience with industry thought leadership including writing, speaking and teaching; Understanding of the latest trends in design/game industry.</p>"
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge",
+                    "cells": [
+                        "<p>No or limited business domain knowledge.</p>",
+                        "<p>Capable of working within at least one customer verticals.</p>",
+                        "<p>Comprehensive experience working within multiple customer verticals.</p>",
+                        "<p>Proven depth and breadth of knowledge of multiple customer verticals.</p>",
+                        "<p>Expert knowledge of multiple customer verticals.</p>"
+                    ]
+                },
+                {
+                    "name": "Design/CG art Process Knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience of the design/CG art processes.</p><p> </p>",
+                        "<p> </p><p>Expected to be able to follow a defined design/CG art process.</p>",
+                        "<p> </p><p>Expected to be able to follow and understand a defined design/CG art process.</p>",
+                        "<p> </p><p>Expected to be able to follow, understand and enhance a defined design/CG art process.</p>",
+                        "<p> </p><p>Expected to be able to follow, understand, actively influence and enhance a defined design/CG art process.</p>"
+                    ]
+                },
+                {
+                    "name": "Design/Artistic and Documentation Skills",
+                    "cells": [
+                        "<p> </p><p>Able to understand and follow design/art (within single CG art specialty)  processes with support.</p>",
+                        "<p> </p><p>Expected to be able to follow defined design/art (within single CG art specialty) processes. Able to read and understand project and requirement documentation; able to create documentation describing his/her deliverables.</p>",
+                        "<p> </p><p>Expected to be able to follow defined design/ art (within two CG art specialties)  processes. Able to read and understand project and requirement documentation; able to create  high-quality documentation of his/her designed deliverables: Ability to direct junior team members and interns/co-ops</p>",
+                        "<p> </p><p>Expected to be able to follow, understand and enhance defined design/art (within multiple CG art specialties) processes. Able to create, implement and enhance a new design/art processes. Contributes directly to project design. Mentors and coaches team members through design/art process and performance management.</p>",
+                        "<p> </p><p>Expected to be able to understand and enhance a defined design/art (within multiple CG art specialties) process. Able to create, implement, and enhance a new design/art (within multiple CG art specialties) processes. Able to read and understand project and requirement documentation; able to create high-quality documentation including documentation of process for client/global consumption; Mentors and coaches team members through design/art process and performance management.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Associate User Experience Designer</p><p>Associate Visual Designer</p><p>Associate Computer Graphics Artist</p><p>Associate Game Designer</p>",
+                        "<p>User Experience Designer</p><p>Visual Designer</p><p>Computer Graphics Artist</p><p>Game Designer  </p>",
+                        "<p>Senior User Experience Designer</p><p>Senior Visual Designer</p><p>Senior Computer Graphics Artist</p><p>Senior Game Designer</p>",
+                        "<p>Lead User Experience Designer</p><p>Lead Visual Designer</p><p>Lead Computer Graphics Artist</p><p>Lead Game Designer</p>",
+                        "<p>Principal User Experience Designer</p><p>Principal Visual Designer</p><p>Principal Computer Graphics Artist</p><p>Principal Game Designer</p>"
+                    ]
+                },
+                {
+                    "name": "Responsibility and Reliability",
+                    "cells": [
+                        "<p> </p><p>Expected to work effectively under supervision and assists senior members of the team with design/CG art services to clients; Demonstrates attention to detail and adherence to company process.</p>",
+                        "<p> </p><p>Work as part of a team under some supervision to create deliverables; Translate business requirements and specifications into usable, useful and desirable deliverables. Participate in new-business activities, presentations and estimates. Present work to internal teams and clients under supervision. Demonstrates high standards of workmanship, attention to detail and adherence to company process and industry standards/best practices.</p>",
+                        "<p> </p><p>Independently create deliverables; Translate business requirements and specifications into usable, useful and desirable deliverables. Participate in new-business activities, presentations and estimates. Collaborate with design/CG art leadership on process; Present design/CG art work to internal team as well as clients without supervision. Ability to take direction and work effectively without supervision. Able to work with internal and external teams on multiple projects simultaneously, think and respond quickly to requests. Demonstrates high standards of workmanship, attention to detail and adherence to company process and industry standards/best practices.</p>",
+                        "<p> </p><p>Lead a team in the creation of deliverables; Lead design/CG art aspects of responsive-design projects; Serve as a Lead for new-business activities, presentations and estimates; Collaborate with creative leads on design/CG art process; Present design work to internal team as well as clients; Delegate work to more junior team members as needed/appropriate; Serve as thought leader in the field by writing, speaking and/or teaching.  Further the practice of design/CG art within; EPAM by sharing knowledge, updating the team on industry advances, and keeping abreast of latest trends. Deliver innovative strategic design/CG art solutions and develop client relationships.</p><p> </p><p>Establish direction and vision which mobilizes the design/CG art team(s) to meet clearly defined goals and targets. Help to recruit, manage, support, groom, inspire, and lead design/CG art team to creative solutions that fulfill client objectives. Expected to be self-managing / work without supervision. Ability to work on multiple projects simultaneously while maintaining absolute organization and prioritization under extreme pressure; Ability to think and respond quickly to client and internal team demands, while maintaining extraordinary attention to detail;  Responsible for design/CG art deliverables produced by more junior team members.</p>",
+                        "<p> </p><p>Serve as thought leader in the field by writing, speaking and/or teaching.  Further the practice of design/CG art within EPAM by sharing knowledge, updating the team on industry advances, and keeping abreast of latest trends. Be able to present and sell complex ideas and concepts to C-level stakeholders.</p><p> </p><p>Establish direction and vision which mobilizes the design/CG art team(s) to meet clearly defined goals and targets. Help to recruit, manage, support, groom, inspire, and lead design team to creative solutions that fulfil client objectives.  Expected to be self-managing, take responsibility for a subsystem or a whole project, and work without supervision. Ability to independently lead a department of designers/artists. Responsible for the methodology creation/refinement/growth responsibilities for the design/CG art team to leverage.  Ability to work on multiple projects simultaneously while maintaining absolute organization and prioritization under extreme pressure; Ability to think and respond quickly to client and internal team demands, while maintaining extraordinary attention to detail;</p><p> </p><p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent quality.</p>"
+                    ]
+                },
+                {
+                    "name": "Roles played on the project",
+                    "cells": [
+                        "<p>Designer; CG Artist</p>",
+                        "<p>Designer; CG Artist</p>",
+                        "<p>Designer; CG Artist; CG Art Lead</p>",
+                        "<p>Designer; CG Art Lead</p>",
+                        "<p>Designer; CG Art Lead</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Not expected to communicate directly with customers.</p>",
+                        "<p>Experience in presenting work to/communicating with internal and external customers.</p>",
+                        "<p>Significant experience in presenting work to/communicating with internal and external customers.</p>",
+                        "<p>Expected to interface directly with clients by leading presentations, workshops and customer visits.</p>",
+                        "<p>Expected to be on a par with the best industry experts in customer relationship skills; interface directly with clients by leading presentations, workshops and customer visits.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>C1</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Associate Visual Designer",
+                "Associate User Experience Designer",
+                "Associate Computer Graphics Artist",
+                "Associate Game Designer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Visual Designer",
+                "User Experience Designer",
+                "Computer Graphics Artist",
+                "Game Designer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Visual Designer",
+                "Senior User Experience Designer",
+                "Senior Computer Graphics Artist",
+                "Senior Game Designer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Visual Designer",
+                "Lead User Experience Designer",
+                "Lead Computer Graphics Artist",
+                "Lead Game Designer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Principal Visual Designer",
+                "Principal User Experience Designer",
+                "Principal Computer Graphics Artist",
+                "Principal Game Designer"
+            ]
+        }
+    ],
+    "id": "d07322bb-7504-3821-0576-4f2ea91b6537",
+    "_rid": "nEl0AILL7gIZAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIZAAAAAAAAAA==/",
+    "_etag": "\"00002100-0000-0000-0000-58e4005c0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337308
+}

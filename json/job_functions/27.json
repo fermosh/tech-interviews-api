@@ -1,0 +1,138 @@
+{
+    "jobFunction": {
+        "id": 27,
+        "name": "Service Desk",
+        "mnemonicBase": "SD",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "End-user Support Service Desk Experience",
+                    "cells": [
+                        "<p>Basic understanding of the overall EPAM Systems environment, workstation support, Internet connectivity and security services, as well as the specific products in use (PMC Suite applications). Ability to understand and follow Service Desk work instructions, checklists and decision trees for the 1st line support of EPAM internal projects/services. Relevant knowledge and experience is a plus.</p>",
+                        "<p>At least a year of experience. Ability to perform Service Desk duties without intensive supervision and curator’s control. Ability to perform initial investigation, ability to identify requests requiring attention of senior Service Desk staff.</p>",
+                        "<p>At least 1.5-2 years of relevant Service Desk experience. Ability to pass knowledge to other team members and be the curator for Junior team members. Ability to perform routing and functional escalation of all types of requests including non-standard ASAP issues (Incident Management, Problem Management processes). Ability to identify gaps in Service Desk processes and knowledge and suggest solutions/updates. Active participation in successful knowledge base management.</p>",
+                        "<p>At least 2.5-3 years of relevant Service Desk experience.</p><p>At least 1 year experience of new workflow processes implementation, ability to organize 1st line support processes according to the Statement of Work (SOW), contract with the customer and other project documentation. Extensive and successful experience in knowledge base management and creation of workflow instructions. Ability to coordinate and organize new processes implementation for the Service Desk team and/or dedicated teams (Change Management, Service Design and Transition process). Ability to provide reports and KPIs on specific processes upon request. Expert knowledge of ITIL processes, Service Desk team processes organization.</p>",
+                        "<p>At least 6 years of relevant Service Desk experience, including team coordination skills. Expert knowledge and experience of ITIL processes implementation for managed support services and Service Desk team processes organization. Extensive experience in coaching and training Senior Service Desk Specialists.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read, understand and follow work instructions under supervision.</p>",
+                        "<p>Ability to actively use Service Desk Knowledge Base and other acknowledged sources if information (PAL, Employee Handbook etc.), identify and report gaps in Service Desk knowledge.</p>",
+                        "<p>Ability to make updates to Service Desk documentation. Active participation in Service Desk Knowledge Base management, workflow instructions creation according to the Service Desk templates.</p>",
+                        "<p>Deep understanding of Service Desk documentation design standards. Ability to reorganize Service Desk Knowledge Base according to the new processes implementation. Experience in creation and implementation new workflow instructions, other support service documentation.</p>",
+                        "<p>Deep understanding of Service Desk documentation design standards. Experience in writing high-quality technical and project documentation.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Service Desk Technician</p>",
+                        "<p>Service Desk Technician</p>",
+                        "<p>Senior Service Desk Technician</p>",
+                        "<p>Lead Service Desk Technician</p>",
+                        "<p>Chief Service Desk Technician</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>1st line Help Desk Specialist</p>",
+                        "<p>1st line Help Desk Specialist</p>",
+                        "<p>1st line Help Desk Specialist, Project Coordinator</p>",
+                        "<p>Usually performs Project Coordinator role.</p>",
+                        "<p>Can play any role, responsibilities can include Team Leader, Project Coordinator, and Performance Analyst roles.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision</p>",
+                        "<p>Expected to work effectively without direct supervision</p>",
+                        "<p>Expected to be self-managing and play role model for other team members.</p>",
+                        "<p>Expected to work independently and guide the activities of the related professional team, including taking responsibility for a sub-process or project.</p>",
+                        "<p>Expected to work independently and guide the activities of the related professional team, including taking responsibility for a sub-process or project.</p>"
+                    ]
+                },
+                {
+                    "name": "Communication and Problem Solving skills",
+                    "cells": [
+                        "<p>General understanding of business email communication techniques, telephone handling techniques including active listening skills, ability to ask probing questions.</p>",
+                        "<p>At least half a year of Service Desk communication experience and proven ability for handling user complaints and problems escalation received by phone/email. Ability to remain productive and exercise patience and professional stress resistance in conflict resolving situations.</p>",
+                        "<p>At least 1.5-2 years of Service Desk communication experience, actively used complaint handling skills. Proven ability to exercise patience and professional stress resistance in conflict resolving situations. Proven role model for the team in such situations.</p><p>Expected ability to coordinate communication issues. Excellent communication skills required for new workflow processes setup.</p>",
+                        "<p>At least 2.5-3 years of Service Desk communication experience. Proven ability to multitask effectively during Service Desk team overload periods and coordinate communication issues. Proven ability to setup new workflow processes. Effective communication with 2nd line Service or Project Coordinators. Expected to participate in pre-sales calls with customers.</p>",
+                        "<p>At least 6 years of Service Desk communication experience. Proven ability to multitask effectively during Service Desk team overload periods. Experience in coordinating Service Desk communication issues and escalations. Proven role model in setting up new workflow processes. Extensive experience in coaching and training Senior Service Desk Specialists in effective communication techniques with 2nd line Service or Project Coordinators</p>"
+                    ]
+                },
+                {
+                    "name": "Quality and Customer Relations",
+                    "cells": [
+                        "<p>Expected to keep up with service quality standards. Expected to deal with customers as a Service Desk Junior Specialist</p>",
+                        "<p>Expected to keep up with service quality standards. Expected to deal with customers as a Service Desk  Specialist</p>",
+                        "<p>Creates deliverables in good quality. Expected to deal with customers as a Service Desk Senior Analyst</p>",
+                        "<p>Must be a role model for other team members. Ability to create deliverables in high quality.  Expected to be involved in customer workshop, presentations and pre-sales projects (is obligatory for production staff only).</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent quality. Expected to be involved in customer workshop, presentations and pre-sales projects</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2/C1</p>",
+                        "<p>C1</p>",
+                        "<p>C1/C2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Service Desk Technician"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Service Desk Technician"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Service Desk Technician"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Service Desk Technician"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Service Desk Technician"
+            ]
+        }
+    ],
+    "id": "cd7a363e-52c9-6c85-9b5f-0ea104a5304e",
+    "_rid": "nEl0AILL7gIXAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIXAAAAAAAAAA==/",
+    "_etag": "\"00001f00-0000-0000-0000-58e4002a0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337258
+}

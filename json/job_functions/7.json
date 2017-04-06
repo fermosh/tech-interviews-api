@@ -1,0 +1,173 @@
+{
+    "jobFunction": {
+        "id": 7,
+        "name": "Business Consulting",
+        "mnemonicBase": "BC",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>At least 7 years of relevant Business Analysis experience (for Career Path transfers from BA) or 2+ years relevant industry consultancy experience.</p>",
+                        "<p>At least 2 years at Analyst grade or 4+ year relevant industry consulting experience.</p>",
+                        "<p>At least 3 years of experience at Consultant grade or 7+ years relevant industry consultancy experience.</p>",
+                        "<p>At least 3 years of experience at Senior Consultant grade or 10+ years relevant industry consultancy experience, or 10-15+ years relevant industry experience and consulting experience combination.</p>",
+                        "<p>At least 4 years of experience at Principal grade or 15+ years relevant industry consultancy experience, or 15-20+ years relevant industry experience and consulting experience combination.</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "Expected to understand a defined software process and to be able to understand and work to a consultancy assignment management framework.",
+                        "Expected to understand a defined software process and have a good understanding of consultancy assignment management processes and consultancy deliverables.",
+                        "Expected to understand a defined software process and have a excellent understanding of consultancy assignment management processes and consultancy deliverables across a broad range of assignments.",
+                        "Expected to understand a defined software process and have a excellent understanding of consultancy assignment management processes and consultancy deliverables across a broad range of assignments.",
+                        "Expected to understand a defined software process and have a excellent understanding of consultancy assignment management processes and consultancy deliverables across a broad range of assignments."
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge",
+                    "cells": [
+                        "Has a broad conceptual understanding of the<span style=\"text-decoration: line-through;\"> </span>relevant industry sector and 1-2 areas of growing specialization. Can assist business domain experts (SMEs) on required business process, assessment, and operating model work.",
+                        "Has a broad understanding of the relevant industry sector and 1-2 areas of specialist knowledge. Can deputise for business domain experts (SMEs) on required business process, assessment, and operating model work.",
+                        "Has a strong understanding of the relevant industry sector and deep specialization in 1-2 areas. Contributes as a SME in assignments which require specialization.",
+                        "Has an excellent understanding of the relevant industry sector and is known as a deep SME/thought leader and in 1-2 areas. Lead/co-lead SME in assignments in which require specialization.",
+                        "Has an excellent and broad understanding of the relevant industry sector and is known as a deep SME and thought leader and in 1-2 areas. Lead SME in substantial assignments in which require deep specialization."
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills and IP skills",
+                    "cells": [
+                        "<p>Reads and understands project documentation.</p><p>Can contribute to the production of high quality consultancy deliverables, or produce individual chapters, with minimal supervision. Contributes to IP development.</p>",
+                        "<p>Reads and understands project documentation.</p><p>Can produce high quality consultancy deliverables, tailored to the individual assignment. Contributes to IP development.</p>",
+                        "<p>Reads and understands project documentation.</p><p>Will consistently product high quality consultancy deliverables, tailored to the individual assignment, which are well received by the client. Contributes or leads IP development. Contributes to marketing content.</p>",
+                        "<p>When required, will product high quality consultancy deliverables, tailored to the individual assignment, which are well received by the client. Leads/co-leads IP development. Regularly produces marketing content.</p>",
+                        "Proposes, sponsors and leads development of significant IP. Regularly produces marketing content of all types. If required, can produce top quality consultancy deliverables."
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Business Consultant</p>",
+                        "<p>Senior Business Consultant;</p><p>Client Engagement Manager</p>",
+                        "<p>Principal Business Consultant;</p><p>Senior Client Engagement Manager</p>",
+                        "<p>Director, Business Consultancy;</p><p>Director, Client Engagement;</p><p>Managing Principal, Business Consultancy</p>",
+                        "<p>Senior Director, Business Consultancy;</p><p>Senior Director, Client Engagement</p>"
+                    ]
+                },
+                {
+                    "name": "Recruitment and Networking",
+                    "cells": [
+                        "Expected to grow a network of industry professionals. Recommends quality consultancy staff and has contacts in the industry.",
+                        "Has a network of industry professionals. Recommends quality consultancy staff and has contacts in the industry.",
+                        "Has a wide network of senior <span style=\"text-decoration: line-through;\">i</span>ndustry professionals and is well known to a number of clients/potential clients. Uses network to seek opportunities, regularly recommends quality consulting staff.",
+                        "Has a wide network of senior industry professionals and is well known to a number of clients/potential clients. Uses network to seek opportunities, regularly recommends quality consulting staff.",
+                        "Has a wide network of ED, MD and C level<span style=\"text-decoration: line-through;\"> </span>industry professionals and is well known to a number of clients/potential clients. Regularly leverages network for sales and recruitment opportunities."
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "Carries out detailed analysis and documentation work required for consulting assignments. This could include, but is not limited to, business processes, business architecture, “as is” analysis; stakeholders interviews.",
+                        "Carries out client facing analysis and documentation work and supervises  Analysts in work required for consulting assignments. Contributes to recommendation formulation.",
+                        "Faces off to key client contacts & SME’s. Actively manages client relationships. Has overall responsibility for a smaller assignment/a key area of a larger assignment. Manages and flexes the assignment process and ensures high quality deliverable are produced. Builds key stakeholder relationships & helps synthesize recommendations.",
+                        "Primary face off to assignment sponsors and senior client staff. Actively manages client relationships. Leads all but the largest consultancy assignments. Supports sales & farms opportunities. Mentors staff.",
+                        "Faces off to assignment sponsors and Steering Committees. Builds senior client relationships. Leads and develops consulting practice(s) and large assignments. Owns assignment portfolio. Identifies upcoming trends, supports sales & farms opportunities. Mentors staff."
+                    ]
+                },
+                {
+                    "name": "Reliability and Independence",
+                    "cells": [
+                        "Expected to be able to understand the overall objectives and required deliverables of an assignment and carry out assigned analysis and documentation work with some guidance and supervision.",
+                        "Understand the overall objectives and required deliverables of an assignment. Supervises or carries out analysis and documentation work to set timescales and quality standards with some guidance.",
+                        "Manages assignment/assignment area with minimal supervision and consistently good results. Entrusted with key customer relationships.",
+                        "Works independently but ensures salient information is communicated to Practice Management/Consulting Heads. Builds key customer relationships.",
+                        "Works independently but ensures salient information is communicated to Consulting Heads."
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "Must produce high quality consulting deliverables that achieve the explicit and implicit objectives of the assignment.",
+                        "Assists in the design & tailoring of consulting deliverables. Produces high quality deliverables that achieve the explicit and implicit objectives of the assignment.",
+                        "Produces high quality deliverables that achieve the explicit and implicit objectives of the assignment, are well received by the client and are tailored to achieve their purpose.",
+                        "Ensures that all work on assignment is carried out to meet or exceed client quality expectations.",
+                        "Ensures that all work on assignment is carried out to meet or exceed client quality expectations. Ensures IP development, marketing content, sales support, staff & career management, and other deliverables of the practice area are all produced to high quality."
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "Expected to participate in meetings/phone conferences; be involved in customer workshops and presentations; collect data and information under supervision; present results under supervision; visit customers without supervision.",
+                        "Expected to participate in meetings/phone conferences; be involved in customer workshops and presentations; collect data and information under supervision; present results under supervision; visit customers without supervision.",
+                        "Expected to participate in meetings/phone conferences; be involved in customer workshops and presentations; collect data and information without supervision; present results without supervision; visit customers without supervision.",
+                        "Expected to participate actively in meetings/phone conferences with clients; collect requirements, data and information; create presentations without supervision; able to present and work with clients to meet overall goals.",
+                        "Expected organize and lead meetings/phone conferences with clients; collect requirements, data and information; create presentations and supervise staff with this; able to present and work with clients to meet overall goals."
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "B2",
+                        "C1",
+                        "C1",
+                        "C2",
+                        "C2"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Business Consultant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Business Consultant",
+                "Client Engagement Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Principal Business Consultant",
+                "Senior Client Engagement Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Managing Principal, Business Consultancy",
+                "Director, Business Consultancy",
+                "Director, Client Engagement"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Director, Business Consultancy",
+                "Senior Director, Client Engagement"
+            ]
+        }
+    ],
+    "id": "e1088616-fdee-e3b9-dc0c-e559a9a3df8f",
+    "_rid": "nEl0AILL7gIFAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIFAAAAAAAAAA==/",
+    "_etag": "\"00000d00-0000-0000-0000-58e3ff1d0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491336989
+}

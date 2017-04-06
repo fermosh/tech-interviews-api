@@ -1,0 +1,163 @@
+{
+    "jobFunction": {
+        "id": 32,
+        "name": "DB Development and Administration",
+        "mnemonicBase": "DB",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Development Experience and Knowledge",
+                    "cells": [
+                        "<p>Some experience of SQL and stored procedures</p>",
+                        "<p>At least 1 year of relevant development experience</p>",
+                        "<p>At least 3 years of relevant development experience, data modeling and database design skills</p>",
+                        "<p>At least 5 years of relevant development experience, data modeling and database design skills, and expert knowledge of at least one database platform</p>",
+                        "<p>At least 7 years of relevant development experience, data modeling and database design skills, expert knowledge of at least one database platform, and ability to coach and train other developers</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience of the software development processes</p>",
+                        "<p>Expected to be able to follow a defined software development process</p>",
+                        "<p>Expected to be able to follow and understand a defined software development process</p>",
+                        "<p>Expected to be able to follow, understand, and enhance a defined software development process</p>",
+                        "<p>Expected to be able to follow, understand, actively influence and enhance a defined software development process</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read and understand project and requirement documentation</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create documentation describing his/her code</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create design and technical documentation including high-quality documentation of his/her code</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create high-quality design and technical documentation including documentation of his/her code; able to write high-quality use cases and audit documentation</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create high-quality design and technical documentation including documentation of his/her code; able to write high-quality use cases and audit documentation</p>"
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Junior DB Developer</p><p>Junior DBA</p>",
+                        "<p>DB Developer</p><p>DBA</p>",
+                        "<p>Senior DB Developer</p><p>Senior DBA</p>",
+                        "<p>Lead DB Developer</p><p>Lead DBA</p>",
+                        "<p>Chief DB Developer</p><p>Chief DBA</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the Developer role</p>",
+                        "<p>Plays the Developer role</p>",
+                        "<p>Plays the role of a Key Developer and a Designer or a Team Lead of 2-5 engineers</p>",
+                        "<p>Plays the Key Developer and Designer roles, and usually also performs a Team Lead, Architect, Reviewer or Auditor role.</p>",
+                        "<p>Can play any role, typically a senior position. Responsibilities can include Team Lead, Architect, Reviewer, Auditor, Technical Trainer, and Process Engineer.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision</p>",
+                        "<p>Expected to implement functionality without direct supervision</p>",
+                        "<p>Expected to be self-managing, implement functionality without supervision and test his/her work thoroughly using test cases</p>",
+                        "<p>Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision and test his/her work thoroughly using test cases</p>",
+                        "<p>Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision and test his/her work thoroughly using test cases</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>No specific expectations regarding quality</p>",
+                        "<p>Must show a sense of responsibility for the quality of the deliverables created by him/her</p>",
+                        "<p>Creates deliverables in good quality</p>",
+                        "<p>Must be a role model for colleagues; creates deliverables in high quality</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent quality</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>",
+                        "<p>Expected to be on a par with the best industry experts in customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                },
+                {
+                    "name": "Language Level in the Customer's Communication Language",
+                    "cells": [
+                        "<p>Able to read and understand the Customer's Communication Language</p>",
+                        "<p>Able to read and write the Customer's Communication Language and have some speaking ability</p>",
+                        "<p>Comfortably able to read, write and speak the Customer's Communication Language</p>",
+                        "<p>Comfortably able to read, write and speak the Customer's Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer's Communication Language; able to write high-quality unambiguous texts</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior DBA",
+                "Junior DB Developer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "DBA",
+                "DB Developer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior DBA",
+                "Senior DB Developer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead DBA",
+                "Lead DB Developer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief DBA",
+                "Chief DB Developer"
+            ]
+        }
+    ],
+    "id": "7f500b9b-7388-17d7-22e6-de8a32e406b2",
+    "_rid": "nEl0AILL7gIcAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIcAAAAAAAAAA==/",
+    "_etag": "\"00002400-0000-0000-0000-58e4008e0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337358
+}

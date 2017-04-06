@@ -1,0 +1,178 @@
+{
+    "jobFunction": {
+        "id": 13,
+        "name": "Resource Management",
+        "mnemonicBase": "RM",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Development Experience and Knowledge",
+                    "cells": [
+                        "<p>Several years of industry experience, participated in several successful projects. Able to guide and coordinate a development team of 5-7 people</p>",
+                        "<p>At least 3 years of leadership experience in a software development organization. Able to run an organization of 10-30 people. Project management experience is a must.</p>",
+                        "<p>At least 5 years of experience as organization unit leader, able to run an organization of 30-100 people. Experienced project and multi-project / Program manager</p>",
+                        "<p>Able to run a business organization. Proven track record of project and program management, as well as organization unit management</p>",
+                        "<p>Able to run a large business organization. Proven track record of project and program management, as well as organization unit management</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Expected to be able to follow and enhance a defined software development process and enforce it on a project</p>",
+                        "<p>Expected to be able to follow and actively enhance a defined software development process and enforce it on a project</p>",
+                        "<p>Expected to be able to follow and actively enhance a defined software development process and enforce it on a project</p>",
+                        "<p>Expected to be able to follow and actively enhance a defined software development process and enforce it on a project</p>",
+                        "<p>Expected to be able to follow and actively enhance a defined software development process and enforce it on a project</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>High-quality, unambiguous project and customer related documentation</p>",
+                        "<p>High-quality, unambiguous project and customer related documentation</p>",
+                        "<p>High-quality, unambiguous project and customer related documentation</p>",
+                        "<p>High-quality, unambiguous project and customer related documentation</p>",
+                        "<p>High-quality, unambiguous project and customer related documentation</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project and Organization",
+                    "cells": [
+                        "<p>Team Lead, Project Coordinator, Manager of a sub project or a small project, Delivery Manager</p>",
+                        "<p>Project Manager, Project Supervisor, Resource Manager, Delivery Manager</p>",
+                        "<p>Project Manager, Program Manager, Project Supervisor, Resource Manager, Delivery Manager</p>",
+                        "<p>Program Manager, Project Manager, Project Supervisor, Project Sponsor, Delivery Manager</p>",
+                        "<p>Program Manager, Project Manager, Project Supervisor, Project Sponsor, Delivery Manager</p>"
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Application Support Team Leader</p><p>Business Analysis Team Leader</p><p>Consulting Team Leader</p><p>Performance Optimization Team Leader</p><p>Scientific Curation Team Leader</p><p>Service Desk Team Leader</p><p>Software Engineering Team Leader</p><p>Software Testing Team Leader</p><p>Systems Engineering Team Leader</p><p>Technical Writing Team Leader</p>",
+                        "<p>Application Support Manager</p><p>Business Analysis Manager</p><p>Consulting Manager</p><p>Performance Optimization Manager</p><p>Scientific Curation Group Manager</p><p>Service Desk Manager</p><p>Software Engineering Manager</p><p>Software Testing Manager</p><p>Systems Engineering Manager</p>",
+                        "<p>Senior Application Support Manager</p><p>Senior Business Analysis Manager</p><p>Senior Consulting Manager</p><p>Senior Scientific Curation Group Manager</p><p>Senior Service Desk Manager</p><p>Senior Software Engineering Manager</p><p>Senior Software Testing Manager</p><p>Senior Systems Engineering Manager</p>",
+                        "<p>Director, Application Support</p><p>Director, Service Desk</p><p>Director, Software Engineering</p><p>Director, Software Testing</p><p>Director, Systems Engineering</p>",
+                        "<p>Senior Director, Application Support</p><p>Senior Director, Service Desk</p><p>Senior Director, Systems Engineering</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work independently with strong management supervision.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>",
+                        "<p>Expected to work independently with management supervision</p>",
+                        "<p>Expected to work independently without direct supervision</p>",
+                        "<p>Expected to work independently, to make decisions based on a defined strategy</p>",
+                        "<p>Expected to work independently, to make decisions based on a defined strategy</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Implements and analyzes the quality metrics in a project, participates in the definition of the metrics</p>",
+                        "<p>Implements and analyzes the quality metrics in a project, participates in the definition of the metrics</p>",
+                        "<p>Implements and analyzes the quality metrics in a project, participates in the definition of the metrics</p>",
+                        "<p>Implements and analyzes the quality metrics in a project, participates in the definition of the metrics</p>",
+                        "<p>Implements and analyzes the quality metrics in a project, participates in the definition of the metrics</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Direct contact with the customer, except contractual terms and financial issues</p>",
+                        "<p>Direct customer contact, including contracting issues. Financial issues are managed under supervision</p>",
+                        "<p>Direct customer contact, control over financial and contracting issues</p>",
+                        "<p>Direct customer contact, control over financial and contracting issues</p>",
+                        "<p>Direct customer contact, control over financial and contracting issues.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Software Engineering Team Leader",
+                "Business Analysis Team Leader",
+                "Technical Writing Team Leader",
+                "Software Testing Team Leader",
+                "Consulting Team Leader",
+                "Application Support Team Leader",
+                "Performance Optimization Team Leader",
+                "Service Desk Team Leader",
+                "Systems Engineering Team Leader",
+                "Scientific Curation Team Leader"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Software Engineering Manager",
+                "Software Testing Manager",
+                "Performance Optimization Manager",
+                "Business Analysis Manager",
+                "Consulting Manager",
+                "Application Support Manager",
+                "Service Desk Manager",
+                "Systems Engineering Manager",
+                "Scientific Curation Group Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Software Engineering Manager",
+                "Senior Consulting Manager",
+                "Senior Software Testing Manager",
+                "Senior Business Analysis Manager",
+                "Senior Systems Engineering Manager",
+                "Senior Service Desk Manager",
+                "Senior Application Support Manager",
+                "Senior Scientific Curation Group Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Director, Software Engineering",
+                "Director, Software Testing",
+                "Director, Service Desk",
+                "Director, Application Support",
+                "Director, Systems Engineering"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Director, Systems Engineering",
+                "Senior Director, Service Desk",
+                "Senior Director, Application Support"
+            ]
+        }
+    ],
+    "id": "68b0dd04-5d61-f63f-1d78-e26ea974d41f",
+    "_rid": "nEl0AILL7gILAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gILAAAAAAAAAA==/",
+    "_etag": "\"00001300-0000-0000-0000-58e3ff6c0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337068
+}

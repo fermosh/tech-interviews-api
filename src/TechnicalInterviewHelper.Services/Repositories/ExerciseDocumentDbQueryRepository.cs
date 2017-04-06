@@ -53,7 +53,7 @@
 
             foreach (var skillId in skillIds)
             {
-                predicate.Append($"(CompetencyId = {competencyId} AND JobFunctionLevel = {jobFunctionLevel} AND SkillId = {skillId}) OR ");
+                predicate.Append($"(CompetencyId = {competencyId} AND JobFunctionLevel = {jobFunctionLevel} AND Skills.Contains({skillId})) OR ");
             }
 
             predicate.Remove(predicate.Length - 4, 4);

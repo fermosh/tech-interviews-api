@@ -26,6 +26,11 @@
         /// </summary>
         private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
+        /// <summary>
+        /// The query skill matrix catalog
+        /// </summary>
+        private readonly ISkillMatrixQueryRepository querySkillMatrixCatalog;
+
         #endregion Repositories
 
         #region Constructor
@@ -37,15 +42,17 @@
         /// <param name="queryTemplateCatalog">Template catalog repository.</param>
         public QueryQuestionController(
             IQuestionQueryRepository queryQuestion,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
+            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog,
+            ISkillMatrixQueryRepository querySkillMatrixCatalog)
         {
             this.queryQuestion = queryQuestion;
             this.queryTemplateCatalog = queryTemplateCatalog;
+            this.querySkillMatrixCatalog = querySkillMatrixCatalog;
         }
 
         #endregion Constructor
 
-        [Route("template/{templateId}/questions")]
+        [Route("templates/{templateId}/questions")]
         public async Task<IHttpActionResult> GetQuestionsByTemplate(string templateId)
         {
             // --------------------------------------------------------------------------------
@@ -76,6 +83,12 @@
 
             var questions = await this.queryQuestion.FindWithinQuestions(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
 
+            // -------------------------------------------------------------------------------
+            // Try to get skill information for Tag property.
+            // -------------------------------------------------------------------------------
+
+            var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
+            
             // --------------------------------------
             // Now it's time to build the response.
             // --------------------------------------
@@ -84,10 +97,17 @@
 
             foreach (var question in questions)
             {
+                var skill = skillsList.FirstOrDefault(s => s.Id == question.SkillId);
                 questionsVM.Add(new QuestionViewModel
                 {
                     QuestionId = question.Id,
-                    Description = question.Description
+                    Description = question.Description,
+                    Answer = question.Answer,
+                    Tag = new TagViewModel
+                    {
+                        SkillId = question.SkillId,
+                        Name = skill != null ? skill.Name : string.Empty
+                    }
                 });
             }
 

@@ -1,0 +1,120 @@
+{
+    "jobFunction": {
+        "id": 1,
+        "name": "Global Mobility and Travel",
+        "mnemonicBase": "GM",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Entry level position - not expected to have previous work experience in global mobility. At least 1 year of administration or travel experience is preferred. </p>",
+                        "<p>At least 1 year of relevant experience in travel or relocation and/or international assignment experience.</p>",
+                        "<p>At least 2 years of relevant experience in travel or relocation and/or international assignment experience.</p>",
+                        "<p>A global mobility/travel professional with a minimum 3-year experience in a similar role.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Produce ad-hoc documentation, note-taking, create documentation and reports with supervision. Good knowledge of MS Office (Word, Excel, etc.) Basic knowledge of maintaining incoming/outgoing documentation.</p>",
+                        "<p>Good knowledge of company internal applications. Good records keeping skills, research and presentation skills are essential. Maintain records, calculate assignment packages and cost projections for business travel or relocation, process 3rd party vendor invoices, relocation and business travel expenses.</p>",
+                        "<p>Develop training and communication materials for internal usage. Maintain the preferred suppliers’ and vendors’ data base and research for new providers and services.</p>",
+                        "<p>Oversee the implementation of new and the improvement of existing project management, progress tracking, feedback collection, knowledge base, employee adaptation and financial reporting systems. Analyse surveys to measure effectiveness of relocation and business travel processes. Responsible for updating global mobility and business travel handbooks, policy reviews and documentation audits.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Global Mobility Assistant,</p><p>Travel Assistant</p>",
+                        "<p>Global Mobility Specialist,</p><p>Travel Specialist</p>",
+                        "<p>Senior Global Mobility Specialist, Senior Travel Specialist</p>",
+                        "<p>Lead Global Mobility Specialist,</p><p>Lead Travel Specialist</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Assist with preparation of all phases of international relocation or business trip activities, assist with ad hock administration (photocopying, scanning, filling, documents translation and legalization, mailing, etc.). Ability to multiple tasks, meet deadlines, and complete last minute requests. Perform routine actions according to clear workflows.</p>",
+                        "<p>Oversee the full end-to-end global mobility operations (immigration applications and visas, liaison with external service providers) or business travel operations (documents preparation for business visas and business trip support). Ensure clear and effective communication with travelers before, during and after their relocation or business trips. Might be required to be available for emergencies out of hours. Work under general direction with a clear view of the responsibilities. Independently plan work activities in order to achieve the objectives.</p>",
+                        "<p>Able to provide complex assistance, and to handle non-standard situations. Work in fast-paced environment. Consult less senior members on issues of standards, methods and tools used in global mobility and travel processes.</p>",
+                        "<p>Responsible for reports, updating handbooks and policies. Coordinate work with other global and local departments involved into relocation and business travel processes. Continually review immigration and non-immigration procedures related to relocation or business travel. Serve as escalation point for complex and difficult cases.  Consulting global mobility and travel program stakeholders regarding the process. Take responsibility for the implementation of at least one (1) specific Global Mobility or Travel program.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision and develop sound understanding of the knowledge, skills and behavior required for a mobility/travel specialist. High integrity, good level of communication skills, ability to maintain confidentiality at all times.</p>",
+                        "<p>Understand and follow the quality metrics, procedures and guidelines.</p>",
+                        "<p>Able to coach and mentor less senior members of the team and help them achieve team objectives and targets.</p>",
+                        "<p>Develop and set quality metrics, help update work instructions, handbooks, and policies.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "English Language and Communication Skills",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>C1 (Global Mobility)</p><p>B2 (Travel)</p>",
+                        "<p>C1 (Global Mobility)</p><p>B2 (Travel)</p>",
+                        null
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Travel Assistant",
+                "Global Mobility Assistant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Global Mobility Specialist",
+                "Travel Specialist"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Travel Specialist",
+                "Senior Global Mobility Specialist"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Travel Specialist",
+                "Lead Global Mobility Specialist"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        }
+    ],
+    "id": "5abd1115-7d52-e50b-dc6c-e745040d450c",
+    "_rid": "nEl0AILL7gIBAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIBAAAAAAAAAA==/",
+    "_etag": "\"00000900-0000-0000-0000-58e3fdf80000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491336696
+}

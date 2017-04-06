@@ -1,0 +1,68 @@
+{
+    "jobFunction": {
+        "id": 37,
+        "name": "Human Resources",
+        "mnemonicBase": "HR",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Associate Human Resource Specialist</p><p> </p>",
+                        "<p>Human Resource Specialist</p>",
+                        "Senior Human Resource Specialist",
+                        "Human Resource Business Partner",
+                        "Senior Human Resource Business Partner"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Associate Human Resource Specialist"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Human Resource Specialist"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Human Resource Specialist"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Human Resource Business Partner"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Human Resource Business Partner"
+            ]
+        }
+    ],
+    "id": "75f74ff4-4e24-49b9-0f84-b5dcd89101f9",
+    "_rid": "nEl0AILL7gIhAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIhAAAAAAAAAA==/",
+    "_etag": "\"00002900-0000-0000-0000-58e400ce0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337422
+}

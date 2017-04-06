@@ -26,6 +26,11 @@
         /// </summary>
         private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
+        /// <summary>
+        /// The query skill matrix catalog
+        /// </summary>
+        private readonly ISkillMatrixQueryRepository querySkillMatrixCatalog;
+
         #endregion Repositories
 
         #region Constructor
@@ -37,15 +42,17 @@
         /// <param name="queryTemplateCatalog">TemplateCatalog repository.</param>
         public QueryExerciseController(
             IExerciseQueryRepository queryExercise,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
+            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog,
+            ISkillMatrixQueryRepository querySkillMatrixCatalog)
         {
             this.queryExercise = queryExercise;
             this.queryTemplateCatalog = queryTemplateCatalog;
+            this.querySkillMatrixCatalog = querySkillMatrixCatalog;
         }
 
         #endregion Constructor
 
-        [Route("template/{templateId}/exercises")]
+        [Route("templates/{templateId}/exercises")]
         public async Task<IHttpActionResult> GetExercisesByTemplate(string templateId)
         {
             // --------------------------------------------------------------------------------
@@ -76,6 +83,12 @@
 
             var exercises = await this.queryExercise.FindWithinExercises(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
 
+            // -------------------------------------------------------------------------------
+            // Try to get skill information for Tag property.
+            // -------------------------------------------------------------------------------
+
+            var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
+
             // --------------------------------------
             // Now it's time to build the response.
             // --------------------------------------
@@ -88,8 +101,9 @@
                 {
                     ExerciseId = exercise.Id,
                     Description = exercise.Description,
-                    ProposedSolution = exercise.ProposedSolution,
-                    Title = exercise.Title
+                    Solution = exercise.Solution,
+                    Title = exercise.Title,
+                    Tags = skillsList.Where(s => exercise.Skills.Contains(s.Id)).Select(s => new TagViewModel() { SkillId = s.Id, Name = s.Name}).ToList()
                 });
             }
 

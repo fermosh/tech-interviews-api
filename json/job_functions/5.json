@@ -1,0 +1,138 @@
+{
+    "jobFunction": {
+        "id": 5,
+        "name": "Business Development",
+        "mnemonicBase": "BD",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Works closely with the Business Development Manager and other members of the Sales team to support their day to day activities. Expected to have at least 3 year of relevant experience.</p><p> </p>",
+                        "<p>Responsible for the business development and sales activities of the Company and expected to have at least 5 year of relevant sales experience.</p>",
+                        "<p>Expected to have at least 8 years of sales management experience. Proven experience in high value software solutions and consultancy services, revenue generation and client-direct selling.</p>",
+                        "<p>Expected to have at least 10+years of sales executive management experience. Proven outstanding track record of success in growing business sales and thrives on finding ways to gain new accounts.</p>",
+                        "<p>Expected to have at least 12+ years of proven business development sales management experience in generating new business and building successful teams through strategic negotiations while cultivating new trusting relationships with key decision makers.</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Expected to have understanding of software development processes.</p>",
+                        "<p>Expected to have understanding of software development processes.</p>",
+                        "<p>Expected to have a good understanding of software development processes.</p>",
+                        "<p>Expected to have a very good understanding of software development processes.</p>",
+                        "<p>Expected to have an excellent understanding of software development processes.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Coordinates preparation of presentations, demos, pitches and customer proposals. Responding to basic and routine client enquiries.</p>",
+                        "<p>Oversee preparation of business' value propositions, sales plans, RFPs/RFQs/ RFIs and able to present those to prospective customers. Evaluates new leads, develops trusted relationships and gains client interest and commitment. Builds and maintains a pipeline of new business opportunities that delivers the Sales Revenue Targets. Able to prepare Basic SOW’s and adequately brief the EPAM Council on main legal business issues for MSAs negotiations. Able to use Microsoft Dynamics or any other sales CRMs system to maintain accurate records and internal communications.</p>",
+                        "<p>Collaborate and create strategic proposals and scope of services definitions. Develops tailored and customized solutions to meet client needs. Write technical proposals, tenders, reports and supporting literature. Negotiates terms of contract, SOW’s, MSA, and other legal agreements. Establish clear and measurable goals for achieving the set KPIs. Develop and maintain an accurate and robust sales reporting methodology. Diligently uses Microsoft Dynamics or any other sales CRMs system to maintain accurate records and internal communications.</p>",
+                        "<p>Develops action plans and implements sales strategies to achieve targets and service goals for the large and complex client accounts. Oversees the development of key business opportunities and accountable for the successful closure of large business deals. Identify opportunities for further sales and new areas of development.</p>",
+                        "<p>Sets, leads and oversees Company strategic short and long-term operational and tactical sales plans, policies, and programs in conjunction with the IBU Heads and the CEO. Full responsibility for creating and monitoring the sales function P&L, annual revenue targets, global new business forecasts and budgets.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Business Development Manager </p>",
+                        "<p>Business Development Manager</p>",
+                        "<p>Senior Business Development Manager</p>",
+                        "<p>Director, Business Development</p>",
+                        "<p>Senior Director, Business Development</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under direct supervision to qualify and support lead generation process. Conduct researches and feasibility studies to analyze the viability of business development opportunities. Demonstrate drive and commitment for further development. Strong team player who has positive can do attitude.</p>",
+                        "<p>Expected to work independently without direct supervision to achieve sales targets /KPI’s and strategic revenue objectives for an assigned market segment. Generate own leads, visit new customers; able to collect, compile, verify, and analyze financial, competitive, sales, marketing, and other information about potential new clients to achieve and exceed individual targets. Ability to quickly qualify in (and out) opportunities while managing a good win rate.</p>",
+                        "<p>Expected to work independently and manage day-to-day activities of the relevant sales force in order to implement the organization's overall sales strategy on a country level. Able to manage a sales territory, drive opportunities and attain and exceed sales quotas. Be involved in pricing strategies, cost estimates and contract negotiations. Coordinate with Marketing on external sales related events and attend trade shows. Possess excellent negotiation and people skills. Expected to have abilities to quickly learn; understands the business environment and able to identify opportunities for adding value to the Customer.</p>",
+                        "<p>Responsible for managing local/regional business development and inside sales offices by analyzing individual and team performances and ensuing the annual revenue targets are met and exceeded. Able to lead people and get results through others. Ensure that the right teams are in place. Expected to have exceptional stakeholder management skills; be able to resolve the most difficult and complex issues when dealing with clients; ability to multi-task in fast paced environment and to lead various sales initiatives. Develops sales targets, leads and manages sales processes. Design compensation plans and ensure the organization's sales volume and profitability objectives are met. Lead complex contract negotiations on major and strategic accounts</p>",
+                        "<p>Top Sales executive responsible for the direction and management of the sales activities in the whole organization. Maintain and constantly improve the organization's competitive position. Ensures maximum sales volume at optimum cost. An inspirational leader, able to motivate, influence, manage and direct an internationally based sales teams.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Understands and follows the quality metrics, procedures and guidelines to promote and sell the organization's products and services.</p>",
+                        "<p>Further develop sales skills and deeper knowledge of the organization's products, services, and customers by working closely with other sales representatives on local and global level. </p>",
+                        "<p>Able to coach sales representatives on technical aspects of the organization's products and services; on marketing campaigns and sales promotions; and on sales techniques, procedures, and standards that will help them achieve their sales targets.</p>",
+                        "<p>Develop and sets quality metrics (annual targets), procedures and guidelines.</p>",
+                        "<p>Reflect high standards of excellence and lead by example.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Able to communicate directly with some customers.</p>",
+                        "<p>Able to communicate directly and independently with customers and have an ability to deliver a tailored sales process.  </p>",
+                        "<p>Excellent communicator who is able to maintain good working relationship with various shareholders and work in a fast paced environment, with strict timescales.</p>",
+                        "<p>Able to manage a group of customers to achieve designated sales target levels.</p>",
+                        "<p>Able to manage multiple regional and global accounts and sales teams.</p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B2</p>",
+                        "<p>C1</p>",
+                        "<p>C1</p>",
+                        "<p>C2</p>",
+                        "<p>C2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Business Development Manager"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Business Development Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Business Development Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Director, Business Development"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Director, Business Development"
+            ]
+        }
+    ],
+    "id": "1d5a7beb-c616-930e-7254-4d4d360f9cd7",
+    "_rid": "nEl0AILL7gIDAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIDAAAAAAAAAA==/",
+    "_etag": "\"00000b00-0000-0000-0000-58e3fecb0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491336907
+}

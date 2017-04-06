@@ -1,0 +1,235 @@
+{
+    "jobFunction": {
+        "id": 33,
+        "name": "Architecture",
+        "mnemonicBase": "SA",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Practical experience with 10+ projects in relevant engineering domain.</p><p>Good knowledge of architectural theory out of primary technology domain context bounds.</p><p>7+ years’ hands-on experience in relevant engineering domain.</p><p>3+ year’s industry experience in 5+ projects in TL and/or PM roles with constant hands-on work.</p><p>Strong experience with full life cycle of Agile software development processes, approaches and methods (SCRUM, XP, etc.).</p><p>Track of record of working directly with the customer (i.e. regularly facing the customer).</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p><p>Considered as an advantage:</p><p>1+ mentored LVL4/VLV in the corresponding discipline;</p><p>Good understanding (or experience) with full lifecycle of software development processes like RUP or “Waterfall” or MSF.</p>",
+                        "<p>All “must have” requirements to Architect L1.</p><p>2+ years in L1 role with positive feedback (karma) about candidate’s work (for EPAM employees).</p><p>5+ production architecture designs / solutions and review activities with available track of record</p><p>Practical experience with full life cycle of software development processes like RUP or “Waterfall” or MSF.</p><p>2+ mentored Architects of in the last 2 years.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p><p> </p><p>Considered as an advantage:</p><p>5+ pre-sale activities with exposure to customers on real accounts for the last 2 years.</p><p>Proven participation in customer advisory.</p>",
+                        "<p>All “must have” requirements to Architect L2.</p><p>2+ years in L2 role with positive feedback (karma) about candidate’s work (for EPAM employees).</p><p>5+ production architecture designs / solutions and review activities with available track of record</p><p>5+ pre-sale activities with exposition to customers on real accounts for the last 2 years.</p><p>4+ mentored Architects in the last 2 years.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p><p> </p><p>Considered as an advantage:</p><p>Proven customer advisory leadership and theory and/or practice.</p>",
+                        "<p>All “must have” requirements to Architect L3.</p><p>2+ years in L3 role with positive feedback (karma) about candidate’s work (for EPAM employees).</p><p>Proven advisory leadership.</p><p>5+ successful customer on-site advisory cases.</p><p>Experience in addressing technology-to-politics issues in customer Enterprise (addressing high risk/impact issue on large scale).</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p><p>Considered as an advantage:</p><p>Evangelism (though leadership) activities in corresponding discipline.</p>",
+                        "<p>All “must have” requirements to Architect L4.</p><p>5+ successful Enterprise Architecture design activities to track of record in last 2 years.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p>"
+                    ]
+                },
+                {
+                    "name": "Professional Skills",
+                    "cells": [
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>"
+                    ]
+                },
+                {
+                    "name": "PROFESSIONAL SKILLS for Solution Architecture:",
+                    "cells": [
+                        "<p>Technologist by heart.</p><p>Ability to deep-dive in new technology and get familiar with it in short terms (and pass this knowledge to others).</p><p>Ability to think and design in cross-domain terms.</p><p>Good general design skills, desire and ability to “put pieces together”</p><p>Ability to conceptually visualize things.</p><p>Can work as Solution Architect, doing solution architecture design and review for small-to-medium size solutions (size is measured using the value to the customer, like number of integrations, number of transactions per sec, number of users, etc. are to be declared) based on familiar technology stack.</p><p>Can create solution architecture documentation, work/feature-breakdown structure document and other related artifacts with deep technical details.</p><p>Can act as BA, if dedicated specialist is not involved: able to work closely with business to identify solution requirements and key case-studies/scenarios for the future solution and document them too. Translates customer’s requirements to the tech language and communicate them to the development team and to the business.</p><p>Can drive and supervise end-to-end development cycle (SDLC).</p><p>Can act as Team Lead or Project Coordinator if dedicated specialist is not involved: able to run/support end-to-end development cycle and interact with customer directly.</p><p>Can manage the delivery of architectural POCs.</p><p>Can produce coarse-grained estimations on the implementation of architectural assets.</p><p>Can process, absorb, retain and reuse business domain knowledge for several of the most popular business domains.</p><p>Quickly learns, systematizes, retains and utilizes knowledge (including best practices).</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p>",
+                        "<p>All “must have” requirements to Solution Architect L1.</p><p>Can work as Solution Architect, doing solution architecture design and review for medium-to-large size solutions based on familiar technology stack.</p><p>Participates in the assessment of the candidates for SA position.</p><p>Works in stand-alone mode on technical pre-sale activity without leading it.</p><p>Can write technical review.</p><p>Can review white papers and blueprints.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p>",
+                        "<p>All “must have” requirements to Solution Architect L2.</p><p>Can lead technical pre-sale activity.</p><p>Mentors other SA’s in practical SA activities.</p><p>Can write white papers and blueprints on customer’s request.</p><p>Can create technology road map for Competency/domain.</p><p>Has Enterprise Architecture theoretical knowledge.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p><p>Considered as an advantage:</p><p>Identify gaps in delivery capabilities and propose Ips to overcome them.</p>",
+                        "<p>All “must have” requirements to Solution Architect L3.</p><p>Should be perceived as equal or superior technologist in the room (during meetings with customer engineers, etc.).</p><p>Works with more than 3 technological platforms.</p><p>Has enterprise-level view on solution architecture, reviews others’ solutions and proposals from external vendors (when relevant) and ensures that they conform to the best IT industry principles and standards.</p><p>Identifies gaps in delivery capabilities and proposes Ips to overcome them.</p><p>Able to optimize architecture basing on budget constraints.</p>",
+                        "<p>All “must have” requirements to Solution Architect L4.</p><p>Can build solution practice.</p><p>Can act as technical director of large software developing company.</p><p>Can manage IT strategy of software developing company.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practices).</p>"
+                    ]
+                },
+                {
+                    "name": "PROFESSIONAL SKILLS for Quality Architecture:",
+                    "cells": [
+                        "<p>All \"must have\" requirements to T4.</p><p>Has Expert level of Software Quality Control processes and SDLC. Able to follow, actively influence, enhance and define Software Quality Control processes.</p><p>Is able to improve testing process and techniques on a project and establish them from scratch. Including communication flows, tracking tools.</p><p>Pro-actively analyzes and measures current processes and practices and suggest/drive improvements to time to market/quality/cost.</p><p>Utilizes metrics and KPI to make decisions and track project risks.</p><p>Provides timely input of risks and issues, impacting quality, schedule or resources, and recommend effective mitigation plans when applicable.</p><p>Develops work instructions, trainings, white-papers, case studies.</p><p>Presentation skill: ability to conceptually visualize things and deliver presentation to professional audience.</p><p>Participates in tech interviews for engineering Level4+ /M1+ specialists.</p><p>May participate in test assessment as 2-nd auditor.</p><p>May participate in presales under supervision.</p><p> </p>",
+                        "<p>All \"must have\" requirements to Quality Architect L1.</p><p>Implements measurable improvements to time to market, quality, cost for multi-team project, establish continuous improvement process.</p><p>Ability to drive staffing of leading/key team members from the scratch: job function definitions, CV preparation, interviewing, on-boarding, roles and responsibilities definition.</p><p>Able to organize measurements and KPI system and support it by tracking and test management tools customization in cost effective manner.</p><p>Has proven track of successful presentations to customer.</p><p>Considered as an advantage:</p><p>Test Management Certification (like ISTQB Advanced+ level, Certified Manager of Software Quality (CMSQ)).</p>",
+                        "<p>All \"must have\" requirements to Quality Architect L2.</p><p>Is able to establish and run multi-team testing organization like Test CoE (Center of Excellence).</p>",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge",
+                    "cells": [
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>"
+                    ]
+                },
+                {
+                    "name": "BUSINESS DOMAIN KNOWLEDGE for Solution Architecture:",
+                    "cells": [
+                        "<p>Knowledge of at least 2 business domains.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practice).</p>",
+                        "<p>Knowledge of at least 3 business domains.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practice).</p>",
+                        "<p>Knowledge of at least 3 business domains.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practice).</p>",
+                        "<p>Knowledge of at least 4 business domains.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practice).</p>",
+                        "<p>Knowledge of at least 4 business domains.</p><p>Technology and Business domain-specific knowledge as applicable (specified by particular EPAM Solution Practice).</p>"
+                    ]
+                },
+                {
+                    "name": "BUSINESS DOMAIN KNOWLEDGE for Quality Architecture:",
+                    "cells": [
+                        "<p>All \"must have\" requirements to T4.</p><p>Has good knowledge and understanding of one (1) business domain area. Proven abilities to quickly learn, systematize, and retain business knowledge.</p><p>Able to address domain specific in test strategy both: from business to technical aspects of a domain.</p>Able to communicate to customer about domain specific\" .",
+                        "<p>All \"must have\" requirements to Quality Architect L1.</p><p>Has strong knowledge and understanding of a business domain area and proven track of successfully delivered projects in the domain.</p>Is familiar with 3rd party components and solutions applicable in the business domain.",
+                        "<span>All \"must have\" requirements to Quality Architect L2.</span>",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Solution Architect;</p><p>Systems Architect;</p><p>Quality Architect;</p><p>Associate Enterprise Architect</p><p> </p><p> </p>",
+                        "<p>Solution Architect;</p><p>Systems Architect;</p><p>Quality Architect;</p><p><span>Enterprise Architect</span></p>",
+                        "<p>Senior Solution Architect;</p><p>Senior Systems Architect;</p><p>Senior Quality Architect;</p><p>Senior <span>Enterprise Architect</span></p>",
+                        "<p>Lead Solution Architect;</p><p>Lead Systems Architect;</p><p>Lead Quality Architect;</p><p>Lead <span>Enterprise Architect;</span></p><p>Director, Technology Solutions</p>",
+                        "<p>Principal Solution Architect;</p><p>Principal Systems Architect;</p><p>Principal Quality Architect;</p><p>Principal <span>Enterprise Architect;</span></p><p>Senior Director, Technology Solutions</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>",
+                        "<strong><span style=\"color: rgb(0,0,0);\">See corresponding table for particular title below.</span></strong>"
+                    ]
+                },
+                {
+                    "name": "Solution Architecture roles:",
+                    "cells": [
+                        "<p>Solution Architect, Systems/Business Analyst,</p><p>Team Lead</p>Test Automation Architect",
+                        "<p>Solution Architect,</p><p>Systems/Business Analyst,</p><p>Team Lead</p>Test Automation Architect",
+                        "<p>Solution Architect,</p><p>Systems/Business Analyst,</p><p>Team Lead,</p><p>Project Supervisor</p>Test Automation Architect",
+                        "<p>Solution Architect,</p><p>Systems/Business Analyst,</p><p>Team Lead,</p>Project Supervisor",
+                        "<p>Solution Architect,</p><p>Systems/Business Analyst,</p><p>Team Lead,</p><p>Project Supervisor</p>"
+                    ]
+                },
+                {
+                    "name": "Quality Architecture roles:",
+                    "cells": [
+                        "<p>Test Team Lead,</p><p>Test Manager,</p><p>Project Coordinator,</p>2nd Auditor on a Test Assessment",
+                        "<p>Primary Auditor (QA Assessment)/ Consultant,</p><p>Test Manager,</p><p>Project Manager,</p>Presales consultant",
+                        "<p>Delivery Manager,</p><p>Project Supervisor</p>",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "name": "Leadership",
+                    "cells": [
+                        "<p>Can lead the architecture development in corresponding discipline (Solution Architecture, System Architecture or Quality Architecture).</p><p>Can drive the discussion to particular decisions and action items.</p><p>Consults and supervises all team members, shares knowledge.</p><p>Can drive the requirements discussion.</p><p>Can coordinate project activities or a certain project part, lead a team of 6+ members (mid-size+ team).</p><p>Interviews candidates to the project team.</p><p>Helps to evaluate team newcomers (in technology and architecture related matters) and direct them to fit customer’ requirements.</p><p>In technical aspects, is self-managing, takes responsibility and accountability for a subsystem or a whole project of small-to-medium size.</p><p>Is able define and mitigate risks associated with specific solution in known contexts.</p>",
+                        "<p>All “must have” requirements to Architect L1.</p><p>Conducts technical interviews with candidates to Architect L1 position.</p><p>Provides technical guidance and PDP help to key team members considering Architect position as professional future.</p><p>Can mentors one colleague who is moving towards Architect title.</p><p>Works self-dependent as a primary responsible person for the architectural delivery on a project of a medium size.</p>",
+                        "<p>All “must have” requirements to Architect L2.</p><p>True leader with confidence.</p><p>Conducts technical interviews with candidates to Architect L1/L2 position.</p><p>Provides technical guidance for the most complex or mission critical aspects of the architecture.</p><p>Can lead group of Architects.</p><p>Can lead the meeting of engineers, meeting with customer representatives, and the direction of an architecture.</p>",
+                        "<p>All “must have” requirements to Architect L3.</p><p>Should be perceived as equal or superior technologist in the room (during meetings with customer architects and executives).</p><p>Acts as a primary person responsible for solution (or system, or quality) architecture for large multi-platform solutions.</p><p>Conducts technical interviews with candidates to Architect L1/L2/L3 position.</p><p>Resolves the most sophisticated issues, drives mission critical technical and managerial discussions involving proper specialists from project team and customer side.</p><p>Though leadership via blogging.</p>",
+                        "<p>All “must have” requirements to Architect L4.</p><p>The “last resort” for the most sophisticated issues, drives mission critical technical and managerial discussions involving proper specialists from project team and customer side.</p><p>Takes responsibility for the strategy consulting activities.</p><p>Conducts technical interviews with candidates to Architect L1/L2/L3/L4 position.</p>"
+                    ]
+                },
+                {
+                    "name": "Self-development",
+                    "cells": [
+                        "<p>Constant self-education in primary technology domain – regular reading of the news, understanding of global trends, etc.</p><p>Finds and evaluates emerging technologies.</p><p>Hands-on and up-to-date experience with primary technology domain.</p><p>Initiates and arranges business domain specific knowledge sharing/trainings for the project team, acts as trainer.</p><p>Participates in assessment committees for developers in his/her primary technology domain during every promotion campaign in committee expert role.</p><p> </p><p>Considered as an advantage:</p><p>Frequently acts as public speaker to internal or external audience.</p>",
+                        "<p>All “must have” requirements to Architect L1.</p><p>Should understand technology trends in primary technology domain.</p><p>Understands the application of the prospective emerging technologies.</p><p>Invests time and efforts in the professional certifications related to Architecture (in his/her engineering domain(s)).</p><p>Improves professional skills via often mentoring activities.</p><p>Participates in assessment committees for Architects during every promotion campaign in committee expert role.</p><p>May run technology community or tech. talks series. Is recognized as public speaker for internal or external audience.</p><p>Continually improve knowledge in business domain.</p>",
+                        "<p>All “must have” requirements to Architect L2.</p><p>Constant self-education in 2+ technology domains – regular reading of the news, understanding of global trends, etc.</p><p>Hands-on and up-to-date experience with 2+ primary technology domains.</p>",
+                        "<p>All “must have” requirements to Architect L3.</p><p>Constant self-education in 3+ technology domains – regular reading of the news, understanding of global trends, etc.</p><p>Hands-on and up-to-date experience with 3+ primary technology domains.</p>",
+                        "<p>All “must have” requirements to Architect.</p>"
+                    ]
+                },
+                {
+                    "name": "Communications and Customer Relations",
+                    "cells": [
+                        "<p>Good level of written and verbal communication skills.</p><p>Ability to identify stakeholders and adopt communication style to particular role (effectively communicate with peer client architects and management).</p><p>Can clearly explain the things.</p><p>Can do white-boarding work.</p><p>Direct contact with the customer, except contractual terms and financial issues.</p>",
+                        "<p>High level of written and verbal communication skills.</p><p>Strong presentational skills.</p><p>Can drive a discussion.</p><p>Fluent English (both verbal and written communications, including narrative writing skills).</p><p>Ability to conduct presentation with wide audience (50+ people).</p>",
+                        "<p>Can lead the meeting of EPAM and customer staff.</p><p>Ability to drive any kind of discussion on technical topics that he/she familiar with.</p><p>Excellent presentation skills.</p><p>Ability to conduct presentation with wide audience (200+ people)</p><p>Fluent English (both verbal and written communications, including narrative writing skills).</p>",
+                        "<p>All “must have” requirements to Architect L3.</p><p>Ability to participate in a discussion on any topic.</p><p>Fluent English (both verbal and written communications, including narrative writing skills).</p>",
+                        "<p>All “must have” requirements to Architect L4.</p><p>Fluent English (both verbal and written communications, including narrative writing skills).</p>"
+                    ]
+                },
+                {
+                    "name": "Textual Summary ",
+                    "cells": [
+                        "<p>Wide expertise</p>",
+                        "<p>Maturity</p>",
+                        "<p>Exposure</p>",
+                        "<p>Strategic vision</p>",
+                        "<p>Strategic vision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1/B2</p>",
+                        "<p>B2/C1</p>",
+                        "<p>C1</p>",
+                        "<p>C2</p>",
+                        "<p>C2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Systems Architect",
+                "Solution Architect",
+                "Quality Architect",
+                "Associate Enterprise Architect"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Systems Architect",
+                "Solution Architect",
+                "Quality Architect",
+                "Enterprise Architect"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Solution Architect",
+                "Senior Systems Architect",
+                "Senior Quality Architect",
+                "Senior Enterprise Architect"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Director, Technology Solutions",
+                "Lead Systems Architect",
+                "Lead Solution Architect",
+                "Lead Quality Architect",
+                "Lead Enterprise Architect"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Principal Systems Architect",
+                "Senior Director, Technology Solutions",
+                "Principal Solution Architect",
+                "Principal Quality Architect",
+                "Principal Enterprise Architect"
+            ]
+        }
+    ],
+    "id": "5c2583fc-da71-81fc-ad3e-21446a709947",
+    "_rid": "nEl0AILL7gIdAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIdAAAAAAAAAA==/",
+    "_etag": "\"00002500-0000-0000-0000-58e400a10000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337377
+}

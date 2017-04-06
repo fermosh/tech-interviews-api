@@ -1,0 +1,73 @@
+{
+    "jobFunction": {
+        "id": 45,
+        "name": "Technology Consulting",
+        "mnemonicBase": "TC",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Consultant;</p><p>Junior Technical Consultant</p>",
+                        "<p>Senior Consultant;</p><p>Technical Consultant</p>",
+                        "<p>Lead Consultant;</p><p>Senior Technical Consultant</p>",
+                        "<p>Chief Consultant;</p><p>Lead Technical Consultant</p>",
+                        "<p>Chief Technical Consultant;</p><p>Principal Consultant</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Consultant",
+                "Junior Technical Consultant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Consultant",
+                "Technical Consultant"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Technical Consultant",
+                "Lead Consultant"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Technical Consultant",
+                "Chief Consultant"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Principal Consultant",
+                "Chief Technical Consultant"
+            ]
+        }
+    ],
+    "id": "1925e3a0-6df0-5b57-fad0-0a2c64e2884a",
+    "_rid": "nEl0AILL7gImAAAAAAAAAA==",
+    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gImAAAAAAAAAA==/",
+    "_etag": "\"00002e00-0000-0000-0000-58e401380000\"",
+    "_attachments": "attachments/",
+    "_ts": 1491337528
+}
