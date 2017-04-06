@@ -76,7 +76,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Container\ControllersInstallerTests.cs" />
     <Compile Include="Controllers\Command\CommandInterviewControllerTests.cs" />
     <Compile Include="Controllers\Command\CommandTemplateControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyControllerTests.cs" />
