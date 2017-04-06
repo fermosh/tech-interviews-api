@@ -21,5 +21,12 @@
         /// <param name="entity">The entity with modified information.</param>
         /// <returns>A task of void.</returns>
         Task Update(T entity);
+
+        /// <summary>
+        /// Deletes an entity
+        /// </summary>
+        /// <param name="id">The Id</param>
+        /// <returns>A task of void.</returns>
+        Task Delete(string id);
     }
 }

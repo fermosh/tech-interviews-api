@@ -52,11 +52,13 @@
     <Compile Include="Entities\Common\AnsweredExercise.cs" />
     <Compile Include="Entities\Catalogs\CompetencyCatalog.cs" />
     <Compile Include="Entities\Common\AnsweredQuestion.cs" />
+    <Compile Include="Entities\Common\ClassConverter.cs" />
     <Compile Include="Entities\Common\Competency.cs" />
     <Compile Include="Entities\Common\Exercise.cs" />
     <Compile Include="Entities\Catalogs\InterviewCatalog.cs" />
     <Compile Include="Entities\Catalogs\Template.cs" />
     <Compile Include="Entities\Catalogs\SkillMatrix.cs" />
+    <Compile Include="Entities\Common\ITag.cs" />
     <Compile Include="Entities\Common\Question.cs" />
     <Compile Include="Entities\Common\Skill.cs" />
     <Compile Include="Entities\Common\Topic.cs" />

@@ -23,7 +23,7 @@
         /// The skill identifier.
         /// </value>
         [JsonProperty("skills")]
-        public Skill Tags { get; set; }
+        public Skill[] Tags { get; set; }
 
         /// <summary>
         /// Gets or sets the title.

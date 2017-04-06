@@ -1,6 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
     using Newtonsoft.Json;
+    using TechnicalInterviewHelper.Model.Entities.Common;
 
     /// <summary>
     /// Question entity.
@@ -14,7 +15,8 @@
         /// The competency identifier.
         /// </value>
         [JsonProperty("competency")]
-        public Competency Competency { get; set; }
+        [JsonConverter(typeof(ConcreteListTypeConverter<ITag, Skill>))]
+        public ITag Competency { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifier.
