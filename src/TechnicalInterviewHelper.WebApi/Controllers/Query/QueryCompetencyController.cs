@@ -1,13 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
+{    
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api/competencies")]
@@ -21,12 +19,6 @@
         #endregion Repository
 
         #region Constructor
-
-        public QueryCompetencyController()
-        {
-            var collectionId = ConfigurationManager.AppSettings["CompetencyCollectionId"];
-            this.queryCompetency = new DocumentDbQueryRepository<CompetencyCatalog, string>(collectionId);
-        }
 
         public QueryCompetencyController(IQueryRepository<CompetencyCatalog, string> competencyRepository)
         {
@@ -47,7 +39,7 @@
             var competenciesVM = new List<CompetencyViewModel>();
             foreach (var competencyCatalog in competencyCatalogs)
             {
-                foreach(var competency in competencyCatalog.Competencies)
+                foreach (var competency in competencyCatalog.Competencies)
                 {
                     competenciesVM.Add(new CompetencyViewModel
                     {
