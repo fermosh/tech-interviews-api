@@ -1,13 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
+{    
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api")]
@@ -88,7 +86,7 @@
             // -------------------------------------------------------------------------------
 
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
-            
+
             // --------------------------------------
             // Now it's time to build the response.
             // --------------------------------------

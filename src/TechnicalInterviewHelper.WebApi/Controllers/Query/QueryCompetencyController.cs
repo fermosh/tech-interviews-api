@@ -1,11 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
+{    
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api/competencies")]

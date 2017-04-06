@@ -2,12 +2,10 @@
 {    
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
     using Model;
-    using Services;
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api/interview")]

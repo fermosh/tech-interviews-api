@@ -1,13 +1,11 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
+{    
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api")]
@@ -103,7 +101,7 @@
                     Description = exercise.Description,
                     Solution = exercise.Solution,
                     Title = exercise.Title,
-                    Tags = skillsList.Where(s => exercise.Skills.Contains(s.Id)).Select(s => new TagViewModel() { SkillId = s.Id, Name = s.Name}).ToList()
+                    Tags = skillsList.Where(s => exercise.Skills.Contains(s.Id)).Select(s => new TagViewModel() { SkillId = s.Id, Name = s.Name }).ToList()
                 });
             }
 
