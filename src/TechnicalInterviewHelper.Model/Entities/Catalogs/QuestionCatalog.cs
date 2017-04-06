@@ -40,7 +40,16 @@
         /// <value>
         /// The text.
         /// </value>
-        [JsonProperty("description")]
+        [JsonProperty("body")]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the answer.
+        /// </summary>
+        /// <value>
+        /// The answer.
+        /// </value>
+        [JsonProperty("answer")]
+        public string Answer { get; set; }
     }
 }
