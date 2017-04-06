@@ -35,7 +35,7 @@
         /// <param name="querySkillMatrixCatalog">The query skill matrix catalog.</param>
         /// <param name="queryTemplateCatalog">The query template catalog.</param>
         public QueryTemplateController(
-            SkillMatrixDocumentDbQueryRepository querySkillMatrixCatalog,
+            ISkillMatrixQueryRepository querySkillMatrixCatalog,
             IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;

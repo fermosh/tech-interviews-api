@@ -20,7 +20,7 @@
         [SetUp]
         public void Setup()
         {
-            containerWithControllers = new WindsorContainer().Install(new BusinessLogicInstaller(), new ControllersInstaller());
+            containerWithControllers = new WindsorContainer().Install(new CommandRepositoriesInstaller(), new ApiControllersInstaller());
         }
 
         [Test]

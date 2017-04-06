@@ -177,9 +177,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Container\BusinessLogicInstaller.cs" />
-    <Compile Include="Container\ControllersInstaller.cs" />
-    <Compile Include="Container\IocContainer.cs" />
+    <Compile Include="Container\Installers\CommandRepositoriesInstaller.cs" />
+    <Compile Include="Container\Installers\ApiControllersInstaller.cs" />
+    <Compile Include="Container\Installers\QueryRepositoriesInstaller.cs" />
     <Compile Include="Controllers\Command\CommandInterviewController.cs" />
     <Compile Include="Controllers\Command\CommandTemplateController.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyController.cs" />
@@ -211,7 +211,7 @@
     <Compile Include="Models\ViewModels\Template\LevelViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\SkillTemplateViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\TemplateViewModel.cs" />
-    <Compile Include="Container\WindsorControllerFactory.cs" />
+    <Compile Include="Container\WindsorControllerActivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
