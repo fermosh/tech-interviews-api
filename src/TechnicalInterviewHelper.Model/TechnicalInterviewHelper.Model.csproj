@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Catalogs\JobFunctionCatalog.cs" />
     <Compile Include="Entities\Common\AnsweredExercise.cs" />
     <Compile Include="Entities\Catalogs\CompetencyCatalog.cs" />
     <Compile Include="Entities\Common\AnsweredQuestion.cs" />
@@ -58,11 +59,14 @@
     <Compile Include="Entities\Catalogs\TemplateCatalog.cs" />
     <Compile Include="Entities\Catalogs\SkillMatrixCatalog.cs" />
     <Compile Include="Entities\Catalogs\QuestionCatalog.cs" />
+    <Compile Include="Entities\Common\JobFunction.cs" />
+    <Compile Include="Entities\Common\Level.cs" />
     <Compile Include="Entities\Common\Skill.cs" />
     <Compile Include="Entities\Common\Topic.cs" />
     <Compile Include="Interfaces\Command\ICommandRepository.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\Query\IExerciseQueryRepository.cs" />
+    <Compile Include="Interfaces\Query\IJobFunctionQueryRepository.cs" />
     <Compile Include="Interfaces\Query\IQuestionQueryRepository.cs" />
     <Compile Include="Interfaces\Query\ISkillMatrixQueryRepository.cs" />
     <Compile Include="Interfaces\Query\IQueryRepository.cs" />
