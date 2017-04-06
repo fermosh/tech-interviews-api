@@ -26,7 +26,10 @@
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["QuestionCollectionId"])),
                 Component.For<ISkillMatrixQueryRepository>()
                          .ImplementedBy<SkillMatrixDocumentDbQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["SkillCollectionId"])));
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["SkillCollectionId"])),
+                Component.For<IJobFunctionQueryRepository>()
+                         .ImplementedBy<JobFunctionQueryRepository>()
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["JobFunctionCollectionId"])));
         }
     }
 }

@@ -24,6 +24,11 @@
         /// </summary>
         private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
+        /// <summary>
+        /// The query job function
+        /// </summary>
+        private readonly IJobFunctionQueryRepository queryJobFunction;
+
         #endregion Repository
 
         #region Constructor
@@ -35,10 +40,12 @@
         /// <param name="queryTemplateCatalog">The query template catalog.</param>
         public QueryTemplateController(
             ISkillMatrixQueryRepository querySkillMatrixCatalog,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
+            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog,
+            IJobFunctionQueryRepository queryJobFunction)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;
             this.querySkillMatrixCatalog = querySkillMatrixCatalog;
+            this.queryJobFunction = queryJobFunction;
         }
 
         #endregion Constructor
@@ -81,6 +88,10 @@
             // -------------------------------------------------------------------------------
 
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
+
+
+
+            var jobTitle = await this.queryJobFunction.FindJobTitleWithinLevels(1, template.JobFunctionLevel);
 
             // --------------------------------------
             // Now it's time to build the response.
