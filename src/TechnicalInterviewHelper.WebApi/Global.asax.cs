@@ -11,7 +11,7 @@
 
     public class WebApiApplication : System.Web.HttpApplication
     {
-        private IWindsorContainer container;
+        private static IWindsorContainer container;
 
         protected void Application_Start()
         {
@@ -23,15 +23,14 @@
             // Setup DocumentDB schema.
             DocumentDbConfig.Initialize();
             // Setup IoC container for ApiControllers.
-            this.container = new WindsorContainer().Install(FromAssembly.This());
-            WindsorControllerActivator activator = new WindsorControllerActivator(this.container.Kernel);
+            container = new WindsorContainer().Install(FromAssembly.This());
+            WindsorControllerActivator activator = new WindsorControllerActivator(container.Kernel);
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), activator);
         }
 
-        public override void Dispose()
+        protected void Application_End()
         {
-            this.container.Dispose();
-            base.Dispose();
+            container.Dispose();
         }
     }
 }
