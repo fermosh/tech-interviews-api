@@ -24,5 +24,33 @@
         /// </value>
         [JsonProperty("body")]
         public string Body { get; set; }
+
+        /// <summary>
+        /// Gets or sets the proposed solution.
+        /// </summary>
+        /// <value>
+        /// The proposed solution.
+        /// </value>
+        [JsonProperty("answer")]
+        public string Answer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the competency
+        /// </summary>
+        /// <value>
+        /// The competency.
+        /// </value>
+        [JsonProperty("competency")]
+        public CompetencyViewModel Competency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the question body.
+        /// </summary>
+        /// <value>
+        /// The body.
+        /// </value>
+        [JsonProperty("Tag")]
+        public TagViewModel Tag { get; set; }
+
     }
 }

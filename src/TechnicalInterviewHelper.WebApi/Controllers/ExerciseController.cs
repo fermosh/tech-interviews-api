@@ -10,7 +10,7 @@
     using System.Web.Http;
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
-
+    
     [RoutePrefix("api")]
     [EnableCors(origins: "*", headers: "*", methods: "GET,POST,PUT,DELETE")]
     public class ExerciseController : ApiController
@@ -104,8 +104,8 @@
             {
                 exercisesVM.Add(new ExerciseViewModel
                 {
-                    Id = exercise.Id,
-                    Body = exercise.Body,
+                    ExerciseId = exercise.Id,
+                    Description = exercise.Description,
                     Solution = exercise.Solution,
                     Title = exercise.Title
                 });
@@ -147,7 +147,7 @@
                 return BadRequest("Request doesn't have a valid exercise to save.");
             }
 
-            if (exercise.Tags.Any())
+            if (exercise.Skills == null || !exercise.Skills.Any())
             {
                 return BadRequest("Input exercise doesn't have a skill, add it in order to save it.");
             }

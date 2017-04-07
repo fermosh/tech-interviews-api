@@ -2,12 +2,11 @@
 {    
     using System.Collections.Generic;
     using Newtonsoft.Json;
-    using TechnicalInterviewHelper.Model.Entities.Common;
-
+    
     /// <summary>
     /// Skill entity.
     /// </summary>
-    public class Skill : ITag
+    public class Skill
     {
         /// <summary>
         /// Gets or sets the root identifier.

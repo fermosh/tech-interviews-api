@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace TechnicalInterviewHelper.WebApi
+namespace TechnicalInterviewHelper.WebApi.App_Start
 {
     public static class WebApiConfig
     {

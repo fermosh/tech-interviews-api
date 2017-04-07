@@ -15,8 +15,8 @@
                 Component.For<ICommandRepository<InterviewCatalog>>()
                          .ImplementedBy<DocumentDbCommandRepository<InterviewCatalog>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["InterviewCollection"])),
-                Component.For<ICommandRepository<TemplateCatalog>>()
-                         .ImplementedBy<DocumentDbCommandRepository<TemplateCatalog>>()
+                Component.For<ICommandRepository<Template>>()
+                         .ImplementedBy<DocumentDbCommandRepository<Template>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["TemplateCollectionId"])));
         }
     }

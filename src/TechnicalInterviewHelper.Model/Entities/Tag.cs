@@ -1,12 +1,11 @@
-﻿namespace TechnicalInterviewHelper.Model.Entities.Common
+﻿namespace TechnicalInterviewHelper.Model.Entities
 {
+    using Newtonsoft.Json;
+
     /// <summary>
-    /// Gets or sets the name.
+    /// Tag entity.
     /// </summary>
-    /// <value>
-    /// The name.
-    /// </value>
-    public interface ITag
+    public class Tag
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -14,7 +13,8 @@
         /// <value>
         /// The identifier.
         /// </value>
-        int Id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -22,6 +22,7 @@
         /// <value>
         /// The name.
         /// </value>
-        string Name { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }

@@ -10,7 +10,7 @@
     using System.Web.Http;
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
-
+    
     [RoutePrefix("api")]
     [EnableCors(origins: "*", headers: "*", methods: "GET,POST,PUT,DELETE")]
     public class QuestionController : ApiController
@@ -145,7 +145,7 @@
                 return BadRequest("Request doesn't have a valid question to save.");
             }
 
-            if (question.Tag == null)
+            if (question.Skill == null)
             {
                 return BadRequest("Input question doesn't have a skill, add it in order to save it.");
             }

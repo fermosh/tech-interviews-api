@@ -15,8 +15,8 @@
                 Component.For<IQueryRepository<CompetencyCatalog, string>>()
                          .ImplementedBy<DocumentDbQueryRepository<CompetencyCatalog, string>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["CompetencyCollectionId"])),
-                Component.For<IQueryRepository<TemplateCatalog, string>>()
-                         .ImplementedBy<DocumentDbQueryRepository<TemplateCatalog, string>>()
+                Component.For<IQueryRepository<Template, string>>()
+                         .ImplementedBy<DocumentDbQueryRepository<Template, string>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["TemplateCollectionId"])),
                 Component.For<IExerciseQueryRepository>()
                          .ImplementedBy<ExerciseDocumentDbQueryRepository>()
