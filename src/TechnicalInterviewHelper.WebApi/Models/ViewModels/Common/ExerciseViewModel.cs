@@ -1,5 +1,6 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
+    using System.Collections.Generic;
     using Newtonsoft.Json;
 
     /// <summary>
@@ -14,7 +15,7 @@
         /// The exercise identifier.
         /// </value>
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public string ExerciseId { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
@@ -40,7 +41,16 @@
         /// <value>
         /// The description.
         /// </value>
-        [JsonProperty("Body")]
-        public string Body { get; set; }
+        [JsonProperty("body")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the topics.
+        /// </summary>
+        /// <value>
+        /// The topics.
+        /// </value>
+        [JsonProperty("tags")]
+        public IList<TagViewModel> Tags { get; set; }
     }
 }

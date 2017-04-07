@@ -2,12 +2,10 @@
 {    
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
     using Model;
-    using Services;
     using TechnicalInterviewHelper.Model;
 
     [RoutePrefix("api/interviews")]
@@ -24,14 +22,6 @@
         #endregion Repository
 
         #region Constructor
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
-        /// </summary>
-        public CommandInterviewController()
-        {
-            this.commandInterview = new DocumentDbCommandRepository<InterviewCatalog>(ConfigurationManager.AppSettings["InterviewCollection"]);
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.

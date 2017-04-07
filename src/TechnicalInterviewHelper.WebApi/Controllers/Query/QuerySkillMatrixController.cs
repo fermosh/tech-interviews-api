@@ -1,20 +1,18 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
+{    
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     /// <summary>
     /// API for Position-Skill operations.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [RoutePrefix("api/skillMatrix")]
+    [RoutePrefix("api/skillmatrix")]
     [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QuerySkillMatrixController : ApiController
     {
@@ -32,18 +30,10 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
-        public QuerySkillMatrixController()
-        {
-            querySkillMatrix = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
-        /// </summary>
         /// <param name="queryPositionSkill">The query skill.</param>
         public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
         {
-            querySkillMatrix = queryPositionSkill;
+            this.querySkillMatrix = queryPositionSkill;
         }
 
         #endregion Constructor
@@ -58,7 +48,7 @@
         public async Task<IHttpActionResult> GetSkillMatrixByCompetencyAndLevel(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
-            var skills = await querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
+            var skills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
                                                                                          skill.JobFunctionLevel == jobFunctionLevel);
 
             // We have found documents that match the input criteria, so we proceed to include them in the response.
@@ -99,7 +89,7 @@
 
             var positionSkillVM = new SkillMatrixViewModel()
             {
-                HasContent = skillsVM.Any(),
+                HasContent = skillsVM.Count() > 0,
                 CompetencyId = competencyId,
                 Skills = skillsVM
             };

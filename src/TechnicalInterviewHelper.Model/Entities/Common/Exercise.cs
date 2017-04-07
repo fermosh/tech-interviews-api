@@ -1,11 +1,12 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using System.Collections.Generic;
     using Newtonsoft.Json;
 
     /// <summary>
     /// Exercise entity.
     /// </summary>
-    public class Exercise : BaseEntity
+    public class ExerciseCatalog : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -13,8 +14,17 @@
         /// <value>
         /// The competency identifier.
         /// </value>
-        [JsonProperty("competency")]
-        public Competency Competency { get; set; }
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the job function level.
+        /// </summary>
+        /// <value>
+        /// The job function level.
+        /// </value>
+        [JsonProperty("jobFunctionLevel")]
+        public int JobFunctionLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifier, supplied by a third party, at which this question belongs.
@@ -23,7 +33,7 @@
         /// The skill identifier.
         /// </value>
         [JsonProperty("skills")]
-        public Skill[] Tags { get; set; }
+        public IEnumerable<int> Skills { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
@@ -41,15 +51,24 @@
         /// The text.
         /// </value>
         [JsonProperty("body")]
-        public string Body { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets the text.
+        /// Gets or sets the complexity.
         /// </summary>
         /// <value>
-        /// The text.
+        /// The complexity.
         /// </value>
-        [JsonProperty("Solution")]
+        [JsonProperty("complexity")]
+        public string Complexity { get; set; }
+
+        /// <summary>
+        /// Gets or sets the proposed solution.
+        /// </summary>
+        /// <value>
+        /// The proposed solution.
+        /// </value>
+        [JsonProperty("solution")]
         public string Solution { get; set; }
     }
 }

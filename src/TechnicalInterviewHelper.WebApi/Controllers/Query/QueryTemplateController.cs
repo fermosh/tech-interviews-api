@@ -1,15 +1,13 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
+{    
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
-    
+
     [RoutePrefix("api/templates")]
     [EnableCors(origins: "*", headers: "*", methods: "GET")]
     public class QueryTemplateController : ApiController
@@ -24,7 +22,7 @@
         /// <summary>
         /// The query template catalog
         /// </summary>
-        private readonly IQueryRepository<Template, string> queryTemplateCatalog;
+        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
 
         #endregion Repository
 
@@ -33,20 +31,11 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryTemplateController"/> class.
         /// </summary>
-        public QueryTemplateController()
-        {
-            this.querySkillMatrixCatalog = new SkillMatrixDocumentDbQueryRepository(ConfigurationManager.AppSettings["SkillCollectionId"]);
-            this.queryTemplateCatalog = new DocumentDbQueryRepository<Template, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryTemplateController"/> class.
-        /// </summary>
         /// <param name="querySkillMatrixCatalog">The query skill matrix catalog.</param>
         /// <param name="queryTemplateCatalog">The query template catalog.</param>
         public QueryTemplateController(
-            SkillMatrixDocumentDbQueryRepository querySkillMatrixCatalog,
-            IQueryRepository<Template, string> queryTemplateCatalog)
+            ISkillMatrixQueryRepository querySkillMatrixCatalog,
+            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;
             this.querySkillMatrixCatalog = querySkillMatrixCatalog;
@@ -63,7 +52,7 @@
         /// </returns>
         /// <example>api/template/04278e7f-2d35-49b8-a8f9-ebd0d794c434</example>
         [Route("{templateId}")]
-         public async Task<IHttpActionResult> Get(string templateId)
+        public async Task<IHttpActionResult> Get(string templateId)
         {
             // --------------------------------------------------------------------------------
             // Let's run some validations over the input data and the saved template as well.
