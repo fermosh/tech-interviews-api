@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace TechnicalInterviewHelper.WebApi.App_Start
+namespace TechnicalInterviewHelper.WebApi
 {
     public class FilterConfig
     {

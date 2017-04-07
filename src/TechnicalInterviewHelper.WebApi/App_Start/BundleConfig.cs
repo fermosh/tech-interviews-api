@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace TechnicalInterviewHelper.WebApi.App_Start
+namespace TechnicalInterviewHelper.WebApi
 {
     public class BundleConfig
     {

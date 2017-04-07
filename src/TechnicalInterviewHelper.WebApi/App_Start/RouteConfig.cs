@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace TechnicalInterviewHelper.WebApi.App_Start
+namespace TechnicalInterviewHelper.WebApi
 {
     public class RouteConfig
     {

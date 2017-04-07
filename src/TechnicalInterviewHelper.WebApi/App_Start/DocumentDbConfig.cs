@@ -1,4 +1,4 @@
-﻿namespace TechnicalInterviewHelper.WebApi.App_Start
+﻿namespace TechnicalInterviewHelper.WebApi
 {
     using Microsoft.Azure.Documents;
     using Microsoft.Azure.Documents.Client;
