@@ -49,13 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\Catalogs\JobFunctionCatalog.cs" />
+    <Compile Include="Entities\JobFunctionDocument.cs" />
     <Compile Include="Entities\AnsweredExercise.cs" />
     <Compile Include="Entities\Catalogs\CompetencyCatalog.cs" />
     <Compile Include="Entities\AnsweredQuestion.cs" />
     <Compile Include="Entities\Competency.cs" />
     <Compile Include="Entities\Exercise.cs" />
     <Compile Include="Entities\Interview.cs" />
+    <Compile Include="Entities\JobFunction.cs" />
+    <Compile Include="Entities\Level.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Template.cs" />
     <Compile Include="Entities\SkillMatrix.cs" />

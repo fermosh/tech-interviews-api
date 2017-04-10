@@ -4,10 +4,10 @@
     using Newtonsoft.Json;    
 
     /// <summary>
-    /// Model for job function catalog.
+    /// Model for job function document.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class JobFunctionCatalog : BaseEntity
+    public class JobFunctionDocument : BaseEntity
     {
         /// <summary>
         /// Gets or sets the job function.

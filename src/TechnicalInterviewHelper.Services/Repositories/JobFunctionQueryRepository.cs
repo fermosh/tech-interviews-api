@@ -10,9 +10,9 @@
     /// <summary>
     /// Repository for specific operation related to JobFunctions.
     /// </summary>
-    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.JobFunctionCatalog, System.String}" />
+    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.JobFunctionDocument, System.String}" />
     /// <seealso cref="TechnicalInterviewHelper.Model.IJobFunctionQueryRepository" />
-    public class JobFunctionQueryRepository : DocumentDbQueryRepository<JobFunctionCatalog, string>, IJobFunctionQueryRepository
+    public class JobFunctionQueryRepository : DocumentDbQueryRepository<JobFunctionDocument, string>, IJobFunctionQueryRepository
     {
         #region Constructor
 
@@ -48,7 +48,7 @@
         {
             var documentQuery =
                     this.DocumentClient
-                    .CreateDocumentQuery<JobFunctionCatalog>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .CreateDocumentQuery<JobFunctionDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(catalog => catalog.JobFunction.Id == jobFunctionId)
                     .SelectMany(catalog => catalog.Levels)
                     .Where(level => level.Id == jobFunctionLevel)

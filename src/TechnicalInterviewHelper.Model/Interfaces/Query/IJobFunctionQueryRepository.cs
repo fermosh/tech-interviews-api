@@ -5,8 +5,8 @@
     /// <summary>
     /// Proper interface for specific operations in the JobFunction catalog.
     /// </summary>
-    /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{TechnicalInterviewHelper.Model.JobFunctionCatalog, System.String}" />
-    public interface IJobFunctionQueryRepository : IQueryRepository<JobFunctionCatalog, string>
+    /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{TechnicalInterviewHelper.Model.JobFunctionDocument, System.String}" />
+    public interface IJobFunctionQueryRepository : IQueryRepository<JobFunctionDocument, string>
     {
         /// <summary>
         /// Finds the title of an specific level within job function catalog.
