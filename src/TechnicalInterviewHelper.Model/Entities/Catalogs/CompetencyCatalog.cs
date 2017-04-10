@@ -4,10 +4,10 @@
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Entity to save a document with a catalog of competencies.
+    /// Entity that models a competency with all its information.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class CompetencyCatalog : BaseEntity
+    public class CompetencyDocument : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competencies.

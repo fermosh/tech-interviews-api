@@ -66,6 +66,7 @@
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Interfaces\Command\ICommandRepository.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\Query\ICompetencyQueryRepository.cs" />
     <Compile Include="Interfaces\Query\IExerciseQueryRepository.cs" />
     <Compile Include="Interfaces\Query\IJobFunctionQueryRepository.cs" />
     <Compile Include="Interfaces\Query\IQuestionQueryRepository.cs" />

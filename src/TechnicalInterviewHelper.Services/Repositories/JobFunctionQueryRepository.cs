@@ -37,19 +37,19 @@
         #endregion Constructor
 
         /// <summary>
-        /// Finds the title of an specific level within job function catalog.
+        /// Finds the title of an specific job among all jobfunction documents.
         /// </summary>
-        /// <param name="jobFunctionId">The job function identifier.</param>
+        /// <param name="competencyId">The competency identifier.</param>
         /// <param name="jobFunctionLevel">The job function level.</param>
         /// <returns>
         /// The position title of the level.
         /// </returns>
-        public async Task<string> FindJobTitleWithinLevels(int jobFunctionId, int jobFunctionLevel)
+        public async Task<string> FindJobTitleThroughAllLevels(int competencyId, int jobFunctionLevel)
         {
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<JobFunctionDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(catalog => catalog.JobFunction.Id == jobFunctionId)
+                    .Where(catalog => catalog.JobFunction.Id == competencyId)
                     .SelectMany(catalog => catalog.Levels)
                     .Where(level => level.Id == jobFunctionLevel)
                     .Select(level => level.JobTitles)

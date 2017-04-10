@@ -29,6 +29,11 @@
         /// </summary>
         private readonly IJobFunctionQueryRepository queryJobFunction;
 
+        /// <summary>
+        /// The query competency
+        /// </summary>
+        private readonly ICompetencyQueryRepository queryCompetency;      
+
         #endregion Repository
 
         #region Constructor
@@ -41,11 +46,13 @@
         public QueryTemplateController(
             ISkillMatrixQueryRepository querySkillMatrixCatalog,
             IQueryRepository<Template, string> queryTemplateCatalog,
-            IJobFunctionQueryRepository queryJobFunction)
+            IJobFunctionQueryRepository queryJobFunction,
+            ICompetencyQueryRepository queryCompetency)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;
             this.querySkillMatrixCatalog = querySkillMatrixCatalog;
             this.queryJobFunction = queryJobFunction;
+            this.queryCompetency = queryCompetency;
         }
 
         #endregion Constructor
@@ -83,15 +90,25 @@
                 return BadRequest($"The template with Id '{templateId}' doesn't have saved skills.");
             }
 
-            // -------------------------------------------------------------------------------
-            // Try to get all filteres skill information using its id, competency and level.
-            // -------------------------------------------------------------------------------
+            // -----------------------------------------------------------------------------
+            // Try to get all filtered skill's information and other required information.
+            // -----------------------------------------------------------------------------
+
+            // Try to find the competency that has the job function identifier.
+            var competency = await this.queryCompetency.FindCompetency(template.CompetencyId);
+            while (!competency.JobFunctions.Any() && competency.ParentId.HasValue)
+            {
+                competency = await this.queryCompetency.FindCompetency(competency.ParentId.Value);
+            }
+
+            string jobTitle = string.Empty;
+            if (competency != null && competency.JobFunctions.Any())
+            {
+                var jobFunctionId = competency.JobFunctions.First();
+                jobTitle = await this.queryJobFunction.FindJobTitleThroughAllLevels(jobFunctionId, template.JobFunctionLevel);
+            }
 
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
-
-
-
-            var jobTitle = await this.queryJobFunction.FindJobTitleWithinLevels(1, template.JobFunctionLevel);
 
             // --------------------------------------
             // Now it's time to build the response.
@@ -134,12 +151,11 @@
                 skillTemplateViewModelList.Add(skillTemplateViewModel);
             }
 
-            //// TODO: Need to fill out "Description" with proper information.
             var levelViewModel = new LevelViewModel
             {
                 Id = template.JobFunctionLevel,
                 Name = $"L{template.JobFunctionLevel}",
-                Description = "Work in progress."
+                Description = jobTitle
             };
 
             //// TODO: Need to fill out "Competency" and "DomainName" with proper information.
