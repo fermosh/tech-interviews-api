@@ -1,11 +1,12 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
     using Newtonsoft.Json;
+    using TechnicalInterviewHelper.Model.Entities;
 
     /// <summary>
     /// Question entity.
     /// </summary>
-    public class QuestionCatalog : BaseEntity
+    public class Question : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -13,17 +14,8 @@
         /// <value>
         /// The competency identifier.
         /// </value>
-        [JsonProperty("competencyId")]
-        public int CompetencyId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the job function level.
-        /// </summary>
-        /// <value>
-        /// The job function level.
-        /// </value>
-        [JsonProperty("jobFunctionLevel")]
-        public int JobFunctionLevel { get; set; }
+        [JsonProperty("competency")]
+        public Tag Competency { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifier.
@@ -31,8 +23,8 @@
         /// <value>
         /// The skill identifier.
         /// </value>
-        [JsonProperty("skillId")]
-        public int SkillId { get; set; }
+        [JsonProperty("skill")]
+        public Tag Skill { get; set; }
 
         /// <summary>
         /// Gets or sets the text.
@@ -41,7 +33,7 @@
         /// The text.
         /// </value>
         [JsonProperty("body")]
-        public string Description { get; set; }
+        public string Body { get; set; }
 
         /// <summary>
         /// Gets or sets the answer.

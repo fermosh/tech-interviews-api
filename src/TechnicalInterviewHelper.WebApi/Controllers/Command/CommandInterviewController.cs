@@ -8,7 +8,7 @@
     using Model;
     using TechnicalInterviewHelper.Model;
 
-    [RoutePrefix("api/interview")]
+    [RoutePrefix("api/interviews")]
     [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandInterviewController : ApiController
     {

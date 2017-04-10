@@ -27,7 +27,7 @@
 
         #endregion Constructor
 
-        [Route("all")]
+        [Route("")]
         public async Task<IHttpActionResult> GetAll()
         {
             var competencyCatalogs = await this.queryCompetency.GetAll();

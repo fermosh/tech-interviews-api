@@ -14,33 +14,43 @@
         /// The question identifier.
         /// </value>
         [JsonProperty("id")]
-        public string QuestionId { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the question body.
         /// </summary>
         /// <value>
-        /// The description.
+        /// The body.
         /// </value>
         [JsonProperty("body")]
-        public string Description { get; set; }
+        public string Body { get; set; }
 
         /// <summary>
-        /// Gets or sets the answer.
+        /// Gets or sets the proposed solution.
         /// </summary>
         /// <value>
-        /// The answer.
-        /// </value> 
+        /// The proposed solution.
+        /// </value>
         [JsonProperty("answer")]
         public string Answer { get; set; }
 
         /// <summary>
-        /// Gets or sets the tag.
+        /// Gets or sets the competency
         /// </summary>
         /// <value>
-        /// The tag.
-        /// </value> 
-        [JsonProperty("tag")]
+        /// The competency.
+        /// </value>
+        [JsonProperty("competency")]
+        public CompetencyViewModel Competency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the question body.
+        /// </summary>
+        /// <value>
+        /// The body.
+        /// </value>
+        [JsonProperty("Tag")]
         public TagViewModel Tag { get; set; }
+
     }
 }

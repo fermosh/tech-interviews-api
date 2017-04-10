@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CommandQuestion\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -184,9 +185,9 @@
     <Compile Include="Controllers\Command\CommandTemplateController.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Query\QueryExerciseController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\Query\QuerySkillMatrixController.cs" />
-    <Compile Include="Controllers\Query\QueryQuestionController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\Query\QueryTemplateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

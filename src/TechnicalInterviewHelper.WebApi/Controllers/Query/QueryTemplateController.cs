@@ -22,7 +22,7 @@
         /// <summary>
         /// The query template catalog
         /// </summary>
-        private readonly IQueryRepository<TemplateCatalog, string> queryTemplateCatalog;
+        private readonly IQueryRepository<Template, string> queryTemplateCatalog;
 
         /// <summary>
         /// The query job function
@@ -40,7 +40,7 @@
         /// <param name="queryTemplateCatalog">The query template catalog.</param>
         public QueryTemplateController(
             ISkillMatrixQueryRepository querySkillMatrixCatalog,
-            IQueryRepository<TemplateCatalog, string> queryTemplateCatalog,
+            IQueryRepository<Template, string> queryTemplateCatalog,
             IJobFunctionQueryRepository queryJobFunction)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;

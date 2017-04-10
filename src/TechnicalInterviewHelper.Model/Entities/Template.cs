@@ -7,7 +7,7 @@
     /// The way a bunch of filtered skill are saved for a queried position.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class TemplateCatalog : BaseEntity
+    public class Template : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.

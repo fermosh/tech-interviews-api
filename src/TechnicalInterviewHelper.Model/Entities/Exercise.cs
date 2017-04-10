@@ -2,11 +2,12 @@
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;
+    using TechnicalInterviewHelper.Model.Entities;
 
     /// <summary>
     /// Exercise entity.
     /// </summary>
-    public class ExerciseCatalog : BaseEntity
+    public class Exercise : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.
@@ -14,17 +15,8 @@
         /// <value>
         /// The competency identifier.
         /// </value>
-        [JsonProperty("competencyId")]
-        public int CompetencyId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the job function level.
-        /// </summary>
-        /// <value>
-        /// The job function level.
-        /// </value>
-        [JsonProperty("jobFunctionLevel")]
-        public int JobFunctionLevel { get; set; }
+        [JsonProperty("competency")]
+        public Tag Competency { get; set; }
 
         /// <summary>
         /// Gets or sets the skill identifier, supplied by a third party, at which this question belongs.
@@ -33,7 +25,7 @@
         /// The skill identifier.
         /// </value>
         [JsonProperty("skills")]
-        public IEnumerable<int> Skills { get; set; }
+        public IEnumerable<Tag> Skills { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
@@ -52,15 +44,6 @@
         /// </value>
         [JsonProperty("body")]
         public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or sets the complexity.
-        /// </summary>
-        /// <value>
-        /// The complexity.
-        /// </value>
-        [JsonProperty("complexity")]
-        public string Complexity { get; set; }
 
         /// <summary>
         /// Gets or sets the proposed solution.

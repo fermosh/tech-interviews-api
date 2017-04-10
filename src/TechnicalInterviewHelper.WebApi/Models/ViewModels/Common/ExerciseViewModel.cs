@@ -45,6 +45,15 @@
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or sets the competency
+        /// </summary>
+        /// <value>
+        /// The competency.
+        /// </value>
+        [JsonProperty("competency")]
+        public CompetencyViewModel Competency { get; set; }
+
+        /// <summary>
         /// Gets or sets the topics.
         /// </summary>
         /// <value>

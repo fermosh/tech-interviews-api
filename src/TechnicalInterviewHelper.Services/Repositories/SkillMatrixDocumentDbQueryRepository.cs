@@ -14,9 +14,9 @@
     /// <summary>
     /// Repository for specific operation related to skill matrix catalog.
     /// </summary>
-    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.SkillMatrixCatalog, System.String}" />
+    /// <seealso cref="TechnicalInterviewHelper.Services.DocumentDbQueryRepository{TechnicalInterviewHelper.Model.SkillMatrix, System.String}" />
     /// <seealso cref="TechnicalInterviewHelper.Model.ISkillMatrixQueryRepository" />
-    public class SkillMatrixDocumentDbQueryRepository : DocumentDbQueryRepository<SkillMatrixCatalog, string>, ISkillMatrixQueryRepository
+    public class SkillMatrixDocumentDbQueryRepository : DocumentDbQueryRepository<SkillMatrix, string>, ISkillMatrixQueryRepository
     {
         #region Constructor
 
@@ -50,7 +50,7 @@
         {
             var documentQuery =
                     this.DocumentClient
-                    .CreateDocumentQuery<SkillMatrixCatalog>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(catalog => catalog.CompetencyId == competencyId)
                     .SelectMany(catalog => catalog.Skills)
                     .Where(predicate)
@@ -87,7 +87,7 @@
 
             var documentQuery =
                     this.DocumentClient
-                    .CreateDocumentQuery<SkillMatrixCatalog>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(catalog => catalog.CompetencyId == competencyId)
                     .SelectMany(catalog => catalog.Skills)
                     .Where<Skill>(predicate.ToString())

@@ -1,17 +1,19 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{    
+{
+    using Model;
+    using Services;
+    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
-    using Model;
     using TechnicalInterviewHelper.Model;
 
     /// <summary>
     /// Has commands that affect template entities.
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [RoutePrefix("api/template")]
+    [RoutePrefix("api/templates")]
     [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandTemplateController : ApiController
     {
@@ -20,7 +22,7 @@
         /// <summary>
         /// The command repository
         /// </summary>
-        private readonly ICommandRepository<TemplateCatalog> commandRepository;
+        private readonly ICommandRepository<Template> commandRepository;
 
         #endregion Repository
 
@@ -29,8 +31,16 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
+        public CommandTemplateController()
+        {
+            this.commandRepository = new DocumentDbCommandRepository<Template>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
+        /// </summary>
         /// <param name="skillRepository">The skill repository.</param>
-        public CommandTemplateController(ICommandRepository<TemplateCatalog> commandRepository)
+        public CommandTemplateController(ICommandRepository<Template> commandRepository)
         {
             this.commandRepository = commandRepository;
         }
@@ -60,7 +70,7 @@
 
             try
             {
-                var templateToSave = new TemplateCatalog()
+                var templateToSave = new Template()
                 {
                     CompetencyId = templateInput.CompetencyId,
                     JobFunctionLevel = templateInput.JobFunctionLevel,

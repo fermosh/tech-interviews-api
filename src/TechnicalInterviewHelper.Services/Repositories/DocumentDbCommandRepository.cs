@@ -105,6 +105,20 @@
 
         #endregion Udpate command
 
+        #region Delete command
+
+        /// <summary>
+        /// Delete a document as an asynchronous operation from the Azure DocumentDB database service.
+        /// </summary>
+        /// <param name="id">The id</param>
+        /// <returns>A task of void.</returns>
+        public async Task Delete(string id)
+        {
+            var deleted = await this.documentClient.DeleteDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, id));
+        }
+
+        #endregion
+
         #region IDisposable support
 
         /// <summary>
