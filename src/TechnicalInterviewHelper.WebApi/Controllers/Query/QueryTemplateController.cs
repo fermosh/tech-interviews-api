@@ -96,16 +96,22 @@
 
             // Try to find the competency that has the job function identifier.
             var competency = await this.queryCompetency.FindCompetency(template.CompetencyId);
-            while (!competency.JobFunctions.Any() && competency.ParentId.HasValue)
+            while (competency != null && !competency.JobFunctions.Any() && competency.ParentId.HasValue)
             {
                 competency = await this.queryCompetency.FindCompetency(competency.ParentId.Value);
             }
 
-            string jobTitle = string.Empty;
-            if (competency != null && competency.JobFunctions.Any())
+            string competencyName = string.Empty;
+            string jobDescription = string.Empty;
+
+            if (competency != null)
             {
-                var jobFunctionId = competency.JobFunctions.First();
-                jobTitle = await this.queryJobFunction.FindJobTitleThroughAllLevels(jobFunctionId, template.JobFunctionLevel);
+                competencyName = competency.Name;
+                if (competency.JobFunctions.Any())
+                {
+                    var jobFunctionId = competency.JobFunctions.First();
+                    jobDescription = await this.queryJobFunction.FindJobTitleThroughAllLevels(jobFunctionId, template.JobFunctionLevel);
+                }
             }
 
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
@@ -155,17 +161,16 @@
             {
                 Id = template.JobFunctionLevel,
                 Name = $"L{template.JobFunctionLevel}",
-                Description = jobTitle
+                Description = jobDescription
             };
 
-            //// TODO: Need to fill out "Competency" and "DomainName" with proper information.
             var templateViewModel = new TemplateViewModel
             {
                 CompetencyId = template.CompetencyId,
                 JobFunctionLevel = template.JobFunctionLevel,
                 Level = levelViewModel,
-                CompetencyName = "Work in progress.",
-                DomainName = "Work in progress.",
+                CompetencyName = competencyName,
+                DomainName = jobDescription,
                 Skills = skillTemplateViewModelList,
                 Exercises = new List<object>()
             };
