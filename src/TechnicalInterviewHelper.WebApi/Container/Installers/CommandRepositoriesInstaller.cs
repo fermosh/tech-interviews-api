@@ -17,7 +17,13 @@
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["InterviewCollection"])),
                 Component.For<ICommandRepository<Template>>()
                          .ImplementedBy<DocumentDbCommandRepository<Template>>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["TemplateCollectionId"])));
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["TemplateCollectionId"])),
+                Component.For<ICommandRepository<Question>>()
+                             .ImplementedBy<DocumentDbCommandRepository<Question>>()
+                             .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["QuestionCollectionId"])),
+               Component.For<ICommandRepository<Exercise>>()
+                             .ImplementedBy<DocumentDbCommandRepository<Exercise>>()
+                             .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["ExerciseCollectionId"])));
         }
     }
 }

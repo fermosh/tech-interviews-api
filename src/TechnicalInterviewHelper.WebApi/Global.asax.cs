@@ -8,7 +8,7 @@
     using Castle.Windsor;
     using Castle.Windsor.Installer;
     using Container;
-
+    
     public class WebApiApplication : System.Web.HttpApplication
     {
         private static IWindsorContainer container;
