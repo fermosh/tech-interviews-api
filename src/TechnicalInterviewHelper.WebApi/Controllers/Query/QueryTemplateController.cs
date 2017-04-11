@@ -32,7 +32,7 @@
         /// <summary>
         /// The query competency
         /// </summary>
-        private readonly ICompetencyQueryRepository queryCompetency;      
+        private readonly ICompetencyQueryRepository queryCompetency;
 
         #endregion Repository
 
@@ -94,6 +94,9 @@
             // Try to get all filtered skill's information and other required information.
             // -----------------------------------------------------------------------------
 
+            string competencyName = string.Empty;
+            string jobDescription = string.Empty;
+
             // Try to find the competency that has the job function identifier.
             var competency = await this.queryCompetency.FindCompetency(template.CompetencyId);
             while (competency != null && !competency.JobFunctions.Any() && competency.ParentId.HasValue)
@@ -101,16 +104,13 @@
                 competency = await this.queryCompetency.FindCompetency(competency.ParentId.Value);
             }
 
-            string competencyName = string.Empty;
-            string jobDescription = string.Empty;
-
             if (competency != null)
             {
                 competencyName = competency.Name;
                 if (competency.JobFunctions.Any())
                 {
                     var jobFunctionId = competency.JobFunctions.First();
-                    jobDescription = await this.queryJobFunction.FindJobTitleThroughAllLevels(jobFunctionId, template.JobFunctionLevel);
+                    jobDescription = await this.queryJobFunction.FindJobTitleByLevel(jobFunctionId, template.JobFunctionLevel);
                 }
             }
 

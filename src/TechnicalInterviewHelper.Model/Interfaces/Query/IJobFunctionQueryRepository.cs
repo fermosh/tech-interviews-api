@@ -14,6 +14,6 @@
         /// <param name="jobFunctionId">The job function identifier.</param>
         /// <param name="jobFunctionLevel">The job function level.</param>
         /// <returns>The position title of the level.</returns>
-        Task<string> FindJobTitleThroughAllLevels(int jobFunctionId, int jobFunctionLevel);
+        Task<string> FindJobTitleByLevel(int jobFunctionId, int jobFunctionLevel);
     }
 }
