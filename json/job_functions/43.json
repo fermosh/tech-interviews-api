@@ -1,4 +1,5 @@
 {
+	"id": "955f42f9-569d-0493-4145-39cfe0d27ebe",
     "jobFunction": {
         "id": 43,
         "name": "Service Management",
@@ -223,11 +224,5 @@
                 "Senior Director, Quality Assurance"
             ]
         }
-    ],
-    "id": "955f42f9-569d-0493-4145-39cfe0d27ebe",
-    "_rid": "nEl0AILL7gIkAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIkAAAAAAAAAA==/",
-    "_etag": "\"00002c00-0000-0000-0000-58e400fd0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337469
+    ]
 }

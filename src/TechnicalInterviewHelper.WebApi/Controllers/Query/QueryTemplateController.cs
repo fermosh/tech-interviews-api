@@ -24,6 +24,16 @@
         /// </summary>
         private readonly IQueryRepository<Template, string> queryTemplateCatalog;
 
+        /// <summary>
+        /// The query job function
+        /// </summary>
+        private readonly IJobFunctionQueryRepository queryJobFunction;
+
+        /// <summary>
+        /// The query competency
+        /// </summary>
+        private readonly ICompetencyQueryRepository queryCompetency;
+
         #endregion Repository
 
         #region Constructor
@@ -35,10 +45,14 @@
         /// <param name="queryTemplateCatalog">The query template catalog.</param>
         public QueryTemplateController(
             ISkillMatrixQueryRepository querySkillMatrixCatalog,
-            IQueryRepository<Template, string> queryTemplateCatalog)
+            IQueryRepository<Template, string> queryTemplateCatalog,
+            IJobFunctionQueryRepository queryJobFunction,
+            ICompetencyQueryRepository queryCompetency)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;
             this.querySkillMatrixCatalog = querySkillMatrixCatalog;
+            this.queryJobFunction = queryJobFunction;
+            this.queryCompetency = queryCompetency;
         }
 
         #endregion Constructor
@@ -76,9 +90,29 @@
                 return BadRequest($"The template with Id '{templateId}' doesn't have saved skills.");
             }
 
-            // -------------------------------------------------------------------------------
-            // Try to get all filteres skill information using its id, competency and level.
-            // -------------------------------------------------------------------------------
+            // -----------------------------------------------------------------------------
+            // Try to get all filtered skill's information and other required information.
+            // -----------------------------------------------------------------------------
+
+            string competencyName = string.Empty;
+            string jobDescription = string.Empty;
+
+            // Try to find the competency that has the job function identifier.
+            var competency = await this.queryCompetency.FindCompetency(template.CompetencyId);
+            while (competency != null && !competency.JobFunctions.Any() && competency.ParentId.HasValue)
+            {
+                competency = await this.queryCompetency.FindCompetency(competency.ParentId.Value);
+            }
+
+            if (competency != null)
+            {
+                competencyName = competency.Name;
+                if (competency.JobFunctions.Any())
+                {
+                    var jobFunctionId = competency.JobFunctions.First();
+                    jobDescription = await this.queryJobFunction.FindJobTitleByLevel(jobFunctionId, template.JobFunctionLevel);
+                }
+            }
 
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
 
@@ -123,22 +157,20 @@
                 skillTemplateViewModelList.Add(skillTemplateViewModel);
             }
 
-            //// TODO: Need to fill out "Description" with proper information.
             var levelViewModel = new LevelViewModel
             {
                 Id = template.JobFunctionLevel,
                 Name = $"L{template.JobFunctionLevel}",
-                Description = "Work in progress."
+                Description = jobDescription
             };
 
-            //// TODO: Need to fill out "Competency" and "DomainName" with proper information.
             var templateViewModel = new TemplateViewModel
             {
                 CompetencyId = template.CompetencyId,
                 JobFunctionLevel = template.JobFunctionLevel,
                 Level = levelViewModel,
-                CompetencyName = "Work in progress.",
-                DomainName = "Work in progress.",
+                CompetencyName = competencyName,
+                DomainName = jobDescription,
                 Skills = skillTemplateViewModelList,
                 Exercises = new List<object>()
             };

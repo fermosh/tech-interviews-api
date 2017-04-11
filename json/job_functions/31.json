@@ -1,4 +1,5 @@
 {
+	"id": "d01a9a72-97e3-0ac6-47f7-98c238a899c3",
     "jobFunction": {
         "id": 31,
         "name": "Content Strategy",
@@ -124,11 +125,5 @@
             "isEligibleForAsmt": false,
             "jobTitles": []
         }
-    ],
-    "id": "d01a9a72-97e3-0ac6-47f7-98c238a899c3",
-    "_rid": "nEl0AILL7gIbAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIbAAAAAAAAAA==/",
-    "_etag": "\"00002300-0000-0000-0000-58e400830000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337347
+    ]
 }

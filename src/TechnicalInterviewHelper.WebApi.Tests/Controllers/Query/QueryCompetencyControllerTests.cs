@@ -19,9 +19,9 @@
         public void WhenThereAreNoCompetencies_ReturnsNotFoundStatusCode()
         {
             // Arrange
-            var competencies = new List<CompetencyCatalog>();
+            var competencies = new List<CompetencyDocument>();
 
-            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyCatalog, string>>();
+            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyDocument, string>>();
 
             queryCompetencyCatalogMock
                 .Setup(method => method.GetAll())
@@ -42,9 +42,9 @@
         public void WhenGetAllCompetencies_ReturnsAnEnumerationWithAllAvailableCompetencyViewModels()
         {
             // Arrange
-            var competencies = new List<CompetencyCatalog>
+            var competencies = new List<CompetencyDocument>
             {
-                new CompetencyCatalog
+                new CompetencyDocument
                 {
                     Id = "3FB6E6CC-4505-45AF-BC5F-73F45E33CC76",
                     Competencies = new List<Competency>
@@ -58,7 +58,7 @@
                 }
             };
 
-            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyCatalog, string>>();
+            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyDocument, string>>();
 
             queryCompetencyCatalogMock
                 .Setup(method => method.GetAll())

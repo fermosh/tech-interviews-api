@@ -79,8 +79,11 @@
     <Compile Include="Controllers\Command\CommandInterviewControllerTests.cs" />
     <Compile Include="Controllers\Command\CommandTemplateControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryCompetencyControllerTests.cs" />
+    <Compile Include="Controllers\ExerciseControllerTests.cs" />
     <Compile Include="Controllers\Query\QueryInterviewControllerTests.cs" />
+    <Compile Include="Controllers\QueryQuestionControllerTests.cs" />
     <Compile Include="Controllers\Query\QuerySkillMatrixControllerTests.cs" />
+    <Compile Include="Controllers\Query\QueryTemplateControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 {
+	"id": "f7f9f0f3-699f-b6a6-31a2-5e2060a4d597",
     "jobFunction": {
         "id": 36,
         "name": "Finance",
@@ -143,11 +144,5 @@
                 "Chief Internal Auditor"
             ]
         }
-    ],
-    "id": "f7f9f0f3-699f-b6a6-31a2-5e2060a4d597",
-    "_rid": "nEl0AILL7gIgAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIgAAAAAAAAAA==/",
-    "_etag": "\"00002800-0000-0000-0000-58e400c10000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337409
+    ]
 }

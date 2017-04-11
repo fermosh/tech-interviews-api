@@ -12,8 +12,8 @@
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                Component.For<IQueryRepository<CompetencyCatalog, string>>()
-                         .ImplementedBy<DocumentDbQueryRepository<CompetencyCatalog, string>>()
+                Component.For<IQueryRepository<CompetencyDocument, string>>()
+                         .ImplementedBy<DocumentDbQueryRepository<CompetencyDocument, string>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["CompetencyCollectionId"])),
                 Component.For<IQueryRepository<Template, string>>()
                          .ImplementedBy<DocumentDbQueryRepository<Template, string>>()
@@ -26,7 +26,13 @@
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["QuestionCollectionId"])),
                 Component.For<ISkillMatrixQueryRepository>()
                          .ImplementedBy<SkillMatrixDocumentDbQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["SkillCollectionId"])));
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["SkillCollectionId"])),
+                Component.For<IJobFunctionQueryRepository>()
+                         .ImplementedBy<JobFunctionQueryRepository>()
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["JobFunctionCollectionId"])),
+                Component.For<ICompetencyQueryRepository>()
+                         .ImplementedBy<CompetencyDocumentDbQueryRepository>()
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["CompetencyCollectionId"])));
         }
     }
 }

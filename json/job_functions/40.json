@@ -1,4 +1,5 @@
 {
+	"id": "537564be-d00d-1a50-6ce6-b0f0e4ea11b9",
     "jobFunction": {
         "id": 40,
         "name": "Legal",
@@ -118,11 +119,5 @@
                 "Chief Lawyer"
             ]
         }
-    ],
-    "id": "537564be-d00d-1a50-6ce6-b0f0e4ea11b9",
-    "_rid": "nEl0AILL7gIiAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIiAAAAAAAAAA==/",
-    "_etag": "\"00002a00-0000-0000-0000-58e400e40000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337444
+    ]
 }

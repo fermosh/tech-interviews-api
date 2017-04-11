@@ -1,4 +1,5 @@
 {
+	"id": "75f74ff4-4e24-49b9-0f84-b5dcd89101f9",
     "jobFunction": {
         "id": 37,
         "name": "Human Resources",
@@ -58,11 +59,5 @@
                 "Senior Human Resource Business Partner"
             ]
         }
-    ],
-    "id": "75f74ff4-4e24-49b9-0f84-b5dcd89101f9",
-    "_rid": "nEl0AILL7gIhAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIhAAAAAAAAAA==/",
-    "_etag": "\"00002900-0000-0000-0000-58e400ce0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337422
+    ]
 }

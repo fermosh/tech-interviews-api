@@ -1,4 +1,5 @@
 {
+	"id": "e1f48856-13c0-9a2d-c3d0-d6220490207c",
     "jobFunction": {
         "id": 15,
         "name": "Software Engineering",
@@ -148,11 +149,5 @@
                 "Chief Software Engineer"
             ]
         }
-    ],
-    "id": "e1f48856-13c0-9a2d-c3d0-d6220490207c",
-    "_rid": "nEl0AILL7gINAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gINAAAAAAAAAA==/",
-    "_etag": "\"00001500-0000-0000-0000-58e3ff860000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337094
+    ]
 }

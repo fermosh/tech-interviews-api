@@ -1,4 +1,5 @@
 {
+	"id": "56a57077-0edb-d3a0-7390-fc344f2045a7",
     "jobFunction": {
         "id": 16,
         "name": "Technical Writing",
@@ -148,11 +149,5 @@
                 "Chief Technical Writer"
             ]
         }
-    ],
-    "id": "56a57077-0edb-d3a0-7390-fc344f2045a7",
-    "_rid": "nEl0AILL7gIOAAAAAAAAAA==",
-    "_self": "dbs/nEl0AA==/colls/nEl0AILL7gI=/docs/nEl0AILL7gIOAAAAAAAAAA==/",
-    "_etag": "\"00001600-0000-0000-0000-58e3ff8f0000\"",
-    "_attachments": "attachments/",
-    "_ts": 1491337103
+    ]
 }
