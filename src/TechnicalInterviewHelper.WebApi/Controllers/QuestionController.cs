@@ -1,16 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
     using Model;
-    using Services;
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
-    
+
     [RoutePrefix("api")]
     [EnableCors(origins: "*", headers: "*", methods: "GET,POST,PUT,DELETE")]
     public class QuestionController : ApiController
@@ -35,16 +33,6 @@
         #endregion Repositories
 
         #region Constructor
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuestionController"/> class.
-        /// </summary>
-        public QuestionController()
-        {
-            this.questionQueryRepository = new QuestionDocumentDbQueryRepository(ConfigurationManager.AppSettings["QuestionCollectionId"]);
-            this.templateQueryRepository = new DocumentDbQueryRepository<Template, string>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-            this.commandRepository = new DocumentDbCommandRepository<Question>(ConfigurationManager.AppSettings["QuestionCollectionId"]);
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuestionController"/> class.
