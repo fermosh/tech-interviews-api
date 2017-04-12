@@ -58,8 +58,11 @@
             var jobTitles = new List<string>();
             while (documentQuery.HasMoreResults)
             {
-                var jobTitleArray = await documentQuery.ExecuteNextAsync<string>();
-                jobTitles.AddRange(jobTitleArray);
+                var jobTitleArrays = await documentQuery.ExecuteNextAsync<string[]>();
+                foreach (var jobTitleArray in jobTitleArrays)
+                {
+                    jobTitles.AddRange(jobTitleArray);
+                }                    
             }
 
             return jobTitles.FirstOrDefault();
