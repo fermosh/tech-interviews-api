@@ -31,7 +31,7 @@
         /// Template catalog repository.
         /// </summary>
         private readonly IQueryRepository<Template, string> templateQueryRepository;
-
+       
         #endregion Repositories
 
         #region Constructor
@@ -71,37 +71,14 @@
                 return NotFound();
             }
 
-            if (template.Skills == null
-                ||
-                template.Skills.Count() == 0)
+            if (template.Skills == null || !template.Skills.Any())
             {
                 return BadRequest($"The template '{templateId}' doesn't have associated skills.");
             }
 
-            // -------------------------------------------------------------------------------
-            // Try to get all filteres skill information using its id, competency and level.
-            // -------------------------------------------------------------------------------
+            var exercises = await this.exerciseQueryRepository.GetAll(template);
 
-            var exercises = await exerciseQueryRepository.GetAll();
-
-            // --------------------------------------
-            // Now it's time to build the response.
-            // --------------------------------------
-
-            var exercisesVM = new List<ExerciseViewModel>();
-
-            foreach (var exercise in exercises)
-            {
-                exercisesVM.Add(new ExerciseViewModel
-                {
-                    ExerciseId = exercise.Id,
-                    Description = exercise.Description,
-                    Solution = exercise.Solution,
-                    Title = exercise.Title
-                });
-            }
-
-            return Ok(exercisesVM);
+            return Ok(exercises);
         }
 
         /// <summary>

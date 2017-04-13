@@ -201,13 +201,12 @@
     <Compile Include="Models\Input\Common\PositionInputModel.cs" />
     <Compile Include="Models\Input\Template\TemplateInputModel.cs" />
     <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\TagViewModel.cs" />
     <Compile Include="Models\ViewModels\CompetencyViewModel.cs" />
     <Compile Include="Models\ViewModels\Interview\InterviewViewModel.cs" />
-    <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
     <Compile Include="Models\ViewModels\Interview\SkillInterviewViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\SkillMatrixViewModel.cs" />
-    <Compile Include="Models\ViewModels\Common\PositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\SkillForPositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\TopicViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\LevelViewModel.cs" />

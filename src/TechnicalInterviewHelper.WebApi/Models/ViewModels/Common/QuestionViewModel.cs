@@ -49,7 +49,7 @@
         /// <value>
         /// The body.
         /// </value>
-        [JsonProperty("Tag")]
+        [JsonProperty("skill")]
         public TagViewModel Tag { get; set; }
 
     }

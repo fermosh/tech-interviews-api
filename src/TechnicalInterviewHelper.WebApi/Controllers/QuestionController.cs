@@ -1,8 +1,6 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using Model;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
@@ -42,12 +40,13 @@
         public QuestionController(
             IQuestionQueryRepository questionQueryRepository,
             ICommandRepository<Question> commandRepository,
-            IQueryRepository<Template, string> templateQueryRepository)
+            IQueryRepository<Template, string> templateQueryRepository
+            )
         {
             this.questionQueryRepository = questionQueryRepository;
             this.commandRepository = commandRepository;
             this.templateQueryRepository = templateQueryRepository;
-        }
+    }
 
         #endregion Constructor
 
@@ -58,46 +57,25 @@
             // Let's run some validations over the input data and the saved template as well.
             // --------------------------------------------------------------------------------
 
-            if (templateId == null)
+            if (string.IsNullOrEmpty(templateId?.Trim()))
             {
                 return BadRequest("Cannot get questions without a valid template identifier.");
             }
 
-            var templateCatalog = await templateQueryRepository.FindById(templateId);
-            if (templateCatalog == null)
+            var template = await this.templateQueryRepository.FindById(templateId);
+            if (template == null)
             {
                 return NotFound();
             }
 
-            if (templateCatalog.Skills == null
-                ||
-                templateCatalog.Skills.Count() == 0)
+            if (template.Skills == null || !template.Skills.Any())
             {
                 return BadRequest($"The template '{templateId}' doesn't have associated skills.");
             }
 
-            // -------------------------------------------------------------------------------
-            // Try to get all filteres skill information using its id, competency and level.
-            // -------------------------------------------------------------------------------
+            var questions = await this.questionQueryRepository.GetAll(template);
 
-            var questions = await questionQueryRepository.GetAll(templateCatalog.CompetencyId, templateCatalog.JobFunctionLevel, templateCatalog.Skills.ToArray());
-
-            // --------------------------------------
-            // Now it's time to build the response.
-            // --------------------------------------
-
-            var questionsVM = new List<QuestionViewModel>();
-
-            foreach (var question in questions)
-            {
-                questionsVM.Add(new QuestionViewModel
-                {
-                    Id = question.Id,
-                    Body = question.Body
-                });
-            }
-
-            return Ok(questionsVM);
+            return Ok(questions);
         }
 
         /// <summary>

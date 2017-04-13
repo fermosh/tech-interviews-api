@@ -12,10 +12,8 @@
         /// <summary>
         /// Finds the within exercises.
         /// </summary>
-        /// <param name="competencyId">The competency identifier.</param>
-        /// <param name="jobFunctionLevel">The job function level.</param>
-        /// <param name="skillIds">Skill identifiers to query.</param>
+        /// <param name="template">The template.</param>
         /// <returns>An enumeration of exercises.</returns>
-        Task<IEnumerable<Exercise>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds);
+        Task<IEnumerable<Exercise>> GetAll(Template template);
     }
 }

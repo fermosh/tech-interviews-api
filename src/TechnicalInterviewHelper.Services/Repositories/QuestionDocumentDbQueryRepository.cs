@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Dynamic;
-    using System.Text;
     using System.Threading.Tasks;
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
@@ -41,18 +40,16 @@
         /// <summary>
         /// Select all those questions that have skill id as one of its values.
         /// </summary>
-        /// <param name="competencyId">The competency identifier.</param>
-        /// <param name="jobFunctionLevel">The job function level.</param>
-        /// <param name="skillIds">Skill identifiers to query.</param>
+        /// <param name="template">The template.</param>
         /// <returns>
         /// An enumeration of questions.
         /// </returns>
-        public async Task<IEnumerable<Question>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds)
+        public async Task<IEnumerable<Question>> GetAll(Template template)
         {
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Question>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(document => document.Competency.Id == competencyId && skillIds.Contains(document.Skill.Id))
+                    .Where(document => document.Competency.Id == template.CompetencyId && template.Skills.Contains(document.Skill.Id))
                     .AsDocumentQuery();
 
             var questionResult = new List<Question>();

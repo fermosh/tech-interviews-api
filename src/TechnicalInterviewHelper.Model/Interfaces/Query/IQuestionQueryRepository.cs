@@ -12,10 +12,8 @@
         /// <summary>
         /// Select all those questions that have skill id as one of its values.
         /// </summary>
-        /// <param name="competencyId">The competency identifier.</param>
-        /// <param name="jobFunctionLevel">The job function level.</param>
-        /// <param name="skillIds">Skill identifiers to query.</param>
+        /// <param name="template">The template.</param>
         /// <returns>An enumeration of questions.</returns>
-        Task<IEnumerable<Question>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds);
+        Task<IEnumerable<Question>> GetAll(Template template);
     }
 }

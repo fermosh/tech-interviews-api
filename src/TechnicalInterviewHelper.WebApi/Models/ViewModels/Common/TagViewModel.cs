@@ -14,7 +14,7 @@
         /// The question identifier.
         /// </value>
         [JsonProperty("id")]
-        public int SkillId { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the skill name.
