@@ -78,7 +78,7 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var exercises = await exerciseQueryRepository.GetAll(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
+            var exercises = await exerciseQueryRepository.GetAll(template);
 
             return Ok(exercises);
         }

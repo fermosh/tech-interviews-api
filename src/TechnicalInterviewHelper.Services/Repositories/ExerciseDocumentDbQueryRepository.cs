@@ -40,20 +40,18 @@
         /// <summary>
         /// Finds the within exercises.
         /// </summary>
-        /// <param name="competencyId">The competency identifier.</param>
-        /// <param name="jobFunctionLevel">The job function level.</param>
-        /// <param name="skillIds">Skill identifiers to query.</param>
+        /// <param name="template">The template.</param>
         /// <returns>
         /// An enumeration of exercises.
         /// </returns>
-        public async Task<IEnumerable<Exercise>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds)
+        public async Task<IEnumerable<Exercise>> GetAll(Template template)
         {
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Exercise>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(document => document.Competency.Id == competencyId)
+                    .Where(document => document.Competency.Id == template.CompetencyId)
                     .SelectMany(document => document.Skills
-                    .Where(skill => skillIds.Contains(skill.Id))
+                    .Where(skill => template.Skills.Contains(skill.Id))
                     .Select(skill => new Exercise
                     {
                         Id = document.Id,
