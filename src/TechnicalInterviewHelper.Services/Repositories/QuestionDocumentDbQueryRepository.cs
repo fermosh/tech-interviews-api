@@ -49,19 +49,10 @@
         /// </returns>
         public async Task<IEnumerable<Question>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds)
         {
-            var predicate = new StringBuilder();
-
-            foreach (var skillId in skillIds)
-            {
-                predicate.Append($"(CompetencyId = {competencyId} AND JobFunctionLevel = {jobFunctionLevel} AND SkillId = {skillId}) OR ");
-            }
-
-            predicate.Remove(predicate.Length - 4, 4);
-
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Question>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(predicate.ToString())
+                    .Where(document => document.Competency.Id == competencyId && skillIds.Contains(document.Skill.Id))
                     .AsDocumentQuery();
 
             var questionResult = new List<Question>();
