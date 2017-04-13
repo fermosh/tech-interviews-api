@@ -1,16 +1,12 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
-    using Model;
-    using Services;
     using System;
-    using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
-    
+
     [RoutePrefix("api")]
     [EnableCors(origins: "*", headers: "*", methods: "GET,POST,PUT,DELETE")]
     public class ExerciseController : ApiController
@@ -82,26 +78,9 @@
             // Try to get all filteres skill information using its id, competency and level.
             // -------------------------------------------------------------------------------
 
-            var exercises = await exerciseQueryRepository.GetAll();
+            var exercises = await exerciseQueryRepository.GetAll(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
 
-            // --------------------------------------
-            // Now it's time to build the response.
-            // --------------------------------------
-
-            var exercisesVM = new List<ExerciseViewModel>();
-
-            foreach (var exercise in exercises)
-            {
-                exercisesVM.Add(new ExerciseViewModel
-                {
-                    ExerciseId = exercise.Id,
-                    Description = exercise.Description,
-                    Solution = exercise.Solution,
-                    Title = exercise.Title
-                });
-            }
-
-            return Ok(exercisesVM);
+            return Ok(exercises);
         }
 
         /// <summary>
