@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Dynamic;
-    using System.Text;
     using System.Threading.Tasks;
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
@@ -49,19 +48,21 @@
         /// </returns>
         public async Task<IEnumerable<Exercise>> GetAll(int competencyId, int jobFunctionLevel, int[] skillIds)
         {
-            var predicate = new StringBuilder();
-
-            foreach (var skillId in skillIds)
-            {
-                predicate.Append($"(CompetencyId = {competencyId} AND JobFunctionLevel = {jobFunctionLevel} AND Skills.Contains({skillId})) OR ");
-            }
-
-            predicate.Remove(predicate.Length - 4, 4);
-
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Exercise>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(predicate.ToString())
+                    .Where(document => document.Competency.Id == competencyId)
+                    .SelectMany(document => document.Skills
+                    .Where(skill => skillIds.Contains(skill.Id))
+                    .Select(skill => new Exercise
+                    {
+                        Id = document.Id,
+                        Competency = document.Competency,
+                        Skills = document.Skills,
+                        Description = document.Description,
+                        Solution = document.Solution,
+                        Title = document.Title
+                    }))
                     .AsDocumentQuery();
 
             var queryResult = new List<Exercise>();
