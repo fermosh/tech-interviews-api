@@ -14,25 +14,25 @@
             container.Register(
                 Component.For<IQueryRepository<CompetencyDocument, string>>()
                          .ImplementedBy<DocumentDbQueryRepository<CompetencyDocument, string>>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["CompetencyCollectionId"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])),
                 Component.For<IQueryRepository<Template, string>>()
                          .ImplementedBy<DocumentDbQueryRepository<Template, string>>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["TemplateCollectionId"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])),
                 Component.For<IExerciseQueryRepository>()
                          .ImplementedBy<ExerciseDocumentDbQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["ExerciseCollectionId"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])),
                 Component.For<IQuestionQueryRepository>()
                          .ImplementedBy<QuestionDocumentDbQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["QuestionCollectionId"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])),
                 Component.For<ISkillMatrixQueryRepository>()
                          .ImplementedBy<SkillMatrixDocumentDbQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["SkillCollectionId"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])),
                 Component.For<IJobFunctionQueryRepository>()
                          .ImplementedBy<JobFunctionQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["JobFunctionCollectionId"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])),
                 Component.For<ICompetencyQueryRepository>()
                          .ImplementedBy<CompetencyDocumentDbQueryRepository>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["CompetencyCollectionId"])));
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])));
         }
     }
 }

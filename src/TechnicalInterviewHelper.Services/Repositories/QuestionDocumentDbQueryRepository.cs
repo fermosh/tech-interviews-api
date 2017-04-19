@@ -49,7 +49,10 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Question>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(document => document.Competency.Id == template.CompetencyId && template.Skills.Contains(document.Skill.Id))
+                    .Where(document =>
+                        document.DocumentTypeId == DocumentType.Questions &&
+                        document.Competency.Id == template.CompetencyId &&
+                        template.Skills.Contains(document.Skill.Id))
                     .AsDocumentQuery();
 
             var questionResult = new List<Question>();

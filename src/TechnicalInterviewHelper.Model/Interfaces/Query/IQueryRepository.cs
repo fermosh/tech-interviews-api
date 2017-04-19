@@ -10,7 +10,7 @@
     /// </summary>
     /// <typeparam name="T">An entity class.</typeparam>
     /// <typeparam name="TKey">The type of the key.</typeparam>
-    public interface IQueryRepository<T, in TKey> where T : class
+    public interface IQueryRepository<T, in TKey> where T : IEntity<TKey>
     {
         /// <summary>
         /// Finds the by identifier.

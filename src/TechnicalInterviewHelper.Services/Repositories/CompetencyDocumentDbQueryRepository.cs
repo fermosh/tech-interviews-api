@@ -46,6 +46,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<CompetencyDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .Where(document => document.DocumentTypeId == DocumentType.Competencies)
                     .SelectMany(document => document.Competencies)
                     .Where(competency => competency.Id == competencyId)
                     .Select(competency => competency)

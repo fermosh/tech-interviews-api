@@ -18,7 +18,7 @@
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{T, TKey}" />
     public class DocumentDbQueryRepository<T, TKey> : IQueryRepository<T, TKey>, IDisposable
-        where T : class
+        where T : IEntity<TKey>
     {
         #region Protected fields
 
@@ -167,7 +167,39 @@
         /// </returns>
         public async Task<IEnumerable<T>> GetAll()
         {
-            var documentQuery = this.DocumentClient.CreateDocumentQuery(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 }).AsDocumentQuery();
+            var documentTypeId = DocumentType.NotValid;
+            switch (nameof(T))
+            {
+                case nameof(Competency):
+                    documentTypeId = DocumentType.Competencies;
+                    break;
+                case nameof(SkillMatrix):
+                    documentTypeId = DocumentType.Skills;
+                    break;
+                case nameof(Exercise):
+                    documentTypeId = DocumentType.Exercises;
+                    break;
+                case nameof(Question):
+                    documentTypeId = DocumentType.Questions;
+                    break;
+                case nameof(Template):
+                    documentTypeId = DocumentType.Templates;
+                    break;
+                case nameof(InterviewCatalog):
+                    documentTypeId = DocumentType.Skills;
+                    break;
+                case nameof(JobFunctionDocument):
+                    documentTypeId = DocumentType.JobFunctions;
+                    break;
+                default:
+                    break;
+            }
+
+            var documentQuery =
+                    this.DocumentClient
+                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                        .Where(item => item.DocumentTypeId == documentTypeId)
+                        .AsDocumentQuery();
 
             var competencyList = new List<T>();
             while (documentQuery.HasMoreResults)

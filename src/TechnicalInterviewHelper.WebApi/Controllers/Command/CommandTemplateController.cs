@@ -1,12 +1,10 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
-    using System.Configuration;
+{    
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     /// <summary>
@@ -27,14 +25,6 @@
         #endregion Repository
 
         #region Constructor
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
-        /// </summary>
-        public CommandTemplateController()
-        {
-            this.commandRepository = new DocumentDbCommandRepository<Template>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.

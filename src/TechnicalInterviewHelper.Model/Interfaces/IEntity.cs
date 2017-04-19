@@ -13,5 +13,13 @@
         /// The identifier.
         /// </value>
         TKey Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the document type identifier.
+        /// </summary>
+        /// <value>
+        /// The document type identifier.
+        /// </value>
+        DocumentType DocumentTypeId { get; set; }
     }
 }

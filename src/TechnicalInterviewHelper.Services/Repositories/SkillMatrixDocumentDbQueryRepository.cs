@@ -51,7 +51,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(catalog => catalog.CompetencyId == competencyId)
+                    .Where(document => document.DocumentTypeId == DocumentType.Skills && document.CompetencyId == competencyId)
                     .SelectMany(catalog => catalog.Skills)
                     .Where(predicate)
                     .Select(skill => skill)
@@ -88,7 +88,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(catalog => catalog.CompetencyId == competencyId)
+                    .Where(document => document.DocumentTypeId == DocumentType.Skills && document.CompetencyId == competencyId)
                     .SelectMany(catalog => catalog.Skills)
                     .Where<Skill>(predicate.ToString())
                     .Select(skill => skill)
