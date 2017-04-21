@@ -7,7 +7,7 @@
     /// Entity model for an interview catalog.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
-    public class InterviewCatalog : BaseEntity
+    public class Interview : BaseEntity
     {
         /// <summary>
         /// Gets or sets the competency identifier.

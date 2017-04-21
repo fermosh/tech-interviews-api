@@ -12,8 +12,8 @@
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                Component.For<ICommandRepository<InterviewCatalog>>()
-                         .ImplementedBy<DocumentDbCommandRepository<InterviewCatalog>>()
+                Component.For<ICommandRepository<Interview>>()
+                         .ImplementedBy<DocumentDbCommandRepository<Interview>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["InterviewCollection"])),
                 Component.For<ICommandRepository<Template>>()
                          .ImplementedBy<DocumentDbCommandRepository<Template>>()

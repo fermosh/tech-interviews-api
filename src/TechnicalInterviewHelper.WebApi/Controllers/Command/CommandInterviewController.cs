@@ -17,7 +17,7 @@
         /// <summary>
         /// The command for interview.
         /// </summary>
-        private readonly ICommandRepository<InterviewCatalog> commandInterview;
+        private readonly ICommandRepository<Interview> commandInterview;
 
         #endregion Repository
 
@@ -27,7 +27,7 @@
         /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
         /// </summary>
         /// <param name="commandInterview">The command interview.</param>
-        public CommandInterviewController(ICommandRepository<InterviewCatalog> commandInterview)
+        public CommandInterviewController(ICommandRepository<Interview> commandInterview)
         {
             this.commandInterview = commandInterview;
         }
@@ -42,21 +42,17 @@
         [Route("")]
         public async Task<IHttpActionResult> PostInterview(InterviewInputModel interviewInputModel)
         {
-            // Exit early from method when any of next validations are not meet.
+            // Exit early from method when validation is not meet.
             if (interviewInputModel == null
                 ||
-                interviewInputModel.Skills == null
-                //||
-                //interviewInputModel.Questions == null
-                ||
-                interviewInputModel.Exercises == null)
+                interviewInputModel.Skills == null)
             {
                 return BadRequest();
             }
 
             try
             {
-                var interviewToSave = new InterviewCatalog
+                var interviewToSave = new Interview
                 {
                     CompetencyId = interviewInputModel.CompetencyId,
                     JobFunctionLevel = interviewInputModel.JobFunctionLevel,
