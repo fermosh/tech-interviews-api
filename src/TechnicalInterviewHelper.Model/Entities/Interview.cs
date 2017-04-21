@@ -43,16 +43,7 @@
         /// The skills.
         /// </value>
         [JsonProperty("skills")]
-        public IEnumerable<Skill> Skills { get; set; }
-
-        /// <summary>
-        /// Gets or sets the questions.
-        /// </summary>
-        /// <value>
-        /// The questions.
-        /// </value>
-        [JsonProperty("questions")]
-        public IEnumerable<AnsweredQuestion> Questions { get; set; }
+        public IEnumerable<SkillInterview> Skills { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.

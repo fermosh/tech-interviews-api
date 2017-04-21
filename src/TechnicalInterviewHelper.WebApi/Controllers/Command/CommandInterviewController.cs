@@ -46,8 +46,8 @@
             if (interviewInputModel == null
                 ||
                 interviewInputModel.Skills == null
-                ||
-                interviewInputModel.Questions == null
+                //||
+                //interviewInputModel.Questions == null
                 ||
                 interviewInputModel.Exercises == null)
             {
@@ -60,25 +60,35 @@
                 {
                     CompetencyId = interviewInputModel.CompetencyId,
                     JobFunctionLevel = interviewInputModel.JobFunctionLevel,
-                    TemplateId = interviewInputModel.TemplateId,
-                    Skills = interviewInputModel.Skills
+                    TemplateId = interviewInputModel.TemplateId
                 };
 
-                var questions = new List<AnsweredQuestion>();
-                foreach (var question in interviewInputModel.Questions)
+                var skills = new List<SkillInterview>();
+                foreach (var skill in interviewInputModel.Skills)
                 {
-                    questions.Add(new AnsweredQuestion
+                    var questions = new List<AnsweredQuestion>();
+                    foreach (var question in skill.Questions)
                     {
-                        CompetencyId = question.CompetencyId,
-                        JobFunctionLevel = question.JobFunctionLevel,
-                        SkillId = question.SkillId,
-                        Description = question.Description,
-                        Answer = question.Answer,
-                        Rating = question.Rating
+                        questions.Add(new AnsweredQuestion
+                        {
+                            CompetencyId = question.CompetencyId,
+                            JobFunctionLevel = question.JobFunctionLevel,
+                            SkillId = question.SkillId,
+                            Description = question.Description,
+                            Answer = question.Answer,
+                            Rating = question.Rating
+                        });
+                    }
+
+                    skills.Add(new SkillInterview
+                    {
+                        SkillId = skill.SkillId,
+                        Description = skill.Description,
+                        Questions = questions
                     });
                 }
 
-                interviewToSave.Questions = questions;
+                interviewToSave.Skills = skills;
 
                 var exercises = new List<AnsweredExercise>();
                 foreach (var exercise in interviewInputModel.Exercises)

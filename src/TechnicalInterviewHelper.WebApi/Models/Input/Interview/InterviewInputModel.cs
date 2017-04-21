@@ -38,15 +38,7 @@
         /// <value>
         /// The skills.
         /// </value>
-        public IEnumerable<Skill> Skills { get; set; }
-
-        /// <summary>
-        /// Gets or sets the questions.
-        /// </summary>
-        /// <value>
-        /// The questions.
-        /// </value>
-        public IEnumerable<AnsweredQuestionInputModel> Questions { get; set; }
+        public IEnumerable<SkillInterviewInputModel> Skills { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.
