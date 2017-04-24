@@ -43,11 +43,14 @@
         public async Task<IHttpActionResult> PostInterview(InterviewInputModel interviewInputModel)
         {
             // Exit early from method when validation is not meet.
-            if (interviewInputModel == null
-                ||
-                interviewInputModel.Skills == null)
+            if (interviewInputModel == null)
             {
-                return BadRequest();
+                return BadRequest("Cannot save the interview because its reference is not valid.");
+            }
+
+            if (interviewInputModel.Skills == null)
+            {
+                return BadRequest("Cannot save an interview without skills added to it.");
             }
 
             try
