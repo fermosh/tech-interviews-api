@@ -23,6 +23,8 @@
         /// </summary>
         private readonly ISkillMatrixQueryRepository querySkillMatrix;
 
+        private readonly ICompetencyQueryRepository queryCompetency;
+
         #endregion Repositories
 
         #region Constructor
@@ -31,9 +33,10 @@
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
         /// <param name="queryPositionSkill">The query skill.</param>
-        public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
+        public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill, ICompetencyQueryRepository queryCompetency)
         {
             this.querySkillMatrix = queryPositionSkill;
+            this.queryCompetency = queryCompetency;
         }
 
         #endregion Constructor
@@ -48,9 +51,37 @@
         public async Task<IHttpActionResult> GetSkillMatrixByCompetencyAndLevel(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
-            var skills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
-                                                                                         skill.JobFunctionLevel == jobFunctionLevel);
+            var skills = await this.querySkillMatrix
+                .FindWithin(competencyId, skill => skill.CompetencyId == competencyId && skill.JobFunctionLevel == jobFunctionLevel);
 
+            return Ok(CreateSkillMatrixViewModel(competencyId, skills));
+        }
+
+        [Route("parent/{parentCompetencyId:int}/{jobFunctionLevel:int}")]
+        public async Task<IHttpActionResult> GetSkillMatrixByParentCompetencyAndLevel(int parentCompetencyId, int jobFunctionLevel)
+        {
+            List<int> competencies = new List<int> { parentCompetencyId };
+            competencies.AddRange(await this.queryCompetency.FindCompetenciesIdByParentId(parentCompetencyId));
+
+            // variable to contain the skill lis from all the skill matrixes
+            List<Skill> skills = new List<Skill>();
+
+            // lets iterate over the childs and store the unique skills
+            foreach (int competencyId in competencies)
+            {
+                // try to locate all skills that belong to the selected competency and level Id.
+                var competencySkills = await this.querySkillMatrix
+                    .FindWithin(competencyId, skill => skill.CompetencyId == competencyId && skill.JobFunctionLevel == jobFunctionLevel);
+
+                // add skill matrix skills to the skill list
+                skills.AddRange(competencySkills.Where(x => !skills.Select(y => y.Id).Contains(x.Id)));
+            }
+
+            return Ok(CreateSkillMatrixViewModel(parentCompetencyId, skills));
+        }
+
+        private static SkillMatrixViewModel CreateSkillMatrixViewModel(int competencyId, IEnumerable<Skill> skills)
+        {
             // We have found documents that match the input criteria, so we proceed to include them in the response.
             var skillsVM = new List<SkillForPositionViewModel>();
 
@@ -94,7 +125,7 @@
                 Skills = skillsVM
             };
 
-            return Ok(positionSkillVM);
+            return positionSkillVM;
         }
     }
 }
