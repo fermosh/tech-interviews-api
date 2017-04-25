@@ -2,6 +2,7 @@
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using TechnicalInterviewHelper.Model;
 
     /// <summary>
     /// Encapsulates the skills belonging to a position.
@@ -37,5 +38,53 @@
         /// </value>
         [JsonProperty("skills")]
         public IEnumerable<SkillForPositionViewModel> Skills { get; set; }
+
+        public static SkillMatrixViewModel Create(int competencyId, IEnumerable<Skill> skills)
+        {
+            // We have found documents that match the input criteria, so we proceed to include them in the response.
+            var skillsVM = new List<SkillForPositionViewModel>();
+
+            foreach (var skill in skills)
+            {
+                // Map all the topics that the skill could have.
+                var topics = new List<TopicViewModel>();
+                foreach (var topic in skill.Topics)
+                {
+                    topics.Add(new TopicViewModel
+                    {
+                        Name = topic.Name,
+                        IsRequired = topic.IsRequired
+                    });
+                }
+
+                // Create the view model of the skill.
+                var skillVM = new SkillForPositionViewModel
+                {
+                    RootId = skill.RootId,
+                    DisplayOrder = skill.DisplayOrder,
+                    RequiredSkillLevel = skill.RequiredSkillLevel,
+                    UserSkillLevel = skill.UserSkillLevel,
+                    LevelsSet = skill.LevelsSet,
+                    CompetencyId = skill.CompetencyId,
+                    JobFunctionLevel = skill.JobFunctionLevel,
+                    Topics = topics,
+                    Id = skill.Id,
+                    ParentId = skill.ParentId,
+                    Name = skill.Name,
+                    IsSelectable = skill.IsSelectable
+                };
+
+                skillsVM.Add(skillVM);
+            }
+
+            var positionSkillVM = new SkillMatrixViewModel()
+            {
+                HasContent = skillsVM.Count > 0,
+                CompetencyId = competencyId,
+                Skills = skillsVM
+            };
+
+            return positionSkillVM;
+        }
     }
 }
