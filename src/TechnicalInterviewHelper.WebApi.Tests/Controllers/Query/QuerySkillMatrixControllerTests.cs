@@ -33,12 +33,14 @@
             };
 
             var querySkillMatrixMock = new Mock<ISkillMatrixQueryRepository>();
-
+            
             querySkillMatrixMock
                 .Setup(m => m.FindWithin(It.IsAny<int>(), It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((int aCompetencyId, Expression<Func<Skill, bool>> predicate) => { return savedSkills.Where(predicate.Compile()); });
 
-            var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object);
+            var queryCompetencyMock = new Mock<ICompetencyQueryRepository>();
+
+            var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object, queryCompetencyMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.GetSkillMatrixByCompetencyAndLevel(competencyId, jobFunctionLevel).Result;
@@ -86,7 +88,9 @@
                 .Setup(m => m.FindWithin(It.IsAny<int>(), It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((int aCompetencyId, Expression<Func<Skill, bool>> predicate) => { return savedSkills.Where(predicate.Compile()); });
 
-            var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object);
+            var queryCompetencyMock = new Mock<ICompetencyQueryRepository>();
+
+            var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object, queryCompetencyMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.GetSkillMatrixByCompetencyAndLevel(competencyId, jobFunctionLevel).Result;
@@ -134,7 +138,9 @@
                 .Setup(m => m.FindWithin(It.IsAny<int>(), It.IsAny<Expression<Func<Skill, bool>>>()))
                 .ReturnsAsync((int aCompetencyId, Expression<Func<Skill, bool>> predicate) => { return savedSkills.Where(predicate.Compile()); });
 
-            var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object);
+            var queryCompetencyMock = new Mock<ICompetencyQueryRepository>();
+
+            var controllerUnderTest = new QuerySkillMatrixController(querySkillMatrixMock.Object, queryCompetencyMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.GetSkillMatrixByCompetencyAndLevel(validCompetencyId, validJobFunctionLevel).Result;

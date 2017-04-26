@@ -27,5 +27,13 @@
         /// <param name="skillIds">The skill ids.</param>
         /// <returns>A bunch of tests.</returns>
         Task<IEnumerable<Skill>> FindWithinSkills(int competencyId, int jobFunctionLevel, int[] skillIds);
+
+        /// <summary>
+        /// Return a skill collection
+        /// </summary>
+        /// <param name="competencyIds">Array of competencies</param>
+        /// <param name="jobFunctionLevel">Job function level</param>
+        /// <returns>skill collection</returns>
+        Task<IEnumerable<Skill>> FindWithinSkills(IEnumerable<int> competencyIds, int jobFunctionLevel);
     }
 }
