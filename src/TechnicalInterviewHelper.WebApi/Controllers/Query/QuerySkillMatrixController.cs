@@ -1,7 +1,6 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
 {
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
@@ -70,20 +69,10 @@
             competencies.AddRange(await this.queryCompetency.FindCompetenciesIdByParentId(parentCompetencyId));
 
             // hashSet to store unique skills
-            var SkillsHashSet = new HashSet<Skill>(new SkillComparer());
-
-            // lets iterate over the childs and store the unique skills
-            foreach (int competencyId in competencies)
-            {
-                // try to locate all skills that belong to the selected competency and level Id.
-                IEnumerable<Skill> competencySkills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId && skill.JobFunctionLevel == jobFunctionLevel);
-
-                // add skill matrix skills to the skill list
-                SkillsHashSet.UnionWith(competencySkills);
-            }
+            var SkillsHashSet = new HashSet<Skill>(await this.querySkillMatrix.FindWithinSkills(competencies, jobFunctionLevel), new SkillComparer());
 
             // return an http 200 status with the SkillMatrixViewModel
-            return Ok(SkillMatrixViewModel.Create(parentCompetencyId, SkillsHashSet.ToList()));
+            return Ok(SkillMatrixViewModel.Create(parentCompetencyId, SkillsHashSet));
         }
     }
 }
