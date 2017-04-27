@@ -211,7 +211,7 @@
             queryCompetency.Verify(method => method.FindCompetency(It.IsAny<int>()), Times.Once);
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Level.Description, Is.EqualTo(savedJobFunctionDocument.Levels.Where(item => item.Id == savedTemplate.JobFunctionLevel).First().JobTitles.FirstOrDefault()));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.CompetencyName, Is.EqualTo(savedCompetencies.Where(item => item.Id == savedTemplate.CompetencyId).First().Name));
-            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo(savedJobFunctionDocument.Levels.Where(item => item.Id == savedTemplate.JobFunctionLevel).First().JobTitles.FirstOrDefault()));
+            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo(savedCompetencies.Where(item => item.Id == savedTemplate.CompetencyId).First().Name));
         }
 
         [Test]
@@ -293,7 +293,7 @@
             queryCompetency.Verify(method => method.FindCompetency(It.IsAny<int>()), Times.Exactly(2));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Level.Description, Is.EqualTo(savedJobFunctionDocument.Levels.Where(item => item.Id == savedTemplate.JobFunctionLevel).First().JobTitles.FirstOrDefault()));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.CompetencyName, Is.EqualTo(selectedCompetency.Name));
-            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo(savedJobFunctionDocument.Levels.Where(item => item.Id == savedTemplate.JobFunctionLevel).First().JobTitles.FirstOrDefault()));
+            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo(savedCompetencies.Where(item => item.Id == savedTemplate.CompetencyId).First().Name));
         }
 
         [Test]
@@ -375,7 +375,7 @@
             queryCompetency.Verify(method => method.FindCompetency(It.IsAny<int>()), Times.Exactly(2));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Level.Description, Is.EqualTo(string.Empty));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.CompetencyName, Is.EqualTo(selectedCompetency.Name));
-            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo(string.Empty));
+            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo("Azure Development"));
         }
 
         [Test]
@@ -504,7 +504,7 @@
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Level.Description, Is.EqualTo(string.Empty));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Level.Name, Is.EqualTo("L3"));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.CompetencyName, Is.EqualTo(selectedCompetency.Name));
-            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo(string.Empty));
+            Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.DomainName, Is.EqualTo("Azure Development"));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Skills.Count, Is.EqualTo(1));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Skills.First().RootId, Is.EqualTo(1001));
             Assert.That((actionResult as OkNegotiatedContentResult<TemplateViewModel>).Content.Skills.First().DisplayOrder, Is.EqualTo(1));
