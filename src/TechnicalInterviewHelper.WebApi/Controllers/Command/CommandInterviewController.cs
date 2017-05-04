@@ -66,17 +66,21 @@
                 foreach (var skill in interviewInputModel.Skills)
                 {
                     var questions = new List<AnsweredQuestion>();
-                    foreach (var question in skill.Questions)
+
+                    if (skill.Questions != null)
                     {
-                        questions.Add(new AnsweredQuestion
+                        foreach (var question in skill.Questions)
                         {
-                            CompetencyId = question.CompetencyId,
-                            JobFunctionLevel = question.JobFunctionLevel,
-                            SkillId = question.SkillId,
-                            Description = question.Description,
-                            Answer = question.Answer,
-                            Rating = question.Rating
-                        });
+                            questions.Add(new AnsweredQuestion
+                            {
+                                CompetencyId = question.CompetencyId,
+                                JobFunctionLevel = question.JobFunctionLevel,
+                                SkillId = question.SkillId,
+                                Description = question.Description,
+                                Answer = question.Answer,
+                                Rating = question.Rating
+                            });
+                        }
                     }
 
                     skills.Add(new SkillInterview
@@ -90,20 +94,24 @@
                 interviewToSave.Skills = skills;
 
                 var exercises = new List<AnsweredExercise>();
-                foreach (var exercise in interviewInputModel.Exercises)
+
+                if (interviewInputModel.Exercises != null)
                 {
-                    exercises.Add(new AnsweredExercise
+                    foreach (var exercise in interviewInputModel.Exercises)
                     {
-                        CompetencyId = exercise.CompetencyId,
-                        JobFunctionLevel = exercise.JobFunctionLevel,
-                        SkillId = exercise.SkillId,
-                        Title = exercise.Title,
-                        Description = exercise.Description,
-                        Complexity = exercise.Complexity,
-                        ProposedSolution = exercise.ProposedSolution,
-                        Answer = exercise.Answer,
-                        Rating = exercise.Rating
-                    });
+                        exercises.Add(new AnsweredExercise
+                        {
+                            CompetencyId = exercise.CompetencyId,
+                            JobFunctionLevel = exercise.JobFunctionLevel,
+                            SkillId = exercise.SkillId,
+                            Title = exercise.Title,
+                            Description = exercise.Description,
+                            Complexity = exercise.Complexity,
+                            ProposedSolution = exercise.ProposedSolution,
+                            Answer = exercise.Answer,
+                            Rating = exercise.Rating
+                        });
+                    }
                 }
 
                 interviewToSave.Exercises = exercises;

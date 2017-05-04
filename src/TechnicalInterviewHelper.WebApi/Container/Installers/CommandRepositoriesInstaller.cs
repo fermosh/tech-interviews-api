@@ -14,7 +14,7 @@
             container.Register(
                 Component.For<ICommandRepository<Interview>>()
                          .ImplementedBy<DocumentDbCommandRepository<Interview>>()
-                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["InterviewCollection"])),
+                         .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["InterviewCollectionId"])),
                 Component.For<ICommandRepository<Template>>()
                          .ImplementedBy<DocumentDbCommandRepository<Template>>()
                          .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["TemplateCollectionId"])),
