@@ -1,12 +1,12 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{    
+{
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
     using Model;
     using TechnicalInterviewHelper.Model;
+    using TechnicalInterviewHelper.Model.Entities.Comparers;
 
     /// <summary>
     /// API for Position-Skill operations.
@@ -23,6 +23,11 @@
         /// </summary>
         private readonly ISkillMatrixQueryRepository querySkillMatrix;
 
+        /// <summary>
+        /// The competency query 
+        /// </summary>
+        private readonly ICompetencyQueryRepository queryCompetency;
+
         #endregion Repositories
 
         #region Constructor
@@ -31,9 +36,10 @@
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
         /// </summary>
         /// <param name="queryPositionSkill">The query skill.</param>
-        public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill)
+        public QuerySkillMatrixController(ISkillMatrixQueryRepository queryPositionSkill, ICompetencyQueryRepository queryCompetency)
         {
             this.querySkillMatrix = queryPositionSkill;
+            this.queryCompetency = queryCompetency;
         }
 
         #endregion Constructor
@@ -48,53 +54,25 @@
         public async Task<IHttpActionResult> GetSkillMatrixByCompetencyAndLevel(int competencyId, int jobFunctionLevel)
         {
             // Try to locate all skills that belong to the selected competency and level Id.
-            var skills = await this.querySkillMatrix.FindWithin(competencyId, skill => skill.CompetencyId == competencyId &&
-                                                                                         skill.JobFunctionLevel == jobFunctionLevel);
+            var skills = await this.querySkillMatrix
+                .FindWithin(competencyId, skill => skill.CompetencyId == competencyId && skill.JobFunctionLevel == jobFunctionLevel);
 
-            // We have found documents that match the input criteria, so we proceed to include them in the response.
-            var skillsVM = new List<SkillForPositionViewModel>();
+            // return an http 200 status with the SkillMatrixViewModel
+            return Ok(SkillMatrixViewModel.Create(competencyId, skills));
+        }
 
-            foreach (var skill in skills)
-            {
-                // Map all the topics that the skill could have.
-                var topics = new List<TopicViewModel>();
-                foreach (var topic in skill.Topics)
-                {
-                    topics.Add(new TopicViewModel
-                    {
-                        Name = topic.Name,
-                        IsRequired = topic.IsRequired
-                    });
-                }
+        [Route("parent/{parentCompetencyId:int}/{jobFunctionLevel:int}")]
+        public async Task<IHttpActionResult> GetSkillMatrixByParentCompetencyAndLevel(int parentCompetencyId, int jobFunctionLevel)
+        {
+            // list to store the competencies to query
+            List<int> competencies = new List<int> { parentCompetencyId };
+            competencies.AddRange(await this.queryCompetency.FindCompetenciesIdByParentId(parentCompetencyId));
 
-                // Create the view model of the skill.
-                var skillVM = new SkillForPositionViewModel
-                {
-                    RootId = skill.RootId,
-                    DisplayOrder = skill.DisplayOrder,
-                    RequiredSkillLevel = skill.RequiredSkillLevel,
-                    UserSkillLevel = skill.UserSkillLevel,
-                    LevelsSet = skill.LevelsSet,
-                    CompetencyId = skill.CompetencyId,
-                    JobFunctionLevel = skill.JobFunctionLevel,
-                    Topics = topics,
-                    Id = skill.Id,
-                    ParentId = skill.ParentId,
-                    Name = skill.Name,
-                    IsSelectable = skill.IsSelectable
-                };
+            // hashSet to store unique skills
+            var SkillsHashSet = new HashSet<Skill>(await this.querySkillMatrix.FindWithinSkills(competencies, jobFunctionLevel), new SkillComparer());
 
-                skillsVM.Add(skillVM);
-            }
-
-            var positionSkillVM = new SkillMatrixViewModel()
-            {
-                HasContent = skillsVM.Count() > 0,
-                CompetencyId = competencyId,
-                Skills = skillsVM
-            };
-
-            return Ok(positionSkillVM);
+            // return an http 200 status with the SkillMatrixViewModel
+            return Ok(SkillMatrixViewModel.Create(parentCompetencyId, SkillsHashSet));
         }
     }
 }

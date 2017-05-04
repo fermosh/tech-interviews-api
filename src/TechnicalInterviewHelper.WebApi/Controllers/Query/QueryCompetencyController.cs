@@ -14,13 +14,16 @@
     {
         #region Repository
 
-        private readonly IQueryRepository<CompetencyDocument, string> queryCompetency;
+        /// <summary>
+        /// The competency query 
+        /// </summary>
+        private readonly ICompetencyQueryRepository queryCompetency;
 
         #endregion Repository
 
         #region Constructor
 
-        public QueryCompetencyController(IQueryRepository<CompetencyDocument, string> competencyRepository)
+        public QueryCompetencyController(ICompetencyQueryRepository competencyRepository)
         {
             this.queryCompetency = competencyRepository;
         }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Comparers\SkillComparer.cs" />
     <Compile Include="Entities\JobFunctionDocument.cs" />
     <Compile Include="Entities\AnsweredExercise.cs" />
     <Compile Include="Entities\Catalogs\CompetencyCatalog.cs" />

@@ -103,5 +103,32 @@
 
             return skillResult;
         }
+
+        /// <summary>
+        /// Return a skill collection
+        /// </summary>
+        /// <param name="competencyIds">Array of competencies</param>
+        /// <param name="jobFunctionLevel">Job function level</param>
+        /// <returns>skill collection</returns>
+        public async Task<IEnumerable<Skill>> FindWithinSkills(IEnumerable<int> competencyIds, int jobFunctionLevel)
+        {
+            var documentQuery =
+                    this.DocumentClient
+                    .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .Where(catalog => competencyIds.Contains(catalog.CompetencyId))
+                    .SelectMany(catalog => catalog.Skills)
+                    .Where<Skill>(skill => competencyIds.Contains(skill.CompetencyId) && skill.JobFunctionLevel == jobFunctionLevel)
+                    .Select(skill => skill)
+                    .AsDocumentQuery();
+
+            var skillResult = new List<Skill>();
+            while (documentQuery.HasMoreResults)
+            {
+                var skills = await documentQuery.ExecuteNextAsync<Skill>();
+                skillResult.AddRange(skills);
+            }
+
+            return skillResult;
+        }
     }
 }
