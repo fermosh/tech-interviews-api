@@ -96,9 +96,16 @@
 
             string competencyName = string.Empty;
             string jobDescription = string.Empty;
+            string domainName = string.Empty;
 
             // Try to find the competency that has the job function identifier.
             var competency = await this.queryCompetency.FindCompetency(template.CompetencyId);
+
+            if (competency != null)
+            {
+                domainName = competency.Name;
+            }
+
             while (competency != null && !competency.JobFunctions.Any() && competency.ParentId.HasValue)
             {
                 competency = await this.queryCompetency.FindCompetency(competency.ParentId.Value);
@@ -111,7 +118,7 @@
                 {
                     var jobFunctionId = competency.JobFunctions.First();
                     jobDescription = await this.queryJobFunction.FindJobTitleByLevel(jobFunctionId, template.JobFunctionLevel);
-                }
+                }                
             }
 
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
@@ -170,7 +177,7 @@
                 JobFunctionLevel = template.JobFunctionLevel,
                 Level = levelViewModel,
                 CompetencyName = competencyName,
-                DomainName = jobDescription,
+                DomainName = domainName,
                 Skills = skillTemplateViewModelList,
                 Exercises = new List<object>()
             };

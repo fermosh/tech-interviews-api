@@ -61,5 +61,55 @@
 
             return competencyList.SingleOrDefault();
         }
+
+        /// <summary>
+        /// Finds a competency collection by a given Parent collection Identifier
+        /// </summary>
+        /// <param name="parentCompetencyId">The parent competency identifier.</param>
+        /// <returns>A competency collection that belongs to the passed parent competency identifier.</returns>
+        public async Task<IEnumerable<Competency>> FindCompetenciesByParentId(int parentCompetencyId)
+        {
+            var documentQuery =
+                    this.DocumentClient
+                    .CreateDocumentQuery<CompetencyDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .SelectMany(document => document.Competencies)
+                    .Where(competency => competency.ParentId == parentCompetencyId)
+                    .Select(competency => competency)
+                    .AsDocumentQuery();
+
+            var competencyList = new List<Competency>();
+            while (documentQuery.HasMoreResults)
+            {
+                var competencies = await documentQuery.ExecuteNextAsync<Competency>();
+                competencyList.AddRange(competencies);
+            }
+
+            return competencyList;
+        }
+
+        /// <summary>
+        /// Finds a competency collection by a given Parent collection Identifier
+        /// </summary>
+        /// <param name="parentCompetencyId">The parent competency identifier.</param>
+        /// <returns>A competency collection that belongs to the passed parent competency identifier.</returns>
+        public async Task<IEnumerable<int>> FindCompetenciesIdByParentId(int parentCompetencyId)
+        {
+            var documentQuery =
+                    this.DocumentClient
+                    .CreateDocumentQuery<CompetencyDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .SelectMany(document => document.Competencies)
+                    .Where(competency => competency.ParentId == parentCompetencyId)
+                    .Select(competency => competency.Id)
+                    .AsDocumentQuery();
+
+            var competencyList = new List<int>();
+            while (documentQuery.HasMoreResults)
+            {
+                var competencies = await documentQuery.ExecuteNextAsync<int>();
+                competencyList.AddRange(competencies);
+            }
+
+            return competencyList;
+        }
     }
 }

@@ -21,7 +21,7 @@
             // Arrange
             var competencies = new List<CompetencyDocument>();
 
-            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyDocument, string>>();
+            var queryCompetencyCatalogMock = new Mock<ICompetencyQueryRepository>();
 
             queryCompetencyCatalogMock
                 .Setup(method => method.GetAll())
@@ -58,7 +58,7 @@
                 }
             };
 
-            var queryCompetencyCatalogMock = new Mock<IQueryRepository<CompetencyDocument, string>>();
+            var queryCompetencyCatalogMock = new Mock<ICompetencyQueryRepository>();
 
             queryCompetencyCatalogMock
                 .Setup(method => method.GetAll())
