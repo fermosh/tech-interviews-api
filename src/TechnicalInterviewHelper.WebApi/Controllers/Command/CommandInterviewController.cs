@@ -12,27 +12,19 @@
     [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandInterviewController : ApiController
     {
-        #region Repository
-
         /// <summary>
         /// The command for interview.
         /// </summary>
-        private readonly ICommandRepository<InterviewCatalog> commandInterview;
-
-        #endregion Repository
-
-        #region Constructor
+        private readonly ICommandRepository<Interview> commandInterview;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
         /// </summary>
         /// <param name="commandInterview">The command interview.</param>
-        public CommandInterviewController(ICommandRepository<InterviewCatalog> commandInterview)
+        public CommandInterviewController(ICommandRepository<Interview> commandInterview)
         {
             this.commandInterview = commandInterview;
         }
-
-        #endregion Constructor
 
         /// <summary>
         /// Posts the interview.
@@ -42,59 +34,77 @@
         [Route("")]
         public async Task<IHttpActionResult> PostInterview(InterviewInputModel interviewInputModel)
         {
-            // Exit early from method when any of next validations are not meet.
-            if (interviewInputModel == null
-                ||
-                interviewInputModel.Skills == null
-                ||
-                interviewInputModel.Questions == null
-                ||
-                interviewInputModel.Exercises == null)
+            // Exit early from method when validation is not meet.
+            if (interviewInputModel == null)
             {
-                return BadRequest();
+                return BadRequest("Cannot save the interview because its reference is not valid.");
+            }
+
+            if (interviewInputModel.Skills == null)
+            {
+                return BadRequest("Cannot save an interview without skills added to it.");
             }
 
             try
             {
-                var interviewToSave = new InterviewCatalog
+                var interviewToSave = new Interview
                 {
+                    DocumentTypeId = DocumentType.Interviews,
                     CompetencyId = interviewInputModel.CompetencyId,
                     JobFunctionLevel = interviewInputModel.JobFunctionLevel,
-                    TemplateId = interviewInputModel.TemplateId,
-                    Skills = interviewInputModel.Skills
+                    TemplateId = interviewInputModel.TemplateId
                 };
 
-                var questions = new List<AnsweredQuestion>();
-                foreach (var question in interviewInputModel.Questions)
+                var skills = new List<SkillInterview>();
+                foreach (var skill in interviewInputModel.Skills)
                 {
-                    questions.Add(new AnsweredQuestion
+                    var questions = new List<AnsweredQuestion>();
+
+                    if (skill.Questions != null)
                     {
-                        CompetencyId = question.CompetencyId,
-                        JobFunctionLevel = question.JobFunctionLevel,
-                        SkillId = question.SkillId,
-                        Description = question.Description,
-                        Answer = question.Answer,
-                        Rating = question.Rating
+                        foreach (var question in skill.Questions)
+                        {
+                            questions.Add(new AnsweredQuestion
+                            {
+                                CompetencyId = question.CompetencyId,
+                                JobFunctionLevel = question.JobFunctionLevel,
+                                SkillId = question.SkillId,
+                                Description = question.Description,
+                                Answer = question.Answer,
+                                Rating = question.Rating
+                            });
+                        }
+                    }
+
+                    skills.Add(new SkillInterview
+                    {
+                        SkillId = skill.SkillId,
+                        Description = skill.Description,
+                        Questions = questions
                     });
                 }
 
-                interviewToSave.Questions = questions;
+                interviewToSave.Skills = skills;
 
                 var exercises = new List<AnsweredExercise>();
-                foreach (var exercise in interviewInputModel.Exercises)
+
+                if (interviewInputModel.Exercises != null)
                 {
-                    exercises.Add(new AnsweredExercise
+                    foreach (var exercise in interviewInputModel.Exercises)
                     {
-                        CompetencyId = exercise.CompetencyId,
-                        JobFunctionLevel = exercise.JobFunctionLevel,
-                        SkillId = exercise.SkillId,
-                        Title = exercise.Title,
-                        Description = exercise.Description,
-                        Complexity = exercise.Complexity,
-                        ProposedSolution = exercise.ProposedSolution,
-                        Answer = exercise.Answer,
-                        Rating = exercise.Rating
-                    });
+                        exercises.Add(new AnsweredExercise
+                        {
+                            CompetencyId = exercise.CompetencyId,
+                            JobFunctionLevel = exercise.JobFunctionLevel,
+                            SkillId = exercise.SkillId,
+                            Title = exercise.Title,
+                            Description = exercise.Description,
+                            Complexity = exercise.Complexity,
+                            ProposedSolution = exercise.ProposedSolution,
+                            Answer = exercise.Answer,
+                            Rating = exercise.Rating
+                        });
+                    }
                 }
 
                 interviewToSave.Exercises = exercises;
