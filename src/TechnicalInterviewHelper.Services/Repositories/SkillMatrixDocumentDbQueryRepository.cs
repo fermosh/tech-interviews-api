@@ -115,7 +115,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(catalog => competencyIds.Contains(catalog.CompetencyId))
+                    .Where(catalog => catalog.DocumentTypeId == DocumentType.Skills && competencyIds.Contains(catalog.CompetencyId))
                     .SelectMany(catalog => catalog.Skills)
                     .Where<Skill>(skill => competencyIds.Contains(skill.CompetencyId) && skill.JobFunctionLevel == jobFunctionLevel)
                     .Select(skill => skill)

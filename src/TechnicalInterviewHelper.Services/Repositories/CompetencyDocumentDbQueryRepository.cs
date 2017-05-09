@@ -72,6 +72,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<CompetencyDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .Where(document => document.DocumentTypeId == DocumentType.Competencies)
                     .SelectMany(document => document.Competencies)
                     .Where(competency => competency.ParentId == parentCompetencyId)
                     .Select(competency => competency)
@@ -97,6 +98,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<CompetencyDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .Where(document => document.DocumentTypeId == DocumentType.Competencies)
                     .SelectMany(document => document.Competencies)
                     .Where(competency => competency.ParentId == parentCompetencyId)
                     .Select(competency => competency.Id)

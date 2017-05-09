@@ -1,5 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.Services
-{    
+{
     using System;
     using System.Collections.Generic;
     using System.Configuration;
@@ -10,6 +10,7 @@
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
     using Model;
+    using Model.Attributes;
 
     /// <summary>
     /// Implements the query operations over a No-SQL Document Db data source.
@@ -166,33 +167,12 @@
         /// All entities in the collection.
         /// </returns>
         public async Task<IEnumerable<T>> GetAll()
-        {
+        {            
             var documentTypeId = DocumentType.NotValid;
-            switch (nameof(T))
+            var documentType = typeof(T).GetCustomAttributes(false).FirstOrDefault(att => att is DocumentTypeAttribute);
+            if (documentType != null)
             {
-                case nameof(Competency):
-                    documentTypeId = DocumentType.Competencies;
-                    break;
-                case nameof(SkillMatrix):
-                    documentTypeId = DocumentType.Skills;
-                    break;
-                case nameof(Exercise):
-                    documentTypeId = DocumentType.Exercises;
-                    break;
-                case nameof(Question):
-                    documentTypeId = DocumentType.Questions;
-                    break;
-                case nameof(Template):
-                    documentTypeId = DocumentType.Templates;
-                    break;
-                case nameof(InterviewCatalog):
-                    documentTypeId = DocumentType.Skills;
-                    break;
-                case nameof(JobFunctionDocument):
-                    documentTypeId = DocumentType.JobFunctions;
-                    break;
-                default:
-                    break;
+                documentTypeId = (documentType as DocumentTypeAttribute).DocumentType;
             }
 
             var documentQuery =

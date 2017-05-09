@@ -1,5 +1,7 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Help us to know what type the ID field is and can include other common properties in every entity.
     /// </summary>
@@ -12,6 +14,7 @@
         /// <value>
         /// The identifier.
         /// </value>
+        [JsonProperty("id")]
         TKey Id { get; set; }
 
         /// <summary>
@@ -20,6 +23,7 @@
         /// <value>
         /// The document type identifier.
         /// </value>
+        [JsonProperty("documentTypeId")]
         DocumentType DocumentTypeId { get; set; }
     }
 }

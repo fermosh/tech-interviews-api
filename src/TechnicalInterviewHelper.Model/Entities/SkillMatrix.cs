@@ -1,12 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.Model
-{    
+{
     using System.Collections.Generic;
-    using Newtonsoft.Json;
+    using Attributes;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// Entity which models a document with skills.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    [DocumentType(DocumentType.Skills)]
     public class SkillMatrix : BaseEntity
     {
         /// <summary>
