@@ -1,11 +1,13 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using Attributes;
+    using Entities;
     using Newtonsoft.Json;
-    using TechnicalInterviewHelper.Model.Entities;
 
     /// <summary>
     /// Question entity.
     /// </summary>
+    [DocumentType(DocumentType.Questions)]
     public class Question : BaseEntity
     {
         /// <summary>
