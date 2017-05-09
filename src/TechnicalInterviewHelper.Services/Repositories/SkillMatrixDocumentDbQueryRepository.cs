@@ -76,21 +76,12 @@
         /// <returns>A bunch of tests.</returns>
         public async Task<IEnumerable<Skill>> FindWithinSkills(int competencyId, int jobFunctionLevel, int[] skillIds)
         {
-            var predicate = new StringBuilder();
-
-            foreach (var skillId in skillIds)
-            {
-                predicate.Append($"(CompetencyId = {competencyId} AND JobFunctionLevel = {jobFunctionLevel} AND Id = {skillId}) OR");
-            }
-
-            predicate.Remove(predicate.Length - 3, 3);
-
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(document => document.DocumentTypeId == DocumentType.Skills && document.CompetencyId == competencyId)
                     .SelectMany(catalog => catalog.Skills)
-                    .Where<Skill>(predicate.ToString())
+                    .Where(skill => skill.CompetencyId == competencyId && skill.JobFunctionLevel == jobFunctionLevel && skillIds.Contains(skill.Id))
                     .Select(skill => skill)
                     .AsDocumentQuery();
 
@@ -117,7 +108,7 @@
                     .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(catalog => catalog.DocumentTypeId == DocumentType.Skills && competencyIds.Contains(catalog.CompetencyId))
                     .SelectMany(catalog => catalog.Skills)
-                    .Where<Skill>(skill => competencyIds.Contains(skill.CompetencyId) && skill.JobFunctionLevel == jobFunctionLevel)
+                    .Where(skill => competencyIds.Contains(skill.CompetencyId) && skill.JobFunctionLevel == jobFunctionLevel)
                     .Select(skill => skill)
                     .AsDocumentQuery();
 
