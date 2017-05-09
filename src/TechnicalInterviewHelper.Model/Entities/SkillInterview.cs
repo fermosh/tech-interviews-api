@@ -1,12 +1,12 @@
-﻿namespace TechnicalInterviewHelper.WebApi.Model
+﻿namespace TechnicalInterviewHelper.Model
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Input model for a filtered skill in an Interview.
+    /// Model for a skill in an Interview.
     /// </summary>
-    public class SkillInterviewInputModel
+    public class SkillInterview
     {
         /// <summary>
         /// Gets or sets the skill identifier.
@@ -33,6 +33,6 @@
         /// The questions.
         /// </value>
         [JsonProperty("questions")]
-        public IEnumerable<AnsweredQuestionInputModel> Questions { get; set; }
+        public IEnumerable<AnsweredQuestion> Questions { get; set; }
     }
 }

@@ -14,23 +14,23 @@
     public class CommandInterviewControllerTests
     {
         [Test]
-        public void WhenInputInterviewIsNull_ReturnsBadRequestStatusCode()
+        public void GivenNewInputInterview_WhenInputInterviewIsValidatedAndItIsNull_ThenBadRequestStatusCodeIsReturned()
         {
             // Arrange
             InterviewInputModel interviewInputModel = null;
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
             var controllerUnderTest = new CommandInterviewController(commandInterviewMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.PostInterview(interviewInputModel).Result;
 
             // Assert
-            Assert.That(actionResult, Is.Not.Null);
-            Assert.That(actionResult, Is.TypeOf<BadRequestResult>());
+            Assert.That(actionResult, Is.TypeOf<BadRequestErrorMessageResult>());
+            Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Cannot save the interview because its reference is not valid."));
         }
 
         [Test]
-        public void WhenInputSkillIsNull_ReturnsBadRequestStatusCode()
+        public void GivenNewInputInterview_WhenInputInterviewIsValidatedAndInputSkillsAreNull_ThenBadRequestStatusCodeIsReturned()
         {
             // Arrange
             InterviewInputModel interviewInputModel = new InterviewInputModel
@@ -40,88 +40,38 @@
                 TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265"
             };
 
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
             var controllerUnderTest = new CommandInterviewController(commandInterviewMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.PostInterview(interviewInputModel).Result;
 
             // Assert
-            Assert.That(actionResult, Is.Not.Null);
-            Assert.That(actionResult, Is.TypeOf<BadRequestResult>());
+            Assert.That(actionResult, Is.TypeOf<BadRequestErrorMessageResult>());
+            Assert.That((actionResult as BadRequestErrorMessageResult).Message, Is.EqualTo("Cannot save an interview without skills added to it."));
         }
 
         [Test]
-        public void WhenInputQuestionsIsNull_ReturnsBadRequestStatusCode()
+        public void GivenNewInputInterview_WhenItIsValidAndNoneOfItsSkillsHaveQuestions_ThenSkillsAreSavedCorrectlyAndOkStatusCodeIsReturned()
         {
             // Arrange
-            InterviewInputModel interviewInputModel = new InterviewInputModel
-            {
-                CompetencyId = 13,
-                JobFunctionLevel = 1,
-                TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
-                Skills = new List<Skill>()
-            };
-
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
-            var controllerUnderTest = new CommandInterviewController(commandInterviewMock.Object);
-
-            // Act
-            var actionResult = controllerUnderTest.PostInterview(interviewInputModel).Result;
-
-            // Assert
-            Assert.That(actionResult, Is.Not.Null);
-            Assert.That(actionResult, Is.TypeOf<BadRequestResult>());
-        }
-
-        [Test]
-        public void WhenInputExercisesIsNull_ReturnsBadRequestStatusCode()
-        {
-            // Arrange
-            InterviewInputModel interviewInputModel = new InterviewInputModel
-            {
-                CompetencyId = 13,
-                JobFunctionLevel = 1,
-                TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
-                Skills = new List<Skill>(),
-                Questions = new List<AnsweredQuestionInputModel>()
-            };
-
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
-            var controllerUnderTest = new CommandInterviewController(commandInterviewMock.Object);
-
-            // Act
-            var actionResult = controllerUnderTest.PostInterview(interviewInputModel).Result;
-
-            // Assert
-            Assert.That(actionResult, Is.Not.Null);
-            Assert.That(actionResult, Is.TypeOf<BadRequestResult>());
-        }
-
-        [Test]
-        public void WhenInputInterviewIsValid_ReturnsOkStatusCodeAndAllSkillsWereSaved()
-        {
-            // Arrange
-            InterviewCatalog savedInterview = null;
+            Interview savedInterview = null;
 
             var newInterviewDocumentGUID = "BB411DF9-B204-4FCF-BA90-8D5C8F52E414";
 
-            var skillInputModels = new List<Skill>
+            var skillInputModels = new List<SkillInterviewInputModel>
             {
-                new Skill
+                new SkillInterviewInputModel
                 {
-                    RootId = 1001, DisplayOrder = 1, RequiredSkillLevel = 1, UserSkillLevel = 10, LevelsSet = 1, CompetencyId = 13,
-                    JobFunctionLevel = 1, Topics = null, Id = 1001, ParentId = 1982, Name = "Documentation", IsSelectable = true
+                    SkillId = 1001, Description = "Documentation", Questions = new List<AnsweredQuestionInputModel>()
                 },
-                new Skill
+                new SkillInterviewInputModel
                 {
-                    RootId = 1001, DisplayOrder = 1, RequiredSkillLevel = 1, UserSkillLevel = 10, LevelsSet = 1, CompetencyId = 13,
-                    JobFunctionLevel = 1, Topics = null, Id = 1001, ParentId = 1982, Name = "Design Patterns", IsSelectable = true
+                    SkillId = 1001, Description = "Design Patterns", Questions = new List<AnsweredQuestionInputModel>()
                 },
-                new Skill
+                new SkillInterviewInputModel
                 {
-                    RootId = 1001, DisplayOrder = 1, RequiredSkillLevel = 1, UserSkillLevel = 10, LevelsSet = 1, CompetencyId = 13,
-                    JobFunctionLevel = 1, Topics = null, Id = 1001, ParentId = 1982, Name = "NET Best Practices", IsSelectable = true
+                    SkillId = 1001, Description = "NET Best Practices", Questions = new List<AnsweredQuestionInputModel>()
                 }
             };
 
@@ -131,15 +81,14 @@
                 JobFunctionLevel = 1,
                 TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
                 Skills = skillInputModels,
-                Questions = new List<AnsweredQuestionInputModel>(),
                 Exercises = new List<AnsweredExerciseInputModel>()
             };
 
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
 
             commandInterviewMock
-                .Setup(method => method.Insert(It.IsAny<InterviewCatalog>()))
-                .ReturnsAsync((InterviewCatalog interview) =>
+                .Setup(method => method.Insert(It.IsAny<Interview>()))
+                .ReturnsAsync((Interview interview) =>
                 {
                     interview.Id = newInterviewDocumentGUID;
                     savedInterview = interview;
@@ -155,59 +104,94 @@
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<OkResult>());
             // -- Check that the save method was called once.
-            commandInterviewMock.Verify(method => method.Insert(It.IsAny<InterviewCatalog>()), Times.Once);
+            commandInterviewMock.Verify(method => method.Insert(It.IsAny<Interview>()), Times.Once);
             // -- Check that the data skills were  mapped correctly in the interview object.
             Assert.That(savedInterview, Is.Not.Null);
             Assert.That(savedInterview.Id, Is.EqualTo(newInterviewDocumentGUID));
             Assert.That(savedInterview.Skills.Count(), Is.EqualTo(skillInputModels.Count()));
-            Assert.That(savedInterview.Skills.First().RootId, Is.EqualTo(skillInputModels.First().RootId));
-            Assert.That(savedInterview.Skills.First().DisplayOrder, Is.EqualTo(skillInputModels.First().DisplayOrder));
-            Assert.That(savedInterview.Skills.First().RequiredSkillLevel, Is.EqualTo(skillInputModels.First().RequiredSkillLevel));
-            Assert.That(savedInterview.Skills.First().UserSkillLevel, Is.EqualTo(skillInputModels.First().UserSkillLevel));
-            Assert.That(savedInterview.Skills.First().LevelsSet, Is.EqualTo(skillInputModels.First().LevelsSet));
-            Assert.That(savedInterview.Skills.First().CompetencyId, Is.EqualTo(skillInputModels.First().CompetencyId));
-            Assert.That(savedInterview.Skills.First().JobFunctionLevel, Is.EqualTo(skillInputModels.First().JobFunctionLevel));
-            Assert.That(savedInterview.Skills.First().Topics, Is.Null);
-            Assert.That(savedInterview.Skills.First().Id, Is.EqualTo(skillInputModels.First().Id));
-            Assert.That(savedInterview.Skills.First().ParentId, Is.EqualTo(skillInputModels.First().ParentId));
-            Assert.That(savedInterview.Skills.First().Name, Is.EqualTo(skillInputModels.First().Name));
-            Assert.That(savedInterview.Skills.First().IsSelectable, Is.EqualTo(skillInputModels.First().IsSelectable));
+            Assert.That(savedInterview.Skills.First().SkillId, Is.EqualTo(skillInputModels.First().SkillId));
+            Assert.That(savedInterview.Skills.First().Description, Is.EqualTo(skillInputModels.First().Description));
+            Assert.That(savedInterview.Skills.First().Questions, Is.Empty);
         }
 
         [Test]
-        public void WhenInputInterviewIsValid_ReturnsOkStatusCodeAndAllQuestionsWereSaved()
+        public void GivenNewInputInterview_WhenItIsValidAndAnyOfItsSkillsHaveQuestions_ThenSkillsAndItsQuestionsAreSavedCorrectlyAndOkStatusCodeIsReturned()
         {
             // Arrange
-            InterviewCatalog savedInterview = null;
+            Interview savedInterview = null;
 
             var newInterviewDocumentGUID = "BB411DF9-B204-4FCF-BA90-8D5C8F52E414";
 
-            var questionInputModels = new List<AnsweredQuestionInputModel>
+            var skillInputModels = new List<SkillInterviewInputModel>
             {
-                new AnsweredQuestionInputModel
+                new SkillInterviewInputModel
                 {
-                    CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1025,
-                    Description = "Explain differences about interface and abstract class", Answer = "Both are contract but...", Rating = 5
+                    SkillId = 1001,
+                    Description = "Documentation",
+                    Questions = new List<AnsweredQuestionInputModel>
+                    {
+                        new AnsweredQuestionInputModel
+                        {
+                            CompetencyId = 13,
+                            JobFunctionLevel = 1,
+                            SkillId = 1001,
+                            Description = "Explain differences about interface and abstract class",
+                            Answer = "Both are contract but...",
+                            Rating = 5
+                        },
+                        new AnsweredQuestionInputModel
+                        {
+                            CompetencyId = 13,
+                            JobFunctionLevel = 1,
+                            SkillId = 1001,
+                            Description = "What's the role of the scrum master?.",
+                            Answer = "Scrum master main role is to...",
+                            Rating = 3
+                        }
+                    }
                 },
-                new AnsweredQuestionInputModel
+                new SkillInterviewInputModel
                 {
-                    CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1025,
-                    Description = "What's the role of the scrum master?.", Answer = "Scrum master main role is to...", Rating = 3
+                    SkillId = 1099,
+                    Description = "Design Patterns",
+                    Questions = new List<AnsweredQuestionInputModel>
+                    {
+                        new AnsweredQuestionInputModel
+                        {
+                            CompetencyId = 13,
+                            JobFunctionLevel = 1,
+                            SkillId = 1099,
+                            Description = "What's the difference between list, collection and enumation?.",
+                            Answer = "List implements both interfaces but...",
+                            Rating = 4
+                        }
+                    }
                 },
-                new AnsweredQuestionInputModel
+                new SkillInterviewInputModel
                 {
-                    CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1025,
-                    Description = "What's the difference between list, collection and enumation?.", Answer = "List implements both interfaces but...", Rating = 4
-                },
-                new AnsweredQuestionInputModel
-                {
-                    CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1025,
-                    Description = "What's the difference between an ApiController and a Controller class?.", Answer = "ApiController is designed to...", Rating = 2
-                },
-                new AnsweredQuestionInputModel
-                {
-                    CompetencyId = 13, JobFunctionLevel = 1, SkillId = 1025,
-                    Description = "What are the SOLID principles?.", Answer = "SOLID stands for...", Rating = 2
+                    SkillId = 4562,
+                    Description = "NET Best Practices",
+                    Questions = new List<AnsweredQuestionInputModel>
+                    {
+                        new AnsweredQuestionInputModel
+                        {
+                            CompetencyId = 13,
+                            JobFunctionLevel = 1,
+                            SkillId = 4562,
+                            Description = "What's the difference between an ApiController and a Controller class?.",
+                            Answer = "ApiController is designed to...",
+                            Rating = 2
+                        },
+                        new AnsweredQuestionInputModel
+                        {
+                            CompetencyId = 13,
+                            JobFunctionLevel = 1,
+                            SkillId = 4562,
+                            Description = "What are the SOLID principles?.",
+                            Answer = "SOLID stands for...",
+                            Rating = 2
+                        }
+                    }
                 }
             };
 
@@ -216,16 +200,15 @@
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
                 TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
-                Skills = new List<Skill>(),
-                Questions = questionInputModels,
+                Skills = skillInputModels,
                 Exercises = new List<AnsweredExerciseInputModel>()
             };
 
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
 
             commandInterviewMock
-                .Setup(method => method.Insert(It.IsAny<InterviewCatalog>()))
-                .ReturnsAsync((InterviewCatalog interview) =>
+                .Setup(method => method.Insert(It.IsAny<Interview>()))
+                .ReturnsAsync((Interview interview) =>
                 {
                     interview.Id = newInterviewDocumentGUID;
                     savedInterview = interview;
@@ -241,26 +224,48 @@
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<OkResult>());
             // -- Check that the save method was called once.
-            commandInterviewMock.Verify(method => method.Insert(It.IsAny<InterviewCatalog>()), Times.Once);
+            commandInterviewMock.Verify(method => method.Insert(It.IsAny<Interview>()), Times.Once);
             // -- Check that the data skills were  mapped correctly in the interview object.
             Assert.That(savedInterview, Is.Not.Null);
             Assert.That(savedInterview.Id, Is.EqualTo(newInterviewDocumentGUID));
-            Assert.That(savedInterview.Questions.Count(), Is.EqualTo(questionInputModels.Count()));
-            Assert.That(savedInterview.Questions.First().CompetencyId, Is.EqualTo(questionInputModels.First().CompetencyId));
-            Assert.That(savedInterview.Questions.First().JobFunctionLevel, Is.EqualTo(questionInputModels.First().JobFunctionLevel));
-            Assert.That(savedInterview.Questions.First().SkillId, Is.EqualTo(questionInputModels.First().SkillId));
-            Assert.That(savedInterview.Questions.First().Description, Is.EqualTo(questionInputModels.First().Description));
-            Assert.That(savedInterview.Questions.First().Answer, Is.EqualTo(questionInputModels.First().Answer));
-            Assert.That(savedInterview.Questions.First().Rating, Is.EqualTo(questionInputModels.First().Rating));
+            Assert.That(savedInterview.Skills.Sum(skill => skill.Questions.Count()), Is.EqualTo(skillInputModels.Sum(skill => skill.Questions.Count())));
+            Assert.That(savedInterview.Skills.First().Questions.First().CompetencyId, Is.EqualTo(skillInputModels.First().Questions.First().CompetencyId));
+            Assert.That(savedInterview.Skills.First().Questions.First().JobFunctionLevel, Is.EqualTo(skillInputModels.First().Questions.First().JobFunctionLevel));
+            Assert.That(savedInterview.Skills.First().Questions.First().SkillId, Is.EqualTo(skillInputModels.First().Questions.First().SkillId));
+            Assert.That(savedInterview.Skills.First().Questions.First().Description, Is.EqualTo(skillInputModels.First().Questions.First().Description));
+            Assert.That(savedInterview.Skills.First().Questions.First().Answer, Is.EqualTo(skillInputModels.First().Questions.First().Answer));
+            Assert.That(savedInterview.Skills.First().Questions.First().Rating, Is.EqualTo(skillInputModels.First().Questions.First().Rating));
         }
 
         [Test]
-        public void WhenInputInterviewIsValid_ReturnsOkStatusCodeAndAllExercisesWereSaved()
+        public void GivenNewInputInterview_WhenItIsValidAndHasExercises_ThenExercisesAreSavedCorrectlyAndOkStatusCodeIsReturned()
         {
             // Arrange
-            InterviewCatalog savedInterview = null;
+            Interview savedInterview = null;
 
             var newInterviewDocumentGUID = "BB411DF9-B204-4FCF-BA90-8D5C8F52E414";
+
+            var skillInputModels = new List<SkillInterviewInputModel>
+            {
+                new SkillInterviewInputModel
+                {
+                    SkillId = 1001,
+                    Description = "Documentation",
+                    Questions = new List<AnsweredQuestionInputModel>()
+                },
+                new SkillInterviewInputModel
+                {
+                    SkillId = 1099,
+                    Description = "Design Patterns",
+                    Questions = new List<AnsweredQuestionInputModel>()
+                },
+                new SkillInterviewInputModel
+                {
+                    SkillId = 4562,
+                    Description = "NET Best Practices",
+                    Questions = new List<AnsweredQuestionInputModel>()
+                }
+            };
 
             var exerciseInputModels = new List<AnsweredExerciseInputModel>
             {
@@ -289,16 +294,15 @@
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
                 TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
-                Skills = new List<Skill>(),
-                Questions = new List<AnsweredQuestionInputModel>(),
+                Skills = skillInputModels,
                 Exercises = exerciseInputModels
             };
 
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
 
             commandInterviewMock
-                .Setup(method => method.Insert(It.IsAny<InterviewCatalog>()))
-                .ReturnsAsync((InterviewCatalog interview) =>
+                .Setup(method => method.Insert(It.IsAny<Interview>()))
+                .ReturnsAsync((Interview interview) =>
                 {
                     interview.Id = newInterviewDocumentGUID;
                     savedInterview = interview;
@@ -314,7 +318,7 @@
             Assert.That(actionResult, Is.Not.Null);
             Assert.That(actionResult, Is.TypeOf<OkResult>());
             // -- Check that the save method was called once.
-            commandInterviewMock.Verify(method => method.Insert(It.IsAny<InterviewCatalog>()), Times.Once);
+            commandInterviewMock.Verify(method => method.Insert(It.IsAny<Interview>()), Times.Once);
             // -- Check that the data skills were  mapped correctly in the interview object.
             Assert.That(savedInterview, Is.Not.Null);
             Assert.That(savedInterview.Id, Is.EqualTo(newInterviewDocumentGUID));
@@ -331,7 +335,7 @@
         }
 
         [Test]
-        public void WhenExceptionIsThrownAtSavingTime_ReturnsInternalServerErrorStatusCodeWithExceptionInformation()
+        public void GivenNewInputInterview_WhenItIsValidButAnExceptionIsThrownAtSavingTime_ThenInternalServerErrorStatusCodeWithExceptionInformationIsReturned()
         {
             // Arrange
             InterviewInputModel interviewInputModel = new InterviewInputModel
@@ -339,15 +343,20 @@
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
                 TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
-                Skills = new List<Skill>(),
-                Questions = new List<AnsweredQuestionInputModel>(),
+                Skills = new List<SkillInterviewInputModel>
+                {
+                    new SkillInterviewInputModel
+                    {
+                        Questions = new List<AnsweredQuestionInputModel>()
+                    }
+                },
                 Exercises = new List<AnsweredExerciseInputModel>()
             };
 
-            var commandInterviewMock = new Mock<ICommandRepository<InterviewCatalog>>();
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
 
             commandInterviewMock
-                .Setup(method => method.Insert(It.IsAny<InterviewCatalog>()))
+                .Setup(method => method.Insert(It.IsAny<Interview>()))
                 .ThrowsAsync(new Exception("DocumentDb was not properly initialized."));
 
             var controllerUnderTest = new CommandInterviewController(commandInterviewMock.Object);
