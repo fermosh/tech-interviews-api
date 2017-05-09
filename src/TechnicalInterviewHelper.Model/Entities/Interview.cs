@@ -1,8 +1,8 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
-    using Attributes;
     using System.Collections.Generic;
-    using Newtonsoft.Json;
+    using Attributes;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// Entity model for an interview catalog.

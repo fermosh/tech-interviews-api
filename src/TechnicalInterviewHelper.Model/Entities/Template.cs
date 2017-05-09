@@ -1,8 +1,8 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
-    using Attributes;
     using System.Collections.Generic;
-    using Newtonsoft.Json;
+    using Attributes;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// The way a bunch of filtered skill are saved for a queried position.

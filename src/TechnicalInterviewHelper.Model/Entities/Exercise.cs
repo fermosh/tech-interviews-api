@@ -1,9 +1,9 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
-    using Attributes;
     using System.Collections.Generic;
-    using Newtonsoft.Json;
-    using TechnicalInterviewHelper.Model.Entities;
+    using Attributes;
+    using Entities;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// Exercise entity.
