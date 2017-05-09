@@ -1,5 +1,6 @@
 ﻿namespace TechnicalInterviewHelper.Model
-{    
+{
+    using Attributes;
     using System.Collections.Generic;
     using Newtonsoft.Json;
 
@@ -7,6 +8,7 @@
     /// Entity model for an interview catalog.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    [DocumentType(DocumentType.Interviews)]
     public class Interview : BaseEntity
     {
         /// <summary>
