@@ -1,12 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.Model
-{    
+{
     using System.Collections.Generic;
-    using Newtonsoft.Json;
+    using Attributes;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// Entity model for an interview catalog.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    [DocumentType(DocumentType.Interviews)]
     public class Interview : BaseEntity
     {
         /// <summary>

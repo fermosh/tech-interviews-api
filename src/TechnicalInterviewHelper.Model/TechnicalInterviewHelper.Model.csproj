@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DocumentTypeAttribute.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Comparers\SkillComparer.cs" />
     <Compile Include="Entities\JobFunctionDocument.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\Topic.cs" />
+    <Compile Include="Enums\DocumentType.cs" />
     <Compile Include="Interfaces\Command\ICommandRepository.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\Query\ICompetencyQueryRepository.cs" />

@@ -49,7 +49,7 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<JobFunctionDocument>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(document => document.JobFunction.Id == competencyId)
+                    .Where(document => document.DocumentTypeId == DocumentType.JobFunctions && document.JobFunction.Id == competencyId)
                     .SelectMany(document => document.Levels)
                     .Where(level => level.Id == jobFunctionLevel)
                     .Select(level => level.JobTitles)

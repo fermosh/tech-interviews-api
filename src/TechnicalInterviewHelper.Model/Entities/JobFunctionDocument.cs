@@ -1,12 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
     using System.Collections.Generic;
+    using Attributes;
     using Newtonsoft.Json;    
 
     /// <summary>
     /// Model for job function document.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    [DocumentType(DocumentType.JobFunctions)]
     public class JobFunctionDocument : BaseEntity
     {
         /// <summary>

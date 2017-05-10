@@ -128,6 +128,8 @@
 
             try
             {
+                exercise.DocumentTypeId = DocumentType.Exercises;
+
                 var result = await commandRepository.Insert(exercise);
 
                 return Ok(result.Id);

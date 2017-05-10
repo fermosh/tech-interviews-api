@@ -75,6 +75,48 @@
         }
 
         [Test]
+        public void WhenRecordIsSavedSuccessfully_AssignedDocumentTypeIdIsCorrectAndOkStatusCodeAndTheIdOfNewRecordIsReturned()
+        {
+            // Arrange
+            Template savedTemplate = null;
+            var filteredSkills = new List<int> { 22, 45, 667, 1008 };
+            var newIdDocument = "3A20A752-652D-45ED-9AD8-8BACA37AC3E3";
+
+            var templateInput = new TemplateInputModel
+            {
+                CompetencyId = 13,
+                JobFunctionLevel = 1,
+                Skills = filteredSkills
+            };
+
+            var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
+
+            commandRepositoryMock
+                .Setup(method => method.Insert(It.IsAny<Template>()))
+                .ReturnsAsync((Template templateToSave) =>
+                {
+                    templateToSave.Id = newIdDocument;
+                    savedTemplate = templateToSave;
+                    return templateToSave;
+                });
+
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+
+            // Act
+            var actionResult = controllerUnderTest.Post(templateInput).Result;
+
+            // Asserts
+            Assert.That(actionResult, Is.Not.Null);
+            Assert.That(actionResult, Is.TypeOf<OkNegotiatedContentResult<string>>());
+            Assert.That((actionResult as OkNegotiatedContentResult<string>).Content, Is.EqualTo(newIdDocument));
+            // Save method was called only once.
+            commandRepositoryMock.Verify(method => method.Insert(It.IsAny<Template>()), Times.Once);
+            // Checks the values of saved template.
+            Assert.That(savedTemplate, Is.Not.Null);
+            Assert.That(savedTemplate.DocumentTypeId, Is.EqualTo(DocumentType.Templates));
+        }
+
+        [Test]
         public void WhenRecordIsSavedSuccessfully_ReturnsOkStatusCodeAndTheIdOfNewRecord()
         {
             // Arrange

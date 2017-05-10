@@ -1,12 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.Model
-{    
+{
     using System.Collections.Generic;
-    using Newtonsoft.Json;
+    using Attributes;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// The way a bunch of filtered skill are saved for a queried position.
     /// </summary>
     /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    [DocumentType(DocumentType.Templates)]
     public class Template : BaseEntity
     {
         /// <summary>

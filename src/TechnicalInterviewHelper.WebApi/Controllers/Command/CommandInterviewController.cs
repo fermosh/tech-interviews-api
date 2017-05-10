@@ -12,16 +12,10 @@
     [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandInterviewController : ApiController
     {
-        #region Repository
-
         /// <summary>
         /// The command for interview.
         /// </summary>
         private readonly ICommandRepository<Interview> commandInterview;
-
-        #endregion Repository
-
-        #region Constructor
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandInterviewController"/> class.
@@ -31,8 +25,6 @@
         {
             this.commandInterview = commandInterview;
         }
-
-        #endregion Constructor
 
         /// <summary>
         /// Posts the interview.
@@ -57,6 +49,7 @@
             {
                 var interviewToSave = new Interview
                 {
+                    DocumentTypeId = DocumentType.Interviews,
                     CompetencyId = interviewInputModel.CompetencyId,
                     JobFunctionLevel = interviewInputModel.JobFunctionLevel,
                     TemplateId = interviewInputModel.TemplateId

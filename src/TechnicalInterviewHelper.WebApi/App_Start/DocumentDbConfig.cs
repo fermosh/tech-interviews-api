@@ -31,39 +31,9 @@
         #region Collections
 
         /// <summary>
-        /// The collection identifier
+        /// The main collection identifier
         /// </summary>
-        private readonly string competencyCollectionId = ConfigurationManager.AppSettings["CompetencyCollectionId"];
-
-        /// <summary>
-        /// The level collection identifier
-        /// </summary>
-        private readonly string questionCollectionId = ConfigurationManager.AppSettings["QuestionCollectionId"];
-
-        /// <summary>
-        /// The domain collection identifier
-        /// </summary>
-        private readonly string exerciseCollectionId = ConfigurationManager.AppSettings["ExerciseCollectionId"];
-
-        /// <summary>
-        /// The skill collection identifier
-        /// </summary>
-        private readonly string skillCollectionId = ConfigurationManager.AppSettings["SkillCollectionId"];
-
-        /// <summary>
-        /// The template collection identifier
-        /// </summary>
-        private readonly string templateCollectionId = ConfigurationManager.AppSettings["TemplateCollectionId"];
-
-        /// <summary>
-        /// The interview collection identifier
-        /// </summary>
-        private readonly string interviewCollectionId = ConfigurationManager.AppSettings["InterviewCollectionId"];
-
-        /// <summary>
-        /// The job function collectionid
-        /// </summary>
-        private readonly string jobFunctionCollectionId = ConfigurationManager.AppSettings["JobFunctionCollectionId"];
+        private readonly string mainCollectionId = ConfigurationManager.AppSettings["MainCollectionId"];
 
         #endregion Collections
 
@@ -138,96 +108,15 @@
             var databaseUri = UriFactory.CreateDatabaseUri(this.databaseId);
             var requestOptions = new RequestOptions { OfferThroughput = 400 };
 
-            #region Competency collection
-
             try
             {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.competencyCollectionId }, requestOptions);
+                var mainDocumentCollection = new DocumentCollection { Id = this.mainCollectionId };
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, mainDocumentCollection, requestOptions);
             }
             catch (Exception)
             {
                 throw;
             }
-
-            #endregion Competency collection
-
-            #region Question collection
-
-            try
-            {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.questionCollectionId }, requestOptions);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            #endregion Question collection
-
-            #region Exercise collection
-
-            try
-            {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.exerciseCollectionId }, requestOptions);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            #endregion Skill collection
-
-            #region Skill collection
-
-            try
-            {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.skillCollectionId }, requestOptions);
-            }
-            catch (Exception)
-            {
-                throw;
-            }            
-
-            #endregion Skill collection
-
-            #region Template collection
-
-            try
-            {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.templateCollectionId }, requestOptions);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            #endregion Template collection
-
-            #region Interview collection
-
-            try
-            {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.interviewCollectionId }, requestOptions);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            #endregion Interview collection
-
-            #region Job function collection
-
-            try
-            {
-                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, new DocumentCollection { Id = this.jobFunctionCollectionId }, requestOptions);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            #endregion Job function collection
         }
 
         #endregion Create Collections

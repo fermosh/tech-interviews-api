@@ -52,6 +52,65 @@
         }
 
         [Test]
+        public void GivenNewInputInterview_WhenItIsValid_ThenAssignedDocumentTypeIdIsCorrectAndOkStatusCodeIsReturned()
+        {
+            // Arrange
+            Interview savedInterview = null;
+
+            var newInterviewDocumentGUID = "BB411DF9-B204-4FCF-BA90-8D5C8F52E414";
+
+            var skillInputModels = new List<SkillInterviewInputModel>
+            {
+                new SkillInterviewInputModel
+                {
+                    SkillId = 1001, Description = "Documentation", Questions = new List<AnsweredQuestionInputModel>()
+                },
+                new SkillInterviewInputModel
+                {
+                    SkillId = 1001, Description = "Design Patterns", Questions = new List<AnsweredQuestionInputModel>()
+                },
+                new SkillInterviewInputModel
+                {
+                    SkillId = 1001, Description = "NET Best Practices", Questions = new List<AnsweredQuestionInputModel>()
+                }
+            };
+
+            InterviewInputModel interviewInputModel = new InterviewInputModel
+            {
+                CompetencyId = 13,
+                JobFunctionLevel = 1,
+                TemplateId = "5E54B3E9-199A-4811-B67D-F17011FBF265",
+                Skills = skillInputModels,
+                Exercises = new List<AnsweredExerciseInputModel>()
+            };
+
+            var commandInterviewMock = new Mock<ICommandRepository<Interview>>();
+
+            commandInterviewMock
+                .Setup(method => method.Insert(It.IsAny<Interview>()))
+                .ReturnsAsync((Interview interview) =>
+                {
+                    interview.Id = newInterviewDocumentGUID;
+                    savedInterview = interview;
+                    return interview;
+                });
+
+            var controllerUnderTest = new CommandInterviewController(commandInterviewMock.Object);
+
+            // Act
+            var actionResult = controllerUnderTest.PostInterview(interviewInputModel).Result;
+
+            // Assert
+            Assert.That(actionResult, Is.Not.Null);
+            Assert.That(actionResult, Is.TypeOf<OkResult>());
+            // -- Check that the save method was called once.
+            commandInterviewMock.Verify(method => method.Insert(It.IsAny<Interview>()), Times.Once);
+            // -- Check that the data skills were  mapped correctly in the interview object.
+            Assert.That(savedInterview, Is.Not.Null);
+            Assert.That(savedInterview.DocumentTypeId, Is.EqualTo(DocumentType.Interviews));
+        }
+
+        [Test]
         public void GivenNewInputInterview_WhenItIsValidAndNoneOfItsSkillsHaveQuestions_ThenSkillsAreSavedCorrectlyAndOkStatusCodeIsReturned()
         {
             // Arrange

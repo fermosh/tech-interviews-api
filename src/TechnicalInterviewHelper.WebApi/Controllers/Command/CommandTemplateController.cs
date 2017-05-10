@@ -1,12 +1,10 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Controllers
-{
-    using Model;
-    using Services;
-    using System.Configuration;
+{    
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
+    using Model;
     using TechnicalInterviewHelper.Model;
 
     /// <summary>
@@ -17,24 +15,10 @@
     [EnableCors(origins: "*", headers: "*", methods: "POST")]
     public class CommandTemplateController : ApiController
     {
-        #region Repository
-
         /// <summary>
         /// The command repository
         /// </summary>
         private readonly ICommandRepository<Template> commandRepository;
-
-        #endregion Repository
-
-        #region Constructor
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
-        /// </summary>
-        public CommandTemplateController()
-        {
-            this.commandRepository = new DocumentDbCommandRepository<Template>(ConfigurationManager.AppSettings["TemplateCollectionId"]);
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuerySkillMatrixController"/> class.
@@ -44,8 +28,6 @@
         {
             this.commandRepository = commandRepository;
         }
-
-        #endregion Constructor
 
         /// <summary>
         /// Save the specified template and its skills identifiers into a database.
@@ -72,6 +54,7 @@
             {
                 var templateToSave = new Template()
                 {
+                    DocumentTypeId = DocumentType.Templates,
                     CompetencyId = templateInput.CompetencyId,
                     JobFunctionLevel = templateInput.JobFunctionLevel,
                     Skills = templateInput.Skills

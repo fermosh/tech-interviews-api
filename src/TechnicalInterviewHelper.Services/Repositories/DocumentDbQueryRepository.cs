@@ -1,5 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.Services
-{    
+{
     using System;
     using System.Collections.Generic;
     using System.Configuration;
@@ -10,6 +10,7 @@
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
     using Model;
+    using Model.Attributes;
 
     /// <summary>
     /// Implements the query operations over a No-SQL Document Db data source.
@@ -18,7 +19,7 @@
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{T, TKey}" />
     public class DocumentDbQueryRepository<T, TKey> : IQueryRepository<T, TKey>, IDisposable
-        where T : class
+        where T : IEntity<TKey>
     {
         #region Protected fields
 
@@ -166,8 +167,19 @@
         /// All entities in the collection.
         /// </returns>
         public async Task<IEnumerable<T>> GetAll()
-        {
-            var documentQuery = this.DocumentClient.CreateDocumentQuery(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 }).AsDocumentQuery();
+        {            
+            var documentTypeId = DocumentType.NotValid;
+            var documentType = typeof(T).GetCustomAttributes(false).FirstOrDefault(att => att is DocumentTypeAttribute);
+            if (documentType != null)
+            {
+                documentTypeId = (documentType as DocumentTypeAttribute).DocumentType;
+            }
+
+            var documentQuery =
+                    this.DocumentClient
+                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                        .Where(item => item.DocumentTypeId == documentTypeId)
+                        .AsDocumentQuery();
 
             var competencyList = new List<T>();
             while (documentQuery.HasMoreResults)

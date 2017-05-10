@@ -1,12 +1,14 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
     using System.Collections.Generic;
-    using Newtonsoft.Json;
-    using TechnicalInterviewHelper.Model.Entities;
+    using Attributes;
+    using Entities;
+    using Newtonsoft.Json;    
 
     /// <summary>
     /// Exercise entity.
     /// </summary>
+    [DocumentType(DocumentType.Exercises)]
     public class Exercise : BaseEntity
     {
         /// <summary>
