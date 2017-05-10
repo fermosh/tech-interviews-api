@@ -123,6 +123,8 @@
 
             try
             {
+                question.DocumentTypeId = DocumentType.Questions;
+
                 var result = await commandRepository.Insert(question);
 
                 return Ok(result.Id);
