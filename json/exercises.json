@@ -1,0 +1,43 @@
+[
+  {
+	"documentTypeId": 3,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skills": [
+      {
+        "id": 57,
+        "name": ".NET Development"
+      },
+      {
+        "id": 979,
+        "name": "Software Craftmanship and Development Process"
+      },
+      {
+        "id": 575,
+        "name": "Developing others"
+      }
+    ],
+    "title": "Palindrome",
+    "body": "Palindrome",
+    "solution": "/// <summary>\n    /// Determines whether the string is a palindrome.\n    /// </summary>\n    public static bool IsPalindrome(string value)\n    {\n        int min = 0;\n        int max = value.Length - 1;\n        while (true)\n        {\n            if (min > max)\n            {\n                return true;\n            }\n            char a = value[min];\n            char b = value[max];\n            if (char.ToLower(a) != char.ToLower(b))\n            {\n                return false;\n            }\n            min++;\n            max--;\n        }\n    }",
+    "id": "d7648dda-3e86-4a96-b5df-652b96756335"
+  },
+  {
+	"documentTypeId": 3,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skills": [
+      {
+        "id": 1141,
+        "name": "Code Review Process"
+      }
+    ],
+    "title": "What's the purpose of standards/conventions in .NET C#?",
+    "body": "",
+    "solution": null,
+    "id": "b404f766-4458-40f8-a2f4-1af92df8543c"
+  }]
