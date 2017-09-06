@@ -18,12 +18,5 @@ TODO: Guide users through getting your code up and running on their own system. 
 #Build and Test
 In order to build the solution you should install next dependencies:
 a) StyleCop, you can get it from: https://github.com/StyleCop/StyleCop
-b) As the data access layer is using DocumentDB, we can download an emulator of it to start running our local tests. Please donwload and install it from here: https://docs.microsoft.com/en-us/azure/documentdb/documentdb-nosql-local-emulator
-
-#Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+b) As the data access layer is using Cosmos DB, we can download an emulator of it to start running our local tests => https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator
+c) How to import data into Azure Cosmos DB for the DocumentDB API?. The answer is Data Migration tool => https://docs.microsoft.com/en-us/azure/cosmos-db/import-data
