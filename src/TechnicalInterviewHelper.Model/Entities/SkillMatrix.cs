@@ -1,43 +1,33 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
     using System.Collections.Generic;
+    using Attributes;
+    using Newtonsoft.Json;    
 
     /// <summary>
-    /// SkillMatrix data transfer object.
+    /// Entity which models a document with skills.
     /// </summary>
+    /// <seealso cref="TechnicalInterviewHelper.Model.BaseEntity" />
+    [DocumentType(DocumentType.Skills)]
     public class SkillMatrix : BaseEntity
     {
         /// <summary>
         /// Gets or sets a value indicating whether this instance has content.
         /// </summary>
         /// <value>
-        /// <c>true</c> if this instance has content; otherwise, <c>false</c>.
+        ///   <c>true</c> if this instance has content; otherwise, <c>false</c>.
         /// </value>
+        [JsonProperty("hasContent")]
         public bool HasContent { get; set; }
 
         /// <summary>
-        /// Gets or sets the competency.
+        /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
-        /// The competency.
+        /// The competency identifier.
         /// </value>
-        public Competency Competency { get; set; }
-
-        /// <summary>
-        /// Gets or sets the level.
-        /// </summary>
-        /// <value>
-        /// The level.
-        /// </value>
-        public Level Level { get; set; }
-
-        /// <summary>
-        /// Gets or sets the domain.
-        /// </summary>
-        /// <value>
-        /// The domain.
-        /// </value>
-        public Domain Domain { get; set; }
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
 
         /// <summary>
         /// Gets or sets the skills.
@@ -45,6 +35,7 @@
         /// <value>
         /// The skills.
         /// </value>
+        [JsonProperty("skills")]
         public IEnumerable<Skill> Skills { get; set; }
     }
 }

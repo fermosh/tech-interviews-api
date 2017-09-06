@@ -14,10 +14,8 @@
         public static readonly Competency TestCompetency;
         public static readonly int TestDomainId;
         public static readonly string TestDomainName;
-        public static readonly Domain TestDomain;
         public static readonly int TestLevelId;
         public static readonly string TestLevelName;
-        public static readonly Level TestLevel;
         public static readonly int TestSkillId;
         public static readonly Skill TestSkill;
 
@@ -34,38 +32,11 @@
             TestLevelName = Guid.NewGuid().ToString("D");
             TestCompetency = new Competency()
             {
-                Id = TestCompetencyId.ToString(),
+                //Id = TestCompetencyId.ToString(),
                 Name = TestCompetencyName
-            };
-            TestLevel = new Level()
-            {
-                Id = TestLevelId.ToString(),
-                Name = TestLevelName,
-                CompetencyId = TestCompetencyId,
-                Description = string.Empty
-            };
-            TestDomain = new Domain()
-            {
-                Id = TestDomainId.ToString(),
-                Name = TestDomainName,
-                CompetencyId = TestCompetencyId,
-                LevelId = TestLevelId
             };
             TestSkill = new Skill()
             {
-                Id = TestSkillId.ToString(),
-                Name = TestDomainName,
-                CompetencyId = TestCompetencyId,
-                DisplayOrder = 1,
-                Exercises = new List<Exercise>(),
-                IsSelectable = true,
-                JobFunctionLevel = 1,
-                LevelSet = 1,
-                ParentId = null,
-                Questions = new List<Question>(),
-                RootId = 1,
-                RequiredSkillLevel = 1,
-                UserSkillLevel = 1,
                 Topics = new List<Topic>()
             };
         }

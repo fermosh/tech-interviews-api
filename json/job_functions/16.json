@@ -1,0 +1,154 @@
+{
+	"id": "56a57077-0edb-d3a0-7390-fc344f2045a7",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 16,
+        "name": "Technical Writing",
+        "mnemonicBase": "TW",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Development Experience and Knowledge",
+                    "cells": [
+                        "<p>Some experience in documentation</p>",
+                        "<p>At least 1 year of relevant documentation experience</p>",
+                        "<p>At least 3 years of relevant documentation experience, including skills to design documents.</p>",
+                        "<p>At least 5 years of relevant documentation experience, including skills to design documents and information design.</p>",
+                        "<p>At least 7 years of relevant documentation experience, including skills to design documents and information design, and ability to coach and train other technical writers.</p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience of the documentation processes</p>",
+                        "<p>Expected to be able to follow a defined documentation process</p>",
+                        "<p>Expected to be able to follow and understand a defined documentation process</p>",
+                        "<p>Expected to be able to follow, understand, and enhance a defined documentation process</p>",
+                        "<p>Expected to be able to follow, understand and actively influence and enhance a defined documentation process</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read and understand project and requirement documentation. Able to write documentation when the structure is provided.</p>",
+                        "<p>Able to read and understand project and requirement documentation. Able to write simple documentation from start to finish</p>",
+                        "<p>Able to read and understand project and requirement documentation. Able to create documentation structure and write a whole document.</p>",
+                        "<p>Able to read and understand project and requirement documentation. Able to design complex document systems.</p>",
+                        "<p>Able to read and understand project and requirement documentation. Able to design complex document systems.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Junior Technical Writer</p>",
+                        "<p>Technical Writer</p>",
+                        "<p>Senior Technical Writer</p>",
+                        "<p>Lead Technical Writer</p>",
+                        "<p>Chief Technical Writer</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the technical writer role</p>",
+                        "<p>Plays the technical writer role</p>",
+                        "<p>Plays the role of a key technical writer or a team leader of 2-5 technical writers</p>",
+                        "<p>Plays the key technical writer and information designer roles, and usually also performs a team leader, reviewer and/or editor role</p>",
+                        "<p>Can play any role, typically a senior position. Responsibilities can include team leader, information architecture engineer, reviewer, editor, technical writer trainer.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision</p>",
+                        "<p>Expected to write documentation without direct supervision</p>",
+                        "<p>Expected to be self-managing, write documentation without supervision, review and edit his/her work thoroughly</p>",
+                        "<p>Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision, review and edit his/her work thoroughly</p>",
+                        "<p>Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision, review and edit his/her work thoroughly</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Work should have no spelling and grammatical errors</p>",
+                        "<p>Must show a sense of responsibility for the quality of the deliverables created by him/her</p>",
+                        "<p>Creates deliverables in good quality</p>",
+                        "<p>Must be a role model for colleagues; creates deliverables in high quality</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent quality</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentation; visit customers without supervision</p>",
+                        "<p>Expected to be on a par with the best industry experts in customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>C1</p>",
+                        "<p>C1</p>",
+                        "<p>C1</p>",
+                        "<p>C2</p>",
+                        "<p>C2</p>"
+                    ]
+                },
+                {
+                    "name": "Language Level in the Customer’s Communication Language",
+                    "cells": [
+                        "<p>Able to read and write the Customer’s Communication Language and have advanced speaking ability</p>",
+                        "<p>Able to read and write the Customer’s Communication Language and have advanced speaking ability</p>",
+                        "<p>Comfortably able to read, write and speak the Customer’s Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer’s Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer’s Communication Language; able to write high-quality unambiguous texts</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Technical Writer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Technical Writer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Technical Writer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Technical Writer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Technical Writer"
+            ]
+        }
+    ]
+}

@@ -28,25 +28,14 @@
         /// </summary>
         private readonly string authorizationKey = ConfigurationManager.AppSettings["AuthorizationKey"];
 
-        /// <summary>
-        /// The collection identifier
-        /// </summary>
-        private readonly string competencyCollectionId = ConfigurationManager.AppSettings["CompetencyCollectionId"];
+        #region Collections
 
         /// <summary>
-        /// The level collection identifier
+        /// The main collection identifier
         /// </summary>
-        private readonly string levelCollectionId = ConfigurationManager.AppSettings["LevelCollectionId"];
+        private readonly string mainCollectionId = ConfigurationManager.AppSettings["MainCollectionId"];
 
-        /// <summary>
-        /// The domain collection identifier
-        /// </summary>
-        private readonly string domainCollectionId = ConfigurationManager.AppSettings["DomainCollectionId"];
-
-        /// <summary>
-        /// The skill collection identifier
-        /// </summary>
-        private readonly string skillCollectionId = ConfigurationManager.AppSettings["SkillCollectionId"];
+        #endregion Collections
 
         /// <summary>
         /// The client
@@ -81,7 +70,7 @@
 
         #endregion Static entrypoint
 
-        #region Initialization functions
+        #region Create Database
 
         /// <summary>
         /// Creates the database if not exists asynchronous.
@@ -106,108 +95,31 @@
             }
         }
 
+        #endregion Create Database
+
+        #region Create Collections
+
         /// <summary>
         /// Creates the collection if not exists asynchronous.
         /// </summary>
         /// <returns></returns>
         private async Task CreateCollectionIfNotExistsAsync()
         {
-            #region Competency collection
+            var databaseUri = UriFactory.CreateDatabaseUri(this.databaseId);
+            var requestOptions = new RequestOptions { OfferThroughput = 400 };
 
             try
             {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.competencyCollectionId));
+                var mainDocumentCollection = new DocumentCollection { Id = this.mainCollectionId };
+                await this.documentClient.CreateDocumentCollectionIfNotExistsAsync(databaseUri, mainDocumentCollection, requestOptions);
             }
-            catch (DocumentClientException e)
+            catch (Exception)
             {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.competencyCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
-
-            #endregion Competency collection
-
-            #region Level collection
-
-            try
-            {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.levelCollectionId));
-            }
-            catch (DocumentClientException e)
-            {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.levelCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            #endregion Level collection
-
-            #region Domain collection
-
-            try
-            {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.domainCollectionId));
-            }
-            catch (DocumentClientException e)
-            {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.domainCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            #endregion Domain collection
-
-            #region Skill collection
-
-            try
-            {
-                await this.documentClient.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.skillCollectionId));
-            }
-            catch (DocumentClientException e)
-            {
-                if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    await this.documentClient.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(this.databaseId),
-                        new DocumentCollection { Id = this.skillCollectionId },
-                        new RequestOptions { OfferThroughput = 1000 });
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            #endregion Skill collection
         }
 
-
-
-        #endregion Initialization functions
+        #endregion Create Collections
 
         #region IDisposable Support
 
@@ -231,6 +143,6 @@
             Dispose(true);
         }
 
-        #endregion
+        #endregion IDisposable Support
     }
 }

@@ -1,25 +1,102 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
 {
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+
     /// <summary>
     /// View model which represents a skill.
     /// </summary>
     public class SkillForPositionViewModel
     {
         /// <summary>
-        /// Gets or sets the skill identifier.
+        /// Gets or sets the root identifier.
         /// </summary>
         /// <value>
-        /// The skill identifier.
+        /// The root identifier.
         /// </value>
-        public string SkillId { get; set; }
+        [JsonProperty("rootId")]
+        public int? RootId { get; set; }
 
         /// <summary>
-        /// Gets or sets the parent skill identifier.
+        /// Gets or sets the display order.
         /// </summary>
         /// <value>
-        /// The parent skill identifier.
+        /// The display order.
         /// </value>
-        public int? ParentSkillId { get; set; }
+        [JsonProperty("displayOrder")]
+        public int DisplayOrder { get; set; }
+
+        /// <summary>
+        /// Gets or sets the required skill level.
+        /// </summary>
+        /// <value>
+        /// The required skill level.
+        /// </value>
+        [JsonProperty("requiredSkillLevel")]
+        public int RequiredSkillLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user skill level.
+        /// </summary>
+        /// <value>
+        /// The user skill level.
+        /// </value>
+        [JsonProperty("userSkillLevel")]
+        public int UserSkillLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the levels set.
+        /// </summary>
+        /// <value>
+        /// The levels set.
+        /// </value>
+        [JsonProperty("levelsSet")]
+        public int LevelsSet { get; set; }
+
+        /// <summary>
+        /// Gets or sets the competency identifier.
+        /// </summary>
+        /// <value>
+        /// The competency identifier.
+        /// </value>
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the job function level.
+        /// </summary>
+        /// <value>
+        /// The job function level.
+        /// </value>
+        [JsonProperty("jobFunctionLevel")]
+        public int JobFunctionLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the topics.
+        /// </summary>
+        /// <value>
+        /// The topics.
+        /// </value>
+        [JsonProperty("topics")]
+        public IList<TopicViewModel> Topics { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the parent identifier.
+        /// </summary>
+        /// <value>
+        /// The parent identifier.
+        /// </value>
+        [JsonProperty("parentId")]
+        public int? ParentId { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -27,53 +104,16 @@
         /// <value>
         /// The name.
         /// </value>
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the skill level.
+        /// Gets or sets a value indicating whether this instance is selectable.
         /// </summary>
         /// <value>
-        /// The skill level.
+        ///   <c>true</c> if this instance is selectable; otherwise, <c>false</c>.
         /// </value>
-        public int SkillLevel { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance has children.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if this instance has children; otherwise, <c>false</c>.
-        /// </value>
-        public bool HasChildren { get; set; }
-
-        /*
-        //
-        // All these might be in another view model class.
-        //
-        public int RootId { get; set; }
-
-        public int DisplayOrder { get; set; }
-
-        public int RequiredSkillLevel { get; set; }
-
-        public int UserSkillLevel { get; set; }
-
-        public int LevelSet { get; set; }
-
-        public int CompetencyId { get; set; }
-
-        public int jobFunctionLevel { get; set; }
-
-        public IEnumerable<Topic> Topics { get; set; }
-
-        public IEnumerable<Question> Questions { get; set; }
-
-        public IEnumerable<Exercise> Exercises { get; set; }
-
+        [JsonProperty("isSelectable")]
         public bool IsSelectable { get; set; }
-
-        public string Priority { get; set; }
-
-        public string StartingFrom { get; set; }
-        */
     }
 }

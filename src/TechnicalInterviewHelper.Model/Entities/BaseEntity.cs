@@ -16,5 +16,14 @@
         /// </value>
         [JsonProperty("id")]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the document type identifier.
+        /// </summary>
+        /// <value>
+        /// The document type identifier.
+        /// </value>
+        [JsonProperty("documentTypeId")]
+        public DocumentType DocumentTypeId { get; set; }
     }
 }

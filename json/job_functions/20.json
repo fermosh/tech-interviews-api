@@ -1,0 +1,128 @@
+{
+	"id": "dea637cb-245d-7082-9e34-5cf57978ba9e",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 20,
+        "name": "Talent Acquisition",
+        "mnemonicBase": "TA",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Knowledge and Experience ",
+                    "cells": [
+                        "<p>Prior experience of 6 to 12 months is desirable in HR or TA. Understanding of recruitment or HR is desirable, but not mandatory as this is entry level.</p>",
+                        "<p>Prior total work experience of 6 to 18 months is desirable in Recruitment. Should have a fundamental understanding of TA as a function and should have been exposed to IT / Functional Recruitment. Understanding of recruitment market and sourcing candidates from Job sites and other alternative sources is desirable. Knowledge of headhunting / alternative sourcing techniques (e.g. Boolean search)</p>",
+                        "<p>At least 2 to 4 years of experience in IT recruitment industry. Should be capable of interviewing candidates and conduct pre-screening of resumes as per organizational std’s. Highly proficient and developing or has developed a comprehensive knowledge of job posting optimization, job board procurement, digital and non-digital employment marketing, comprehensive recruitment campaign planning, sourcing channel expansion and cost optimization.</p>",
+                        "<p>Should have TA Project Management skills 5 to 8 + years of experience in IT recruitment industry, preferably 2 to 3 years in a recruiting agency supporting sourcing. Expert in sourcing techniques and tools   Knowledge of competing companies Expert opinion on the current workforce landscape. Outstanding negotiation, presentation and interpersonal skills.</p>",
+                        "<p>Should have worked and designed on recruitment workflow for volume and niche skill hiring  Should have 8 to 15 years of recruitment experience across industry sectors. Preferably understanding of IT recruitment in Tier 1 companies or direct EPAM competitors        Global recruitment understanding is a must and should have worked in an agency or in house team Experience of the full life-cycle recruiting with significant direct sourcing and in-house recruiting experience. Volume Hiring is a must in Application Development (Java, .Net, C++, etc). Significant functional expertise in IT recruitment with a proven track record of delivering high quality hires with strong line manager and candidate satisfaction.</p>"
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge (Business and Contextual)",
+                    "cells": [
+                        "<p>Not expected to have or have basic IT-industry context on local market.</p><p> </p><p> </p>",
+                        "<p>IT-industry context on local market. Able to understand technology and to keep abreast of technology trends at client company. Good understanding of IT production process and key roles in IT production.</p>",
+                        "<p>Detailed knowledge of a specialist market such as BY, UA, RU or CIS, Western Europe, Americas, etc. Main sources of external (public) information about industry issues that may impact recruitment campaigns. Know how to understand/interpret basic IT production and performance information.</p>",
+                        "<p>Vision and goals of production organization. Internal and external (public) information related to production performance of EPAM and key competitors.</p>",
+                        "<p>Excellent understanding of the latest trends of IT industry and how they impact on TA strategy.  </p><p> </p><p> </p><p> </p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Talent Acquisition Assistant</p>",
+                        "<p>Recruiter</p><p>Talent Acquisition Researcher</p>",
+                        "<p>Senior Recruiter</p><p>Senior Talent Acquisition Researcher</p>",
+                        "<p>Lead Recruiter</p><p>Lead Talent Acquisition Researcher</p>",
+                        "<p>Principal Recruiter</p><p>Talent Acquisition Business Partner</p>"
+                    ]
+                },
+                {
+                    "name": "Role and Responsibility",
+                    "cells": [
+                        "<p>TA1.1 Performs routine tasks. Works within pre-defined set of guidelines. Limited impact on the group work. Expected to work effectively under supervision. Receives detailed instructions on all work. Reports by the completion of each step.</p><p>TA1.2 Expected to work independently and be a good team player. Plans and executes own work assignments defined by more senior team member. Contributes primarily to own work group. Direct impact on the group work.</p><p> </p>",
+                        "<p>Runs set of tasks within assigned process. Contributes to group work/project. Direct impact on the group work through the quality and volume of work provided and through advice and reviews. Routinely exercises independent judgment, analyzes and presents solutions, exercising problem solving.  Initiates and implements improvements/new tasks under senior team member supervision. Coordinates activities, define tasks; exercises considerable independent judgment and problem solving. Shares knowledge.</p>",
+                        "<p>Runs complex of tasks within defined professional area. Expected to be self-managed, work without supervision.  Provides expertise in challenging and brand new domain projects and tasks. Key contributor to work group/project. Direct impact on teams/projects designing processes, methods based on medium to long-term objectives. Acts as corporate culture delivery agent. Contributes to adjacent groups/teams. Supervises task execution by junior team members.</p>",
+                        "<p>Key contributor with a significant impact on teams/projects designing processes, methods based on long-term objectives. Impacts adjacent multiple areas/teams work. Designs road-map for future processes developments based on the company’s values taking into consideration all parties involved interests. Mentors and trains more junior colleagues and influences colleagues professional growth through own example.</p>",
+                        "<p>Executes function level complex project(s) through developing programs, approaches. Generates ideas for new initiatives, sets/impacts strategy and objectives for the function (region). Insures quality operation of processes. Influences colleague’s professional growth through guidance/coaching.</p><p> </p><p> </p><p> </p><p> </p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "Reliability and Trust",
+                    "cells": [
+                        "<p>TA1.1 Accountable for delegated tasks. Provides visibility of tasks done at level defined by supervisor. Able to follow instructions and be part of an established team.</p><p>TA1.2 Approaches senior team members in case of any unexpected circumstances. Able to follow instructions and be part of an established team.</p>",
+                        "<p>Responsible for own tasks completion and proper escalation in case of unexpected circumstances.  . Provides visibility of tasks done for all process internal and external stakeholders. Able to understand, follow and contribute into existing relationship within process stakeholders.</p>",
+                        "<p>Provides good reasoning to issues or risks identified.  Provides expert opinion how those issues can be addressed. Develops and contributes trustful and respectful long-term relationship within process stakeholders.</p>",
+                        "<p>Foresees possible risks and takes steps to mitigate or prevent them. Designs, develops and supports trustful and respectful long-term relationship within all process/organization decision-makers and own team.</p>",
+                        "<p>Develops strong and trusted partnership with organization’s leadership team aiming to elaborate key region level solutions. Engages company decision-makers into change management process. Plans process on risk reduction. Finds solutions and make concrete steps to prevent risks.</p>"
+                    ]
+                },
+                {
+                    "name": "Stake Holder Management Skills",
+                    "cells": [
+                        "<p>People interaction skills are desirable. Expected to use ‘active listening’ with feedback; communicates clearly and positively; generates empathy with others. Develops and maintains effective working relationships. Builds relationships with and influence a diverse audience.</p><p> </p>",
+                        "<p>Confident to influence colleagues and managers. Resilient and able to maintain relationships with key shareholders. Works closely with Hiring Managers to understand their needs in order to identify the right talent. Assist Hiring Managers with the drafting of exceptional job descriptions. Leads all sourcing initiatives and develop innovative sourcing strategies and managing recruiting campaigns.</p>",
+                        "<p>Responsible for developing and maintaining positive employee relations. Expected to advice and counsel managers in all aspects of TA. Expected to implement specific procedures for resolution of complex TA issues and/or conflicts, as well as is able to maintain optimal working relationships.</p>",
+                        "<p>Expected to improve specific procedures for resolution of complex TA issues and/or conflicts as well as is able to maintain optimal working relationships. Maintains statistics necessary to monitor the effectiveness of the TA campaigns and alerts top management to difficulties encountered.</p>",
+                        "<p>Develops and implements measures to increase team member’s morale, motivation and satisfaction, while reducing turnover. Acts as a mentor and role model to junior members and assist with delivering business strategy.</p><p> </p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2/C1</p>",
+                        "<p>B2/C1</p>",
+                        "<p>B2/C1</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Talent Acquisition Assistant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Recruiter",
+                "Talent Acquisition Researcher"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Recruiter",
+                "Senior Talent Acquisition Researcher"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Recruiter",
+                "Lead Talent Acquisition Researcher"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Principal Recruiter",
+                "Talent Acquisition Business Partner"
+            ]
+        }
+    ]
+}

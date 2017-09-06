@@ -1,0 +1,134 @@
+{
+	"id": "9659b176-83cc-b3ec-9c5b-783857762266",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 19,
+        "name": "IT Infrastructure Support",
+        "mnemonicBase": "IT",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Support and Maintenance Skills and Knowledge",
+                    "cells": [
+                        "<p>Elementary support skillset, basic understanding of computer operation and networking concepts.</p>",
+                        "<p>One year of relevant experience. Good knowledge of computer hardware and operation systems architectures, basic knowledge of networking concepts.</p>",
+                        "<p>3+ years of relevant experience. Deep knowledge in computer hardware, operating systems and networking domains, solid understanding of enterprise IT infrastructure systems.</p>",
+                        "<p>5+ years of relevant experience. Deep knowledge in computer hardware, operating systems and networking domains, complete understanding of enterprise IT infrastructure systems.</p><p>Good knowledge in some specialized areas (storage systems, server hardware, DC infrastructure systems, LAN cabling practices, etc.).</p>",
+                        "<p>5+ years of relevant experience. Excellent knowledge in computer hardware, operating systems and networking domains, complete understanding of enterprise IT infrastructure systems.</p><p>Excellent knowledge in almost every specialized area (storage systems, server hardware, DC infrastructure systems, LAN cabling practices, etc.).</p>"
+                    ]
+                },
+                {
+                    "name": "Support/Service Process Knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience of the ITSM (ITIL/ISO 20 000) processes</p>",
+                        "<p>Expected to be able to follow a defined  ITSM (ITIL/ISO 20 000) processes</p>",
+                        "<p>Expected to be able to follow and understand a defined ITSM (ITIL/ISO 20 000) process</p>",
+                        "<p>Expected to be able to follow, understand, and enhance a defined ITSM (ITIL/ISO 20 000) processes</p>",
+                        "<p>Expected to be able to follow, understand, actively influence and enhance a defined  ITSM (ITIL/ISO 20 000) processes</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Not expected to have  experience of dealing with documentation</p>",
+                        "<p>Able to read and understand technical and engineering documentation</p>",
+                        "<p>Able to read and understand technical and engineering documentation</p>",
+                        "<p>Able to read and understand technical and engineering documentation; able to create technical documentation;</p>",
+                        "<p>Able to read and understand technical and engineering documentation; able to create high-quality technical documentation, system design documentation, engineering documentation.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior IT Infrastructure Support Engineer</p>",
+                        "<p>IT Infrastructure Support Engineer</p>",
+                        "<p>Senior IT Infrastructure Support Engineer</p>",
+                        "<p>Lead IT Infrastructure Support Engineer</p>",
+                        "<p>Chief IT Infrastructure Support Engineer</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision</p>",
+                        "<p>Expected to resolve standard support cases and typical incidents effectively without direct supervision</p>",
+                        "<p>Expected to be self-managing, effectively support IT services delivery in his responsibility area without supervision</p>",
+                        "<p>Expected to be self-managing, effectively support IT services delivery in his responsibility area without supervision; take technical responsibility for major infrastructure changes implementation, complex incidents and problems resolution</p>",
+                        "<p>Expected to be self-managing, effectively support IT services delivery in his responsibility area without supervision; take technical responsibility for major infrastructure changes implementation, complex incidents and problems resolution</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Expected to possess general sense of responsibility for the quality of his work; minimize reopen rate of his tasks</p>",
+                        "<p>Expected to possess general sense of responsibility for the quality of his work; minimize reopen rate of his tasks</p>",
+                        "<p>Expected to deliver high quality service equally considering best practices of infrastructure support and the specifics of the requestor’s needs</p>",
+                        "<p>Expected to be a role model for his colleagues delivering excellent quality service</p>",
+                        "<p>Expected to be a role model for his colleagues delivering excellent quality service</p>"
+                    ]
+                },
+                {
+                    "name": "Communication skills",
+                    "cells": [
+                        "<p>Not special requirements</p>",
+                        "<p>Expected to be able to support/drive technical discussions</p>",
+                        "<p>Expected to be able to participate in phone conferences; be involved in workshops and presentations</p>",
+                        "<p>Expected to be able to participate in phone conferences; drive the presentations and workshops; work with customer without supervision</p>",
+                        "<p>Expected to be able to participate in phone conferences; drive the presentations and workshops; work with customer without supervision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior IT Infrastructure Support Engineer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "IT Infrastructure Support Engineer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior IT Infrastructure Support Engineer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead IT Infrastructure Support Engineer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Chief IT Infrastructure Support Engineer"
+            ]
+        }
+    ]
+}

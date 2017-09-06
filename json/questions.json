@@ -1,0 +1,715 @@
+[
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 1207,
+      "name": "Unit and API Testing (White box)"
+    },
+    "body": "What is Unit Testing and what it is for?",
+    "answer": null,
+    "id": "86c405fb-9744-42f5-a1ac-f096f701b36b"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 1207,
+      "name": "Unit and API Testing (White box)"
+    },
+    "body": "could you provide some Unit Testing tools?",
+    "answer": null,
+    "id": "920c273e-3c90-4570-b93a-ef20ab41bf7e"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 1207,
+      "name": "Unit and API Testing (White box)"
+    },
+    "body": "How do you implement the dependecy injection in Unit Testing?",
+    "answer": null,
+    "id": "7d4f9f40-155a-48c2-9d4f-6ae440077f16"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 58,
+      "name": ".NET Web Development"
+    },
+    "body": "What is Microsoft ASP.NET?",
+    "answer": null,
+    "id": "f4e4f948-ec3a-44e3-ae15-fd524656aae7"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 116,
+      "name": "ASP.NET Webforms Development"
+    },
+    "body": "What is the difference between view state and a hidden field?",
+    "answer": null,
+    "id": "75d2be4d-198b-4507-8525-96001408d74a"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 116,
+      "name": "ASP.NET Webforms Development"
+    },
+    "body": "What Is The Difference Between ViewState and Session State?",
+    "answer": null,
+    "id": "f7ffc03e-5898-4267-b53e-75c31bc83315"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 116,
+      "name": "ASP.NET Webforms Development"
+    },
+    "body": "What is Postback? Why do we use that?",
+    "answer": null,
+    "id": "49c384a4-6b2d-4309-8264-f93d1309db08"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 116,
+      "name": "ASP.NET Webforms Development"
+    },
+    "body": "Where is the View State data stored?",
+    "answer": null,
+    "id": "a19c1a41-6396-4b74-bb10-d2b1cda00888"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What is MVC (Model View Controller)?",
+    "answer": null,
+    "id": "5abc4e9c-93b6-491a-9105-a72ca4d13d5a"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What are the benefits of using MVC?",
+    "answer": null,
+    "id": "80e5f496-e7f6-4eec-8be9-0047d8a913f4"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "what is the flow or pipeline of MVC?",
+    "answer": null,
+    "id": "bb6ab652-18b3-4769-9d4c-cd6a77d0d533"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What are partial views in MVC?",
+    "answer": null,
+    "id": "d7c4141e-7319-4d4d-973d-3fb29c2a1df1"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "Can we map multiple URL’s to the same action?",
+    "answer": null,
+    "id": "8c9debc1-c4a0-4146-83ca-3841afd71a11"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What is a view engine?",
+    "answer": null,
+    "id": "ca780b11-0e32-45ab-8371-b6d31a546d5f"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What is Razor in MVC?",
+    "answer": null,
+    "id": "89dc53d0-95aa-4dc1-9883-5f46fec94fba"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What are the different types of results in MVC?",
+    "answer": "Note: It’s difficult to remember all the types. \nBut some important ones you can remember for the interview are ActionResult, ViewResult, and JsonResult. Below is a detailed list for your interest:\n\nThere 12 kinds of results in MVC, at the top is the ActionResult class which is a base class that can have 11 subtypes as listed below:\n\n1. ViewResult - Renders a specified view to the response stream\n2. PartialViewResult - Renders a specified partial view to the response stream\n3. EmptyResult - An empty response is returned\n4. RedirectResult - Performs an HTTP redirection to a specified URL\n5. RedirectToRouteResult - Performs an HTTP redirection to a URL that is determined by the routing engine, based on given route data\n6. JsonResult - Serializes a given ViewData object to JSON format\n7. JavaScriptResult - Returns a piece of JavaScript code that can be executed on the client\n8. ContentResult - Writes content to the response stream without requiring a view\n9. FileContentResult - Returns a file to the client\n10. FileStreamResult - Returns a file to the client, which is provided by a Stream\n11. FilePathResult - Returns a file to the client",
+    "id": "84565e75-fba0-4272-88cd-b6e8a0c2fba8"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What is the difference between ActionResult and ViewResult?",
+    "answer": null,
+    "id": "de8d3d40-e52b-4566-b3a3-06a0d5c7324e"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "How or where can you configure the routing in MVC?",
+    "answer": null,
+    "id": "a81eb723-5b83-41fe-9e86-ccb1e7611e08"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What are the different types of filters in MVC?",
+    "answer": "- Authorization\n- Exception\n- Action\n- Result",
+    "id": "3919553f-830a-4e15-be2d-47e8723f716e"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 58,
+      "name": ".NET Web Development"
+    },
+    "body": "What is Authentication and Authorization?",
+    "answer": null,
+    "id": "1ac5b4f8-08ab-4eb3-80f1-af4638927c77"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What is a model binder?",
+    "answer": null,
+    "id": "1dded992-d8c7-4086-b2f7-0fd97cb68265"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "How does MVC handles XSS(Cross Site Security|scripting)?",
+    "answer": null,
+    "id": "a040732b-5c58-4e7a-81cc-db03aca01a19"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 117,
+      "name": "ASP.NET MVC Development"
+    },
+    "body": "What do you know about bundling and minification in MVC?",
+    "answer": null,
+    "id": "761d97bc-7a25-4cb8-b058-101c8c3b3670"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 58,
+      "name": ".NET Web Development"
+    },
+    "body": "What is an HTTP Module?",
+    "answer": null,
+    "id": "bb7a6cc9-5a79-4a31-904a-f38e00bf3e26"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 58,
+      "name": ".NET Web Development"
+    },
+    "body": "What is an HTTP Handler?",
+    "answer": null,
+    "id": "70a17b88-fe05-43e8-9d6d-baeca0bd6a36"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "What is ASP.NET Web API?",
+    "answer": "ASP.NET Web API is a framework that simplifies building HTTP services for broader range of clients (including browsers as well as mobile devices) on top of .NET Framework.",
+    "id": "643e6b62-a207-4a43-8faf-50d77c10f95c"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "What is a RESTful API?",
+    "answer": "A RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data.",
+    "id": "b678728d-905c-4705-b076-17630a9ad993"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "What are the different HTTP methods for RESTful services and what they are used for?",
+    "answer": "POST - Create\nGET - Read\nPUT - Update/replace\nPATCH - Update/Modify\nDELETE - Delete",
+    "id": "87080989-7437-47d3-aa48-85b287a23598"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "How to Restrict Access to Web API Method to Specific HTTP Verb?",
+    "answer": null,
+    "id": "9f43c9c1-d3a9-4021-bcfc-9122fd253cac"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "What is the difference between a Controller(MVC) and an API Controller?",
+    "answer": "Use Controller to render your normal views. ApiController action only return data that is serialized and sent to the client.\nApiControllers are specialized in returning data.",
+    "id": "0d013927-44e5-4488-b46f-5cfceab86270"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "How Can We Provide an Alias Name for ASP.NET Web API Action?",
+    "answer": "Use a decorator:\n[ActionName(\"Alias\")]",
+    "id": "61600f6d-f2f1-43f7-b916-abb712fb1d58"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 123,
+      "name": ".NET RESTful services and WebAPI"
+    },
+    "body": "Can we return view from Web API?",
+    "answer": "No :-)",
+    "id": "c9defbe0-1504-4778-8a55-c4ac52c36d4e"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What are the difference between clustered and a non-clustered index?",
+    "answer": "A clustered index: When a clustered index is created on a table, the data pages are arranged accordingly based on the clustered index key. There can only be one Clustered index on a table Example: Primary Key  \n\nA non clustered index: In a Non-Clustered index, the leaf level page does not contain data pages instead it contains pointers to the data pages. There can be a multiple non-clustered indexes on a single table.",
+    "id": "7e278247-af6f-4a14-8d22-49e448fbc3da"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "How many Clustered and Non-Clustered Indexes can be created on a single table?",
+    "answer": "Table can contain a single Clustered Index at any time,  SQL Server 2012 supports up to 999 Non-Clustered Indexes.",
+    "id": "218da62d-f031-4146-a8ab-de2cbc14defb"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What are constraints? What are the different constraints in SQL Server?",
+    "answer": "\nConstraints are used to enforce and maintain database Integrity  some of constraints within SQL server \n\nUnique – to enforce the table column to have only unique values with only one Null\nDefault – to enforce default value on table column \nCheck- to enforce predefined value Set \nPrimary Key –    \nForeign Key – to enforce data integrity (parent child,) \nNot Null Constraints – to enforce Mandatory ",
+    "id": "b18a2ecb-1f7c-43ad-abb9-37b86b00a320"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is a primary key?",
+    "answer": null,
+    "id": "357e6756-121f-403a-a91a-7de91e055363"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is a foreign key?",
+    "answer": "Foreign keys are cnstraints to ensure data integrity and a manifestation of the relationship between tables",
+    "id": "d2650066-ce05-4e94-8b1a-dc474578d792"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is an Identity?",
+    "answer": "Identity (or AutoNumber) is a column that automatically generates numeric values. A start and increment value can be set at the creation time of the table column.",
+    "id": "c6bb3288-a776-4287-9427-84c3b3dbb77d"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What's the difference between a primary key and a unique key?",
+    "answer": "Primary key does not accept the duplicate values and null values. The unique key does not accept the duplicate value but it accept the null values (only one value of the unique column can have null value)",
+    "id": "783f42f5-c323-4cde-a63f-13c893afc929"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What are the different type of table joins possible within SQL server ?",
+    "answer": "Inner Joins: This join returns rows when there is at least one match in both the tables\n\nEx :Select *from Table1 t1 INNER JOIN Table2 t2 on t1.COL1 =t2.COL1\n\nOuter Join: There are three different Outer Join methods\n\n1. Left outer Joins - This join returns all the rows from the left table in conjunction with the matching rows from the right table. If there are no columns matching in the right table, it returns NULL values \nEx: Select *from Table1 t1 left  JOIN Table2 t2 on t1.COL1 =t2.COL1\n\n2. Right Outer Joins: This join returns all the rows from the right table in conjunction with the matching rows from the left table. If there are no columns matching in the left table, it returns NULL values \nEx: Select *from Table1 t1 Right JOIN Table2 t2 on t1.COL1 =t2.COL1\n\n3. Full Outer Join: This join combines left outer join and right outer join. It returns row from either table when the conditions are met and returns null value when there is no match\nEx: Select *from Table1 t1 FULL OUTER JOIN Table2 t2 on t1.COL1 =t2.COL1\n\n4. Cross Join: This join is a Cartesian join that does not necessitate any condition to join. The resultset contains records that are multiplication of record number from both the tables.\nEx: SELECT t1.*,t2.* FROM Table1 t1 CROSS JOIN Table2 t2",
+    "id": "b2789444-2a04-4168-9d2a-101aaf82fd62"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is the difference between DELETE and Truncate ?",
+    "answer": "DELETE TABLE is a logged operation, so the deletion of each row gets logged in the transaction log, which makes it slow. TRUNCATE TABLE also deletes all the rows in a table, but it won't log the deletion of each row, instead it logs the deallocation of the data pages of the table, which makes it faster.",
+    "id": "e1d8abe4-2232-4202-9ee4-7dd169c7c76f"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is the functionality of UNION in a T-SQL statement?",
+    "answer": "UNION Operator combines data from two or more result sets and displays one final result set. The columns in the result sets should match in all of the result sets. UNION does not display duplicate rows (if there are any). ",
+    "id": "e5952435-86d0-44e0-9e0a-4cf2a186b489"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is the functionality of UNION ALL in a T-SQL statement?",
+    "answer": "UNION ALL operator combines data from two or more result sets and displays one final result set including duplicate records. The columns in the result sets should match in all of the result sets.",
+    "id": "bad61107-b9ad-4881-b35d-d82f2943d118"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is a trigger in SQL Server?",
+    "answer": "Triggers allow us to execute a batch of SQL code whenever the insert, update or delete command is executed against a specific table. They executed automatically on the insert, delete and update operation.",
+    "id": "889b2bbf-eeb0-4374-b076-ee0cdce7084f"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "How many type of trigger are there in SQL server?",
+    "answer": "There are four types of triggers. \n\n1. Insert \n2. Delete \n3. Update \n4. Instead of",
+    "id": "59703ad1-b57f-4c6b-86ff-33c42c7835f2"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "Define stored procedure?",
+    "answer": "Stored procedure is a set of SQL commands that have been complied and stored on the database sever. They can be used in the code as and when required since hey stored. They need not be complied over and over again.",
+    "id": "78dfb7ae-b3f9-4338-b2fd-0fb780361a86"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What are the purposes and advantages stored procedure?",
+    "answer": "\nPurposes and advantages of stored procedures:\n\n• Manage, control and validate data \n• It can also be used for access mechanisms \n• Large queries can be avoided \n• Reduces network traffic since they need not be recompiled \n• Even though the stored procedure itself may be a complex piece of code, we need not write it over and over again. Hence stored procedures increases reusability of code \n• Permissions can be granted for stored procedures. Hence, increases security.",
+    "id": "ca19adb8-2f6a-4717-8c2a-5f7d7ce97dd4"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "When would you use stored procedure or functions?",
+    "answer": "It is best to go for a function when a value needs to be computed but a stored procedure is useful when you need to execute business logic",
+    "id": "c3c865d5-3737-4a1f-805b-a9a50d436639"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "Expain ACID (Atomicity, Consistency, Isolation, Durability)",
+    "answer": "Atomicity: is an all-or-none proposition.\nConsistency: guarantees that a transaction never leaves your database in a half-finished state.\nIsolation: keeps transactions separated from each other until they’re finished.\nDurability: guarantees that the database will keep track of pending changes in such a way that the server can recover from an abnormal termination.",
+    "id": "49cc3e1e-584d-4c92-abbd-ad268b5621a1"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is a query execution plan?",
+    "answer": "The query execution plan is a useful tools offered by SQL Server. It describes the steps and order of a SQL query during executions. After that a DBA can decide which part of the query is slow. SQL Server can create execution plans in two ways:\nActual Execution Plan – (CTRL + M) – It is created after execution of the query and contains the steps that were performed\nEstimated Execution Plan – (CTRL + L) – It is created without executing the query and contains an approximate execution plan",
+    "id": "41537ea4-0713-4be2-b489-c7639c505a36"
+  },
+  {
+	"documentTypeId": 4,
+    "competency": {
+      "id": 13,
+      "name": "Azure Development"
+    },
+    "skill": {
+      "id": 273,
+      "name": "MS SQL Server DB Development"
+    },
+    "body": "What is SQL Profiler?",
+    "answer": "SQL Profiler is a graphical tool that is available with SQL Server that allows system administrators to monitor events in an instance of Microsoft SQL Server. It can perform various significant tasks such as tracing what is running under the SQL Server Engine’s, and finding out how queries are resolved internally and what scripts are running to accomplish any SQL command.",
+    "id": "37a2bcb7-fcb7-44a7-9626-5c23c43c1698"
+  }]

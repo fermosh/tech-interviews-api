@@ -1,0 +1,156 @@
+{
+	"id": "400afcd9-f3ee-5ee2-5ae2-9ef10dbdb755",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 9,
+        "name": "Delivery Management",
+        "mnemonicBase": "DM",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience ",
+                    "cells": [
+                        "<p>Expected to have at least 5 years of IT experience and at least 2+ years in Lead Developer/Team Lead or PM roles.</p><p> </p><p>Proven track record of managing delivery engagements for teams of 3-30+ FTEs. Experience in project governance, communication with the end client and handling delivery end-to-end. Strong, proven experience in software engineering with ability to design and deliver sustainable solutions. </p><p>Experience in the design and implementation of continuous integration/ delivery/ deployment setups. </p><p>Skilled in communication, handling conflicts and taking on responsibility.</p>",
+                        "<p>Expected to have at least 8 years of experience in IT and at least 3+ years in positions of Delivery/Team Lead, Coordinator, Solution / Systems / Enterprise Architect, Delivery/Project/Program Manager.</p><p> </p><p>All prev. stated, along with a proven track record in managing delivery engagements end-to-end on teams averaging 20-50+ FTEs in total, or connected with high visibility and high business impact projects. Experience in governing project delivery across the board of all stakeholders. Strong in handling complicated engineering issues, assuring quality and timely delivery. Experience and up-to-date knowledge of design and implementation of end-to-end solutions with continuous delivery/deployment pipelines.</p><p>Experience with outcome based setups, delivering on hard commitments and fixed timelines.</p>",
+                        "<p>Expected to have at least 10 years in IT and at least 5+ years in positions of a Project / Program Manager, Coordinator, Solution / Systems / Enterprise Architect; Delivery Manager.</p><p> </p><p>All prev. stated, along with a proven track record of managing delivery of an organization of 40-100+ FTEs, or engagements of a smaller size but high business impact. Experience in managing a complete set of activities related to the project delivery in a company such as lead management, qualification for the bid/financing, staffing, client management, delivery and execution governance. Experience in running multiple delivery streams/clients, assuring proper governance on the top management level.</p><p>Hands on experience in technology and software engineering practices with ability to supervise and suggest competitive technical decisions and assure a winning mix of delivery practices applied on the project. Business savvy and able to oversee delivery from financial, sourcing, development and business point of view.</p>",
+                        "<p>Expected to have at least 12 years in IT and 8+ years in delivery management.</p><p> </p><p>All prev. stated, along with a proven track record of managing delivery of organization of 70-150+ FTEs, or engagements of a less size, but high business impact. Skill in forming vision, coherent approach to delivery among the organization. Proven track record in creating, representing and landing best delivery concepts and pushing through organization from idea to inception and productive use.</p>",
+                        "<p>Expected to have at least 15+ in IT and 10+ years in delivery management.</p><p> </p><p>All of prev. stated, along with the experience of management large organizations fully owning the delivery aspects of international operations for medium and large clients. Skill in managing business development including roadshows, client engagement strategies as well as in forming enterprise vision of delivery practices and approaches. Recognition within the company as a true leader and true delivery ambassador for the enterprise.    </p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Competencies",
+                    "cells": [
+                        "<p>Able to analyze, design and deliver a technical solution to the client. </p><p>Can read and comprehend the code, architecture and technical peculiarities of the technical solution respectively to the business objectives. Able to tailor the project process based on a real need. Is a hands on practitioner of selected, or multiple industry recognized software development and service delivery methodologies including, but not limited to Agile, Lean, Waterfall, ITIL(ITSM) etc.</p><p>Strong in effort estimation, planning and scheduling delivery. Have a deep, structural knowledge of the best engineering practices and the ability to apply them on the ground. </p><p>Able to dive deep into problem areas, including the code, processes and provide support for the delivery to resolve those problems. </p><p>Deliver software solutions that can start generating business value in the production.</p>",
+                        "<p>All prev. + able to advocate, negotiate, tailor and apply best engineering processes.</p><p>Able to oversee business end of solution, apply best practices and deliver the most possible value out of the effort.</p>",
+                        "<p>All prev. + able to dive deep into complex issues of the production delivery, run the root cause analysis, invent the solution and push it through all steps necessary to deliver. </p><p>Skilled to design and bring the proper methodology, process and technology on the account. </p><p>Able to take over the responsibility for the delivery on the effort. Act as a single contact point on delivery related matters.</p><p> </p>",
+                        "<p>All prev. + ability to perform on the level, assuring world-class services are delivered to the clients along the board. </p><p>Build and extend cooperative delivery relations within organization. Have a competency of managing delivery organization on every step including landing new business, sustaining development and improving quality.</p><p> </p>",
+                        "<p>All prev. + outstanding skill and experience in delivery, recognized by the industry and on organization level. </p><p>Applying wide range of approaches and techniques to deliver the end product to the end customer including knowledge of organization, business landscape, industry trends and competition on the market. </p><p>Able to advise top management on business opportunities, frameworks and the setups for the best possible business outcome for the company.</p><p>True visionary of the delivery organization, forming the values, principles and approaches assuring the world standards of delivery in organization.</p>"
+                    ]
+                },
+                {
+                    "name": "Responsibility",
+                    "cells": [
+                        "<p>Drives project(s), sub-project(s) or streams with average team size of 10+ FTEs. Responsible for project governance, handling delivery end-to-end, communication with the customer and handling all the project related delivery matters. </p><p>Takes a proactive part in suggesting technologies, tools and approaches. Setting up the project from the ground up, advocates the best engineering practices and tools for effective use. Acts at his best ability to deliver and is an active point of responsibility on delivery for the company and the client.</p><p>Contributes to the presales: the estimations, architecture reviews, and documentation.</p><p>Contributes best practices & processes as well as delivery management knowledge base to the company. </p><p>Responsible for staffing matching people for successful project delivery. Proactively supervising project coordinators, team leaders, business analysts and technical staff in terms of delivery. Facilitates reporting including billing/resource allocation.</p>",
+                        "<p>All prev. + drives engagement(s) of the average size of 30+ FTEs in total. Governing the delivery across stakeholders, handling complicated engineering issues, making sure the design, code and overall solution is of top-notch quality. Is completely responsible for the overall customer experience in terms of delivery.</p><p>Responsible for developing and executing the succession plan of the projects on their account. </p><p>Takes a proactive role in contributing to the best delivery management practices and processes within the company.</p><p>Participates in the assessment committees for M1/M2 during promotion campaigns as a committee expert. </p><p>Participates in mentoring and talent development programs for delivery leads and managers.</p>",
+                        "<p>All prev. + drives engagement(s) with 50+ FTEs in total. Takes responsibility on specific leads, passing all the stages including qualification, winning the bid/financing, staffing, managing the client expectations and delivery. Is responsible for setting up the project governance structure and is an active ambassador of the delivery quality for the setup. Is taking proactive part in governance, serves as a point of escalation for the client and EPAM top management.</p><p>Manages the delivery governance for strategic accounts (specified by particular EPAM Solution Practices or BU) and major contribution into company best delivery management practices and processes.</p><p>Participates in the assessment committees for developers in their primary technology domain during every promotion campaign in the committee expert role.</p>",
+                        "<p>All prev. + drives program(s)/project(s)/organization with more than 70 FTEs onboard. Assuring top-level project governance, responsible for the top management awareness and guidance of the project or organization. Is responsible for embracing the best engineering delivery practices, from inception until production adoption in the organization. Takes over the leadership in organization on strategic delivery efforts.</p><p>Supports and supervises of the GDO/BU initiatives.</p>",
+                        "<p>All prev. + drives organization with more than 150 FTEs, acting as a single point of responsibility for all of the delivery. </p><p>Responsible for handling the client development strategies, winning new business for organization or location, forming proper delivery vision among employees and organization.</p><p>Is responsible for the company’s image in front of the prospect clients. </p><p>Taking an active part in a business development and winning new business. Support and supervise GDO/BU initiatives.</p>"
+                    ]
+                },
+                {
+                    "name": "Management Competencies",
+                    "cells": [
+                        "<p>Is able to adopt to changes and ambiguity, new ideas and approaches. </p><p>Focuses and guides others in accomplishing work operations and objectives. Able to create a learning environment and manage people performance in production setups.</p><p>Identifies problems, actively works to resolve issues by focusing on listening and understanding. Escalates timely if help is needed. Recognizes and understands the agenda and perspective of others and balances the interests of all parties involved.</p>",
+                        "<p>All prev. + able to provide a coherent plan on the delivery including, but not limited to planning, scheduling and tracking delivery. </p><p>Able to handle conflicts, people and technology. </p><p>Able to apply best processes and methodologies, tailor them and run on the project. </p><p>Possess sufficient knowledge to run the outcome-based setups with hard commitment to the timeline, quality and budget.</p>",
+                        "<p>All prev. + have a coherent vision on the local company business, market and client business. Able to consult the client on software methodology, cooperation patterns and delivery plans. </p><p>Able to manage the customer relations in terms of delivery, take a lead role in setting up a company and client relations governance. </p><p>Possess advanced knowledge in management of outcome-based setups, assuring best processes, practices and approaches are efficiently applied to delivery</p>",
+                        "<p>All prev. + be connected to the business side of delivery, responsible for the end-to-end collaboration, and management of relations. </p><p>True visionary of the organization on the matters of outcome based setups, with both experience and skill to perform ground-up designing of complex delivery setups.</p>",
+                        "<p>All prev. + true leader in delivery management of the organization. Holder of the best practices. Advisor and mentor to all delivery engagements. </p><p>Facilitator and owner, accountable for the success of the delivery, starting with winning the client and ending with handling the worst-case scenarios materialized in the real life.</p>"
+                    ]
+                },
+                {
+                    "name": "Personal Competences",
+                    "cells": [
+                        "<p>Strong in all aspects of leadership for the team/effort. A role model and a doer type of personality. Attentive to knowledge details and open for new knowledge. Strives for being expert in technology and domain skills. Strong personality. Able to accept other point of view. Willing to make an extra mile to deliver. Able to build trust in a team and motivate. </p><p>Conveys information clearly and concisely to groups or individuals either verbally or in writing.</p><p><a href=\"https://kb.epam.com/display/EPMLVL/3.+Delivery+Management+-+Personal+Competencies\">Delivery Management - Personal Competences</a></p>",
+                        "<p>All prev. + able to revitalize the teams with the proper management approaches on a long going setups. Managing people of a highly competitive nature under umbrella of one delivery. Strong in conflict management on both – team and client aspects of delivery. </p><p>Exceptional communicator.</p><p><a href=\"https://kb.epam.com/display/EPMLVL/3.+Delivery+Management+-+Personal+Competencies\">Delivery Management - Personal Competences</a></p>",
+                        "<p>All prev. + advanced presentation skills, able to impress the clients and the organization with the level of thoroughness and approach to delivery. Able to stand for the team during the hard times, handling escalations, expert in a conflict solving, able to bring very fuzzy ideas and vision to a solid setup. Able to mentor and own delivery for multiple clients, resilient for the stress. </p><p>Possess entrepreneurial skills in the area of services, and business development. Able to turn opportunity into real business.</p><p><a href=\"https://kb.epam.com/display/EPMLVL/3.+Delivery+Management+-+Personal+Competencies\">Delivery Management - Personal Competences</a></p>",
+                        "<p>All prev. + ability to absorb, consult and mentor strong organization setups. Leadership that is being recognized and assured by the integrity, and a strong desire and ability to influence people, as well as business for the best outcome.</p><p><a href=\"https://kb.epam.com/display/EPMLVL/3.+Delivery+Management+-+Personal+Competencies\">Delivery Management - Personal Competences</a></p>",
+                        "<p>All prev. + a true advocate of the best delivery approaches, great mind taking things from a very fuzzy business idea to the solid, structured, and feasible setup. Be able to absorb the business values, vision, and spirit of the highly demanding clients turning into advising, handling and management of the opportunities and deliveries to the best possible outcome for the client and EPAM. </p><p>Able to act at the very best of abilities of the organization to deliver outstanding world class services.</p><p><a href=\"https://kb.epam.com/display/EPMLVL/3.+Delivery+Management+-+Personal+Competencies\">Delivery Management - Personal Competences</a></p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Delivery Manager</p>",
+                        "<p>Delivery Manager</p>",
+                        "<p>Senior Delivery Manager</p>",
+                        "<p>Director, Delivery Management</p><p>Director, Technology Solutions</p>",
+                        "<p>Senior Director, Delivery Management</p><p>Senior Director, Technology Solutions</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Software Developer, Team Leader, Delivery Lead, Solution Architect, Project Coordinator, Project Manager.</p>",
+                        "<p>Delivery Lead, Delivery Manager, Solution Architect, Project Coordinator, Project Manager, Consultant.</p>",
+                        "<p>Delivery Lead, Delivery Manager, Project Manager, Solution Architect, Account Manager, Project Supervisor, Consultant.</p>",
+                        "<p>Delivery Manager, Program Manager, Project Manager, Account Manager, Project Supervisor, Client Partner, Consultant.</p>",
+                        "<p>Delivery Manager, Program Manager, Account Manager, Project Supervisor, Client Partner, Consultant, Project Sponsor, Sales Executive.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to perform within the defined zone of responsibility. Supervised on aspects of strategic and business related development/communication or other nature of the business critical matters. Trusted to oversee the development, and technical aspects of the designated delivery.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>",
+                        "<p>Expected to work independently without direct supervision. Consult on aspects of strategic and business related development/communication or other nature of the question with the delivery organization.</p><p>Trusted to oversee the development and technical aspects of delivery as well as sourcing of people, methodologies, and processes of the setups. </p>",
+                        "<p>The prev. + expected to work independently and act as a point of responsibility over delivery. </p><p>Trusted to oversee the development and technical, human resource and process aspects of the delivery as well as client relations in terms of delivery management.</p><p> </p>",
+                        "<p>The prev. + trusted by the top management to own the delivery and manage the client relations, relations within the group of company business and/or production divisions, setting up collaboration framework and delivery approaches for the enterprise.</p>",
+                        "<p>The prev. + trust to act a visionary of delivery for defined practice, unit or organization.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Handles direct line communication with the client on behalf of their team or project deliverables.</p>",
+                        "<p>All prev. + proactively manages client request on delivery targets, resourcing. Handles direct customer relations, on the matters of delivery, team performance and the project timelines, schedules.</p>",
+                        "<p>All prev. + supervising engagements on delivery matters. Fully involved into approach to generate additional value for the client and taking ownership of potential upsell as well as new business development.</p>",
+                        "<p>All prev. + defines strategies as well as approaches for delivery for the business. Fully involved into governance of the deliverables. </p>",
+                        "<p>Is a key contact point on delivery matters within organization and the area of responsibility usually covering GEO, Solution Practice or Business Vertical within the company. Is on track communicating with TOP management, top clients and top businesses.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B2</p>",
+                        "<p>B2+</p>",
+                        "<p>B2+</p>",
+                        "<p>C1</p>",
+                        "<p>C1</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Delivery Manager"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Delivery Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Delivery Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Director, Technology Solutions",
+                "Director, Delivery Management"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Director, Technology Solutions",
+                "Senior Director, Delivery Management"
+            ]
+        }
+    ]
+}

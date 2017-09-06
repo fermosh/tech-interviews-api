@@ -8,12 +8,12 @@
     public class InterviewViewModel
     {
         /// <summary>
-        /// Gets or sets the position.
+        /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
-        /// The position.
+        /// The competency identifier.
         /// </value>
-        public PositionViewModel Position { get; set; }
+        public int CompetencyId { get; set; }
 
         /// <summary>
         /// Gets or sets the skills.
@@ -21,7 +21,15 @@
         /// <value>
         /// The skills.
         /// </value>
-        public IEnumerable<SkillForInterviewViewModel> Skills { get; set; }
+        public IEnumerable<SkillInterviewViewModel> Skills { get; set; }
+
+        /// <summary>
+        /// Gets or sets the questions.
+        /// </summary>
+        /// <value>
+        /// The questions.
+        /// </value>
+        public IEnumerable<QuestionViewModel> Questions { get; set; }
 
         /// <summary>
         /// Gets or sets the exercises.

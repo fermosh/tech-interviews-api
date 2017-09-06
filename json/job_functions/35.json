@@ -1,0 +1,144 @@
+{
+	"id": "d1c5bc1b-e474-ed0e-651b-d0cf70a097c2",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 35,
+        "name": "Data Analysis",
+        "mnemonicBase": "DA",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Data Analysis Experience and Knowledge",
+                    "cells": [
+                        "<p>Math/numerical background, good analytical skills, knowledge and understanding of basic data analysis concepts.</p>",
+                        "<p>At least 1 year of relevant experience</p>",
+                        "<p>At least 3 years of relevant experience; ability to interpret and report results of analyses; experience working with very large data sets; working knowledge of data exploration and analysis techniques.</p>",
+                        "<p>At least 7 years of relevant experience; experience working with a variety of information systems and data files, including large and complex files; ability to interpret and report results of analyses, provide business recommendations; strong knowledge of various data exploration and analysis techniques; ability to coach and train others.</p>",
+                        "<p>At least 10 years of relevant experience; experience working with a variety of information systems and data files, including large and complex files; ability to interpret and report results of analyses, provide business recommendations; expert knowledge of various data exploration and analysis techniques; ability to coach and train others</p>"
+                    ]
+                },
+                {
+                    "name": "Modeling/Framework Experience and Knowledge",
+                    "cells": [
+                        "<p>Basic ability to build models or analytical frameworks, develop hypotheses and design experiments </p><p> </p>",
+                        "<p>At least 1 year of relevant experience; working knowledge and understanding of  model/framework creation and hypotheses testing</p>",
+                        "<p>At least 3 years of relevant experience; experience and knowledge of various framework/modeling and hypotheses testing techniques and methods; ability to  build models or frameworks properly reflecting different aspects of business problems</p>",
+                        "<p>At least 7 years of relevant experience; advanced  model/framework development and implementation skills; extensive knowledge of complex or advanced techniques; ability to think out of the box; ability to provide consultative support.</p>",
+                        "<p>At least 10 years of relevant experience;</p><p>exceptional model/framework development and implementation skills; extensive knowledge of complex or advanced techniques; ability to think out of the box; ability to design business domain solutions and change processes based on modeling results.</p>"
+                    ]
+                },
+                {
+                    "name": "Analysis Tools Knowledge",
+                    "cells": [
+                        "<p>MS Excel experience, exposure to other job-specific tools.</p>",
+                        "<p>MS Excel advanced knowledge (Analysis Toolpack, Pivot tables, graphs), working knowledge of other job-specific tools, potentially including SQL, statistical packages (SAS, SPSS, R), data visualization, etc.</p>",
+                        "<p>MS Excel advanced knowledge, proficiency with other job-specific tools, ability to select appropriate tools for the job.</p>",
+                        "<p>Extensive knowledge of job-specific tools, including the ability to train and mentor junior staff in all use, ability to use job-specific tools to process big data, ability to evaluate and select appropriate tools for the job.</p>",
+                        "<p>Extensive knowledge of job-specific tools, including the ability to train and mentor junior staff in all use, ability to use job-specific tools to process big data, ability to evaluate and select appropriate tools for the job.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Data Analyst</p>",
+                        "<p>Data Analyst</p>",
+                        "<p>Senior Data Analyst</p>",
+                        "<p>Lead Data Analyst</p>",
+                        "<p>Chief Data Analyst</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the Data Analyst role.</p>",
+                        "<p>Plays the Data Analyst and Modeler role.</p>",
+                        "<p>Plays the role of a Data Analyst  or Team Lead, coordinating project activities across job functions</p>",
+                        "<p>Plays the Key Data Analyst or Modeler role, and also can perform a Team Lead, Reviewer or Auditor role.</p>",
+                        "<p>Can play any Data Analyst or Modeler role, typically a senior position. Responsibilities can include Team Lead, Reviewer, Auditor and Technical Trainer.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision.</p>",
+                        "<p>Expected to work without direct supervision.</p>",
+                        "<p>Expected to be self-managing, work with minimal supervision and check his/her own work thoroughly.</p>",
+                        "<p>Expected to be self-managing, take full responsibility for a subsystem or a whole project, work without supervision and check his/her own work thoroughly.</p>",
+                        "<p>Expected to be self-managing, take full responsibility for a subsystem or a whole project, work without supervision and check his/her own work thoroughly.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Shows a sense of responsibility for the quality of deliverables created.</p>",
+                        "<p>Creates deliverables in good quality with supervision.</p>",
+                        "<p>Creates template deliverables in good quality without supervision.</p>",
+                        "<p>Must be a role model for colleagues; creates deliverables in high quality</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent-quality.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Expected to participate in meetings/phone conferences; collect data and information under supervision.</p>",
+                        "<p>Expected to participate in meetings/phone conferences; collect data and information under supervision; create presentations with results under supervision.</p>",
+                        "<p>Expected to lead meetings/phone conferences with clients; collect data and information; create presentations with results without supervision; present results with supervision</p>",
+                        "<p>Expected to lead meetings/phone conferences with clients and senior-level client contacts; develop relationships with key clients able to present and work with clients to meet overall goals; supervise junior staff in client meetings and presentations, all expectations of DA3.</p>",
+                        "<p>Expected to organize and lead meetings/phone conferences with clients including C-level; able to develop successful relationships with key client and prospect senior executives.</p>"
+                    ]
+                },
+                {
+                    "name": "Language Level in the Customer’s Communication Language",
+                    "cells": [
+                        "<p>Able to read and write the Customer’s Communication Language and have both advanced speaking and listening ability.</p>",
+                        "<p>Able to read and write the Customer’s Communication Language and have both advanced speaking and listening ability.</p>",
+                        "<p>Comfortably able to read and write and speak Customer’s Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Fluent in the spoken and written variants of the Customer’s Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Fluent in the spoken and written variants of the Customer’s Communication Language; able to write high-quality unambiguous texts</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Data Analyst"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Data Analyst"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Data Analyst"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Data Analyst"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Data Analyst"
+            ]
+        }
+    ]
+}

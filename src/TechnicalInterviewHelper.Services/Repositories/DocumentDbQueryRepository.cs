@@ -10,6 +10,7 @@
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
     using Model;
+    using Model.Attributes;
 
     /// <summary>
     /// Implements the query operations over a No-SQL Document Db data source.
@@ -17,20 +18,33 @@
     /// <typeparam name="T">An entity class.</typeparam>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.IQueryRepository{T, TKey}" />
-    public class DocumentDbQueryRepository<T, TKey> : IDisposable, IQueryRepository<T, TKey>
-        where T : class
+    public class DocumentDbQueryRepository<T, TKey> : IQueryRepository<T, TKey>, IDisposable
+        where T : IEntity<TKey>
     {
-        #region Private fields
+        #region Protected fields
 
         /// <summary>
         /// The collection identifier
         /// </summary>
-        private readonly string collectionId;
+        protected readonly string CollectionId;
+
+        //// public string CollectionId { get { return this.collectionId; } private set; }
 
         /// <summary>
         /// The document client
         /// </summary>
-        private readonly DocumentClient documentClient;
+        protected readonly DocumentClient DocumentClient;
+
+        //// public DocumentClient DocumentClient { get { return this.documentClient; } private set; }
+
+        #endregion Protected fields
+
+        #region Private fields
+
+        /// <summary>
+        /// The database identifier
+        /// </summary>
+        private string databaseId = ConfigurationManager.AppSettings["DatabaseId"];
 
         /// <summary>
         /// The database identifier
@@ -41,11 +55,6 @@
         /// The authorization key
         /// </summary>
         private string authorizationKey = ConfigurationManager.AppSettings["AuthorizationKey"];
-
-        /// <summary>
-        /// The database identifier
-        /// </summary>
-        private string databaseId = ConfigurationManager.AppSettings["DatabaseId"];
 
         /// <summary>
         /// To know whether the class is already disposed.
@@ -62,8 +71,8 @@
         /// <param name="collectionId">The collection identifier.</param>
         public DocumentDbQueryRepository(string collectionId)
         {
-            this.collectionId = collectionId;
-            this.documentClient = new DocumentClient(new Uri(this.endPointUrl), this.authorizationKey, new ConnectionPolicy { EnableEndpointDiscovery = false });
+            this.CollectionId = collectionId;
+            this.DocumentClient = new DocumentClient(new Uri(this.endPointUrl), this.authorizationKey, new ConnectionPolicy { EnableEndpointDiscovery = false });
         }
 
         /// <summary>
@@ -72,10 +81,28 @@
         /// <param name="documentClient">The document client.</param>
         public DocumentDbQueryRepository(DocumentClient documentClient)
         {
-            this.documentClient = documentClient;
+            this.DocumentClient = documentClient;
         }
 
         #endregion Constructor
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the database identifier.
+        /// </summary>
+        /// <value>
+        /// The database identifier.
+        /// </value>
+        public string DatabaseId
+        {
+            get
+            {
+                return this.databaseId;
+            }
+        }
+
+        #endregion Properties
 
         #region Get functions
 
@@ -88,7 +115,11 @@
         /// </returns>
         public async Task<IEnumerable<T>> FindBy(Expression<Func<T, bool>> predicate)
         {
-            var documentQuery = this.documentClient.CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), new FeedOptions { MaxItemCount = -1 }).Where(predicate).AsDocumentQuery();
+            var documentQuery =
+                    this.DocumentClient
+                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                        .Where(predicate)
+                        .AsDocumentQuery();
 
             var competencyList = new List<T>();
             while (documentQuery.HasMoreResults)
@@ -110,11 +141,9 @@
         {
             try
             {
-                var mm = Convert.ToString(id);
-
-                var competencyDocument = await this.documentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, mm));
-
-                return (T)(dynamic)competencyDocument;
+                var documentId = Convert.ToString(id);
+                var competencyDocument = await this.DocumentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.CollectionId, documentId));
+                return (T)(dynamic)competencyDocument.Resource;
             }
             catch (DocumentClientException e)
             {
@@ -123,6 +152,10 @@
                     return default(T);
                 }
 
+                throw;
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }
@@ -134,8 +167,19 @@
         /// All entities in the collection.
         /// </returns>
         public async Task<IEnumerable<T>> GetAll()
-        {
-            var documentQuery = this.documentClient.CreateDocumentQuery(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), new FeedOptions { MaxItemCount = -1 }).AsDocumentQuery();
+        {            
+            var documentTypeId = DocumentType.NotValid;
+            var documentType = typeof(T).GetCustomAttributes(false).FirstOrDefault(att => att is DocumentTypeAttribute);
+            if (documentType != null)
+            {
+                documentTypeId = (documentType as DocumentTypeAttribute).DocumentType;
+            }
+
+            var documentQuery =
+                    this.DocumentClient
+                        .CreateDocumentQuery<T>(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                        .Where(item => item.DocumentTypeId == documentTypeId)
+                        .AsDocumentQuery();
 
             var competencyList = new List<T>();
             while (documentQuery.HasMoreResults)
@@ -168,13 +212,13 @@
             {
                 if (disposing)
                 {
-                    this.documentClient.Dispose();
+                    this.DocumentClient.Dispose();
                 }
 
                 this.disposedValue = true;
             }
         }
 
-        #endregion
+        #endregion IDisposable Support
     }
 }

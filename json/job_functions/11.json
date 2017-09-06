@@ -1,0 +1,146 @@
+{
+	"id": "eff9ca83-0d14-bea0-8fac-58954b928dca",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 11,
+        "name": "Project Management",
+        "mnemonicBase": "PM",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Project Management Experience",
+                    "cells": [
+                        "<p>Expected to have at least 3 years of experience in project coordination and management functions on key roles on one or several projects. It is supposed that candidate has already practiced their project management knowledge on small projects, sub-projects or streams with average team size at least 3 FTE. </p>",
+                        "<p>Expected to have at least 3 years of project management experience and were in responsible leadership and managerial functions on a several small or medium size projects with average monthly workload in the range from 7 to 25 FTE.</p><p> </p>",
+                        "<p>Expected to have at least 5 years of project management experience and were in responsible leadership and managerial functions on a number of large size projects, multiple simultaneous projects or small programs with average monthly workload in the range from 25 to 100 FTE. Proven track record of leading implementations, on time and within budget.</p>",
+                        "<p>Expected to have more than 8 years of project management experience and successfully completed projects with FTE totals in the range from 100 to 500 FTE Months; Able to handle emergency and complex situations and issues. Line management of the team of Project Managers.</p>",
+                        "<p>Proven track record in project management. Expected to have more than 10+ years of PM experience and successfully completed multiple stream projects with FTE totals in the range from 200 to 1000 FTE Months with multiple parties and large scale;</p>"
+                    ]
+                },
+                {
+                    "name": "Software and Project Management Process Knowledge",
+                    "cells": [
+                        "<p>Expected to have good understanding about Software Development Lifecycle and Software Engineering Process. Able to perform activities related to Planning, Executing and Monitoring process groups and has the ability to follow one of the project management methodologies under supervision. Able to guide and coordinate an engineering team of 5-7 people.</p>",
+                        "<p>Expected to have solid knowledge about Software Development Lifecycle and Software Engineering Process. Has broad knowledge about project management standards and practices, able to perform project manager's activities during Initiation, Planning, Execution, Monitoring and Closing project phases as well as practice several Software Development Methodologies. Able to run an organization of 10-30 people.</p>",
+                        "<p>Able to perform project manager's activities and provide their supervision during Initiation, Planning, Execution, Monitoring and Closing project phases as well as to be able to choose an appropriate project management methodology and setup it on a project.</p>",
+                        "<p>Expected to be able to follow and actively influence and enhance a defined project management process and enforce it on a project, and at a team level.</p>",
+                        "<p>Expected to be able to actively influence and enhance a defined project management process and enforce it on a project, and at a department level.</p>"
+                    ]
+                },
+                {
+                    "name": "Project Management Tools, Techniques and Responsibility",
+                    "cells": [
+                        "<p>Able to use and understands at least few of project management techniques and tools related to planning and grooming, estimation, tracking, reporting, monitoring and communication. Able to create and maintain project artefacts related to change management, quality assurance, project monitoring and control (understanding of QMS is considered as a benefit). Knows mandatory project artefacts which are listed on EPAM internal PAL pages. Able to recognize, identify and work out a mitigation plan, set it up and follow it to avoid risks, escalate critical risks and issues to respective stakeholders.</p>",
+                        "<p>Expected to choose and set up project management tools and techniques in order to organize and manage a project team, identify, analyse and properly respond to project risks, conduct planning and grooming, estimation, tracking, reporting monitoring and communication. Has knowledge and able to develop and maintain project artefacts which are listed on EPAM internal PAL pages. Ensures the effectiveness of project execution by conducting configuration management and manage key performance indicators. Able to plan, estimate and control project costs. Recognize and conduct strategic plan to solve significant escalations and mitigate critical risks.</p>",
+                        "<p>Ability to continuously improve project management tools and techniques in order to organize, manage and optimize multiple project teams. Able to develop knowledge base and share within a community.</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create high-quality UI modelling, technical and project documentation; able to write high-quality reviews and audit documentation. Prepare the reports needed for the monthly steering committee status meetings and management. Has an advanced understanding of MS Office and MS Project (desired) and the ability to recommend / drive PM tools and process at the project level. Accountable for the Change and Risk management for the entire Customer’s project portfolios, including those managed by other project managers, and balancing resources in line with overall delivery criticality.</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create high-quality UI modelling, technical and project documentation; able to write high-quality reviews and audit documentation.  Able to set standards at a department level. High-quality, unambiguous project documentation.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Project Manager</p>",
+                        "<p>Project Manager</p>",
+                        "<p>Senior Project Manager</p>",
+                        "<p>Director, Project Management</p><p>Director, Program Management</p>",
+                        "<p>Senior Director, Project Management</p><p>Senior Director, Program Management</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays Team Leader, Project Coordinator, Project Manager, Delivery Manager</p>",
+                        "<p>Plays Project Manager, Project Coordinator, Project Supervisor, Delivery Manager</p>",
+                        "<p>Plays Project Manager, Program Manager, Project Supervisor, Delivery Manager</p>",
+                        "<p>Plays Manager, Program Manager, Project Supervisor, Delivery Manager</p>",
+                        "<p>Can play any role, typically a senior position. Manager, Program Manager, Project Supervisor, Delivery Manager</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively within defined zone of responsibility under supervision.</p>",
+                        "<p>Expected to work independently without direct supervision.</p>",
+                        "<p>Able to coach, mentor and support less experienced PMs and help them resolve complex problems. Expected to ensure all members of the project team understand the methods and procedures used, able to enforce trainings and coaching.</p>",
+                        "<p>Able to successfully manage and lead multiple multimillions projects. Expected to supervise the work of other Project Managers.</p>",
+                        "<p>Able to successfully manage and lead multiple multimillions projects. Reflect high standards and plays a role of trusted strategic advisor and business partner.  Guide and mentor senior project managers and business consultants. Oversee several large programmes bringing identifiable business benefits to clients internally and externally.</p>"
+                    ]
+                },
+                {
+                    "name": "Leadership, Communication and Presentation Skills",
+                    "cells": [
+                        "<p>Able to effectively delegate tasks, encourage team to follow their commitments and hold them together in common purpose toward the right objective. Responsible for the quality and timeliness of the deliverables of their respective team.</p><p>Able to keep a conversation, moderate small meetings, compose emails and prepare meeting follow-ups. Has the ability to express their conversational intent clearly and completely, ability to conduct public speaking within small groups, prepare presentation and diagrams in scope relevant to project's needs.</p>",
+                        "<p>Accountable for making decisions and able to establish solid working relationships within a team, effectively delegate tasks, encourage the team to follow their commitments and hold them together in common purpose toward the right objective.</p><p>Responsible for the quality and timeliness of the deliverables of their respective team. Able to lead and engage people in a conversation, moderate small and large meetings, excellent written skills. Has the ability to influence people with their ideas, conduct public speaking within large groups, solid skills in preparing slide decks and visual materials in scope relevant to project's needs.</p>",
+                        "<p>Excellent leadership abilities and able to engage and inspire people. Decision maker for critical issues. Able to lead and engage people in a conversation, moderate small and large meetings, excellent written skills. Has the ability to influence people with their ideas, conduct public speaking within large groups, solid skills in preparing slide decks and visual materials in scope relevant to project's needs. Able to conduct trainings and coaching sessions, prepare training materials, presentations and speeches.</p>",
+                        "<p>Responsible for managing and leading project managers and delivery teams, developing large-scale solutions and able to manage a large resource pool consisting of several teams across all production disciplines. Must be a role model for colleagues and have knowledge and experience of the best industry standards; creates deliverables in excellent quality.</p>",
+                        "<p>Leads by example. Able to build professional network and to effectively share and collaborate with peers. A positive attitude combined with excellent interpersonal skills. A positive attitude combined with excellent interpersonal and motivational skills.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Able to identify project stakeholders and understand their interests and priorities. Communicates to stakeholders in order to keep them informed about work progress, impediments and issues. It's not expected to have access to contractual terms and financial issues, doesn't authorized to negotiate them.</p>",
+                        "<p>Able to develop Communications Management Plan in order identify stakeholders interests, priorities and expectations in the requirements. Works closely with the variety of clients to ensure they have the correct resources to achieve the delivery of its technology Projects on time and budget. Proactively communicates to stakeholders, executes and manages changes in the stakeholder management plan and reports status of the project execution. Contractual terms and financial issues are managed under supervision of Account Manager.</p>",
+                        "<p>Understands customer's goals and business objectives and proactively cooperates and engages stakeholders through the project lifecycle in order to evolve, optimize and improve customer's business. Able to manage contractual terms and financial issues.</p>",
+                        "<p>Full customer handling, able to manage and handle most customer-related issue. Responsible for commitments control, complete planning for different streams of work working with Project Managers and relevant resources to provide accurate estimates; track and report on stream milestones and provide status reports to different stakeholders (including client); monitoring project performance metrics, taking actions for its optimization.</p>",
+                        "<p>Able to manage multiple regional and global projects and project teams. Define and agree with internal and external clients on business objectives and build strong relationships at board level.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>C1</p>",
+                        "<p>C1</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Project Manager"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Project Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Project Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Director, Program Management",
+                "Director, Project Management"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Director, Program Management",
+                "Senior Director, Project Management"
+            ]
+        }
+    ]
+}

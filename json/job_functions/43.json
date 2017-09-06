@@ -1,0 +1,229 @@
+{
+	"id": "955f42f9-569d-0493-4145-39cfe0d27ebe",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 43,
+        "name": "Service Management",
+        "mnemonicBase": "SM",
+        "track": 1
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>At least 2 years of experience in category-specific domain, able to guide and coordinate team of 5-7 people.</p><p>Highly proficient and developing or has developed a comprehensive knowledge of domain specific processes and procedures, plus the methodologies of guiding teams.  Has prior experience of occasional team coordination. Knows how the defined processes are executed in locations within a country.</p><p> </p>",
+                        "<p>At least 3 years of leadership in relevant area. Able to run an organization of 8-15 people.</p><p>Full understanding of certain area/s of expertise with deep spike in one professional area. Comprehensive knowledge of specific domain processes and procedures. Highly proficient and has prior comprehensive knowledge of team management. Has holistic vision of how the processes combine together in order to create value for company.</p>",
+                        "<p>At least 5 years of experience in leadership role and ability to run a team of 16-30 people.</p><p>Recognized as the expert/adviser of certain area/s of expertise. Understands complicated issues of overarching goals, conflict of interests, areas of responsibility, lines of authority and how success is evaluated and distributed. Experience of cross-organizational teamwork. Deep understanding of designing and/or upgrade existing or new domain processes. Comprehensive management knowledge and experience.</p>",
+                        "<p>At least 5 years of management experience. </p><p>Recognized as an authority in multiple function areas. Experience of cross-organizational and cross-functional teamwork. Deep knowledge of function and processes established in the Company. Deep knowledge of management processes established in the company. Proven organizational and financial awareness. Knows and uses the levers to drive performance.</p><p> </p>",
+                        "<p>7+ years of management experience</p><p>Expert knowledge in business critical processes. Experience of global team management, in strategic planning. Recognized as a resource for innovation and groundbreaking development, knows how to build functional alignment (organization design, strategy and plans) to the vision and purpose of EPAM</p>"
+                    ]
+                },
+                {
+                    "name": "Domain Knowledge",
+                    "cells": [
+                        "<p>Basic proficiency of domain standard tools and processes.</p><p>Main sources of external (public) information about industry issues that may impact on domain processes. Basic understanding of market segments.</p>",
+                        "<p>Developing or has developed proficiency and effectiveness of domain standard tools and processes.</p><p>How to understand/interpret basic business domain production and performance information. Implements and controls the most suitable domain-process/activity aiming to improve production KPI. Key sources of external (public) information that may affect current and further health of business. </p>",
+                        "<p>Highly proficient and developing or has developed a comprehensive knowledge of domain standard tools and processes.</p><p>Vision and goals of production organization. How to adjust domain-strategy to these goals. Internal and external (public) information related to production performance of EPAM and key competitors. Last trends of the industry and how they affect domain strategy.</p><p> </p>",
+                        "<p>Has proven depth and breadth of knowledge of domain standard tools and processes.</p><p>How to build corporate domain strategy in alignment with vision and goals of production. Global trends of the industry and other business (market) factors that impact sustainable performance. Current and perspective political, economic, social, technological, legal issues that may affect performance and organizational health in a whole. Key skills and capabilities that add competitive values for the production organization.</p>",
+                        "<p>Current and perspective market context and organizational behavior frameworks.</p><p>Internal and external (public) stakeholders, formal and informal decision makers from production organization and executive board and how to influence within it.</p><p>Key skills and capabilities that add competitive values for the production organization, and how those can be built, acquired or developed.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Expert knowledge about the toolset, ability to create enhancements requirements for applications.</p>",
+                        "<p>Expert knowledge about the toolset, participation in its enhancement, and enforce its usage in units.</p>",
+                        "<p>Expert knowledge about the toolset, participation in its enhancement, and enforce its usage in units.</p>",
+                        "<p>Expert knowledge about the toolset, participation in its enhancement, and enforce its usage in units.</p>",
+                        "<p>Expert knowledge about the toolset, participation in its enhancement, and enforce its usage in units.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Key contributor to group/project. Acts as coordinator/functional leader. Works without direct supervision. Coordinates team’s priorities, resources. Provides medium to long-term tactical direction and operational oversight. Acts as corporate culture delivery agent. Coaches more junior colleagues and influences team spirit and professional growth through own example and leadership.</p><p> </p>",
+                        "<p>Manages function’s complex or multiple projects/areas through setting priorities, executing resources. In charge of project team hiring/staffing & development.</p><p>Implements and leads strategic processes development based on the company’s values taking into consideration all parties’ involved interests. Coaches more junior colleagues and influences team spirit and professional growth through own example and leadership.</p><p> </p>",
+                        "<p>Manages function level complex project(s). Drives function strategic planning and implementation based on company strategic goals and KPIs as well as on function` SWOT and market trends analysis. Provides long-term strategic group/area planning and operational oversight.</p><p>Acts as corporate culture development and transformation agent.</p><p> </p>",
+                        "<p>Manages multi-regional level complex or Company’s mission-critical projects. Provides input to Executives. Leads and influences changes at a functional level across the organization. Translates business needs into initiatives. Impacts Company’s direction and success by setting strategy/objectives for the function on regional level. Acts as corporate culture delivery agent and changes/improvement. Considers financial data when making decisions.</p>",
+                        "<p>Manages global team in aim to achieve company goals.</p><p> Subject matter expert and decision-maker within the organization at operational, tactical and strategic level.</p><p>In charge of domain specific structure efficiency, team high-professionalism & service scope delivery across all the locations. Takes part as Top Management team member in company mission, vision, values and strategy development. Develops and manages domain specific functional budget in the line with business expectations, allocating funds for high-priority, high-impact activity.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Travel Group Team Leader;</p><p>Global Mobility Team Leader;</p><p>Training and Development Team Leader;</p><p>Language Training Team Leader;</p><p>Resource Development Lab Team Leader;</p><p>Resource Development Team Leader;</p><p>IT Team Leader;</p><p>IT Service Team Leader;</p><p>FP&A Team Leader;</p><p>Internal Audit Team Leader;</p><p>Accounting Team Leader;</p><p>Revenue Team Leader;</p><p>Controlling Team Leader;</p><p>Counsel;</p><p>Procurement Team Leader</p><p>Communications Team Lead;</p><p>Talent Acquisition Team Lead;</p><p>Human Resource Team Lead;</p><p>Associate Operations Manager;</p><p>Staffing Team Lead;</p><p><span>Marketing Team Lead;</span></p><p><span>Associate Quality Assurance Manager;</span></p><p><span>Compliance Team Leader</span></p><p> </p>",
+                        "<p>Travel Group Manager;</p><p>Global Mobility Manager;</p><p>Training and Development Manager;</p><p>Language Training Manager;</p><p>Resource Development Manager;</p><p>IT Manager;</p><p>FP&A Manager;</p><p>Internal Audit Manager;</p><p>Accounting Manager;</p><p>Revenue Manager;</p><p>IT Service Manager;</p><p>Controlling Manager;</p><p>Senior Counsel;</p><p>Procurement Manager;</p><p>Inside Sales Manager;</p><p>Communications Manager;</p><p>Marketing Manager;</p><p>Talent Acquisition Manager;</p><p>Human Resource Manager;</p><p>Operations Manager;</p><p>Administrative Manager;</p><p>Guest Service Manager;</p><p>Personnel Administration Manager;</p><p><span>Contract Negotiator;</span></p><p>Staffing Manager;</p><p>Quality Assurance Manager;</p><p><span>Compliance Manager</span></p>",
+                        "<p>Senior Travel Group Manager;</p><p>Senior Global Mobility Manager;</p><p>Senior Training and Development Manager;</p><p>Senior Language Training Manager;</p><p>Senior Resource Development Manager;</p><p>Senior IT Manager;</p><p>Senior FP&A Manager;</p><p>Senior Internal Audit Manager;</p><p>Senior Accounting Manager;</p><p>Senior Revenue Manager;</p><p>Assistant Controller;</p><p>Senior Expense Manager;</p><p>Senior Tax Manager;</p><p>Regional Senior Counsel;</p><p>Senior Procurement Manager;</p><p>Senior Inside Sales Manager;</p><p>Senior Communications Manager;</p><p>Senior Talent Acquisition Manager;</p><p>Senior Human Resource Manager;</p><p>Senior Operations Manager;</p><p>Senior Administrative Manager;</p><p>Senior Compliance Manager;</p><p>Senior Contract Negotiator;</p><p>Senior Staffing Manager;</p><p>Senior Quality Assurance Manager</p>",
+                        "<p>Director, Global Mobility;</p><p>Director, Global Travel;</p><p>Director, Training and Development;</p><p>Director, Resource Development;</p><p>Director, IT;</p><p>Director, FP&A;</p><p>Director, Internal Audit;</p><p>Director, International Controller;</p><p>Director, Revenue;</p><p>Associate General Counsel;</p><p>Director, Talent Acquisition;</p><p>Director, Communications;</p><p>Director, Marketing;</p><p>Director, Talent Acquisition;</p><p>Director, Human Resources;</p><p>Director, WP&M;</p><p>Director, Quality Assurance</p>",
+                        "<p>Senior Director, Global Mobility and Travel;</p><p>Senior Director, Training and Development;</p><p>Senior Director, Resource Development;</p><p>Senior Director, FP&A;</p><p><span>Senior </span>Director, IT;</p><p>Senior Director, Internal Audit;</p><p>Senior Director, Corporate Controller;</p><p>Deputy General Counsel;</p><p>Senior Director, Communications;</p><p>Senior Director, Marketing;</p><p>Senior Director, Talent Acquisition;</p><p>Senior Director, Human Resources;</p><p>Senior Director, WP&M;</p><p>Senior <span>Director, Quality Assurance</span></p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Provides good reasoning to issues or risks identified.  Provides expert opinion how those issues can be addressed. Develops and contributes trustful and respectful long-term relationship within process stakeholders.</p><p>Participates in establishing quality standards, analyzes quality of deliverables provided by colleagues</p>",
+                        "<p>Foresees possible risks and takes steps to mitigate or prevent them. Designs, develops and supports trustful and respectful long-term relationship within all process/organization decision-makers and own team.</p><p>Leads implementation of quality standards, analyzes quality metrics</p>",
+                        "<p>Foresees possible risks and takes steps to mitigate or prevent them. Plans process on risk reduction. Finds solutions and make concrete steps to prevent risks. Develops strong and trusted partnership with organization’s leadership team aiming to elaborate key region level solutions. Engages company decision-makers into change management process.</p><p>Leads implementation of quality standards, analyzes quality metrics.</p>",
+                        "<p>Elaborates key company (cross-regional) level solutions. In charge of cross-regional/company function KPIs planning and achievement. Insures that the organization has the resources to deliver the goals.</p><p>Drives cross-regional or company level complicated issues of areas of responsibility, lines of authority and how success is distributed.</p><p>Leads implementation of quality standards, analyzes quality metrics.</p><p> </p>",
+                        "<p>Shapes the evolving culture of the whole organization in anticipation of future challenges as well as in response to current challenges. Develops strong and trusted partnership with organization’s executive team to provide challenge, legal guidance and advice.</p><p>Leads implementation of quality standards, analyzes quality metrics.</p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "Communication skills",
+                    "cells": [
+                        "<p>Able to communicate and enforce the usage of the best domain practices in day-to-day operations. Able to effectively delegate tasks, encourage team to follow their commitments and hold them together in common purpose toward the right objective. Responsible for the quality and timeliness of the deliverables of their respective team.</p>",
+                        "<p>Accountable for making decisions and able to establish solid working relationships within a team, effectively delegate tasks, encourage the team to follow their commitments and hold them together in common purpose toward the right objective.</p>",
+                        "<p>Excellent leadership abilities and able to engage and inspire people. Decision maker for critical issues. Able to lead and engage people in a conversation, moderate small and large meetings, excellent written skills. Has the ability to influence people with their ideas, conduct public speaking within large groups, solid skills in preparing slide decks and visual materials in scope relevant to project’s needs.</p>",
+                        "<p>Able to manage a large resource pool consisting of several teams across all disciplines. Must be a role model for colleagues and have knowledge and experience of the best industry standards; creates deliverables in excellent quality.</p>",
+                        "<p>Leads by example. Able to build professional network and to effectively share and collaborate with peers. A positive attitude combined with excellent interpersonal and motivational skills.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2/C1</p>",
+                        "<p>C1</p>",
+                        "<p>C1/C2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Accounting Team Leader",
+                "Counsel",
+                "IT Team Leader",
+                "Talent Acquisition Team Lead",
+                "Travel Group Team Leader",
+                "Global Mobility Team Leader",
+                "Resource Development Lab Team Leader",
+                "Resource Development Team Leader",
+                "Language Training Team Leader",
+                "Controlling Team Leader",
+                "Revenue Team Leader",
+                "Human Resource Team Lead",
+                "IT Service Team Leader",
+                "FP&A Team Leader",
+                "Internal Audit Team Leader",
+                "Training and Development Team Leader",
+                "Procurement Team Leader",
+                "Communications Team Lead",
+                "Associate Operations Manager",
+                "Marketing Team Lead",
+                "Associate Quality Assurance Manager",
+                "Compliance Team Leader"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Marketing Manager",
+                "Human Resource Manager",
+                "Internal Audit Manager",
+                "Procurement Manager",
+                "IT Manager",
+                "Talent Acquisition Manager",
+                "Contract Negotiator",
+                "Training and Development Manager",
+                "Revenue Manager",
+                "Resource Development Manager",
+                "Senior Counsel",
+                "Guest Service Manager",
+                "Personnel Administration Manager",
+                "Administrative Manager",
+                "FP&A Manager",
+                "IT Service Manager",
+                "Operations Manager",
+                "Communications Manager",
+                "Global Mobility Manager",
+                "Language Training Manager",
+                "Travel Group Manager",
+                "Accounting Manager",
+                "Controlling Manager",
+                "Inside Sales Manager",
+                "Quality Assurance Manager",
+                "Compliance Manager"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Administrative Manager",
+                "Senior Tax Manager",
+                "Senior IT Manager",
+                "Senior Travel Group Manager",
+                "Senior Global Mobility Manager",
+                "Senior Revenue Manager",
+                "Senior Expense Manager",
+                "Assistant Controller",
+                "Senior Resource Development Manager",
+                "Senior Training and Development Manager",
+                "Senior Human Resource Manager",
+                "Senior Talent Acquisition Manager",
+                "Senior Language Training Manager",
+                "Senior Compliance Manager",
+                "Senior Contract Negotiator",
+                "Senior Accounting Manager",
+                "Senior FP&A Manager",
+                "Senior Internal Audit Manager",
+                "Senior Procurement Manager",
+                "Senior Operations Manager",
+                "Senior Communications Manager",
+                "Senior Inside Sales Manager",
+                "Regional Senior Counsel",
+                "Senior Quality Assurance Manager"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Director, Quality Assurance",
+                "Director, Human Resources",
+                "Director, FP&A",
+                "Director, IT",
+                "Director, Revenue",
+                "Director, Resource Development",
+                "Associate General Counsel",
+                "Director, Training and Development",
+                "Director, Internal Audit",
+                "Director, Communications",
+                "Director, Marketing",
+                "Director, International Controller",
+                "Director, Talent Acquisition",
+                "Director, Global Mobility",
+                "Director, Global Travel"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Director, Global Mobility and Travel",
+                "Deputy General Counsel",
+                "Senior Director, Resource Development",
+                "Senior Director, Marketing",
+                "Senior Director, Human Resources",
+                "Senior Director, Training and Development",
+                "Senior Director, IT",
+                "Senior Director, FP&A",
+                "Senior Director, Internal Audit",
+                "Senior Director, Communications",
+                "Senior Director, Corporate Controller",
+                "Senior Director, Talent Acquisition",
+                "Senior Director, Quality Assurance"
+            ]
+        }
+    ]
+}

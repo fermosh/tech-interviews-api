@@ -1,0 +1,594 @@
+{
+	"id": "1AD14472-D9BD-47DF-8701-A9E1A057AD8E",
+	"documentTypeId": 1,
+	"competencies": [
+		{
+			"code": "DotNET",
+			"jobFunctions": [
+				15
+			],
+			"id": 1,
+			"parentId": null,
+			"name": ".NET",
+			"isSelectable": false
+		}, {
+			"code": "CG-2DAnim",
+			"jobFunctions": [],
+			"id": 86,
+			"parentId": 83,
+			"name": "2D Animation and Vector Art",
+			"isSelectable": true
+		}, {
+			"code": "CG-2DRaster",
+			"jobFunctions": [],
+			"id": 84,
+			"parentId": 83,
+			"name": "2D Raster Art",
+			"isSelectable": true
+		}, {
+			"code": "CG-3D",
+			"jobFunctions": [],
+			"id": 85,
+			"parentId": 83,
+			"name": "3D Art",
+			"isSelectable": true
+		}, {
+			"code": "ADAM",
+			"jobFunctions": [],
+			"id": 76,
+			"parentId": null,
+			"name": "ADAM",
+			"isSelectable": false
+		}, {
+			"code": "ADAM_Core_Dev",
+			"jobFunctions": [],
+			"id": 78,
+			"parentId": 76,
+			"name": "ADAM Core developer",
+			"isSelectable": true
+		}, {
+			"code": "ADAM_Web_Dev",
+			"jobFunctions": [],
+			"id": 77,
+			"parentId": 76,
+			"name": "ADAM Web developer",
+			"isSelectable": true
+		}, {
+			"code": "AEM",
+			"jobFunctions": [],
+			"id": 64,
+			"parentId": null,
+			"name": "AEM",
+			"isSelectable": false
+		}, {
+			"code": "AEM-Dev",
+			"jobFunctions": [],
+			"id": 65,
+			"parentId": 64,
+			"name": "AEM developement",
+			"isSelectable": true
+		}, {
+			"code": "Mobile-Android",
+			"jobFunctions": [],
+			"id": 18,
+			"parentId": 2,
+			"name": "Android Development",
+			"isSelectable": true
+		}, {
+			"code": "ECommerce-ATG",
+			"jobFunctions": [],
+			"id": 33,
+			"parentId": 32,
+			"name": "ATG Development",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest",
+			"jobFunctions": [
+				18
+			],
+			"id": 37,
+			"parentId": null,
+			"name": "Automated Testing",
+			"isSelectable": false
+		}, {
+			"code": "DotNET-Azure",
+			"jobFunctions": [],
+			"id": 13,
+			"parentId": 1,
+			"name": "Azure Development",
+			"isSelectable": true
+		}, {
+			"code": "DotNET-Backend",
+			"jobFunctions": [],
+			"id": 12,
+			"parentId": 1,
+			"name": "Back-end Development",
+			"isSelectable": true
+		}, {
+			"code": "Java-Backend",
+			"jobFunctions": [],
+			"id": 17,
+			"parentId": 7,
+			"name": "Back-end Development",
+			"isSelectable": true
+		}, {
+			"code": "BigData",
+			"jobFunctions": [
+				15
+			],
+			"id": 3,
+			"parentId": null,
+			"name": "Big Data",
+			"isSelectable": true
+		}, {
+			"code": "BA",
+			"jobFunctions": [
+				8
+			],
+			"id": 4,
+			"parentId": null,
+			"name": "Business Analysis",
+			"isSelectable": true
+		}, {
+			"code": "BI-Analysis",
+			"jobFunctions": [],
+			"id": 25,
+			"parentId": 24,
+			"name": "Business Analysis",
+			"isSelectable": true
+		}, {
+			"code": "BI",
+			"jobFunctions": [
+				15,
+				32
+			],
+			"id": 24,
+			"parentId": null,
+			"name": "Business Intelligence",
+			"isSelectable": false
+		}, {
+			"code": "C-CDev",
+			"jobFunctions": [],
+			"id": 59,
+			"parentId": 58,
+			"name": "C Development",
+			"isSelectable": true
+		}, {
+			"code": "C",
+			"jobFunctions": [
+				15
+			],
+			"id": 58,
+			"parentId": null,
+			"name": "C\\C++",
+			"isSelectable": false
+		}, {
+			"code": "C-CPP-Dev",
+			"jobFunctions": [],
+			"id": 60,
+			"parentId": 58,
+			"name": "C++ Development",
+			"isSelectable": true
+		}, {
+			"code": "CGArt",
+			"jobFunctions": [],
+			"id": 83,
+			"parentId": null,
+			"name": "Computer Graphic Art",
+			"isSelectable": false
+		}, {
+			"code": "BI-QA",
+			"jobFunctions": [],
+			"id": 27,
+			"parentId": 24,
+			"name": "Data Quality Engineering",
+			"isSelectable": true
+		}, {
+			"code": "DB",
+			"jobFunctions": [
+				32,
+				15
+			],
+			"id": 5,
+			"parentId": null,
+			"name": "DB",
+			"isSelectable": false
+		}, {
+			"code": "MGMT-Delivery",
+			"jobFunctions": [
+				9,
+				11,
+				13
+			],
+			"id": 30,
+			"parentId": null,
+			"name": "Delivery Management",
+			"isSelectable": true
+		}, {
+			"code": "Design",
+			"jobFunctions": [
+				63,
+				62
+			],
+			"id": 8,
+			"parentId": null,
+			"name": "Design",
+			"isSelectable": false
+		}, {
+			"code": "PHP-Drupal",
+			"jobFunctions": [],
+			"id": 54,
+			"parentId": 51,
+			"name": "Drupal Developer",
+			"isSelectable": true
+		}, {
+			"code": "ECommerce",
+			"jobFunctions": [
+				15
+			],
+			"id": 32,
+			"parentId": null,
+			"name": "E-Commerce",
+			"isSelectable": false
+		}, {
+			"code": "BI-ETLDev",
+			"jobFunctions": [],
+			"id": 28,
+			"parentId": 24,
+			"name": "ETL Development",
+			"isSelectable": true
+		}, {
+			"code": "UXD",
+			"jobFunctions": [
+				15
+			],
+			"id": 9,
+			"parentId": null,
+			"name": "Front-end",
+			"isSelectable": false
+		}, {
+			"code": "DotNET-Desktop",
+			"jobFunctions": [],
+			"id": 11,
+			"parentId": 1,
+			"name": "Front-end Desktop Development",
+			"isSelectable": true
+		}, {
+			"code": "DotNET-Web",
+			"jobFunctions": [],
+			"id": 10,
+			"parentId": 1,
+			"name": "Front-end Web Development",
+			"isSelectable": true
+		}, {
+			"code": "Java-Web",
+			"jobFunctions": [],
+			"id": 16,
+			"parentId": 7,
+			"name": "Front-end Web Development",
+			"isSelectable": true
+		}, {
+			"code": "QA",
+			"jobFunctions": [
+				17
+			],
+			"id": 6,
+			"parentId": null,
+			"name": "Functional Testing",
+			"isSelectable": true
+		}, {
+			"code": "Java-GA",
+			"jobFunctions": [],
+			"id": 31,
+			"parentId": 7,
+			"name": "Google account Development",
+			"isSelectable": true
+		}, {
+			"code": "Design-Graphic",
+			"jobFunctions": [],
+			"id": 21,
+			"parentId": 8,
+			"name": "Graphic Design",
+			"isSelectable": true
+		}, {
+			"code": "ECommerce-Hybris",
+			"jobFunctions": [],
+			"id": 34,
+			"parentId": 32,
+			"name": "Hybris Development",
+			"isSelectable": true
+		}, {
+			"code": "Mobile-IOS",
+			"jobFunctions": [],
+			"id": 19,
+			"parentId": 2,
+			"name": "iOS Development",
+			"isSelectable": true
+		}, {
+			"code": "Java",
+			"jobFunctions": [
+				15
+			],
+			"id": 7,
+			"parentId": null,
+			"name": "Java",
+			"isSelectable": false
+		}, {
+			"code": "UXD-JS",
+			"jobFunctions": [],
+			"id": 23,
+			"parentId": 9,
+			"name": "JavaScript Development",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-Mobile",
+			"jobFunctions": [],
+			"id": 47,
+			"parentId": 37,
+			"name": "Layer expert: Mobile",
+			"isSelectable": true
+		}, {
+			"code": "PHP-Magneto",
+			"jobFunctions": [],
+			"id": 55,
+			"parentId": 51,
+			"name": "Magento Developer",
+			"isSelectable": true
+		}, {
+			"code": "Mobile",
+			"jobFunctions": [
+				15
+			],
+			"id": 2,
+			"parentId": null,
+			"name": "Mobile",
+			"isSelectable": false
+		}, {
+			"code": "DB-MSSQL",
+			"jobFunctions": [],
+			"id": 14,
+			"parentId": 5,
+			"name": "MS SQL Development",
+			"isSelectable": true
+		}, {
+			"code": "DB-Oracle",
+			"jobFunctions": [],
+			"id": 15,
+			"parentId": 5,
+			"name": "Oracle Development",
+			"isSelectable": true
+		}, {
+			"code": "Perf",
+			"jobFunctions": [
+				10
+			],
+			"id": 35,
+			"parentId": null,
+			"name": "Performance Analysis",
+			"isSelectable": true
+		}, {
+			"code": "PHP",
+			"jobFunctions": [
+				15
+			],
+			"id": 51,
+			"parentId": null,
+			"name": "PHP",
+			"isSelectable": false
+		}, {
+			"code": "PHP-Dev",
+			"jobFunctions": [],
+			"id": 53,
+			"parentId": 51,
+			"name": "PHP Developer",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-DotNet",
+			"jobFunctions": [],
+			"id": 39,
+			"parentId": 37,
+			"name": "Platform expert: .NET",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-Java",
+			"jobFunctions": [],
+			"id": 38,
+			"parentId": 37,
+			"name": "Platform expert: Java",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-JS",
+			"jobFunctions": [],
+			"id": 41,
+			"parentId": 37,
+			"name": "Platform expert: JavaScript",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-Python",
+			"jobFunctions": [],
+			"id": 40,
+			"parentId": 37,
+			"name": "Platform expert: Python",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-Ruby",
+			"jobFunctions": [],
+			"id": 42,
+			"parentId": 37,
+			"name": "Platform expert: Ruby",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-TC",
+			"jobFunctions": [],
+			"id": 44,
+			"parentId": 37,
+			"name": "Platform expert: TestComplete",
+			"isSelectable": true
+		}, {
+			"code": "AutoTest-UFT",
+			"jobFunctions": [],
+			"id": 43,
+			"parentId": 37,
+			"name": "Platform expert: UFT",
+			"isSelectable": true
+		}, {
+			"code": "BI-Dev",
+			"jobFunctions": [],
+			"id": 26,
+			"parentId": 24,
+			"name": "Report Development",
+			"isSelectable": true
+		}, {
+			"code": "Salesforce",
+			"jobFunctions": [],
+			"id": 74,
+			"parentId": null,
+			"name": "Salesforce",
+			"isSelectable": false
+		}, {
+			"code": "SaleF-Dev",
+			"jobFunctions": [],
+			"id": 75,
+			"parentId": 74,
+			"name": "Salesforce developer",
+			"isSelectable": true
+		}, {
+			"code": "SAP-Dev-ABAP",
+			"jobFunctions": [],
+			"id": 62,
+			"parentId": 61,
+			"name": "SAP ABAP developer",
+			"isSelectable": true
+		}, {
+			"code": "SAP-BI",
+			"jobFunctions": [],
+			"id": 66,
+			"parentId": null,
+			"name": "SAP BI",
+			"isSelectable": false
+		}, {
+			"code": "SAP-BI-BO",
+			"jobFunctions": [],
+			"id": 68,
+			"parentId": 66,
+			"name": "SAP BI (BO) Consultant",
+			"isSelectable": true
+		}, {
+			"code": "SAP-BI-BW",
+			"jobFunctions": [],
+			"id": 67,
+			"parentId": 66,
+			"name": "SAP BI (BW) Consultant",
+			"isSelectable": true
+		}, {
+			"code": "SAP-Dev",
+			"jobFunctions": [],
+			"id": 61,
+			"parentId": null,
+			"name": "SAP Development",
+			"isSelectable": false
+		}, {
+			"code": "SAP-ERPC",
+			"jobFunctions": [],
+			"id": 79,
+			"parentId": null,
+			"name": "SAP ERP",
+			"isSelectable": false
+		}, {
+			"code": "SAPFICons",
+			"jobFunctions": [],
+			"id": 81,
+			"parentId": 79,
+			"name": "SAP FI/CO consultant",
+			"isSelectable": true
+		}, {
+			"code": "SAP-BI-HANA",
+			"jobFunctions": [],
+			"id": 69,
+			"parentId": 66,
+			"name": "SAP HANA Consultant",
+			"isSelectable": true
+		}, {
+			"code": "SAPHRCons",
+			"jobFunctions": [],
+			"id": 82,
+			"parentId": 79,
+			"name": "SAP HR Consultant",
+			"isSelectable": true
+		}, {
+			"code": "SAPLOCons",
+			"jobFunctions": [],
+			"id": 80,
+			"parentId": 79,
+			"name": "SAP LO consultant",
+			"isSelectable": true
+		}, {
+			"code": "SAP-Dev-Consult",
+			"jobFunctions": [],
+			"id": 63,
+			"parentId": 61,
+			"name": "SAP Technical consultant",
+			"isSelectable": true
+		}, {
+			"code": "SP",
+			"jobFunctions": [
+				15
+			],
+			"id": 36,
+			"parentId": null,
+			"name": "Sharepoint",
+			"isSelectable": true
+		}, {
+			"code": "Sitecore",
+			"jobFunctions": [
+				15
+			],
+			"id": 56,
+			"parentId": null,
+			"name": "Sitecore",
+			"isSelectable": false
+		}, {
+			"code": "Sitecore-Dev",
+			"jobFunctions": [],
+			"id": 57,
+			"parentId": 56,
+			"name": "Sitecore developer",
+			"isSelectable": true
+		}, {
+			"code": "SArchitect",
+			"jobFunctions": [],
+			"id": 71,
+			"parentId": 70,
+			"name": "Solution Architect",
+			"isSelectable": true
+		}, {
+			"code": "SA",
+			"jobFunctions": [],
+			"id": 70,
+			"parentId": null,
+			"name": "Solution Architecture",
+			"isSelectable": false
+		}, {
+			"code": "Design-UX",
+			"jobFunctions": [],
+			"id": 20,
+			"parentId": 8,
+			"name": "User Experience Design",
+			"isSelectable": true
+		}, {
+			"code": "UXD-UX",
+			"jobFunctions": [],
+			"id": 22,
+			"parentId": 9,
+			"name": "UX Development",
+			"isSelectable": true
+		}, {
+			"code": "XamDev",
+			"jobFunctions": [],
+			"id": 73,
+			"parentId": 2,
+			"name": "Xamarin developer",
+			"isSelectable": true
+		}
+	]
+}

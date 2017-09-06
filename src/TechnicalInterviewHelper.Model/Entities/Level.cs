@@ -1,32 +1,38 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using System.Collections.Generic;
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Level entity.
     /// </summary>
-    public class Level : BaseEntity
+    public class Level
     {
         /// <summary>
-        /// Gets or sets the competency identifier.
+        /// Gets or sets the identifier.
         /// </summary>
         /// <value>
-        /// The competency identifier.
+        /// The identifier.
         /// </value>
-        public int CompetencyId { get; set; }
+        [JsonProperty("level")]
+        public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets a value indicating whether this instance is eligible for asmt.
         /// </summary>
         /// <value>
-        /// The name.
+        ///   <c>true</c> if this instance is eligible for asmt; otherwise, <c>false</c>.
         /// </value>
-        public string Name { get; set; }
+        [JsonProperty("isEligibleForAsmt")]
+        public bool IsEligibleForAsmt { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the job titles.
         /// </summary>
         /// <value>
-        /// The description.
+        /// The job titles.
         /// </value>
-        public string Description { get; set; }
+        [JsonProperty("jobTitles")]
+        public IEnumerable<string> JobTitles { get; set; }
     }
 }

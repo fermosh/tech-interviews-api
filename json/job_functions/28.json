@@ -1,0 +1,129 @@
+{
+	"id": "8b09aafe-6101-9159-a49f-0b1b15ad1dae",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 28,
+        "name": "Systems Engineering",
+        "mnemonicBase": "SE",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Experience and Knowledge",
+                    "cells": [
+                        "<p>Understanding of script programming language(s), SQL. Intermediate level of primary skill. Not expected to have knowledge or experience of ITIL processes.</p>",
+                        "<p>At least 1 year of relevant experience. Intermediate level of all relevant professional skills. Basics in Disaster recovery strategy, Performance Optimization, Cluster solution operation, Application Performance Management (Monitoring). Experience with Service Desk / Ticketing software. Expected to be able to follow a defined ITIL/ITSM processes. Service Model oriented.</p>",
+                        "<p>At least 3 years of experience. Advanced level in primary skill, Intermediate+ level in other professional skills. Good in scripting/automation. Able to contribute in design and deploy of solution, in capacity planning. Able to setup monitoring, conduct performance audit and performance optimization. Ability to supervise and train another SE1-SE2 specialist. Experience in bug / development tracking systems. Expected to be able to follow and understand a defined ITIL/ITSM process, train other team members, and contribute in process improvement. Understanding of concepts of software development cycle.</p>",
+                        "<p>At least 5 years of relevant experience. Expert in primary skill, Advanced level in 3+ related professional skills. Experience with Project Management software. In addition to previous level requirements, SE4 should have expertise and skills to initiate, supervise, design, manage implementation of solutions and processes, coordinate project teams, do service delivery management. Ability to supervise and train SE1-SE2 specialists. Expected to be able to design, deploy, follow, explain and enhance defined ITIL/ITSM processes in his team as well as linked teams. Knowledge of Software development processes and methodologies.</p>",
+                        "<p>At least 7 years of relevant experience, expertise in 3+ professional skills and cross-domain knowledge. Able to do full scale Solution Design, Project Planning and Coordination. Primarily leading technical expertise is required. One of expert skills may include ability to be able to design, improve, follow, consult, actively influence or integrate different processes based on ITIL/ITSM and SDLC frameworks.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read and understand project and requirement documentation</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create documentation describing his/her solution / code.</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create design, technical and project documentation including high-quality documentation of his/her code and solutions.</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create high-quality design, technical and project documentation including documentation of his/her code and solution; able to write high-quality use cases and audit documentation.</p>",
+                        "<p>Able to read and understand project and requirement documentation; able to create high-quality design, technical and project documentation including documentation of his/her code and solutions, proposed solution architecture; able to write high-quality use cases and audit documentation.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Systems Engineer/Junior Security Systems Engineer</p>",
+                        "<p>Systems Engineer/Security Systems Engineer</p>",
+                        "<p>Senior Systems Engineer/Senior Security Systems Engineer</p>",
+                        "<p>Lead Systems Engineer/Lead Security Systems Engineer</p>",
+                        "<p>Chief Systems Engineer/Chief Security Systems Engineer</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the Systems Engineer, Database Administrator role</p>",
+                        "<p>Plays the Systems Engineer, Maintenance Engineer, Database Administrator role</p>",
+                        "<p>Plays the Systems Engineer, Maintenance Engineer, Database Administrator role or roles of DB Architect, Database or Systems Consultant or Maintenance and leading team up to 5 engineers</p>",
+                        "<p>Plays the Lead Systems / Maintenance Engineer and Architect roles, usually performs a Team Leader, Reviewer, Auditor, Technical Trainer. May perform roles of DB Architect, Database or Systems Consultant.</p>",
+                        "<p>Can play any role, typically a Lead position. Responsibilities can include Team Leader, Architect, Project Manager or Coordinator, Reviewer, Auditor, Technical Trainer and Process Engineer.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality and Reliability",
+                    "cells": [
+                        "<p>Diligence, accountability, flexibility, adaptability, interested to study professional domain. Expected to work effectively under supervision</p>",
+                        "<p>Responsibility for the quality of the code/solution created. Stress tolerance. Expected to implement functionality without direct supervision</p>",
+                        "<p>Creates deliverables in good quality. Strong ownership and personal responsibility. Team player. Able to train and couch juniors. Expected to be self-managing, implement functionality without supervision and test his/her work thoroughly using test cases</p>",
+                        "<p>Must be a role model for colleagues; creates deliverables in high quality. Introduces process improvements. Leadership skills, basics in RM and PM. Participates in staff hiring/career development. Provides tactical vision. Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision and test his work thoroughly using test cases. <span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent quality.</p><p>Leadership abilities, PM skills, Introduces process improvements.</p><p>Able to do staffing, career development. Delivers tactical and strategically vision. Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision and test his work thoroughly using test cases.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Not expected to deal directly with customers.</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision.</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision.</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision.</p>",
+                        "<p>Expected to be on a par with the best industry experts in customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2/C1</p>",
+                        "<p>C1</p>",
+                        "<p>C1/C2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Security Systems Engineer",
+                "Junior Systems Engineer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Security Systems Engineer",
+                "Systems Engineer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Security Systems Engineer",
+                "Senior Systems Engineer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Security Systems Engineer",
+                "Lead Systems Engineer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Security Systems Engineer",
+                "Chief Systems Engineer"
+            ]
+        }
+    ]
+}

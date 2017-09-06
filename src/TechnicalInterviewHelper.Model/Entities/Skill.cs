@@ -1,43 +1,21 @@
 ﻿namespace TechnicalInterviewHelper.Model
-{
+{    
     using System.Collections.Generic;
-
+    using Newtonsoft.Json;
+    
     /// <summary>
     /// Skill entity.
     /// </summary>
-    public class Skill : BaseEntity
+    public class Skill
     {
-        /// <summary>
-        /// Gets or sets the competency identifier.
-        /// </summary>
-        /// <value>
-        /// The competency identifier.
-        /// </value>
-        public int CompetencyId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the level identifier.
-        /// </summary>
-        /// <value>
-        /// The level identifier.
-        /// </value>
-        public int LevelId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the domain identifier.
-        /// </summary>
-        /// <value>
-        /// The domain identifier.
-        /// </value>
-        public int DomainId { get; set; }
-
         /// <summary>
         /// Gets or sets the root identifier.
         /// </summary>
         /// <value>
         /// The root identifier.
         /// </value>
-        public int RootId { get; set; }
+        [JsonProperty("rootId")]
+        public int? RootId { get; set; }
 
         /// <summary>
         /// Gets or sets the display order.
@@ -45,6 +23,7 @@
         /// <value>
         /// The display order.
         /// </value>
+        [JsonProperty("displayOrder")]
         public int DisplayOrder { get; set; }
 
         /// <summary>
@@ -53,6 +32,7 @@
         /// <value>
         /// The required skill level.
         /// </value>
+        [JsonProperty("requiredSkillLevel")]
         public int RequiredSkillLevel { get; set; }
 
         /// <summary>
@@ -61,15 +41,27 @@
         /// <value>
         /// The user skill level.
         /// </value>
+        [JsonProperty("userSkillLevel")]
         public int UserSkillLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets the level set.
+        /// Gets or sets the levels set.
+        /// Note that this property has a typo since our data source has it too.
         /// </summary>
         /// <value>
-        /// The level set.
+        /// The levels set.
         /// </value>
-        public int LevelSet { get; set; }        
+        [JsonProperty("levelsSet")]
+        public int LevelsSet { get; set; }
+
+        /// <summary>
+        /// Gets or sets the competency identifier.
+        /// </summary>
+        /// <value>
+        /// The competency identifier.
+        /// </value>
+        [JsonProperty("competencyId")]
+        public int CompetencyId { get; set; }
 
         /// <summary>
         /// Gets or sets the job function level.
@@ -77,6 +69,7 @@
         /// <value>
         /// The job function level.
         /// </value>
+        [JsonProperty("jobFunctionLevel")]
         public int JobFunctionLevel { get; set; }
 
         /// <summary>
@@ -85,23 +78,17 @@
         /// <value>
         /// The topics.
         /// </value>
-        public List<Topic> Topics { get; set; }
+        [JsonProperty("topics")]
+        public IList<Topic> Topics { get; set; }
 
         /// <summary>
-        /// Gets or sets the questions.
+        /// Gets or sets the identifier.
         /// </summary>
         /// <value>
-        /// The questions.
+        /// The identifier.
         /// </value>
-        public List<Question> Questions { get; set; }
-
-        /// <summary>
-        /// Gets or sets the exercises.
-        /// </summary>
-        /// <value>
-        /// The exercises.
-        /// </value>
-        public List<Exercise> Exercises { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the parent identifier.
@@ -109,6 +96,7 @@
         /// <value>
         /// The parent identifier.
         /// </value>
+        [JsonProperty("parentId")]
         public int? ParentId { get; set; }
 
         /// <summary>
@@ -117,14 +105,16 @@
         /// <value>
         /// The name.
         /// </value>
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is selectable.
         /// </summary>
         /// <value>
-        /// <c>true</c> if this instance is selectable; otherwise, <c>false</c>.
+        ///   <c>true</c> if this instance is selectable; otherwise, <c>false</c>.
         /// </value>
+        [JsonProperty("isSelectable")]
         public bool IsSelectable { get; set; }
     }
 }

@@ -1,0 +1,158 @@
+{
+	"id": "77b9f182-f200-23b6-53c5-73815d8abd87",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 44,
+        "name": "Administration",
+        "mnemonicBase": "ADM",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "At least 1 year of relevant experience desirable but not essential.",
+                        "At least 2 years of relevant experience.",
+                        "At least 3 years of relevant experience.",
+                        "At least 5 years of relevant experience.",
+                        "At least 7 years of relevant experience."
+                    ]
+                },
+                {
+                    "name": "Business Domain Knowledge",
+                    "cells": [
+                        "Not expected to have knowledge or experience of business administration processes.",
+                        "Expected to be able to follow a defined business administration process.",
+                        "Expected to be able to follow and understand a defined business administration process.",
+                        "Expected to be able to follow, understand, and enhance a defined  business administration process.",
+                        "Expected to be able to follow, understand, and actively influence and enhance a defined business administration process."
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "Able to read and understand process-related documentation; complete tasks according to the team’s rules.",
+                        "Able to read, understand and design process-related documentation; able to follow guidelines, identify tasks and complete them according to the team’s rules.<br>",
+                        "Able to read, understand and design high-quality process-related documentation; able to follow guidelines, identify tasks and complete them according to the team’s rules.",
+                        "Able to read, understand and design high-quality process-related documentation; able to design guidelines, identify (OR set)  tasks and complete them according to the team’s rules.",
+                        "Able to read, understand and design high-quality process-related documentation; able to design guidelines, set tasks and complete them according to the team’s rules."
+                    ]
+                },
+                {
+                    "name": "Organizational Impact/Responsibility and reliability ",
+                    "cells": [
+                        "Works on limited set of tasks. <br>Expected to work effectively under supervision. Problem set is well-defined. Plans and executes own work assignments defined by more senior team member. Contributes primarily to own work group. Direct impact on the group work.",
+                        "Expected to work effectively under supervision and to perform a variety of activities in accordance with the established standards.",
+                        "Expected to be self-managing, implement functionality without supervision. Able to share learning or enable process improvement. Proactive attitude in identifying issues at the earliest opportunity and in responding to potential problems.",
+                        "Expected to be self-managing, take responsibility for a projects, work without supervision. Able to share learning or enable process improvement. Proactive attitude in identifying issues at the earliest opportunity and in responding to potential problems.",
+                        "Expected to be self-managing, take responsibility for a projects, work without supervision. Able to share learning or enable process improvement.Proactive attitude in identifying issues at the earliest opportunity and in responding to potential problems."
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "No specific expectations regarding quality.",
+                        "Must show a sense of responsibility for the quality of his / her deliverables.",
+                        "Creates deliverables in good quality.",
+                        "Must be a role model for colleagues; creates deliverables in high quality.",
+                        "Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent-quality."
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Procurement Specialist</p><p>Associate Project Administrator</p><p>Junior Maintenance Specialist</p><p>Receptionist</p><p> </p><p> </p>",
+                        "<p>Procurement Specialist,</p><p>Administrative Assistant</p><p>Construction Specialist</p><p>Guest Service Specialist</p><p>Interior Designer</p><p>Maintenance Specialist</p><p>Office Specialist</p><p>Paralegal</p><p>Personnel Officer</p><p>Project Administrator</p>",
+                        "<p>Senior Procurement Specialist,</p><p>Senior Administrative Assistant</p><p>Executive Assistant</p><p>Senior Construction Specialist</p><p>Senior Corporate Paralegal</p><p>Senior Interior Designer</p><p>Senior Maintenance Specialist</p><p>Senior Office Specialist</p><p>Senior Paralegal</p><p>Senior Personnel Officer</p><p>Senior Project Administrator</p><p>Senior Guest Service Specialist</p>",
+                        "<p>Lead Procurement Specialist,</p><p>Lead Administrative Assistant</p><p>Lead Construction Specialist</p><p>Lead Interior Designer</p><p>Lead Maintenance Specialist</p><p>Lead Office Specialist</p><p>Lead Personnel Officer</p><p>Lead Project Administrator</p>",
+                        "<p>Chief Procurement Specialist</p><p>Chief Maintenance Specialist</p><p><span>Chief Office Specialist</span></p><p>Chief Personnel Officer</p><p>Chief Project Administrator</p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "English Language ",
+                    "cells": [
+                        "A1/A2",
+                        "A2/B1",
+                        "B1/B2",
+                        "B2",
+                        "B2"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Receptionist",
+                "Associate Project Administrator",
+                "Junior Procurement Specialist",
+                "Junior Maintenance Specialist"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Office Specialist",
+                "Administrative Assistant",
+                "Project Administrator",
+                "Personnel Officer",
+                "Procurement Specialist",
+                "Construction Specialist",
+                "Interior Designer",
+                "Paralegal",
+                "Guest Service Specialist",
+                "Maintenance Specialist"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Personnel Officer",
+                "Senior Corporate Paralegal",
+                "Senior Administrative Assistant",
+                "Executive Assistant",
+                "Senior Procurement Specialist",
+                "Senior Office Specialist",
+                "Senior Interior Designer",
+                "Senior Project Administrator",
+                "Senior Paralegal",
+                "Senior Maintenance Specialist",
+                "Senior Construction Specialist",
+                "Senior Guest Service Specialist"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Personnel Officer",
+                "Lead Office Specialist",
+                "Lead Construction Specialist",
+                "Lead Procurement Specialist",
+                "Lead Project Administrator",
+                "Lead Interior Designer",
+                "Lead Maintenance Specialist",
+                "Lead Administrative Assistant"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Chief Personnel Officer",
+                "Chief Project Administrator",
+                "Chief Maintenance Specialist",
+                "Chief Procurement Specialist",
+                "Chief Office Specialist"
+            ]
+        }
+    ]
+}

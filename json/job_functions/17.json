@@ -1,0 +1,154 @@
+{
+	"id": "d51a4a80-2b35-1607-0603-1fda6b36f163",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 17,
+        "name": "Testing",
+        "mnemonicBase": "T",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Test Experience and Knowledge",
+                    "cells": [
+                        "<p>No work experience of Software Testing</p>",
+                        "<p>At least 0.5 year Software Testing experience and Intermediate level of primary skill.</p>",
+                        "<p>At least 2 years Software Testing experience and Advanced level of primary skill.</p>",
+                        "<p>At least 5 years Software Testing experience and Expert level of primary skill, and Advanced level of secondary skill.</p>",
+                        "<p>At least 7 years Software Testing experience and Expert level of primary and two secondary skills.</p><p> </p>"
+                    ]
+                },
+                {
+                    "name": "Software Process Knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience of Software Quality Control processes</p>",
+                        "<p>Has Intermediate level of Software Quality Control process and SDLC. Able to follow a defined Software Quality Control process.</p>",
+                        "<p>Has Advanced level of Software Quality Control process and SDLC. Able to follow and enhance a defined Software Quality Control process.</p>",
+                        "<p>Has Expert level of Software Quality Control process and SDLC. Able to follow, actively influence and enhance a defined Software Quality Control process.</p>",
+                        "<p>Has Expert level of Software Quality Control and other Software Engineering processes. Able to define Software Quality Control process.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Able to read and understand project and requirement documentation, create test documentation (test cases for non-complex areas of the software product)</p>",
+                        "<p>Able to read and understand project documentation, perform review and analysis of functional requirements and specifications, create test documentation (test cases and test results reports)</p>",
+                        "<p>Shows good understanding of project documentation. Provides good-quality functional requirement and specification review and analysis. Creates high-quality test cases and test results reports. Creates test plans.</p>",
+                        "<p>Shows strong understanding of project documentation. Provides high-quality functional requirement and specification review and analysis. Creates high-quality test plans, test cases and test result reports.</p>",
+                        "<p>Shows perfect understanding of project documentation. Provides high-quality functional requirement and specification review and analysis. Creates high-quality test plans, test cases and test results reports</p>"
+                    ]
+                },
+                {
+                    "name": "Job Titles",
+                    "cells": [
+                        "<p>Junior Software Testing Engineer</p>",
+                        "<p>Software Testing Engineer</p>",
+                        "<p>Senior Software Testing Engineer</p>",
+                        "<p>Lead Software Testing Engineer</p>",
+                        "<p>Chief Software Testing Engineer</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project",
+                    "cells": [
+                        "<p>Plays the Tester role</p>",
+                        "<p>Plays the Tester role</p>",
+                        "<p>Plays the Tester (or Automation Tester) and Key Tester roles</p>",
+                        "<p>Plays the Key Tester role, and usually also performs a Testing Team Lead, Project Coordinator, Reviewer or Auditor role.</p>",
+                        "<p>Can play any role, typically a senior position. Responsibilities can include Key Tester, Testing Team Lead, Project Coordinator, Reviewer, Auditor, Technical Trainer and Process Engineer.</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under close supervision</p>",
+                        "<p>Expected to perform primary testing tasks without direct supervision.</p>",
+                        "<p>Expected to be self-managing and perform primary testing tasks without supervision. Takes testing responsibility for a subsystem or a whole project.</p>",
+                        "<p>Expected to be self-managing and perform any tasks without supervision. Takes testing responsibility for a subsystem or a whole project.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>",
+                        "<p>Expected to be self-managing and perform any tasks without supervision. Takes testing responsibility for a subsystem or a whole project.</p><p><span>Expected to have proven experience in evaluating theoretical knowledge and practical (on-the-job) skills and the seniority level of candidates and providing actionable feedback and recommendations on positions/projects matching.</span></p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>No specific expectations regarding quality</p>",
+                        "<p>Must show a sense of responsibility for the results of the primary testing tasks he/she performs.</p><p>Creates deliverables in normal quality</p>",
+                        "<p>Takes full responsibility for the results of the performed primary testing tasks.</p><p>Creates deliverables in good quality.</p>",
+                        "<p>Takes full responsibility for the results of performing any tasks he/she is assigned for.</p><p>Must be a role model for colleagues; creates deliverables in high quality.</p>",
+                        "<p>Takes full responsibility for the results of performing any tasks he/she is assigned for.</p><p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent quality.</p>"
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Not expected to deal directly with customers</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; visit customers with supervision</p>",
+                        "<p>Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>",
+                        "<p>Expected to have good customer relationship skills; participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>",
+                        "<p>B2</p>"
+                    ]
+                },
+                {
+                    "name": "Language Level in the Customer’s Communication Language",
+                    "cells": [
+                        "<p>Able to read and understand the Customer’s Communication Language</p>",
+                        "<p>Able to read and write the Customer’s Communication Language and have some speaking ability</p>",
+                        "<p>Comfortably able to read, write and speak the Customer’s Communication Language</p>",
+                        "<p>Comfortably able to read, write and speak the Customer’s Communication Language; able to write high-quality unambiguous texts</p>",
+                        "<p>Totally fluent in the spoken and written variants of the Customer’s Communication Language; able to write high-quality unambiguous texts</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Software Testing Engineer"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Software Testing Engineer"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Senior Software Testing Engineer"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Lead Software Testing Engineer"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": true,
+            "jobTitles": [
+                "Chief Software Testing Engineer"
+            ]
+        }
+    ]
+}

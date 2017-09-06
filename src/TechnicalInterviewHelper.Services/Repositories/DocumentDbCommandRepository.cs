@@ -11,7 +11,7 @@
     /// </summary>
     /// <typeparam name="T">Entity to apply the command operations.</typeparam>
     /// <seealso cref="TechnicalInterviewHelper.Model.ICommandRepository{T, TKey}" />
-    public class DocumentDbCommandRepository<T> : IDisposable, ICommandRepository<T>
+    public class DocumentDbCommandRepository<T> : ICommandRepository<T>, IDisposable
             where T : BaseEntity
     {
         #region Private fields
@@ -104,6 +104,20 @@
         }
 
         #endregion Udpate command
+
+        #region Delete command
+
+        /// <summary>
+        /// Delete a document as an asynchronous operation from the Azure DocumentDB database service.
+        /// </summary>
+        /// <param name="id">The id</param>
+        /// <returns>A task of void.</returns>
+        public async Task Delete(string id)
+        {
+            var deleted = await this.documentClient.DeleteDocumentAsync(UriFactory.CreateDocumentUri(this.databaseId, this.collectionId, id));
+        }
+
+        #endregion
 
         #region IDisposable support
 

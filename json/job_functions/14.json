@@ -1,0 +1,126 @@
+{
+	"id": "8abe8c11-701c-350c-0d3b-84870c3e61b7",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 14,
+        "name": "Scientific Curation",
+        "mnemonicBase": "LS",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Entry level position: no previous experience of data curation or experience of work with not relevant content. Last year student or specialist with high with biological/medical/ chemical/other relevant education. PhD students/degree preferable. Understanding of project subject and tasks. Ability to understand and follow curation work instructions. Ability to perform curation work with intensive supervision and biological/chemical curator’s control. Ability of self-education in relevant area. Computer skills: MSOffice, Chemical drawing tools (for chemists).</p>",
+                        "<p>At least 1 year of relevant data curation experience. Ability to perform curation work without intensive supervision and biological/chemical curator’s control. Ability to perform curation of low complexity data related to >1 areas of relevant knowledge. Stable work during previous periods.</p>",
+                        "<p>At least 3-4 years of relevant curation experience. Ability to perform curation work without supervision with random biological/chemical curator’s control. Ability to perform curation of middle-high complexity data related to different areas of relevant knowledge. Ability to pass knowledge to other team members and be the curator for Junior team members. Ability to learn new processes and switch between >=2 processes. Ability to work directly with customer with supervision of PM or higher level specialist.</p>",
+                        "<p>An experienced professional with at least 5-6 years’ experience. Ability to coordinate work of other team members and be the curator for L2-3 team members. Deep understanding of data and curation processes. Guidelines analysis and creation of instructions/manuals for team. Work with taxonomies (terms matching). Ability to investigate new information area to work at different tasks/projects. Ability to switch between >=3 processes. Ability to work directly with customer including reports generation and data delivery.</p>",
+                        "<p>An experienced professional with at least 7 years’ experience. Ability to coordinate team work.  Ability to create proposals/ideas for relevant database content and production workflow. Ability to work with all relevant knowledge areas. Creation of taxonomies including multi-hierarchical and multi-source cases. Ability to work with any customer including participation in product requirements generation.</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Good knowledge of MS Office (Word, Excel, etc.). Reads and understands project documentation.</p>",
+                        "<p>Good knowledge of MS Office and project-specific tools. Reads and understands project documentation.</p>",
+                        "<p>Develops training and communication materials for internal usage.</p>",
+                        "<p>Creates analysis and requirement documentation.</p>",
+                        "<p>Develops training and communication materials for internal and external usage. Creates high-quality analysis, requirement documentation. Creates process improvement documentation.</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Scientific Curation Specialist/</p><p>Junior Data Entry Specialist</p>",
+                        "<p>Scientific Curation Specialist/</p><p>Data Entry Specialist</p>",
+                        "<p>Senior Scientific Curation Specialist</p>",
+                        "<p>Lead Scientific Curation Specialist</p>",
+                        "<p>Principal Scientific Curation Specialist</p>"
+                    ]
+                },
+                {
+                    "name": "Responsibility and Reliability",
+                    "cells": [
+                        "<p>Ability to work effectively under direct supervision and assists senior curation specialists with routine tasks. Ability to acquire new technological skills and resolve problems in a resourceful and timely manner</p>",
+                        "<p>Ability to work effectively under supervision of biological/chemical data QA specialists. Knowledge of advanced scientific approaches and methodologies. Ability to design, organize, and coordinate scientific research projects.</p>",
+                        "<p>Demonstrable ability to work independently as well as collaboratively, to set priorities, show initiative and balance the demands of working in a complex work context. Ability to extract complex data and to make decisions in complex case. Ability to make QA and ability to build and maintain team process.</p>",
+                        "<p>Ability to build, maintain and supervise team work. Ability to build relationship with client and to influence on client’s decision. Ability to work with any data, to create data structure and to develop workflow.</p>",
+                        "<p>Ability to liaise effectively with a diverse range of stakeholders and to communicate effectively on complex technical issues with technical and non-technical audiences. Strong client-focus.</p>"
+                    ]
+                },
+                {
+                    "name": "Roles Played on a Project / Specialization",
+                    "cells": [
+                        "<p>Can play different role depending on the required skills and qualifications, such as Chemistry, Biology, and Material science data curation specialist.</p>",
+                        "<p>Can play different role depending on the required skills and qualifications, such as Chemistry, Biology, and Material science data curation specialist.</p>",
+                        "<p>Can play different role depending on the required skills and qualifications, such as Chemistry, Biology, Material science data curation specialist, Scientific content QA specialist, Scientific data integration specialist.</p>",
+                        "<p>Can play different role depending on the required skills and qualifications, such as Chemistry, Biology, Material science data curation specialist, Scientific content QA specialist, Scientific data integration specialist, Taxonomy processing specialist.</p>",
+                        "<p>Can play different role depending on the required skills and qualifications, such as Chemistry, Biology, Material science data curation leader, Scientific content QA leader, Scientific data integration leader, Taxnomy creation specialist.</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Analytical and organizational skills. Good critical thinking, problem solving and attentiveness to detail.</p>",
+                        "<p>Works according to existing workflows. Asks for instructions in case of new and unfamiliar situations. Performs routine actions according to clear instructions.</p>",
+                        "<p>Able to coach and mentor less senior members of the team. Highly developed presentation, written, oral and interpersonal communication skills. The ability to build and maintain good working internal relationships.</p>",
+                        "<p>Ability to manage time and multiple projects in a complex, changing environment with a positive, flexible, creative and innovative attitude. The ability to build and maintain good working relationships internally and externally.</p>",
+                        "<p>Significant hands-on experience with relevant technologies and applications.</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>A2</p>",
+                        "<p>A2</p>",
+                        "<p>B1</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Scientific Curation Specialist",
+                "Junior Data Entry Specialist"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Scientific Curation Specialist",
+                "Data Entry Specialist"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Scientific Curation Specialist"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Scientific Curation Specialist"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Principal Scientific Curation Specialist"
+            ]
+        }
+    ]
+}

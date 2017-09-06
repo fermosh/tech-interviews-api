@@ -1,0 +1,149 @@
+{
+	"id": "f7f9f0f3-699f-b6a6-31a2-5e2060a4d597",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 36,
+        "name": "Finance",
+        "mnemonicBase": "F",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional background",
+                    "cells": [
+                        "<p>High education (4<sup>th</sup> or 5<sup>th</sup> year of education is acceptable)</p>",
+                        "<p>Completed high education, some courses taken in Finance</p>",
+                        "<p>Completed high (finance) education, some advanced courses taken in Finance</p>",
+                        "<p>Completed high (finance) education, some relevant certification is started</p>",
+                        "<p>Completed high (finance) education with relevant certification completed</p>"
+                    ]
+                },
+                {
+                    "name": "Professional experience and domain knowledge",
+                    "cells": [
+                        "<p>Not expected to have knowledge or experience in category-specific domain</p>",
+                        "<p>Basic knowledge and at least one year of relevant experience</p>",
+                        "<p>Good knowledge and at least two years of relevant experience</p>",
+                        "<p>Expert knowledge and at least 3 years of relevant experience</p>",
+                        "<p>Expert knowledge and at least 5 years of relevant experience</p>"
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>Basic knowledge about some applications from working toolset</p>",
+                        "<p>Basic knowledge about all applications from working toolset, ability to perform standard actions within them</p>",
+                        "<p>Good awareness about toolset functionality, ability to perform advanced actions with it</p>",
+                        "<p>Expert knowledge about the toolset, ability to create enhancements requirements for applications</p>",
+                        "<p>Expert knowledge about the toolset, ability to create enhancements requirements for applications</p>"
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Junior Analyst</p><p>Junior Expense Analyst</p><p>Junior Internal Auditor</p><p>Junior Accountant</p>",
+                        "<p>Analyst</p><p>Expense Analyst</p><p>Internal Auditor</p><p>Accountant</p>",
+                        "<p>Senior Analyst</p><p>Senior Expense Analyst</p><p>Senior Internal Auditor</p><p>Senior Accountant</p>",
+                        "<p>Lead Analyst</p><p>Lead Expense Analyst</p><p>Lead Internal Auditor</p><p>Lead Accountant</p>",
+                        "<p>Chief Analyst</p><p>Chief Expense Analyst</p><p>Chief Internal Auditor</p><p>Chief Accountant</p>"
+                    ]
+                },
+                {
+                    "name": "Reliability",
+                    "cells": [
+                        "<p>Expected to work effectively under supervision</p>",
+                        "<p>Expected to follow established workflow without supervision with limited guidance</p>",
+                        "<p>Expected to be self-managing, to follow established workflow and make improvement suggestions about it</p>",
+                        "<p>Expected to be self-managing, to take full responsibility for some working process</p>",
+                        "<p>Expected to be self-managing, to take full responsibility for some working process</p>"
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>No specific expectations regarding quality</p>",
+                        "<p>Must show a sense of responsibility for the quality of his / her deliverables</p>",
+                        "<p>Creates deliverables in good quality</p>",
+                        "<p>Must be a role model for colleagues; creates deliverables in high quality</p>",
+                        "<p>Must be a role model for colleagues, on a par with the best industry standards; creates deliverables in excellent-quality</p>"
+                    ]
+                },
+                {
+                    "name": "Communication skills/Customer relations",
+                    "cells": [
+                        "<p>Not expected to be externally exposed</p>",
+                        "<p>Not expected to be externally exposed</p>",
+                        "<p>Expected to participate in external communications with supervision</p>",
+                        "<p>Expected to communicate with external persons without supervision</p>",
+                        "<p>Expected to communicate with external persons without supervision and drive this relation</p>"
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>A1</p>",
+                        "<p>A2</p>",
+                        "<p>B1</p>",
+                        "<p>B2</p>",
+                        "<p>C1</p>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Junior Analyst",
+                "Junior Expense Analyst",
+                "Junior Internal Auditor",
+                "Junior Accountant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Analyst",
+                "Accountant",
+                "Internal Auditor",
+                "Expense Analyst"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Accountant",
+                "Senior Analyst",
+                "Senior Internal Auditor",
+                "Senior Expense Analyst"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Analyst",
+                "Lead Accountant",
+                "Lead Internal Auditor",
+                "Lead Expense Analyst"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Chief Accountant",
+                "Chief Analyst",
+                "Chief Expense Analyst",
+                "Chief Internal Auditor"
+            ]
+        }
+    ]
+}

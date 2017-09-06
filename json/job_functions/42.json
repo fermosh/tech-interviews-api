@@ -1,0 +1,136 @@
+{
+	"id": "2ad09a12-2c51-e269-9f60-c024f413f2bd",
+	"documentTypeId": 7,
+    "jobFunction": {
+        "id": 42,
+        "name": "Training and Development",
+        "mnemonicBase": "TD",
+        "track": 0
+    },
+    "sections": [
+        {
+            "caption": null,
+            "rows": [
+                {
+                    "name": "Professional Experience and Knowledge",
+                    "cells": [
+                        "<p>Entry-level position. Ideally a graduate or junior specialist with at least 1 year of administrative or secretarial work experience.</p>",
+                        "<p>At least 2 years of relevant experience, preferably in a technology-based organization.</p><p> </p><p> </p>",
+                        "<p>At least 3 years of relevant experience in training and development and instructional design.</p>",
+                        "<p>At least 6 years of relevant experience in training and development and instructional design.</p><p> </p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Design and Documentation Skills ",
+                    "cells": [
+                        "<p>MS Office (Outlook, Word, Excel),</p><p> </p><p> </p>",
+                        "<p>Able to write actionable letters, MFUs, tasks and assignments. Able to follow guidelines, identify tasks and complete them according to the team’s rules.</p><p> </p><p> </p>",
+                        "<p>Supplies relevant information in a timely, logical and clear manner (both verbally and in written documents), following corporate business communication rules in RU and EN. Able to develop a Service Description, track Spending Limit vs Budget and design high quality teaching materials. Regularly teaches with technology, involving Web 2.0 tools, web conferencing and/or VLEs.  </p><p> </p>",
+                        "<p>Able to customize Jira, set tasks for IT, work with advanced Excel (pivots and diagrams) and advanced PowerPoint. Able to process and present analytical data related to the area of their expertise</p><p> </p><p> </p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Responsibility and Reliability",
+                    "cells": [
+                        "<p>Able to achieve results while doing Run the Business (RTB) work well. Contributes to the overall process, follows explicit and tacit rules and policies established in the Training and Development team. Assumes personal responsibility for their own actions, behaviors and results. Adapts to changes easily, open to new initiatives, and takes part in them. Able to organize, prioritize and multi-task. Shows the qualities of a team player with a can-do attitude and a strong work ethic. Participates in company and team events as a contributing member.</p><p> </p>",
+                        "<p>Understands team goals and strategies, provides input and prioritizes work accordingly. Has a clear understanding of how their role and actions can affect customer satisfaction. Able to coordinate a deployed service (a function within a complex service) and has all the necessary knowledge: workflows, metrics, roles, SLAs, etc. (Executing and Controlling).</p><p>Demonstrates self‐motivation, a positive attitude, a pro‐active approach and excellent communication skills. </p><p> </p><p> </p>",
+                        "<p>Able to operate multiple instances of complex services, has all the necessary general management skills, defines lag and lead metrics, sets targets and expectations, automates and tracks performance, makes processes, tools and team adjustments as necessary. Tracks their subset of requests, coordinates other roles and their tasks to fulfill service commitments and SLAs: able to organize and run focused meetings which produce actionable follow-ups; able to supervise a variety of tasks.</p><p>Demonstrates self‐motivation, a positive attitude, a pro‐active approach and excellent communication skills. </p><p>A self-starter eager to learn new tools and methods. Eagerly takes on peer mentoring tasks.</p>",
+                        "<p>Aligns team goals, strategies and methods with high-level strategic goals and direction; identifies how the team can contribute to them. Able to present in an engaging manner, negotiate terms and conditions and sell solutions. Is accessible and responds within a designated time frame. Responsible for maintaining a high performance level of the assigned team(s): knows how to motivate team members, balances team goals and personal interests, learn new tools and methods, define PDPs and career paths. Recognizes the successes of individuals and teams. Demonstrates leadership qualities, self‐motivation, a pro‐active approach and a commitment to excellence.</p><p> </p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Job Title",
+                    "cells": [
+                        "<p>Training and Development Assistant/ Language Training Assistant</p>",
+                        "<p>Training and Development Specialist/ Language Instructor</p>",
+                        "<p>Senior Training and Development Specialist/ Senior Language Instructor</p>",
+                        "<p>Lead Training and Development Specialist/ Lead Language Instructor</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Roles Played in a Team/on a Project",
+                    "cells": [
+                        "<p>Team Member, Key Specialist, Mentor,</p><p> </p>",
+                        "<p>Key Specialist, Mentor, Process Owner; Coordinator; Trainer,</p><p> </p>",
+                        "<p>Key Specialist, Process Owner; Coordinator; Mentor; Coach, Senior Trainer; Project Manager; Service Manager, Assessment committee member</p>",
+                        "<p>Key Specialist, Process Owner; Team Lead, Coordinator, Mentor Trainer, Project Manager, Service Manager, Change Manager, Assessment committee member</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Quality",
+                    "cells": [
+                        "<p>Understands and follows the departmental quality metrics, procedures and guidelines. Demonstrates a high level of responsibility and attention to details.</p>",
+                        "<p>Shows a high level of discipline, responsibility, and work ethics. Learns fast from team members, identifies and quickly bridges gaps in knowledge and skills. Managers a personal work plan. </p>",
+                        "<p>Able to provide comprehensive hands-on job-related education where more experienced specialists (mentors) share their knowledge and skills. Identifies gaps in knowledge and skills and defines opportunities for further self-development. Good understanding of IT production processes and key roles in IT production.</p>",
+                        "<p>Collaborates with others to create new solutions. Takes the lead in formulating and identifying core elements of our culture.</p><p>Demonstrates a commitment to excellence and company values. Nurtures and supports team identity and team spirit.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "Customer Relations",
+                    "cells": [
+                        "<p>Understands the value of the provided service and its importance to the company and customers. Interacts with customers in order to accommodate their needs in the best way possible.</p>",
+                        "<p>Has a clear understanding of how role and actions influence customer satisfaction and training progress. Demonstrates a proactive and individualized approach to customers. Shows the ability to study the customer’s domain in order to accommodate their training needs in the best way possible.   </p>",
+                        "<p>Full customer contact, including contracting issues. Financial issues are managed under supervision only.</p>",
+                        "<p>Acts as role model in their personal approach to a customer focus. Establishes strong and trusted partnerships with customers.</p><p>As an expert in educational solutions, may deal with customer complaints.</p>",
+                        null
+                    ]
+                },
+                {
+                    "name": "English Language Ability",
+                    "cells": [
+                        "<p>B1 (B2 – for Language Training Assistant)</p>",
+                        "<p>B2 (C1 – for Language Instructor)</p>",
+                        "<p>B2         (C2 – for Senior Language Instructor)</p>",
+                        "<p>B2 (C2 – for Lead Language Instructor)</p>",
+                        null
+                    ]
+                }
+            ]
+        }
+    ],
+    "levels": [
+        {
+            "level": 1,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Training and Development Assistant",
+                "Language Training Assistant"
+            ]
+        },
+        {
+            "level": 2,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Training and Development Specialist",
+                "Language Instructor"
+            ]
+        },
+        {
+            "level": 3,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Senior Training and Development Specialist",
+                "Senior Language Instructor"
+            ]
+        },
+        {
+            "level": 4,
+            "isEligibleForAsmt": false,
+            "jobTitles": [
+                "Lead Training and Development Specialist",
+                "Lead Language Instructor"
+            ]
+        },
+        {
+            "level": 5,
+            "isEligibleForAsmt": false,
+            "jobTitles": []
+        }
+    ]
+}
