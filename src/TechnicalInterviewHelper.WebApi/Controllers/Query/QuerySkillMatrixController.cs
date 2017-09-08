@@ -58,7 +58,7 @@
                 .FindWithin(competencyId, skill => skill.CompetencyId == competencyId && skill.JobFunctionLevel == jobFunctionLevel);
 
             // return an http 200 status with the SkillMatrixViewModel
-            return Ok(SkillMatrixViewModel.Create(competencyId, skills));
+            return Ok(SkillMatrixViewModel.Create(competencyId, skills).Skills);
         }
 
         [Route("parent/{parentCompetencyId:int}/{jobFunctionLevel:int}")]

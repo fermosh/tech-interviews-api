@@ -49,25 +49,18 @@
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Exercise>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
-                    .Where(document => document.DocumentTypeId == DocumentType.Exercises && document.Competency.Id == template.CompetencyId)
-                    .SelectMany(document => document.Skills
-                    .Where(skill => template.Skills.Contains(skill.Id))
-                    .Select(skill => new Exercise
-                    {
-                        Id = document.Id,
-                        Competency = document.Competency,
-                        Skills = document.Skills,
-                        Description = document.Description,
-                        Solution = document.Solution,
-                        Title = document.Title
-                    }))
+                    .Where(document =>
+                        document.DocumentTypeId == DocumentType.Exercises &&
+                        document.Competency.Id == template.CompetencyId)
+                    .SelectMany(document =>
+                        document.Skills.Where(skill => template.Skills.Contains(skill.Id)).Select(s => document))
                     .AsDocumentQuery();
 
             var queryResult = new List<Exercise>();
             while (documentQuery.HasMoreResults)
             {
                 var exercises = await documentQuery.ExecuteNextAsync<Exercise>();
-                queryResult.AddRange(exercises);
+                queryResult.AddRange(exercises.GroupBy(e => e.Id).Select(e => e.FirstOrDefault()));
             }
 
             return queryResult;
