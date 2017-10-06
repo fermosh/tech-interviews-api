@@ -51,6 +51,7 @@
     <Compile Include="Attributes\DocumentTypeAttribute.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Comparers\SkillComparer.cs" />
+    <Compile Include="Entities\ErrorResult.cs" />
     <Compile Include="Entities\JobFunctionDocument.cs" />
     <Compile Include="Entities\AnsweredExercise.cs" />
     <Compile Include="Entities\Catalogs\CompetencyCatalog.cs" />

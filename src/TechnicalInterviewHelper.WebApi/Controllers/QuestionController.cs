@@ -6,6 +6,7 @@
     using System.Web.Http;
     using System.Web.Http.Cors;
     using TechnicalInterviewHelper.Model;
+    using System.Collections.Generic;
 
     [RoutePrefix("api")]
     [EnableCors(origins: "*", headers: "*", methods: "GET,POST,PUT,DELETE")]
@@ -102,7 +103,7 @@
             return Ok(question);
         }
 
-        [Route("questions")]
+        [Route("bulkImport/questions")]
         [HttpPost]
         public async Task<IHttpActionResult> Post(Question question)
         {
@@ -128,6 +129,64 @@
                 var result = await commandRepository.Insert(question);
 
                 return Ok(result.Id);
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("questions")]
+        [HttpPost]
+        public async Task<IHttpActionResult> Post(IEnumerable<Question> questions)
+        {
+            if (questions == null)
+            {
+                return BadRequest("Request list of questions is null.");
+            }
+
+            var skillIsNullQuestions = questions.Where(q => q.Skill == null).ToList();
+            var competencyIsNullQuestions = questions.Where(q => q.Competency == null).ToList();
+            var questionIsEmptyOrNull = questions.Where(q => !String.IsNullOrEmpty(q.Body)).ToList();
+
+            questions = questions.Where(q => q.Skill != null & q.Competency != null & !String.IsNullOrEmpty(q.Body)).ToList();
+            questions.ToList().ForEach(q => q.DocumentTypeId = DocumentType.Questions);
+
+            try
+            {
+                var results = await commandRepository.Insert(questions);
+
+                if((skillIsNullQuestions!=null && skillIsNullQuestions.Count > 0) 
+                    || (competencyIsNullQuestions!=null && competencyIsNullQuestions.Count > 0) 
+                    || (questionIsEmptyOrNull!=null && questionIsEmptyOrNull.Count > 0))
+                {
+                    if(results==null)
+                        results = new List<ErrorResult>();
+
+                    if (skillIsNullQuestions != null)
+                        questions.ToList().ForEach(q => results.Add(new ErrorResult
+                        {
+                            Entity = q.ToString(),
+                            ErrorDescription = "Request doesn't have a valid question to save."
+                        }));
+
+
+                    if (skillIsNullQuestions != null)
+                        questions.ToList().ForEach(q => results.Add(new ErrorResult
+                        {
+                            Entity = q.ToString(),
+                            ErrorDescription = "Input question doesn't have a skill, add it in order to save it."
+                        }));
+
+                    if (competencyIsNullQuestions != null)
+                        questions.ToList().ForEach(q => results.Add(new ErrorResult
+                        {
+                            Entity = q.ToString(),
+                            ErrorDescription = "Input question doesn't have a competency, add it in order to save it."
+                        }));
+                }
+
+                return Ok(results);
             }
             catch (Exception)
             {

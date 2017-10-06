@@ -45,5 +45,14 @@
         /// </value>
         [JsonProperty("answer")]
         public string Answer { get; set; }
+
+        /// <summary>
+        /// Converts the question to string
+        /// </summary>
+        /// <returns>The question converted to String</returns>
+        public override string ToString()
+        {
+            return string.Format("ID: {0}, Competency: {1}, Skill: {2}, Body: {3}", this.Id, this.Competency.Id, this.Skill.Id, this.Body);
+        }
     }
 }
