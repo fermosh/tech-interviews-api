@@ -103,7 +103,7 @@
             return Ok(question);
         }
 
-        [Route("bulkImport/questions")]
+        [Route("questions")]
         [HttpPost]
         public async Task<IHttpActionResult> Post(Question question)
         {
@@ -136,7 +136,7 @@
             }
         }
 
-        [Route("questions")]
+        [Route("bulkImport/questions")]
         [HttpPost]
         public async Task<IHttpActionResult> Post(IEnumerable<Question> questions)
         {
