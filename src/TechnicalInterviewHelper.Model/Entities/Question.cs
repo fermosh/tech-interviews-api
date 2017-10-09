@@ -52,7 +52,15 @@
         /// <returns>The question converted to String</returns>
         public override string ToString()
         {
-            return string.Format("ID: {0}, Competency: {1}, Skill: {2}, Body: {3}", this.Id, this.Competency.Id, this.Skill.Id, this.Body);
+            string competencyId = string.Empty, skillId = string.Empty;
+
+            if (this.Skill != null)
+                skillId = this.Competency.Id.ToString();
+
+            if (this.Competency != null)
+                competencyId = this.Competency.Id.ToString();
+
+            return string.Format("ID: {0}, Competency: {1}, Skill: {2}, Body: {3}", this.Id, competencyId, skillId, this.Body);
         }
     }
 }

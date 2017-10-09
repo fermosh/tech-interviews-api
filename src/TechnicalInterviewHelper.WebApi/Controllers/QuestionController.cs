@@ -136,7 +136,7 @@
             }
         }
 
-        [Route("bulkImport/questions")]
+        [Route("bulkimport/questions")]
         [HttpPost]
         public async Task<IHttpActionResult> Post(IEnumerable<Question> questions)
         {
