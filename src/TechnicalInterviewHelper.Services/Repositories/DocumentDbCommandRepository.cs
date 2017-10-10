@@ -107,9 +107,9 @@
 
             try
             {
-                var insertedDocumentsCount = await this.documentClient.ExecuteStoredProcedureAsync<int>(UriFactory.CreateStoredProcedureUri(this.databaseId, this.collectionId, this.bulkImportStoredProcedure), entities);
+                var result = await this.documentClient.ExecuteStoredProcedureAsync<int>(UriFactory.CreateStoredProcedureUri("TestDataBase", "TestCollection", "BulkImport2"), entities);
             }
-            finally
+            catch (Exception e)
             {
                 foreach (var entity in entities)
                 {
@@ -117,7 +117,7 @@
                     {
                         var resultEntity = await this.Insert(entity);
                     }
-                    catch (Exception e)
+                    catch (Exception internalEx)
                     {
                         if (errorResults == null)
                         {
@@ -127,7 +127,7 @@
                         errorResults.Add(new ErrorResult
                         {
                             Entity = entity.ToString(),
-                            ErrorDescription = e.ToString()
+                            ErrorDescription = internalEx.ToString()
                         });
                     }
                 }
