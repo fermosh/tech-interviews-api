@@ -158,10 +158,7 @@
 
                 if (questions.Count() > 0)
                 {
-                    var t = commandRepository.Insert(questions);
-
-                    t.Wait();
-                    results = t.Result.ToList();
+                    ICollection<ErrorResult> errorResults = await commandRepository.Insert(questions);
                 }
                     
 
