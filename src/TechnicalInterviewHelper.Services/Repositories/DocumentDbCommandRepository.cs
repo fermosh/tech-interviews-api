@@ -107,7 +107,7 @@
 
             try
             {
-                var insertedDocumentsCount = await this.documentClient.CreateDocumentAsync(UriFactory.CreateStoredProcedureUri(this.databaseId, this.collectionId, this.bulkImportStoredProcedure), entities);
+                var insertedDocumentsCount = await this.documentClient.ExecuteStoredProcedureAsync<int>(UriFactory.CreateStoredProcedureUri(this.databaseId, this.collectionId, this.bulkImportStoredProcedure), entities);
             }
             finally
             {
