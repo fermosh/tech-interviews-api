@@ -1,5 +1,6 @@
 ﻿namespace TechnicalInterviewHelper.Model
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -14,6 +15,13 @@
         /// <param name="entity">Entity to save.</param>
         /// <returns>A task with the saved entity.</returns>
         Task<T> Insert(T entity);
+
+        /// <summary>
+        /// Saves the specified entities.
+        /// </summary>
+        /// <param name="entities">Entities to save.</param>
+        /// <returns>A list of resulted errors</returns>
+        Task<ICollection<ErrorResult>> Insert(IEnumerable<T> entities);
 
         /// <summary>
         /// Updates the specified entity identifier.

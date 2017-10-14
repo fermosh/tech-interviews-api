@@ -1,8 +1,10 @@
 ﻿namespace TechnicalInterviewHelper.Services
 {
     using System;
+    using System.Collections.Generic;
     using System.Configuration;
     using System.Threading.Tasks;
+
     using Microsoft.Azure.Documents.Client;
     using Model;
 
@@ -14,7 +16,7 @@
     public class DocumentDbCommandRepository<T> : ICommandRepository<T>, IDisposable
             where T : BaseEntity
     {
-        #region Private fields
+        #region fields
 
         /// <summary>
         /// The collection identifier
@@ -42,11 +44,16 @@
         private string databaseId = ConfigurationManager.AppSettings["DatabaseId"];
 
         /// <summary>
+        /// Name of the Stored Procedure used to perform bulk imports, it inserts a document if it does not exist, if it does then updates it
+        /// </summary>
+        private string bulkImportStoredProcedure = ConfigurationManager.AppSettings["BulkImportStoredProcedure"];
+
+        /// <summary>
         /// To know whether the class is already disposed.
         /// </summary>
-        private bool disposedValue = false;
+        private bool disposedValue = false;        
 
-        #endregion Private fields
+        #endregion fields
 
         #region Constructor
 
@@ -87,6 +94,46 @@
             var documentCreated = await this.documentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionId), entity);
             entity.Id = documentCreated.Resource.Id;
             return entity;
+        }
+
+        /// <summary>
+        /// Inserts an IEnumerable of entities
+        /// </summary>
+        /// <param name="entities">The IEnumerable of entities</param>
+        /// <returns>A list of ErrorResult</returns>
+        public async Task<ICollection<ErrorResult>> Insert(IEnumerable<T> entities)
+        {
+            List<ErrorResult> errorResults = null;
+
+            try
+            {
+                var documentsCreated = await this.documentClient.ExecuteStoredProcedureAsync<int>(UriFactory.CreateStoredProcedureUri(this.databaseId, this.collectionId, this.bulkImportStoredProcedure), entities);
+            }
+            catch (Exception e)
+            {
+                foreach (var entity in entities)
+                {
+                    try
+                    {
+                        var resultEntity = await this.Insert(entity);
+                    }
+                    catch (Exception internalEx)
+                    {
+                        if (errorResults == null)
+                        {
+                            errorResults = new List<ErrorResult>();
+                        }
+
+                        errorResults.Add(new ErrorResult
+                        {
+                            Entity = entity.ToString(),
+                            ErrorDescription = internalEx.ToString()
+                        });
+                    }
+                }
+            }
+
+            return errorResults;
         }
 
         #endregion Insert command
