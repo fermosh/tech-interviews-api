@@ -154,7 +154,7 @@
 
             try
             {
-                List<ErrorResult> results = null;
+                List<ErrorResult> results = new List<ErrorResult>();
 
                 if (questions.Count() > 0)
                 {
@@ -166,9 +166,6 @@
                     || (competencyIsNullQuestions!=null && competencyIsNullQuestions.Count > 0) 
                     || (questionIsEmptyOrNull!=null && questionIsEmptyOrNull.Count > 0))
                 {
-                    if(results==null)
-                        results = new List<ErrorResult>();
-
                     if (skillIsNullQuestions != null)
                         skillIsNullQuestions.ToList().ForEach(q => results.Add(new ErrorResult
                         {
