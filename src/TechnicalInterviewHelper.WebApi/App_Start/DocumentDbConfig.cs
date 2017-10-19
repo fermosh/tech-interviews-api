@@ -4,7 +4,10 @@
     using Microsoft.Azure.Documents.Client;
     using System;
     using System.Configuration;
+    using System.IO;
+    using System.Linq;
     using System.Threading.Tasks;
+    using System.Web;
 
     /// <summary>
     /// A class to initialize the DocumentDB client.
@@ -37,6 +40,20 @@
 
         #endregion Collections
 
+        #region Stored Procedures
+
+        /// <summary>
+        /// The Bulk Import Stored Procedure identifier
+        /// </summary>
+        private readonly string bulkImportStoredProcedureId = ConfigurationManager.AppSettings["BulkImportStoredProcedure"];
+
+        /// <summary>
+        /// The Bulk Import Stored Procedure identifier
+        /// </summary>
+        private readonly string bulkImportStoredProcedureFilePath = ConfigurationManager.AppSettings["BulkImportStoredProcedureFilePath"];
+
+        #endregion Stored Procedures
+
         /// <summary>
         /// The client
         /// </summary>
@@ -66,6 +83,7 @@
             var documentDbInitializer = new DocumentDbConfig();
             documentDbInitializer.CreateDatabaseIfNotExistsAsync().Wait();
             documentDbInitializer.CreateCollectionIfNotExistsAsync().Wait();
+            documentDbInitializer.CreateStoredProcedureAsync().Wait();
         }
 
         #endregion Static entrypoint
@@ -120,6 +138,51 @@
         }
 
         #endregion Create Collections
+
+        #region Create Stored Procedures
+
+        /// <summary>
+        /// Creates a Stored Procedure in the Main Collection
+        /// </summary>
+        /// <returns></returns>
+        private async Task CreateStoredProcedureAsync()
+        {
+            var documentCollectionUri = UriFactory.CreateDocumentCollectionUri(this.databaseId, this.mainCollectionId);
+            var requestOptions = new RequestOptions { OfferThroughput = 400 };
+
+            var storedProcedure = new StoredProcedure
+            {
+                Id = bulkImportStoredProcedureId,
+                Body = File.ReadAllText(HttpContext.Current.Server.MapPath(this.bulkImportStoredProcedureFilePath))
+            };
+
+            try
+            {
+                await TryDeleteStoredProcedure(documentCollectionUri, bulkImportStoredProcedureId);
+                await this.documentClient.CreateStoredProcedureAsync(documentCollectionUri, storedProcedure, requestOptions);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// If a Stored Procedure is found on the DocumentCollection for the Id supplied it is deleted
+        /// </summary>
+        /// <param name="collectionLink">DocumentCollection to search for the Stored Procedure</param>
+        /// <param name="storedProcedureId">Id of the Stored Procedure to delete</param>
+        /// <returns></returns>
+        private async Task TryDeleteStoredProcedure(Uri collectionLink, string storedProcedureId)
+        {
+            StoredProcedure storedProcedure = this.documentClient.CreateStoredProcedureQuery(collectionLink).Where(s => s.Id == storedProcedureId).AsEnumerable().FirstOrDefault();
+            if (storedProcedure != null)
+            {
+                await this.documentClient.DeleteStoredProcedureAsync(storedProcedure.SelfLink);
+            }
+        }
+
+        #endregion Create Stored Procedures
 
         #region IDisposable Support
 
