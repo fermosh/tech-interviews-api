@@ -46,7 +46,7 @@
         /// <summary>
         /// Name of the Stored Procedure used to perform bulk imports, it inserts a document if it does not exist, if it does then updates it
         /// </summary>
-        private string bulkImportStoredProcedure = ConfigurationManager.AppSettings["QuestionsBulkImportSPId"];
+        private string questionsBulkImportSPId = ConfigurationManager.AppSettings["QuestionsBulkImportSPId"];
 
         /// <summary>
         /// To know whether the class is already disposed.
@@ -107,7 +107,7 @@
 
             try
             {
-                var documentsCreated = await this.documentClient.ExecuteStoredProcedureAsync<int>(UriFactory.CreateStoredProcedureUri(this.databaseId, this.collectionId, this.bulkImportStoredProcedure), entities);
+                var documentsCreated = await this.documentClient.ExecuteStoredProcedureAsync<int>(UriFactory.CreateStoredProcedureUri(this.databaseId, this.collectionId, this.questionsBulkImportSPId), entities);
             }
             catch (Exception e)
             {

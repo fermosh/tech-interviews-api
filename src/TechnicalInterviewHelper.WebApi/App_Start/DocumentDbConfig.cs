@@ -45,12 +45,12 @@
         /// <summary>
         /// The Bulk Import Stored Procedure identifier
         /// </summary>
-        private readonly string bulkImportStoredProcedureId = ConfigurationManager.AppSettings["QuestionsBulkImportSPId"];
+        private readonly string questionsBulkImportSPId = ConfigurationManager.AppSettings["QuestionsBulkImportSPId"];
 
         /// <summary>
         /// The Bulk Import Stored Procedure identifier
         /// </summary>
-        private readonly string bulkImportStoredProcedureFilePath = ConfigurationManager.AppSettings["QuestionsBulkImportSPFilePath"];
+        private readonly string questionsBulkImportSPFilePath = ConfigurationManager.AppSettings["QuestionsBulkImportSPFilePath"];
 
         #endregion Stored Procedures
 
@@ -152,13 +152,13 @@
 
             var storedProcedure = new StoredProcedure
             {
-                Id = bulkImportStoredProcedureId,
-                Body = File.ReadAllText(HttpContext.Current.Server.MapPath(this.bulkImportStoredProcedureFilePath))
+                Id = this.questionsBulkImportSPId,
+                Body = File.ReadAllText(HttpContext.Current.Server.MapPath(this.questionsBulkImportSPFilePath))
             };
 
             try
             {
-                await TryDeleteStoredProcedure(documentCollectionUri, bulkImportStoredProcedureId);
+                await TryDeleteStoredProcedure(documentCollectionUri, this.questionsBulkImportSPId);
                 await this.documentClient.CreateStoredProcedureAsync(documentCollectionUri, storedProcedure, requestOptions);
             }
             catch (Exception)
