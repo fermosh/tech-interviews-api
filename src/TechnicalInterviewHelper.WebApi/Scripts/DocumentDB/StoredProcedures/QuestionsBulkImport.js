@@ -1,4 +1,4 @@
-﻿function BulkImport(docs) {
+﻿function QuestionsBulkImport(docs) {
     var collection = getContext().getCollection();
     var collectionLink = collection.getSelfLink();
 

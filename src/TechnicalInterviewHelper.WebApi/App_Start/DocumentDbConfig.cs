@@ -45,12 +45,12 @@
         /// <summary>
         /// The Bulk Import Stored Procedure identifier
         /// </summary>
-        private readonly string bulkImportStoredProcedureId = ConfigurationManager.AppSettings["BulkImportStoredProcedure"];
+        private readonly string bulkImportStoredProcedureId = ConfigurationManager.AppSettings["QuestionsBulkImportSPId"];
 
         /// <summary>
         /// The Bulk Import Stored Procedure identifier
         /// </summary>
-        private readonly string bulkImportStoredProcedureFilePath = ConfigurationManager.AppSettings["BulkImportStoredProcedureFilePath"];
+        private readonly string bulkImportStoredProcedureFilePath = ConfigurationManager.AppSettings["QuestionsBulkImportSPFilePath"];
 
         #endregion Stored Procedures
 

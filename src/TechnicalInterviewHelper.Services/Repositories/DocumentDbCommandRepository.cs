@@ -46,7 +46,7 @@
         /// <summary>
         /// Name of the Stored Procedure used to perform bulk imports, it inserts a document if it does not exist, if it does then updates it
         /// </summary>
-        private string bulkImportStoredProcedure = ConfigurationManager.AppSettings["BulkImportStoredProcedure"];
+        private string bulkImportStoredProcedure = ConfigurationManager.AppSettings["QuestionsBulkImportSPId"];
 
         /// <summary>
         /// To know whether the class is already disposed.
