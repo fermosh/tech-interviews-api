@@ -41,7 +41,6 @@
             this.querySkillMatrix = queryPositionSkill;
             this.queryCompetency = queryCompetency;
         }
-
         #endregion Constructor
 
         /// <summary>
@@ -73,6 +72,17 @@
 
             // return an http 200 status with the SkillMatrixViewModel
             return Ok(SkillMatrixViewModel.Create(parentCompetencyId, SkillsHashSet));
+        }
+
+        [Route("{competencyId:int}")]
+        public async Task<IHttpActionResult> GetSkillMatrixByCompetency(int competencyId)
+        {
+            var skills = await querySkillMatrix
+                .FindWithinSkills(competencyId);
+
+            // return an http 200 status with the SkillMatrixViewModel
+            return Ok(SkillMatrixViewModel.Create(competencyId, skills).Skills);
+
         }
     }
 }

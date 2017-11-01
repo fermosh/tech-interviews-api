@@ -194,7 +194,7 @@
 
                 return Ok(results);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return InternalServerError();
             }

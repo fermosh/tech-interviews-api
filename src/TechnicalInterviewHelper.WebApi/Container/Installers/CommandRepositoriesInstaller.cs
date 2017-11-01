@@ -24,6 +24,9 @@
                Component.For<ICommandRepository<Exercise>>()
                              .ImplementedBy<DocumentDbCommandRepository<Exercise>>()
                              .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollectionId"])));
+               //Component.For<ICommandRepository<SkillMatrix>>()
+               //              .ImplementedBy<DocumentDbCommandRepository<SkillMatrix>>()
+               //              .DependsOn(Dependency.OnValue("collectionId", ConfigurationManager.AppSettings["MainCollection"]));
         }
     }
 }
