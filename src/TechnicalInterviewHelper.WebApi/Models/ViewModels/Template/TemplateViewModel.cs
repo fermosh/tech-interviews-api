@@ -9,6 +9,15 @@
     public class TemplateViewModel
     {
         /// <summary>
+        /// Gets or sets the question identifier.
+        /// </summary>
+        /// <value>
+        /// The question identifier.
+        /// </value>
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        /// <summary>
         /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>

@@ -58,6 +58,51 @@
         #endregion Constructor
 
         /// <summary>
+        /// Gets the all templates.
+        /// </summary>
+        /// <returns>
+        /// 200 HTTP status code with all templates view models; otherwise, any other HTTP status code.
+        /// </returns>
+        /// <example>api/template/all</example>
+        [Route("all")]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get()
+        {
+            var templates = await queryTemplateCatalog.GetAll();
+
+            if (templates == null)
+            {
+                return NotFound();
+            }
+
+            var templateViewModelsList = new List<TemplateViewModel>();
+
+            foreach (var template in templates)
+            {
+                var competencyAndJobInfo = await GetCompetencyAndJobInfoAsync(template);
+
+                templateViewModelsList.Add(new TemplateViewModel
+                {
+                    Id = template.Id,
+                    CompetencyId = template.CompetencyId,
+                    JobFunctionLevel = template.JobFunctionLevel,
+                    Level = new LevelViewModel
+                    {
+                        Id = template.JobFunctionLevel,
+                        Name = $"L{template.JobFunctionLevel}",
+                        Description = competencyAndJobInfo.JobDescription
+                    },
+                    CompetencyName = competencyAndJobInfo.CompetencyName,
+                    DomainName = competencyAndJobInfo.DomainName,
+                    Skills = Enumerable.Repeat(new SkillTemplateViewModel(), template.Skills.Count()), // Fake Skills, we just need to know how many skills the template has
+                    Exercises = new List<object>()
+                });
+            }
+
+            return Ok(templateViewModelsList);
+        }
+
+        /// <summary>
         /// Gets the specified template identifier.
         /// </summary>
         /// <param name="templateId">The template identifier.</param>
@@ -78,61 +123,59 @@
             }
 
             var template = await this.queryTemplateCatalog.FindById(templateId);
+
             if (template == null)
             {
                 return NotFound();
             }
 
-            if (template.Skills == null
-                ||
-                template.Skills.Count() == 0)
+            if (template.Skills == null || template.Skills.Count() == 0)
             {
                 return BadRequest($"The template with Id '{templateId}' doesn't have saved skills.");
             }
 
-            // -----------------------------------------------------------------------------
-            // Try to get all filtered skill's information and other required information.
-            // -----------------------------------------------------------------------------
-
-            string competencyName = string.Empty;
-            string jobDescription = string.Empty;
-            string domainName = string.Empty;
-
-            // Try to find the competency that has the job function identifier.
-            var competency = await this.queryCompetency.FindCompetency(template.CompetencyId);
-
-            if (competency != null)
-            {
-                domainName = competency.Name;
-            }
-
-            while (competency != null && !competency.JobFunctions.Any() && competency.ParentId.HasValue)
-            {
-                competency = await this.queryCompetency.FindCompetency(competency.ParentId.Value);
-            }
-
-            if (competency != null)
-            {
-                competencyName = competency.Name;
-                if (competency.JobFunctions.Any())
-                {
-                    var jobFunctionId = competency.JobFunctions.First();
-                    jobDescription = await this.queryJobFunction.FindJobTitleByLevel(jobFunctionId, template.JobFunctionLevel);
-                }                
-            }
-
+            var competencyAndJobInfo = await GetCompetencyAndJobInfoAsync(template);
             var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
+            var skillTemplateViewModelList = GetSkillsTemplateViewModels(skillsList);
 
-            // --------------------------------------
-            // Now it's time to build the response.
-            // --------------------------------------
+            var levelViewModel = new LevelViewModel
+            {
+                Id = template.JobFunctionLevel,
+                Name = $"L{template.JobFunctionLevel}",
+                Description = competencyAndJobInfo.JobDescription
+            };
 
-            var skillTemplateViewModelList = new List<SkillTemplateViewModel>();
+            var templateViewModel = new TemplateViewModel
+            {
+                CompetencyId = template.CompetencyId,
+                JobFunctionLevel = template.JobFunctionLevel,
+                Level = levelViewModel,
+                CompetencyName = competencyAndJobInfo.CompetencyName,
+                DomainName = competencyAndJobInfo.DomainName,
+                Skills = skillTemplateViewModelList,
+                Exercises = new List<object>()
+            };
 
-            foreach (var skill in skillsList)
+            return Ok(templateViewModel);
+        }
+
+
+        /// <summary>
+        /// Builds and returns a list of SkillTemplateViewModel based on the Skills of a given Template
+        /// </summary>
+        /// <param name="skills">The template's skills.</param>
+        /// <returns>
+        /// Enumerable of SkillTemplateViewModel
+        /// </returns>
+        private IEnumerable<SkillTemplateViewModel> GetSkillsTemplateViewModels(IEnumerable<Skill> skills)
+        {
+            var templateSkillsViewModelList = new List<SkillTemplateViewModel>();
+
+            foreach (var skill in skills)
             {
                 // Map all the topics that the skill could have.
                 var topics = new List<TopicViewModel>();
+
                 foreach (var topic in skill.Topics)
                 {
                     topics.Add(new TopicViewModel
@@ -161,28 +204,48 @@
                 };
 
                 // Add the view model to the result list.
-                skillTemplateViewModelList.Add(skillTemplateViewModel);
+                templateSkillsViewModelList.Add(skillTemplateViewModel);
             }
 
-            var levelViewModel = new LevelViewModel
-            {
-                Id = template.JobFunctionLevel,
-                Name = $"L{template.JobFunctionLevel}",
-                Description = jobDescription
-            };
+            return templateSkillsViewModelList;
+        }
 
-            var templateViewModel = new TemplateViewModel
-            {
-                CompetencyId = template.CompetencyId,
-                JobFunctionLevel = template.JobFunctionLevel,
-                Level = levelViewModel,
-                CompetencyName = competencyName,
-                DomainName = domainName,
-                Skills = skillTemplateViewModelList,
-                Exercises = new List<object>()
-            };
+        /// <summary>
+        /// Gets the Competency and Job Information for a given template
+        /// </summary>
+        /// <returns>
+        /// Competency and Job Information
+        /// </returns>
+        private async Task<CompetencyAndJobInfo> GetCompetencyAndJobInfoAsync(Template template)
+        {
+            var competencyAndJobInfo = new CompetencyAndJobInfo();
 
-            return Ok(templateViewModel);
+            // Try to find the competency that has the job function identifier.
+            var competency = await queryCompetency.FindCompetency(template.CompetencyId);
+
+            if (competency != null)
+            {
+                competencyAndJobInfo.DomainName = competency.Name;
+            }
+
+            while (competency != null && !competency.JobFunctions.Any() && competency.ParentId.HasValue)
+            {
+                competency = await queryCompetency.FindCompetency(competency.ParentId.Value);
+            }
+
+            if (competency != null)
+            {
+                competencyAndJobInfo.CompetencyName = competency.Name;
+
+                if (competency.JobFunctions.Any())
+                {
+                    var jobFunctionId = competency.JobFunctions.First();
+
+                    competencyAndJobInfo.JobDescription = await queryJobFunction.FindJobTitleByLevel(jobFunctionId, template.JobFunctionLevel);
+                }
+            }
+
+            return competencyAndJobInfo;
         }
     }
 }

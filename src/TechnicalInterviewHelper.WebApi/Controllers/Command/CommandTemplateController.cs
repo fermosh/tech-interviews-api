@@ -36,6 +36,7 @@
         /// <returns>An identifier of the just created record.</returns>
         /// <example>Send to "api/template" a JSON with the same structure as TemplateInputModel.</example>
         [Route("")]
+        [HttpPost]
         public async Task<IHttpActionResult> Post(TemplateInputModel templateInput)
         {
             if (templateInput == null)
