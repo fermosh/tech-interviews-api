@@ -1,5 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
-{
+{ 
     public class CompetencyAndJobInfo
     {
         public string CompetencyName { get; set; }
