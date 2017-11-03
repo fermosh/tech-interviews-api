@@ -121,5 +121,61 @@
 
             return skillResult;
         }
+
+        /// <summary>
+        /// Queries the skills document and returns the skills by competency
+        /// </summary>
+        /// <param name="competencyId">receives the competency id</param>
+        /// <returns>skill collection</returns>
+        public async Task<IEnumerable<Skill>> FindWithinSkills(int competencyId)
+        {
+            var documentQuery =
+            this.DocumentClient
+            .CreateDocumentQuery<SkillMatrix>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+            .Where(catalog => catalog.DocumentTypeId == DocumentType.Skills && catalog.CompetencyId == competencyId)
+            .SelectMany(catalog => catalog.Skills)
+            .Select(skill => skill)
+            .AsDocumentQuery();
+
+            var skillResult = new List<Skill>();
+            var skillResult1 = new List<Skill>();
+            while (documentQuery.HasMoreResults)
+            {
+                var skills = await documentQuery.ExecuteNextAsync<Skill>();
+                skillResult.AddRange(skills);
+            }
+
+            skillResult.OrderBy(s => s.Name);
+
+            // Load this list with only the skills for the job function level 1
+            skillResult1.AddRange(skillResult.Where(s => s.JobFunctionLevel == 1));
+
+            // since we are not filtering the skill matrix by job level some of the skills are 
+            // duplicated like hard skills which is part of every job level, so the following routine is to create a new skill list but without duplicates
+            int count = 0;
+            
+            // Loop through the original skill result which should contain all the skills for all job levels 
+            foreach (var skill1 in skillResult)
+            {
+                count++;
+
+                // check if the skill does not exists in the skillResult1 list
+                if (!skillResult1.Any(s => s.Name == skill1.Name))
+                {
+                    skillResult1.Add(skill1);
+                    continue;
+                }
+                else
+                {
+                    // this only checks if we reach the end of the skill result 1 which remember it only contains the skills related to job level 1
+                    if (count == skillResult1.Count())
+                    {
+                        continue;
+                    }
+                }
+            }
+
+            return skillResult1;
+        }
     }
 }
