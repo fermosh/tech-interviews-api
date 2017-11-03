@@ -90,7 +90,7 @@
         /// The questions.
         /// </value>
         [JsonProperty("interviewQuestions")]
-        public IEnumerable<object> Questions { get; set; }
+        public IEnumerable<QuestionTemplateViewModel> Questions { get; set; }
 
         /// <summary>
         /// Gets or sets the identifier.

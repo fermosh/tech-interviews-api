@@ -15,5 +15,12 @@
         /// <param name="template">The template.</param>
         /// <returns>An enumeration of questions.</returns>
         Task<IEnumerable<Question>> GetAll(Template template);
+
+        /// <summary>
+        /// Select all those questions by Ids.
+        /// </summary>
+        /// <param name="ids">The Ids.</param>
+        /// <returns>An enumeration of questions.</returns>
+        Task<IEnumerable<Question>> FindByIds(List<string> ids);
     }
 }

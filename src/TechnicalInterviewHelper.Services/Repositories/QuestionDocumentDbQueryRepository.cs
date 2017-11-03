@@ -46,13 +46,40 @@
         /// </returns>
         public async Task<IEnumerable<Question>> GetAll(Template template)
         {
+            List<int> skillTemplateIds = template.Skills.Select(s => s.SkillId).ToList();
+
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Question>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
                     .Where(document =>
                         document.DocumentTypeId == DocumentType.Questions &&
                         document.Competency.Id == template.CompetencyId &&
-                        template.Skills.Contains(document.Skill.Id))
+                        skillTemplateIds.Contains(document.Skill.Id))
+                    .AsDocumentQuery();
+
+            var questionResult = new List<Question>();
+            while (documentQuery.HasMoreResults)
+            {
+                var questions = await documentQuery.ExecuteNextAsync<Question>();
+                questionResult.AddRange(questions);
+            }
+
+            return questionResult;
+        }
+
+        /// <summary>
+        /// Select all those questions by Ids.
+        /// </summary>
+        /// <param name="ids">The Ids.</param>
+        /// <returns>An enumeration of questions.</returns>
+        public async Task<IEnumerable<Question>> FindByIds(List<string> ids)
+        {
+            var documentQuery =
+                    this.DocumentClient
+                    .CreateDocumentQuery<Question>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .Where(document =>
+                        document.DocumentTypeId == DocumentType.Questions &&
+                        ids.Contains(document.Id))
                     .AsDocumentQuery();
 
             var questionResult = new List<Question>();

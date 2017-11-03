@@ -34,6 +34,16 @@
         /// </summary>
         private readonly ICompetencyQueryRepository queryCompetency;
 
+        /// <summary>
+        /// Question repository.
+        /// </summary>
+        private readonly IQuestionQueryRepository questionQueryRepository;
+
+        /// <summary>
+        /// Exercise repository.
+        /// </summary>
+        private readonly IExerciseQueryRepository exerciseQueryRepository;
+
         #endregion Repository
 
         #region Constructor
@@ -47,12 +57,16 @@
             ISkillMatrixQueryRepository querySkillMatrixCatalog,
             IQueryRepository<Template, string> queryTemplateCatalog,
             IJobFunctionQueryRepository queryJobFunction,
-            ICompetencyQueryRepository queryCompetency)
+            ICompetencyQueryRepository queryCompetency,
+            IQuestionQueryRepository questionQueryRepository,
+            IExerciseQueryRepository exerciseQueryRepository)
         {
             this.queryTemplateCatalog = queryTemplateCatalog;
             this.querySkillMatrixCatalog = querySkillMatrixCatalog;
             this.queryJobFunction = queryJobFunction;
             this.queryCompetency = queryCompetency;
+            this.questionQueryRepository = questionQueryRepository;
+            this.exerciseQueryRepository = exerciseQueryRepository;
         }
 
         #endregion Constructor
@@ -121,7 +135,7 @@
                 }                
             }
 
-            var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.ToArray());
+            var skillsList = await this.querySkillMatrixCatalog.FindWithinSkills(template.CompetencyId, template.JobFunctionLevel, template.Skills.Select(s => s.SkillId).ToArray());
 
             // --------------------------------------
             // Now it's time to build the response.
@@ -142,6 +156,23 @@
                     });
                 }
 
+                // Map the skill questions.
+                List<QuestionTemplateViewModel> questionsList = new List<QuestionTemplateViewModel>();
+                List<string> questionIds = template.Skills.FirstOrDefault(s => s.SkillId == skill.Id).Questions.ToList();
+
+                var questions = await this.questionQueryRepository.FindByIds(questionIds);
+                foreach (var question in questions)
+                {
+                    var questionTemplateViewModel = new QuestionTemplateViewModel
+                    {
+                        Id = question.Id,
+                        Body = question.Body,
+                        Answer = question.Answer
+                    };
+                    questionsList.Add(questionTemplateViewModel);
+                }
+
+
                 // Create the view model of the skill.
                 var skillTemplateViewModel = new SkillTemplateViewModel
                 {
@@ -157,7 +188,7 @@
                     ParentId = skill.ParentId,
                     Name = skill.Name,
                     IsSelectable = skill.IsSelectable,
-                    Questions = new List<object>()
+                    Questions = questionsList
                 };
 
                 // Add the view model to the result list.
@@ -171,15 +202,47 @@
                 Description = jobDescription
             };
 
+            // Map the template exercises.
+            List<ExerciseTemplateViewModel> exercisesList = new List<ExerciseTemplateViewModel>();
+            List<string> exerciseIds = template.Exercises.ToList();
+            
+            var exercises = await this.exerciseQueryRepository.FindByIds(exerciseIds);
+            foreach (var exercise in exercises)
+            {
+                List<TagTemplateViewModel> relatedSkills = new List<TagTemplateViewModel>();
+
+                foreach (var skill in exercise.Skills)
+                {
+                    var relatedSkill = new TagTemplateViewModel
+                    {
+                        Id = skill.Id,
+                        Name = skill.Name
+                    };
+                    relatedSkills.Add(relatedSkill);
+                }
+
+                var exerciseTemplateViewModel = new ExerciseTemplateViewModel
+                {
+                    Id = exercise.Id,
+                    Title = exercise.Title,
+                    Description = exercise.Description,
+                    Solution = exercise.Solution,
+                    Skills = relatedSkills
+                };
+                exercisesList.Add(exerciseTemplateViewModel);
+            }
+
+            // Set the Template View Model result.
             var templateViewModel = new TemplateViewModel
             {
+                Name = template.Name,
                 CompetencyId = template.CompetencyId,
                 JobFunctionLevel = template.JobFunctionLevel,
                 Level = levelViewModel,
                 CompetencyName = competencyName,
                 DomainName = domainName,
                 Skills = skillTemplateViewModelList,
-                Exercises = new List<object>()
+                Exercises = exercisesList
             };
 
             return Ok(templateViewModel);

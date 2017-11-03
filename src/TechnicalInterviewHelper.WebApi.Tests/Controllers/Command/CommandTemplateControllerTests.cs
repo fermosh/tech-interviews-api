@@ -18,7 +18,8 @@
             // Arrange
             TemplateInputModel templateInput = null;
             var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
-            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+            var queryRepositoryMock = new Mock<IQueryRepository<Template, string>>();
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object, queryRepositoryMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.Post(templateInput).Result;
@@ -40,7 +41,8 @@
             };
 
             var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
-            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+            var queryRepositoryMock = new Mock<IQueryRepository<Template, string>>();
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object, queryRepositoryMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.Post(templateInput).Result;
@@ -59,11 +61,13 @@
             {
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
-                Skills = new List<int>()
+                Skills = new List<SkillTemplateInputModel>(),
+                Exercises = new List<string>()
             };
 
             var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
-            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+            var queryRepositoryMock = new Mock<IQueryRepository<Template, string>>();
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object, queryRepositoryMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.Post(templateInput).Result;
@@ -79,14 +83,28 @@
         {
             // Arrange
             Template savedTemplate = null;
-            var filteredSkills = new List<int> { 22, 45, 667, 1008 };
+            var filteredSkills = new List<SkillTemplateInputModel> {
+                new SkillTemplateInputModel
+                {
+                    SkillId = 22, Questions = new List<string>() },
+                new SkillTemplateInputModel
+                {
+                    SkillId = 45, Questions = new List<string>() },
+                new SkillTemplateInputModel
+                {
+                    SkillId = 667, Questions = new List<string>() },
+                new SkillTemplateInputModel
+                {
+                    SkillId = 1088, Questions = new List<string>() }
+            };
             var newIdDocument = "3A20A752-652D-45ED-9AD8-8BACA37AC3E3";
 
             var templateInput = new TemplateInputModel
             {
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
-                Skills = filteredSkills
+                Skills = filteredSkills,
+                Exercises = new List<string>()
             };
 
             var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
@@ -100,7 +118,9 @@
                     return templateToSave;
                 });
 
-            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+            var queryRepositoryMock = new Mock<IQueryRepository<Template, string>>();
+
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object, queryRepositoryMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.Post(templateInput).Result;
@@ -121,14 +141,41 @@
         {
             // Arrange
             Template savedTemplate = null;
-            var filteredSkills = new List<int> { 22, 45, 667, 1008 };
+            var filteredSkills = new List<SkillTemplate> {
+                new SkillTemplate
+                {
+                    SkillId = 22, Questions = new List<string>() },
+                new SkillTemplate
+                {
+                    SkillId = 45, Questions = new List<string>() },
+                new SkillTemplate
+                {
+                    SkillId = 667, Questions = new List<string>() },
+                new SkillTemplate
+                {
+                    SkillId = 1088, Questions = new List<string>() }
+            };
             var newIdDocument = "3A20A752-652D-45ED-9AD8-8BACA37AC3E3";
 
             var templateInput = new TemplateInputModel
             {
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
-                Skills = filteredSkills
+                Skills = new List<SkillTemplateInputModel> {
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 22, Questions = new List<string>() },
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 45, Questions = new List<string>() },
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 667, Questions = new List<string>() },
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 1088, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
@@ -139,10 +186,13 @@
                 {
                     templateToSave.Id = newIdDocument;
                     savedTemplate = templateToSave;
+                    savedTemplate.Skills = filteredSkills;
                     return templateToSave;
                 });
 
-            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+            var queryRepositoryMock = new Mock<IQueryRepository<Template, string>>();
+
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object, queryRepositoryMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.Post(templateInput).Result;
@@ -169,7 +219,21 @@
             {
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
-                Skills = new List<int> { 22, 45, 667, 1008 }
+                Skills = new List<SkillTemplateInputModel> {
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 22, Questions = new List<string>() },
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 45, Questions = new List<string>() },
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 667, Questions = new List<string>() },
+                    new SkillTemplateInputModel
+                    {
+                        SkillId = 1088, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var commandRepositoryMock = new Mock<ICommandRepository<Template>>();
@@ -178,7 +242,9 @@
                 .Setup(method => method.Insert(It.IsAny<Template>()))
                 .Throws(new Exception());
 
-            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object);
+            var queryRepositoryMock = new Mock<IQueryRepository<Template, string>>();
+
+            var controllerUnderTest = new CommandTemplateController(commandRepositoryMock.Object, queryRepositoryMock.Object);
 
             // Act
             var actionResult = controllerUnderTest.Post(templateInput).Result;

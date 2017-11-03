@@ -9,6 +9,15 @@
     public class TemplateViewModel
     {
         /// <summary>
+        /// Gets or sets the template name.
+        /// </summary>
+        /// <value>
+        /// The template name.
+        /// </value>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
         /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
@@ -70,6 +79,6 @@
         /// The exercises.
         /// </value>
         [JsonProperty("interviewExercises")]
-        public IEnumerable<object> Exercises { get; set; }
+        public IEnumerable<ExerciseTemplateViewModel> Exercises { get; set; }
     }
 }
