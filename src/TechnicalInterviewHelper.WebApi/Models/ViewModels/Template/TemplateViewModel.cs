@@ -1,5 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
-{    
+{
     using System.Collections.Generic;
     using Newtonsoft.Json;
 
@@ -16,6 +16,15 @@
         /// </value>
         [JsonProperty("id")]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template name.
+        /// </summary>
+        /// <value>
+        /// The template name.
+        /// </value>
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the competency identifier.

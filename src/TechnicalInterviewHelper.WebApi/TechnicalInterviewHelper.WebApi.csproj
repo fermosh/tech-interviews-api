@@ -200,6 +200,7 @@
     <Compile Include="Models\Input\Interview\QuestionInterviewInputModel.cs" />
     <Compile Include="Models\Input\Interview\SkillInterviewInputModel.cs" />
     <Compile Include="Models\Input\Common\PositionInputModel.cs" />
+    <Compile Include="Models\Input\Template\SkillTemplateInputModel.cs" />
     <Compile Include="Models\Input\Template\TemplateInputModel.cs" />
     <Compile Include="Models\ViewModels\Common\ExerciseViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\QuestionViewModel.cs" />
@@ -210,9 +211,12 @@
     <Compile Include="Models\ViewModels\PositionSkill\SkillMatrixViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\SkillForPositionViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionSkill\TopicViewModel.cs" />
+    <Compile Include="Models\ViewModels\Template\ExerciseTemplateViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\CompetencyAndJobInfo.cs" />
     <Compile Include="Models\ViewModels\Template\LevelViewModel.cs" />
+    <Compile Include="Models\ViewModels\Template\QuestionTemplateViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\SkillTemplateViewModel.cs" />
+    <Compile Include="Models\ViewModels\Template\TagTemplateViewModel.cs" />
     <Compile Include="Models\ViewModels\Template\TemplateViewModel.cs" />
     <Compile Include="Container\WindsorControllerActivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,6 +12,15 @@
     public class Template : BaseEntity
     {
         /// <summary>
+        /// Gets or sets the template name.
+        /// </summary>
+        /// <value>
+        /// The template name.
+        /// </value>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
         /// Gets or sets the competency identifier.
         /// </summary>
         /// <value>
@@ -36,6 +45,15 @@
         /// The skill identifiers.
         /// </value>
         [JsonProperty("skills")]
-        public IEnumerable<int> Skills { get; set; }
+        public IEnumerable<SkillTemplate> Skills { get; set; }
+
+        /// <summary>
+        /// Gets or sets the exercises identifiers.
+        /// </summary>
+        /// <value>
+        /// The exercises.
+        /// </value>
+        [JsonProperty("exercises")]
+        public IEnumerable<string> Exercises { get; set; }
     }
 }

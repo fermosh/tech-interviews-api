@@ -22,8 +22,10 @@
             var queryTemplate = new Mock<IQueryRepository<Template, string>>();
             var queryJobFunction = new Mock<IJobFunctionQueryRepository>();
             var queryCompetency = new Mock<ICompetencyQueryRepository>();
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -43,13 +45,15 @@
             var querySkillMatrix = new Mock<ISkillMatrixQueryRepository>();
             var queryJobFunction = new Mock<IJobFunctionQueryRepository>();
             var queryCompetency = new Mock<ICompetencyQueryRepository>();
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
 
             var queryTemplate = new Mock<IQueryRepository<Template, string>>();
             queryTemplate
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(() => null);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -71,19 +75,21 @@
                 Id = "B7F16780-227C-46FC-A7A1-7AADF91BBECA",
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
-                Skills = isNullAndEmpty == true ? null : new List<int>()
+                Skills = isNullAndEmpty == true ? null : new List<SkillTemplate>()
             };
 
             var querySkillMatrix = new Mock<ISkillMatrixQueryRepository>();
             var queryJobFunction = new Mock<IJobFunctionQueryRepository>();
             var queryCompetency = new Mock<ICompetencyQueryRepository>();
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
 
             var queryTemplate = new Mock<IQueryRepository<Template, string>>();
             queryTemplate
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(savedTemplate);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -105,7 +111,15 @@
                 Id = "B7F16780-227C-46FC-A7A1-7AADF91BBECA",
                 CompetencyId = 13,
                 JobFunctionLevel = 1,
-                Skills = new List<int> { 228, 289 }
+                Skills = new List<SkillTemplate> {
+                    new SkillTemplate
+                    {
+                        SkillId = 228, Questions = new List<string>() },
+                    new SkillTemplate
+                    {
+                        SkillId = 289, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var queryJobFunction = new Mock<IJobFunctionQueryRepository>();
@@ -125,7 +139,10 @@
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(savedTemplate);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
+
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -149,7 +166,15 @@
                 Id = "B7F16780-227C-46FC-A7A1-7AADF91BBECA",
                 CompetencyId = 13,
                 JobFunctionLevel = 3,
-                Skills = new List<int> { 228, 289 }
+                Skills = new List<SkillTemplate> {
+                    new SkillTemplate
+                    {
+                        SkillId = 228, Questions = new List<string>() },
+                    new SkillTemplate
+                    {
+                        SkillId = 289, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var savedJobFunction = new JobFunction
@@ -200,7 +225,10 @@
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(savedTemplate);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
+
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -227,7 +255,15 @@
                 Id = "B7F16780-227C-46FC-A7A1-7AADF91BBECA",
                 CompetencyId = 13,
                 JobFunctionLevel = 3,
-                Skills = new List<int> { 228, 289 }
+                Skills = new List<SkillTemplate> {
+                    new SkillTemplate
+                    {
+                        SkillId = 228, Questions = new List<string>() },
+                    new SkillTemplate
+                    {
+                        SkillId = 289, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var savedJobFunction = new JobFunction
@@ -282,7 +318,10 @@
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(savedTemplate);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
+
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -309,7 +348,15 @@
                 Id = "B7F16780-227C-46FC-A7A1-7AADF91BBECA",
                 CompetencyId = 13,
                 JobFunctionLevel = 3,
-                Skills = new List<int> { 228, 289 }
+                Skills = new List<SkillTemplate> {
+                    new SkillTemplate
+                    {
+                        SkillId = 228, Questions = new List<string>() },
+                    new SkillTemplate
+                    {
+                        SkillId = 289, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var savedJobFunction = new JobFunction
@@ -364,7 +411,10 @@
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(savedTemplate);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
+
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;
@@ -391,7 +441,15 @@
                 Id = "B7F16780-227C-46FC-A7A1-7AADF91BBECA",
                 CompetencyId = 13,
                 JobFunctionLevel = 3,
-                Skills = new List<int> { 228, 289 }
+                Skills = new List<SkillTemplate> {
+                    new SkillTemplate
+                    {
+                        SkillId = 228, Questions = new List<string>() },
+                    new SkillTemplate
+                    {
+                        SkillId = 289, Questions = new List<string>() }
+                },
+                Exercises = new List<string>()
             };
 
             var savedJobFunction = new JobFunction
@@ -490,7 +548,10 @@
                 .Setup(method => method.FindById(It.IsAny<string>()))
                 .ReturnsAsync(savedTemplate);
 
-            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object);
+            var queryQuestion = new Mock<IQuestionQueryRepository>();
+            var queryExercise = new Mock<IExerciseQueryRepository>();
+
+            var controllerUnderTest = new QueryTemplateController(querySkillMatrix.Object, queryTemplate.Object, queryJobFunction.Object, queryCompetency.Object, queryQuestion.Object, queryExercise.Object);
 
             // Act
             var actionResult = controllerUnderTest.Get(templateId).Result;

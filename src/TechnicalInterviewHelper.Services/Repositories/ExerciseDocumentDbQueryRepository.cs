@@ -46,6 +46,8 @@
         /// </returns>
         public async Task<IEnumerable<Exercise>> GetAll(Template template)
         {
+            List<int> skillTemplateIds = template.Skills.Select(s => s.SkillId).ToList();
+
             var documentQuery =
                     this.DocumentClient
                     .CreateDocumentQuery<Exercise>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
@@ -53,7 +55,32 @@
                         document.DocumentTypeId == DocumentType.Exercises &&
                         document.Competency.Id == template.CompetencyId)
                     .SelectMany(document =>
-                        document.Skills.Where(skill => template.Skills.Contains(skill.Id)).Select(s => document))
+                        document.Skills.Where(skill => skillTemplateIds.Contains(skill.Id)).Select(s => document))
+                    .AsDocumentQuery();
+
+            var queryResult = new List<Exercise>();
+            while (documentQuery.HasMoreResults)
+            {
+                var exercises = await documentQuery.ExecuteNextAsync<Exercise>();
+                queryResult.AddRange(exercises.GroupBy(e => e.Id).Select(e => e.FirstOrDefault()));
+            }
+
+            return queryResult;
+        }
+
+        /// <summary>
+        /// Select all those exercises by Ids.
+        /// </summary>
+        /// <param name="ids">The Ids.</param>
+        /// <returns>An enumeration of exercises.</returns>
+        public async Task<IEnumerable<Exercise>> FindByIds(List<string> ids)
+        {
+            var documentQuery =
+                    this.DocumentClient
+                    .CreateDocumentQuery<Exercise>(UriFactory.CreateDocumentCollectionUri(this.DatabaseId, this.CollectionId), new FeedOptions { MaxItemCount = -1 })
+                    .Where(document =>
+                        document.DocumentTypeId == DocumentType.Exercises &&
+                        ids.Contains(document.Id))
                     .AsDocumentQuery();
 
             var queryResult = new List<Exercise>();
