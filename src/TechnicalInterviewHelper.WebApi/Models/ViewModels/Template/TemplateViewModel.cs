@@ -1,5 +1,5 @@
 ﻿namespace TechnicalInterviewHelper.WebApi.Model
-{    
+{
     using System.Collections.Generic;
     using Newtonsoft.Json;
 
@@ -8,6 +8,15 @@
     /// </summary>
     public class TemplateViewModel
     {
+        /// <summary>
+        /// Gets or sets the question identifier.
+        /// </summary>
+        /// <value>
+        /// The question identifier.
+        /// </value>
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
         /// <summary>
         /// Gets or sets the template name.
         /// </summary>
@@ -79,6 +88,6 @@
         /// The exercises.
         /// </value>
         [JsonProperty("interviewExercises")]
-        public IEnumerable<ExerciseTemplateViewModel> Exercises { get; set; }
+        public IEnumerable<object> Exercises { get; set; }
     }
 }
