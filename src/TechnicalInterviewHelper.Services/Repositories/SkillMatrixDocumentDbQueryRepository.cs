@@ -5,12 +5,10 @@
     using System.Linq;
     using System.Linq.Dynamic;
     using System.Linq.Expressions;
-    using System.Text;
     using System.Threading.Tasks;
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
     using Model;
-    using TechnicalInterviewHelper.Model.Entities.Comparers;
 
     /// <summary>
     /// Repository for specific operation related to skill matrix catalog.
@@ -151,13 +149,16 @@
             // Load this list with only the skills for the job function level 1
             skillResult1.AddRange(skillResult.Where(s => s.JobFunctionLevel == 1));
 
-            // the following routine is to create a new skill list but without duplicates
+            // since we are not filtering the skill matrix by job level some of the skills are 
+            // duplicated like hard skills which is part of every job level, so the following routine is to create a new skill list but without duplicates
             int count = 0;
+
             // Loop through the original skill result which should contain all the skills for all job levels 
             foreach (var skill1 in skillResult)
             {
                 count++;
-                // check if skill exists in the skill result1
+
+                // check if the skill does not exists in the skillResult1 list
                 if (!skillResult1.Any(s => s.Name == skill1.Name))
                 {
                     skillResult1.Add(skill1);
