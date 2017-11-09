@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Linq.Dynamic;
     using System.Linq.Expressions;
-    using System.Text;
     using System.Threading.Tasks;
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
@@ -153,7 +152,7 @@
             // since we are not filtering the skill matrix by job level some of the skills are 
             // duplicated like hard skills which is part of every job level, so the following routine is to create a new skill list but without duplicates
             int count = 0;
-            
+
             // Loop through the original skill result which should contain all the skills for all job levels 
             foreach (var skill1 in skillResult)
             {

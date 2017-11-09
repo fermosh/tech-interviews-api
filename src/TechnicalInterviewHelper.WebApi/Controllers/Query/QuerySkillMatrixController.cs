@@ -41,7 +41,6 @@
             this.querySkillMatrix = queryPositionSkill;
             this.queryCompetency = queryCompetency;
         }
-
         #endregion Constructor
 
         /// <summary>
